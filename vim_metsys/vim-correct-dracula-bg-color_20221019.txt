@@ -1,0 +1,14 @@
+Run
+$> vim ~/.vim/pack/themes/start/dracula/autoload/dracula.vim
+and change:
+
+let g:dracula#palette.bg        = ['#20222b', 234]
+let g:dracula#palette.bgdark    = ['#1a1b23', 233]
+" let g:dracula#palette.bgdarker  = ['#14151a', 232]
+" let g:dracula#palette.bgdarker  = ['#010414', 232]
+let g:dracula#palette.bgdarker  = ['#00020a', 232]
+
+Get color codes from:
+https://encycolorpedia.com/14151a
+
+

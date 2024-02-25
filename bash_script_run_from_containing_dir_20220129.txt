@@ -1,0 +1,12 @@
+#! /bin/bash
+
+if [ $# != 2 ]; then
+	unixpath=$1
+else
+	unixpath="."
+fi
+
+# Access dirs and files relative to scripts containing dir!!
+# scripts containing dir: "$(dirname ${BASH_SOURCE[0]})", or (not recomended: "$(dirname $0)")
+java -jar $(dirname ${BASH_SOURCE[0]})/jars/RsortByEnddate.jar $unixpath
+

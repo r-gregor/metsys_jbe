@@ -1,0 +1,7 @@
+https://download.ebz.epson.net/dsc/search/01/search/searchModule
+
+[Notice]
+In order to install these drivers, you need to install LSB package (version 3.2 or later) beforehand.
+
+Ubuntu:
+# apt-get install lsb

@@ -1,0 +1,7 @@
+xrandr --output LVDS-1 --mode 1600x900 --scale 2x2 --fb 3200x1800
+xrandr --output LVDS-1 --mode 1600x900 --scale 1x1 --fb 1600x900
+
+
+
+xrandr --output LVDS-1 --mode 1600x900 --scale 1.6x1.6 --fb 2560x1440
+xrandr --output LVDS-1 --mode 1600x900 --scale 1x1 --fb 1600x900

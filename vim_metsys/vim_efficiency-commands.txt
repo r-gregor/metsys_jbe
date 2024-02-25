@@ -1,0 +1,109 @@
+filename: vim_efficiency-commands.txt
+20240212_en
+---
+
+- g/pattern/action:
+	acction applied on all lines that contain pattern
+
+- change buffer
+	:b <tab> --> list of available buffers
+		any unique part of filename --> opens the buffer
+
+- delete from current position until pattern (not including)
+	d
+		/.*pattern
+
+- opnen/edit new file in same folder:
+	:new % <tab> --> this filename with path
+		:new %:h --> just path
+			:new %:h<new filename>
+
+- go to surroundig bracket
+	] ),}, ...
+	[ (,{, ...
+
+- go to next displayed line in wrapped singe long line
+	gj, gk
+
+- open a file in READONLY mode
+	:view <filename>
+
+
+- go to a file under the cursor
+	gf
+
+- go to a file under the cursor and open it in new window
+	ctrl+w f
+
+- grep a list of files with pattern and select one
+	:vimgrep '<pattern>' <filepath>/** (internal grep)
+	:grep '<pattern>' <filepath>/** (external grep)
+		:copen
+			--> select
+
+- delete multiple buffers --> <ctrl+a> expands the glob
+	:bd *.c<ctrl+a>
+
+- switch to last edited buffer
+	ctrl+6
+
+- create a new file to edit when in netrw
+	shift+5
+
+- incrementing sequences
+	A - numbers
+	visualy select block of numbers:
+		1. line
+		1. line
+		1. line
+		1. line
+		g ctrl+a on selected block of numbers --> increment
+			1. line
+			2. line
+			3. line
+			4. line
+			g ctrl+x on selected block of numbers --> decrement
+				5. line
+				4. line
+				3. line
+				2. line
+	B - chars (alpha) -- must have nrformats be set to +=alpha --> :set nrformats+=alpha
+	visualy select block of chars:
+		{sequence: a; limit=false}
+		{sequence: a; limit=false}
+		{sequence: a; limit=false}
+		{sequence: a; limit=false}
+		{sequence: a; limit=false}
+		g ctrl+a on selected block of chars --> increment
+			{sequence: a; limit=false}
+			{sequence: b; limit=false}
+			{sequence: c; limit=false}
+			{sequence: d; limit=false}
+			{sequence: e; limit=false}
+	
+
+- within :help <help item> --> move to where link points to:
+	with cursor under the link press ctrl+]
+
+- open multiple files in separat tabs:
+	vim -p *.c *.h
+
+- move between tabs in vim
+	gt  --> go to next tab
+	gT  --> go to previous tab
+	1gt --> go to tab number 1
+	0gt --> go to first tab
+
+- save session to a file --> windows tabs and ...
+	:mksession <session_name.vim>
+
+- load session:
+	vim -S <session_name.vim>
+
+- rcCtrl-O lets us temporarily exit Insert mode, perform one Normal mode command, and then return to
+  Insert mode
+
+- ...
+
+
+

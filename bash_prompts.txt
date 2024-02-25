@@ -1,0 +1,33 @@
+### 20240215
+
+### CURRENT PROMPTS ###
+# export PS1=$'\[\e[1;36m\]\u\[\e[1;31m\]@\[\e[1;32m\]\h:\[\e[1;35m\]\w\[\e[1;31m\]\n\u21aa \[\e[0m\]'
+# export PS1=$'\n\[\e[01;38;5;75m\]\w\n$(parse_git_branch)\[\e[1;31m\]\u21AA \[\e[0m\] '
+export PS1=$'\n\[\e[01;38;5;75m\][\h] \w\n$(parse_git_branch)\[\e[1;31m\]\u21AA \[\e[0m\] '
+
+# ---
+
+## external (experimental):
+PS1='\e[1;31;48;5;234m\u \e[38;5;240mon \e[1;38;5;28;48;5;234m\h \e[38;5;54m\d \@\e[0m\n\e[0;31;48;5;234m[\w] \e[1m\$\e[0m '
+PS1='\e[1;38;5;56;48;5;234m\u \e[38;5;240mon \e[1;38;5;28;48;5;234m\h \e[38;5;54m\d \@\e[0m\n\e[0;38;5;56;48;5;234m[\w] \e[1m\$\e[0m '
+# ---
+PS1='\[\e[0m\]\[\e[48;5;236m\]\[\e[38;5;105m\]\u\[\e[38;5;105m\]@\[\e[38;5;105m\]\h\[\e[38;5;105m\] \[\e[38;5;221m\]\w\[\e[38;5;221m\]\[\e[38;5;105m\]\[\e[0m\]\[\e[38;5;236m\]\342\226\214\342\226\214\342\226\214\[\e[0m\]'
+PS1='\[\e[0m\]\[\e[48;5;236m\]\[\e[38;5;197m\]\u\[\e[38;5;197m\]@\[\e[38;5;197m\]\h\[\e[38;5;105m\] \[\e[38;5;221m\]\w\[\e[38;5;221m\]\[\e[38;5;105m\]\[\e[0m\]\[\e[38;5;236m\]\342\226\214\342\226\214\342\226\214\[\e[0m\]'
+# ---
+
+
+# NOTE: resets:
+Here's a little more on resetting:
+
+\e[0m resets all colors and attributes.
+\e[20m resets only attributes (underline, etc.), leaving colors unchanged.
+\e[39m resets only foreground color, leaving attributes unchanged.
+\e[49m resets only background color, leaving attributes unchanged.
+
+
+print 256 depth color:
+printf "\e[38;5;232m256_BARVA\n"
+
+
+print true (RGB) color:
+printf "\e[38;2;256;200;200mRGB_BARVA\n"

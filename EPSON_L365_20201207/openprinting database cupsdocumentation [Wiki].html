@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html dir="ltr" class="js olCSSsupported desktop" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>openprinting:database:cupsdocumentation [Wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki">
+<meta name="theme-color" content="#008800">
+<meta name="robots" content="index,follow">
+<meta name="keywords" content="openprinting,database,cupsdocumentation">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.linuxfoundation.org/lib/exe/opensearch.php" title="Wiki">
+<link rel="start" href="https://wiki.linuxfoundation.org/">
+<link rel="contents" href="https://wiki.linuxfoundation.org/openprinting/database/cupsdocumentation?do=index" title="Sitemap">
+<link rel="manifest" href="https://wiki.linuxfoundation.org/lib/exe/manifest.php">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="https://wiki.linuxfoundation.org/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="https://wiki.linuxfoundation.org/feed.php?mode=list&amp;ns=openprinting:database">
+<link rel="alternate" type="text/html" title="Plain HTML" href="https://wiki.linuxfoundation.org/_export/xhtml/openprinting/database/cupsdocumentation">
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="https://wiki.linuxfoundation.org/_export/raw/openprinting/database/cupsdocumentation">
+<link rel="canonical" href="https://wiki.linuxfoundation.org/openprinting/database/cupsdocumentation">
+<link rel="stylesheet" type="text/css" href="openprinting%20database%20cupsdocumentation%20[Wiki]_files/css.css">
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='openprinting:database';var JSINFO = {"plugins":{"edittable":{"default columnwidth":""}},"plugin_folded":{"hide":"hide","reveal":"reveal"},"id":"openprinting:database:cupsdocumentation","namespace":"openprinting:database","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script><script>try {
+                        Object.defineProperty(screen, "availTop", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availLeft", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availWidth", { value: 1920 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availHeight", { value: 1200 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "colorDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "pixelDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "hardwareConcurrency", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "appVersion", { value: "5.0 (Windows)" });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "doNotTrack", { value: "unspecified" });
+                    } catch (e) {}
+                    
+            try {
+                window.screenY = 99
+            } catch (e) { }
+        
+            try {
+                window.screenTop = 99
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerHeight = 1000
+            } catch (e) { }
+        
+            try {
+                window.screenX = 75
+            } catch (e) { }
+        
+            try {
+                window.screenLeft = 75
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerWidth = 1669
+            } catch (e) { }
+        </script>
+<script type="text/javascript" charset="utf-8" src="openprinting%20database%20cupsdocumentation%20[Wiki]_files/jquery.php"></script>
+<script type="text/javascript" charset="utf-8" src="openprinting%20database%20cupsdocumentation%20[Wiki]_files/js.php"></script><style id="iris-css">.iris-picker{display:block;position:relative}.iris-picker,.iris-picker *{-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input+.iris-picker{margin-top:4px}.iris-error{background-color:#ffafaf}.iris-border{border-radius:3px;border:1px solid #aaa;width:200px;background-color:#fff}.iris-picker-inner{position:absolute;top:0;right:0;left:0;bottom:0}.iris-border .iris-picker-inner{top:10px;right:10px;left:10px;bottom:10px}.iris-picker .iris-square-inner{position:absolute;left:0;right:0;top:0;bottom:0}.iris-picker .iris-square,.iris-picker .iris-slider,.iris-picker .iris-square-inner,.iris-picker .iris-palette{border-radius:3px;box-shadow:inset 0 0 5px rgba(0,0,0,.4);height:100%;width:12.5%;float:left;margin-right:5%}.iris-picker .iris-square{width:76%;margin-right:10%;position:relative}.iris-picker .iris-square-inner{width:auto;margin:0}.iris-ie-9 .iris-square,.iris-ie-9 .iris-slider,.iris-ie-9 .iris-square-inner,.iris-ie-9 .iris-palette{box-shadow:none;border-radius:0}.iris-ie-9 .iris-square,.iris-ie-9 .iris-slider,.iris-ie-9 .iris-palette{outline:1px solid rgba(0,0,0,.1)}.iris-ie-lt9 .iris-square,.iris-ie-lt9 .iris-slider,.iris-ie-lt9 .iris-square-inner,.iris-ie-lt9 .iris-palette{outline:1px solid #aaa}.iris-ie-lt9 .iris-square .ui-slider-handle{outline:1px solid #aaa;background-color:#fff;-ms-filter:"alpha(Opacity=30)"}.iris-ie-lt9 .iris-square .iris-square-handle{background:0;border:3px solid #fff;-ms-filter:"alpha(Opacity=50)"}.iris-picker .iris-strip{margin-right:0;position:relative}.iris-picker .iris-strip .ui-slider-handle{position:absolute;background:0;margin:0;right:-3px;left:-3px;border:4px solid #aaa;border-width:4px 3px;width:auto;height:6px;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.2);opacity:.9;z-index:5;cursor:ns-resize}.iris-strip .ui-slider-handle:before{content:" ";position:absolute;left:-2px;right:-2px;top:-3px;bottom:-3px;border:2px solid #fff;border-radius:3px}.iris-picker .iris-slider-offset{position:absolute;top:11px;left:0;right:0;bottom:-3px;width:auto;height:auto;background:transparent;border:0;border-radius:0}.iris-picker .iris-square-handle{background:transparent;border:5px solid #aaa;border-radius:50%;border-color:rgba(128,128,128,.5);box-shadow:none;width:12px;height:12px;position:absolute;left:-10px;top:-10px;cursor:move;opacity:1;z-index:10}.iris-picker .ui-state-focus .iris-square-handle{opacity:.8}.iris-picker .iris-square-handle:hover{border-color:#999}.iris-picker .iris-square-value:focus .iris-square-handle{box-shadow:0 0 2px rgba(0,0,0,.75);opacity:.8}.iris-picker .iris-square-handle:hover::after{border-color:#fff}.iris-picker .iris-square-handle::after{position:absolute;bottom:-4px;right:-4px;left:-4px;top:-4px;border:3px solid #f9f9f9;border-color:rgba(255,255,255,.8);border-radius:50%;content:" "}.iris-picker .iris-square-value{width:8px;height:8px;position:absolute}.iris-ie-lt9 .iris-square-value,.iris-mozilla .iris-square-value{width:1px;height:1px}.iris-palette-container{position:absolute;bottom:0;left:0;margin:0;padding:0}.iris-border .iris-palette-container{left:10px;bottom:10px}.iris-picker .iris-palette{margin:0;cursor:pointer}.iris-square-handle,.ui-slider-handle{border:0;outline:0}</style><style type="text/css" media="screen"><!--/*--><![CDATA[/*><!--*/ .folded.hidden { display: none; } .folder .indicator { visibility: visible; } /*]]>*/--></style>
+<script type="text/javascript">/*<![CDATA[*/document.documentElement.className += ' olCSSsupported';
+/*!]]>*/</script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="https://wiki.linuxfoundation.org/lib/tpl/dokuwiki/images/favicon.ico">
+<link rel="apple-touch-icon" href="https://wiki.linuxfoundation.org/lib/tpl/dokuwiki/images/apple-touch-icon.png">
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki     ">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">skip to content</a></li>
+        </ul>
+
+        <h1><a href="https://wiki.linuxfoundation.org/start" accesskey="h" title="[H]"><img src="openprinting%20database%20cupsdocumentation%20[Wiki]_files/logo.png" alt="" width="200" height="64"> <span>Wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li class="action login"><a href="https://wiki.linuxfoundation.org/openprinting/database/cupsdocumentation?do=login&amp;sectok=" title="Log In" rel="nofollow"><span>Log In</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"></path></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="/start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="openprinting:database:cupsdocumentation"><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in"><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="openprinting:database:cupsdocumentation"><select name="do" class="edit quickselect" title="Tools"><option value="" selected="selected">Tools</option><optgroup label="Page Tools"><option value="edit">Show pagesource</option><option value="revisions">Old revisions</option><option value="menuitemfolded">Fold/unfold all</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Recent Changes</option><option value="media">Media Manager</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="login">Log In</option></optgroup></select><button type="submit" style="display: none;">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="https://wiki.linuxfoundation.org/openprinting/database/cupsdocumentation?do=recent" title="Recent Changes [r]" rel="nofollow" accesskey="r">Recent Changes</a></li><li class="action media"><a href="https://wiki.linuxfoundation.org/openprinting/database/cupsdocumentation?do=media&amp;ns=openprinting%3Adatabase" title="Media Manager" rel="nofollow">Media Manager</a></li><li class="action index"><a href="https://wiki.linuxfoundation.org/openprinting/database/cupsdocumentation?do=index" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="https://wiki.linuxfoundation.org/openprinting/database/cupsdocumentation" class="breadcrumbs" title="openprinting:database:cupsdocumentation">cupsdocumentation</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y">
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>openprinting:database:cupsdocumentation</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle open" style="cursor: pointer;"><strong><span>−</span></strong>Table of Contents</h3>
+<div style="" aria-expanded="true">
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#openprinting_cups_quick_start">OpenPrinting CUPS Quick Start</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#quick_start">Quick Start</a></div></li>
+<li class="level2"><div class="li"><a href="#printing">Printing</a></div></li>
+<li class="level2"><div class="li"><a href="#how_does_it_work">How does it work?</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="openprinting_cups_quick_start">OpenPrinting CUPS Quick Start</h1>
+<div class="level1">
+
+<p>
+For more detail, see the <a href="https://wiki.linuxfoundation.org/openprinting/database/cupsprintingtutorial" class="wikilink2" title="openprinting:database:cupsprintingtutorial" rel="nofollow">tutorial</a> (beware, it is not yet updated for Foomatic 4.0).
+</p>
+
+<p>
+If you have trouble, see the <a href="http://www.openprinting.org/kpfeifle/LinuxKongress2002/Tutorial/VII.cups-help/VII.cups-help.html" class="urlextern" title="http://www.openprinting.org/kpfeifle/LinuxKongress2002/Tutorial/VII.cups-help/VII.cups-help.html" rel="nofollow">troubleshooting guide</a>.
+</p>
+
+</div>
+
+<h2 class="sectionedit2" id="quick_start">Quick Start</h2>
+<div class="level2">
+
+<p>
+In most cases you do not need to go through these steps. Modern Linux 
+distributions have everything prepared for using most printers. For USB 
+printers it is often enough to simply plug them in. The printer gets 
+auto-detected and after some seconds a message pops up on the screen 
+telling that the printer is set up. If this is not the case or for 
+parallel or network printers you simply start the distribution's printer
+ setup tool out of the system administration menu or out of a system 
+administration application, click on a button for adding a new printer 
+and then follow the screen instructions. In certain cases PPDs or 
+drivers are even automatically downloaded from this web site.
+</p>
+
+<p>
+If this does not work, usually there is no suitable driver installed on your system. Verify in <a href="http://www.openprinting.org/printer_list.cgi" class="urlextern" title="http://www.openprinting.org/printer_list.cgi" rel="nofollow">the OpenPrinting database</a> whether your printer is supposed to work and whether there is a driver or PPD file available.
+</p>
+<div class="table sectionedit3"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0">0.</td><td class="col1">First just give it a try.<br>
+<br>
+Start at Step 5 (Configure CUPS). See if this works before installing 
+new software; most distributions ship many drivers and PPD files.<br>
+</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">1.</td><td class="col1"></td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<br>
+            You can see the available Ghostscript drivers on your system by running <code>'gs -h</code>'.
+ If the driver you need is not listed, you need to obtain a new 
+Ghostscript package which includes this driver, or compile Ghostscript 
+yourself. <a href="http://www.ghostscript.com/" class="urlextern" title="http://www.ghostscript.com/" rel="nofollow">GPL GhostScript</a>
+ includes all known free  software built-in drivers and Linux 
+distributions ship it with all drivers actually compiled. Currently such
+ drivers are not developed any more by third parties, as adding these 
+drivers is awkward and there are plenty of interfaces for modular 
+drivers: CUPS Raster, IJS, OpenPrinting Vector, filters, …. <br>
+  * <strong> <em><strong>CUPS Raster</strong></em> </strong><br>
+  *  CUPS has a native driver style called “CUPS Raster”. These are 
+executable programs, installed into CUPS' filter directory, which CUPS 
+drives using a set of filters and Ghostscript. Such drivers are 
+relatively easy to get going with CUPS, so are usually the best choice 
+for CUPS users. <br>
+
+<br>
+            The gimp-print driver is probably the best known third party
+ CUPS driver. Several printer vendors also provide CUPS drivers, 
+typically as part of an installer utility. A few such drivers are 
+included with CUPS. <br>
+
+<br>
+            You can see which CUPS Raster drivers are installed by examining the filters in <code>/usr/lib/cups/filter</code>;
+ usually CUPS Raster drivers have names beginning with “rasterto”. Each 
+CUPS Raster driver program will also have one or more PPD files in <code>/usr/share/ppd</code> or <code>/usr/share/cups/model</code>, each containing a reference to the proper CUPS Raster program. <br>
+  * <strong> <em><strong>IJS</strong></em> </strong><br>
+  *  IJS is a plug-in interface to connect raster driver modules with 
+Ghostscript (or a renderer in general) based on pipes. It was introduced
+ for HP's HPIJS driver but currently it also used by several other 
+drivers. The driver executables are usually installed into the standard 
+search path for programs (<code>/usr/bin</code> or <code>/usr/local/bin</code>). <br>
+  * <strong> <em><strong>OpenPrinting Vector</strong></em> </strong><br>
+  *  This driver concept is developed by the Japanese members of the 
+OpenPrinting project. It is a plugin interface for Ghostscript and other
+ renderers which supports high-level (vector) graphics. This way modular
+ drivers for printers with proprietary high-level page description 
+languages can be created. Such printers are common on the Japanese 
+market. <br>
+  * <strong> <em><strong>Filter</strong></em> </strong><br>
+  *  Some drivers are simply a filter into which generic bitmap output 
+of Ghostscript is piped. This was one of the first solutions to make 
+printer drivers without compiling them into Ghostscript. The filter 
+executables are usually installed into the standard search path for 
+programs (<code>/usr/bin</code> or <code>/usr/local/bin</code>). <br>
+  * <strong> <em><strong>Uniprint</strong></em> </strong><br>
+  *  A few drivers are Uniprint drivers. These consist simply of a <em>upp</em>
+ file containing various parameters; most are included with Ghostscript.
+ Others you will need to obtain and place in your ghostscript library 
+directory (one of the directories listed under “<em>Search path:</em>” at the end of the “<code>gs -h</code>” output). <br>
+<br>
+If your driver is not installed, install it. See whether there is a 
+driver download link for your computer's architecture (normal PCs are 
+“x86 32 bit”, newer PCs are “x86 64 bit”, older Macs are “Power PC”), on
+ your printer's page in <a href="http://www.openprinting.org/printer_list.cgi" class="urlextern" title="http://www.openprinting.org/printer_list.cgi" rel="nofollow">the database</a>. If so, install this package as <a href="https://wiki.linuxfoundation.org/openprinting/database/driverpackages" class="wikilink1" title="openprinting:database:driverpackages">shown here</a>.
+ If not, the actual installation procedure varies by driver and 
+distribution. Look first for a prepackaged binary kit of any sort; 
+failing that look for generic installation instructions provided from 
+the driver website.<br>
+|
+</p>
+<div class="table sectionedit4"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0">2.</td><td class="col1">Install a PPD file.<br>
+<br>
+CUPS requires a PPD file to define how it will use the printer and 
+driver (if any). PPD files come from several sources, be sure you get 
+yours from the right place:<br>
+<br>
+  * <strong> If you have a PostScript printer </strong><br>
+  *  Obtain the PPD file from your printer's vendor. Several vendors 
+post PPDs on the OpenPrinting web site. Go to your printer's entry and 
+look whether a driver named “Postscript-&lt;vendor name&gt;” is 
+available. Take the PPD from this driver entry. Other sources are the 
+printer manuafacturer's web site (look for a package for Linux or Unix, 
+Windows and Mac packages are often not simple to extract on a Linux 
+machine) on the driver CDs which come with the printer, or on a Windows 
+or Mac <abbr title="Operating System">OS</abbr> X partition if the printer was already set up on that operating system. You do not need a driver (Step 1), just the PPD file. <br>
+  * <strong> If you do not have a PostScript printer </strong><br>
+  *  You will need a driver. The OpenPrinting database can help yopu 
+find a suitable one. Several drivers can be downloaded there as a 
+ready-to-use binary package for all LSB-compliant distributions. In any 
+case, you find links to driver project pages. If the driver does not 
+ship a PPD file, use the PPD file offered to you by the OpenPrinting 
+database. Follow the “download PPD” link in such a case. Save downloaded
+ PPD files in <code>/usr/share/ppd</code>, <code>/usr/share/cups/model</code>,
+ or wherever your CUPS setup has its PPD directory. The PPD file does 
+not need to be executable, but it should be world-readable and should 
+have the file name extension “<code>.ppd</code>”. <br>
+</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">3.</td><td class="col1">Restart the CUPS daemon (Only CUPS 1.1.x and older).<br>
+<br>
+Log in as root and enter one of the following commands:<br>
+<pre class="code">killall -HUP cupsd
+/etc/init.d/cups restart
+sudo /etc/init.d/cups restart
+/etc/software/init.d/cups restart</pre>
+
+<p>
+<br>
+<br>
+The actual command depends on the operating system distribution which you are running and may be different from these.<br>
+
+</p>
+</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">4.</td><td class="col1">Install the foomatic-filters package.<br>
+<br>
+(If you are using a native CUPS Raster driver, or are using a PostScript printer with a PPD <em>from your printer vendor</em>,
+ you probably do not need Foomatic and should skip this step). Usually, 
+your Linux distribution ships the foomatic-filters package (you have <code>/usr/lib/cups/filter/foomatic-rip</code> and <code>/usr/bin/foomatic-rip</code> then). If not, get the foomatic-filters package from <a href="http://www.openprinting.org/download/foomatic/" class="urlextern" title="http://www.openprinting.org/download/foomatic/" rel="nofollow">here</a>.
+ You need a C compiler and the Ghostscript shared library to build it. 
+See the USAGE file in the foomatic-filters package for more information.<br>
+</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">5.</td><td class="col1"></td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<br>
+            CUPS also includes a command line administration tool; consult the CUPS documentation if you prefer to use that.<br>
+|
+</p>
+<div class="table sectionedit5"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0">6.</td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<br>
+cd /tmp
+<br>
+wget <a href="http://www.openprinting.org/download/printing/align.ps" class="urlextern" title="http://www.openprinting.org/download/printing/align.ps" rel="nofollow">http://www.openprinting.org/download/printing/align.ps</a>
+<br>
+wget <a href="http://www.openprinting.org/download/printing/alignmargins" class="urlextern" title="http://www.openprinting.org/download/printing/alignmargins" rel="nofollow">http://www.openprinting.org/download/printing/alignmargins</a>
+<br>
+chmod 755 alignmargins
+<br>
+
+<br>
+su
+<br>
+./alignmargins
+<br>
+
+<br>
+   OR
+<br>
+
+<br>
+sudo alignmargins<br>
+<br>
+This will add the Margins print option so you can turn on (“<code>lpr -o Margins=Custom printfile</code>”, default setting) or off (“<code>lpr -o Margins=Default printfile</code>”) your adjustments.<br>
+
+<br>
+            Note that this does not work for all drivers.<br>
+|
+</p>
+<div class="table sectionedit6"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0">7.</td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<br>
+            See the <a href="https://wiki.linuxfoundation.org/openprinting/database/backenderrorhandler" class="wikilink1" title="openprinting:database:backenderrorhandler">''beh'' page</a> for more information and for setup instructions.<br>
+|
+</p>
+
+</div>
+
+<h2 class="sectionedit7" id="printing">Printing</h2>
+<div class="level2">
+
+<p>
+Most modern application programs support CUPS directly. Your printer(s) 
+are listed in the printing dialogs and you can change option settings by
+ clicking a “Properties” button and/or clicking the tabs in the dialogs.
+</p>
+
+<p>
+For printing from the command line or out of shell scripts use the CUPS lp(1) and lpr(1) commands. For example:
+</p>
+<pre class="code">$ lp -d foo1 -o PageSize=Letter /etc/motd</pre>
+
+<p>
+This will print the message of the day on letter paper. For many 
+drivers, you'll want to use the lpadmin(9) or lpoptions(1) command to 
+lock down a set of sensible defaults for you. This is especially true 
+for free drivers, which tend to have a large number of options.
+</p>
+
+<p>
+To see the options available for your setup, run the <code>'lpoptions -p foo1 -l' command or send a print job with only the option '&lt;tt&gt;docs</code>', like this: <code>'lp -d foo1 -o docs /etc/hosts</code>'. The former shows the option list on the screen, the latter prints it. You can also download and install <a href="http://www.openprinting.org/download/printing/lphelp.tar.gz" class="urlextern" title="http://www.openprinting.org/download/printing/lphelp.tar.gz" rel="nofollow">lphelp</a> (Usage: <code>'lphelp &lt;printer&gt; | less</code>') to display the options nicely on the screen.
+</p>
+
+<p>
+Usually, you can also use the <code>media=…</code>, <code>sides=…</code>, and <code>duplex</code>
+ “standard” CUPS options as documented in the CUPS user manual; they 
+should work if there are InputSlot, MediaType, and/or Duplex options for
+ your driver.
+</p>
+
+<p>
+Options can also be supplied only to selected pages when Foomatic is 
+used. To apply an option to specific pages prepend the option with a 
+page specification separated by a colon:
+</p>
+<pre class="code">$ lp -d foo1 -o 1:InputSlot=Letterhead -o InputSlot=Standard file
+$ lp -d foo1 -o even:Watermark=on -o odd:ColorMode=Gray file
+$ lp -d foo1 -o 1,6-10,15,20-:MediaType=YellowPaper file</pre>
+
+<p>
+The syntax is “<code>even</code>”, “<code>odd</code>”, or giving 
+comma-separated page numbers or page ranges. Option settings with page 
+selection override option settings for the whole document on the 
+appropriate pages. More specific (less pages selected) settings override
+ less specific settings on the appropriate pages.
+</p>
+
+<p>
+The first line in the example prints the first page on letter head paper
+ and the rest on standard paper. The second line prints the 
+even-numbered pages with watermark and the odd-numbered pages in 
+grayscale. The third line prints the first, the 6th to the 10th, the 
+15th, the 20th, and all later pages on yellow paper, the rest on 
+standard paper.
+</p>
+
+<p>
+Page-specific option settings cannot be set as default in the PPD files, but they can be set by editing the <code>~/.cups/lpoptions</code> or <code>/etc/cups/lpoptions</code> files.
+</p>
+
+<p>
+With some printer/driver combos it is also possible to use arbitrary, 
+custom page sizes (as long as they fit into the printer). Then you have a
+ “Custom” setting for the “PageSize” option which you can use as 
+follows:
+</p>
+<pre class="code">$ lp -d foo1 -o PageSize=Custom.20x30cm file.ps</pre>
+
+<p>
+You give always at first the width, then the height and in the end one of the units “<code>pt</code>” (PostScript points, 1/72 inch), “<code>in</code>” (inches), “<code>cm</code>” (centimeters), or “<code>mm</code>” (millimeters). If you leave out the unit, “<code>pt</code>” will be used as default. The numbers do not need to be integers, something like “<code>4.3×5.5in</code>” is allowed.
+</p>
+
+<p>
+Note that options with a user-provided integer, float. string, or 
+password value are not supported by the PPD syntax. With Foomatic-based 
+printers, you may specify these options on the command line, and CUPS 
+will just sort of pass them along.
+</p>
+
+<p>
+For more information on using CUPS and defining print queues, consult the <a href="http://www.cups.org/documentation.html" class="urlextern" title="http://www.cups.org/documentation.html" rel="nofollow">CUPS documentation</a>. If it doesn't work, turn on the debug flag in <code>/etc/foomatic/filter.conf</code> and examine the debugging output in the file <code>/tmp/foomatic-rip.log</code>. Read also the <a href="http://www.cups.org/cups-help.html" class="urlextern" title="http://www.cups.org/cups-help.html" rel="nofollow">Troubleshooting-CUPS-and-Asking-for-Help-HOWTO</a>. And feel free to contact us for help.
+</p>
+
+</div>
+
+<h2 class="sectionedit8" id="how_does_it_work">How does it work?</h2>
+<div class="level2">
+<div class="table sectionedit9"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong> The filtering chain for CUPS (for versions 1.1.15 or later) and how <em>foomatic-rip</em> fits into the picture: </strong></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><pre class="code">\\  
+\\    "foomatic-rip" constructs an appropriate commandline and executes Ghostscript to generate
+\\    print-ready raster data  (the CUPS daemon controls  the execution of  the other filters,
+\\    and calls foomatic-rip as the last filter of the chain, because a "*cupsFilter" entry in
+\\    the PPD tells it to do so):
+\\    =========================================================================================
+\\  
+\\    [SOMETHING]-FILEFORMAT
+\\         |
+\\         |   [something]tops
+\\         V
+\\    APPLICATION/POSTSCRIPT
+\\         |
+\\         |   pstops
+\\         V
+\\    APPLICATION/VND.CUPS-POSTSCRIPT-----------+
+\\                                              |
+\\                     +------------------------v------------------------------+
+\\                     |                                                       |
+\\                     |       Ghostscript at work....                         |
+\\                     |          (= a "postscript interpreter")               |
+\\                     |                                                       |
+\\                     | * * * * * * * * * * * * * * * * * * * * * * * * * * * |
+\\                     |                        *                              |
+\\                     |  run with commandline  *                              |
+\\                     |  parameter             *                              |
+\\                     |       "-sDEVICE=cups"  *                              |
+\\                     |                        *                              |
+\\                     |  called by pstoraster  *   run with commandline       |
+\\                     | (CUPS standard filter) *   parameter                  |
+\\                     |                        *        "-sDEVICE=[s.th.]"    |
+\\                     +------------------v-----+                              |
+\\                                        |     |                              |
+\\    APPLICATION/VND.CUPS-RASTER &lt;-------+     |                              |
+\\         |                                    |   called by foomatic-rip     |
+\\         |  rasterto[something]               | (openprinting.org extension)|
+\\         |   (= "raster driver")              |                              |
+\\         |                                    +----------------v-------------+
+\\         |                                                     |
+\\    SOMETHING-DEVICE-SPECIFIC &lt;--------------------------------+
+\\         |
+\\         V
+\\        backend</pre>
+
+<p>
+<br>
+<br>
+&nbsp;<br>
+
+</p>
+</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"></td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<br>
+            NOTES:<br>
+  * (1) MIME types + file formats are in CAPITAL letters: 
+“[SOMETHING]-FILEFORMAT”, “APPLICATION/POSTSCRIPT”, 
+“APPLICATION/VND.CUPS-POSTSCRIPT”, “APPLICATION/VND.CUPS-RASTER”<br>
+  * (2) filters are in lower case letters: “[something]tops”, “pstops”, “rasterto[something]“<br>
+  * (3) Gimp-Print, some other 3rd-Party-Filters (like TurboPrint) for 
+CUPS and ESP PrintPro plug-in where “rasterto[something]” is denoted.<br>
+<br>
+&nbsp;<br>
+|
+</p>
+
+<p>
+<br>
+<br>
+
+To see where this fits into the “big picture” of the complete CUPS filtering environment, go to the <a href="https://wiki.linuxfoundation.org/openprinting/database/cups-filter-chart" class="wikilink1" title="openprinting:database:cups-filter-chart">complete CUPS-Filter-FlowChart</a>,
+ drawn by Kurt Pfeifle. (Note, that this chart doesn't yet reflect the 
+new names for Foomatic-3.0, like “foomatic-rip” etc., but you might 
+still get the idea from it….)
+</p>
+
+<p>
+There are three parts to the Foomatic scheme:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong> The Database </strong></div>
+</li>
+<li class="level1"><div class="li">  The database contains a number of 
+XML files which detail exactly how to execute a given printer driver. 
+There are two front-ends which use these files: (1) the human-readable 
+one generates the information shown on all “Execution Details” pages; 
+(2) the PPD-O-Matic PPD generator computes an Adobe-compliant PPD file 
+which you need to configure your print queue. </div>
+</li>
+<li class="level1"><div class="li"> <strong> The PPD File </strong></div>
+</li>
+<li class="level1"><div class="li">  The PPD file generated by the 
+database contains all information about important printer capabilities, 
+available options and how to build the renderer's (usually 
+Ghostscript's) command line depending on the user's choices for the 
+options. <code>foomatic-rip</code> reads it to know how to execute the print job. <abbr title="Graphical User Interface">GUI</abbr>
+ frontends read it to build dialog boxes in which the user can adjust 
+the options. Besides the usual stuff the PPD file contains various extra
+ lines beginning with “*Foomatic…”. These contain details of the driver 
+command line, the information whether an option accepts arbitrary 
+numbers (and not only the choices listed in the PPD file), and more. 
+CUPS and application programs ignore these extra lines. </div>
+</li>
+<li class="level1"><div class="li"> <strong> The filter </strong></div>
+</li>
+<li class="level1"><div class="li">  The filter script <code>'foomatic-rip</code>'
+ is called by CUPS with various inputs; inputs include both the PPD 
+filename and the various options selected by the user. foomatic-rip 
+opens the PPD, extracts all options and their possible settings and also
+ the command line to execute Ghostscript with the appropriate driver. It
+ parses the PostScript print file for option settings. These option 
+setting could have been stuffed in by CUPS or by application programs; 
+foomatic-rip itself also inserts additional PostScript code into the 
+print data stream to set options, if needed. It also massages the 
+standard CUPS option types into the more generic printer/driver-specific
+ format used by the database. </div>
+</li>
+</ul>
+
+<p>
+CUPS completely supports normal PPD option types, which include boolean 
+values and enumerated choices. PPDs do not support arbitrary 
+user-inputted numerical arguments, so PPD-O-Matic maps them to a list of
+ up to 100 equally-spaced discrete values out of which the user can 
+choose when he is using a PPD-driven <abbr title="Graphical User Interface">GUI</abbr>.  Independent of this there is nothing stopping the user from explicity saying <code>'-o Gamma=4.3</code>'
+ on the command line and having it work, too. Here the chosen value does
+ not even need to be one of the choices offered in the PPD file, it 
+simply needs to be between the allowed minimum and maximum value. 
+Foomatic PPD also contain the CUPS PPD extensions for custom options. So
+ GUIs which understand these extensions allow the user to enter 
+arbitrary numerical or string values, too. Foomatic understands also 
+CUPS' command line syntax for custom options, for example it also 
+understands <code>'-o Gamma=Custom.4.3</code>'.
+</p>
+
+<p>
+There was also added a bunch of special code to pick out the media= and 
+sides= options. These map sensibly to the PageSize, MediaType, 
+InputSlot, and Duplex enumerated selections, if present. It's all a bit 
+ugly if a driver supports an option that happens to be named the same as
+ an existing standard ipp/cups option.
+</p>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>openprinting/database/cupsdocumentation.txt</bdi> · Last modified: 2020/02/03 13:06 by <bdi>sysdef</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y">
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="source"><a href="https://wiki.linuxfoundation.org/openprinting/database/cupsdocumentation?do=edit" title="Show pagesource [v]" rel="nofollow" accesskey="v"><span>Show pagesource</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"></path></svg></a></li><li class="revs"><a href="https://wiki.linuxfoundation.org/openprinting/database/cupsdocumentation?do=revisions" title="Old revisions [o]" rel="nofollow" accesskey="o"><span>Old revisions</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"></path></svg></a></li><li class="backlink"><a href="https://wiki.linuxfoundation.org/openprinting/database/cupsdocumentation?do=backlink" title="Backlinks" rel="nofollow"><span>Backlinks</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"></path></svg></a></li><li class="menuitemfolded"><a href="javascript:void(0);" title="Fold/unfold all" rel="nofollow" class="fold_unfold_all_new" onclick="fold_unfold_all();"><span>Fold/unfold all</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M 2,0 L 6.5,3 L 2,6 z M 8,6.6 L 12.5,9.6 L 8,12.6 z M 14,13.2 L 20,13.2 L 17,17.7 z"></path></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Back to top [t]" rel="nofollow" accesskey="t"><span>Back to top</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    <div class="license">Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" class="urlextern">CC Attribution-Noncommercial-Share Alike 4.0 International</a></bdi></div>
+    <div class="buttons">
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"><img src="openprinting%20database%20cupsdocumentation%20[Wiki]_files/cc-by-nc-sa.png" alt="CC Attribution-Noncommercial-Share Alike 4.0 International"></a>        <a href="https://www.dokuwiki.org/donate" title="Donate"><img src="openprinting%20database%20cupsdocumentation%20[Wiki]_files/button-donate.gif" alt="Donate" width="80" height="15"></a>
+        <a href="https://php.net/" title="Powered by PHP"><img src="openprinting%20database%20cupsdocumentation%20[Wiki]_files/button-php.gif" alt="Powered by PHP" width="80" height="15"></a>
+        <a href="https://validator.w3.org/check/referer" title="Valid HTML5"><img src="openprinting%20database%20cupsdocumentation%20[Wiki]_files/button-html5.png" alt="Valid HTML5" width="80" height="15"></a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS"><img src="openprinting%20database%20cupsdocumentation%20[Wiki]_files/button-css.png" alt="Valid CSS" width="80" height="15"></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki"><img src="openprinting%20database%20cupsdocumentation%20[Wiki]_files/button-dw.png" alt="Driven by DokuWiki" width="80" height="15"></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="openprinting%20database%20cupsdocumentation%20[Wiki]_files/indexer.gif" alt="" width="2" height="1"></div>
+    <div id="screen__mode" class="no"></div>
+
+</body></html>

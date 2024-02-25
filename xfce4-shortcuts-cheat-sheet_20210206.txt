@@ -1,0 +1,77 @@
+Alt+Delete | xflock4
+Super+f | exo-open --launch FileManager
+Super+4 | libreoffice --calc
+Alt+F1 | xfce4-popup-applicationsmenu
+Super+w | exo-open --launch WebBrowser
+Super+l | xflock4
+Alt+t | exo-open --launch TerminalEmulator
+Super+r | xfce4-appfinder
+Alt+Escape | xkill
+Super+m | exo-open --launch MailReader
+Primary+Escape | xfce4-popup-whiskermenu
+Super+1 | parole
+Super+t | exo-open --launch TerminalEmulator
+Alt+Print | xfce4-screenshooter -w
+Super+2 | pidgin
+Super+F1 | xfce4-find-cursor
+Alt+l | xflock4
+Shift+Print | xfce4-screenshooter -r
+Super+p | dmenu_run
+Super+e | mousepad
+Super+3 | libreoffice --writer
+Super+d | dmenu_run
+Alt+Insert | add_workspace_key
+Alt+F4 | close_window_key
+Alt+KP_3 | move_window_workspace_3_key
+Primary+F2 | workspace_2_key
+Alt+Down | down_workspace_key
+Super+Down | tile_down_key
+Alt+KP_9 | move_window_workspace_9_key
+Alt+Left | move_window_left_key
+Alt+End | move_window_next_workspace_key
+Primary+F8 | workspace_8_key
+Alt+F5 | maximize_horiz_key
+Primary+F10 | workspace_10_key
+Alt+Page_Down | lower_window_key
+Super+Right | tile_right_key
+Primary+F9 | workspace_9_key
+Alt+Tab | cycle_windows_key
+Super+Up | tile_up_key
+Alt+Right | right_workspace_key
+Alt+F6 | maximize_vert_key
+Primary+F11 | workspace_11_key
+Alt+KP_5 | move_window_workspace_5_key
+Primary+F6 | workspace_6_key
+Alt+Delete | del_workspace_key
+Super+Tab | switch_window_key
+Super+KP_7 | tile_up_left_key
+Super+Left | tile_left_key
+Alt+Right | move_window_right_key
+Super+d | show_desktop_key
+Primary+F4 | workspace_4_key
+Primary+F12 | workspace_12_key
+Alt+F7 | maximize_window_key
+Alt+KP_6 | move_window_workspace_6_key
+Super+KP_1 | tile_down_left_key
+Alt+F11 | fullscreen_key
+Alt+KP_4 | move_window_workspace_4_key
+Shift+Tab | cycle_reverse_windows_key
+Alt+space | popup_menu_key
+Alt+Home | move_window_prev_workspace_key
+Alt+Page_Up | raise_window_key
+Alt+KP_1 | move_window_workspace_1_key
+Alt+F12 | above_key
+Alt+KP_7 | move_window_workspace_7_key
+Alt+Left | left_workspace_key
+Super+KP_9 | tile_up_right_key
+Alt+KP_2 | move_window_workspace_2_key
+Alt+Up | up_workspace_key
+Alt+Up | move_window_up_key
+Alt+F8 | stick_window_key
+Primary+F5 | workspace_5_key
+Primary+F7 | workspace_7_key
+Primary+F3 | workspace_3_key
+Alt+F9 | hide_window_key
+Alt+KP_8 | move_window_workspace_8_key
+Super+KP_3 | tile_down_right_key
+Primary+F1 | workspace_1_key

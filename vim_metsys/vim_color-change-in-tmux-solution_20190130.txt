@@ -1,0 +1,6 @@
+Vim color scheme changes in tmux
+
+Put the following config in .vimrc seems fixed the problem in my case.
+set background=dark
+set t_Co=256
+Both the color scheme and font are normal(still don't know why).

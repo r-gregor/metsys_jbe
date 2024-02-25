@@ -1,0 +1,91 @@
+print 256 depth color:
+printf "\e[38;5;232m256_BARVA\n"
+              ! ˙˙˙ (color from 0 till 255)
+
+print true (RGB) color:
+printf "\e[38;2;256;200;200mRGB_BARVA\n"
+              ! ˙R˙;˙G˙;˙B˙ (full RGB color)
+
+16-bit colors
+------------------------------------------------------
+Color                       Foreground      Background
+------------------------------------------------------
+Default                     \e[39m          \e[49m
+Black                       \e[30m          \e[40m
+Dark red                    \e[31m          \e[41m
+Dark green                  \e[32m          \e[42m
+Dark yellow (Orange-ish)    \e[33m          \e[43m
+Dark blue                   \e[34m          \e[44m
+Dark magenta                \e[35m          \e[45m
+Dark cyan                   \e[36m          \e[46m
+Light gray                  \e[37m          \e[47m
+Dark gray                   \e[90m          \e[100m
+Red                         \e[91m          \e[101m
+Green                       \e[92m          \e[101m
+Orange                      \e[93m          \e[103m
+Blue                        \e[94m          \e[104m
+Magenta                     \e[95m          \e[105m
+Cyan                        \e[96m          \e[106m
+White                       \e[97m          \e[107m
+------------------------------------------------------
+and the reset code is:      \e[0m
+------------------------------------------------------
+
+Colours & effects
+-----------------------------------------------------------
+Parameter       Effect
+-----------------------------------------------------------
+0               reset all SGR effects to their default
+1               bold or increased intensity
+2               faint or decreased intensity
+4               singly underlined
+5               slow blink
+7               reverse
+9               strike-trough
+30-37           foreground color (8 colors)
+38;5;x          foreground color (256 colors, non-standard)
+38;2;r;g;b      foreground color (RGB, non-standard)
+40-47           background color (8 colors)
+48;5;x          background color (256 colors, non-standard)
+48;2;r;g;b      background color (RGB, non-standard)
+90-97           bright foreground color (non-standard)
+100-107         bright background color (non-standard)
+-----------------------------------------------------------
+
+
+Examples:
+$ printf "\e[31;42mCOLOR\e[0m"
+$> printf "\e[31;102mCOLOR\e[0m"
+$> printf "\e[1;104mCOLOR\e[0m"
+$> printf "\e[3;31;104mCOLOR\e[0m"
+$> printf "\e[4;31;104mCOLOR\e[0m"
+$> printf "\e[5;31;104mCOLOR\e[0m"
+$> printf "\e[6;31;104mCOLOR\e[0m"
+$> printf "\e[7;31;104mCOLOR\e[0m"
+$> printf "\e[8;31;104mCOLOR\e[0m"
+$> printf "\e[9;31;104mCOLOR\e[0m"
+$> printf "\e[10;31;104mCOLOR\e[0m"
+$> printf "\e[9;38;2;100,100;100mCOLOR\e[0m"
+$> printf "\e[38;2;100,100;100mCOLOR\e[0m"
+$> printf "\e[38;5;100mCOLOR\e[0m"
+$> printf "\e[38;2;150;230;100mCOLOR\e[0m"
+$> printf "\e[9;38;2;150;230;100mCOLOR\e[0m"
+$> printf "\e[7;38;2;150;230;100mCOLOR\e[0m"
+$> printf "\e[1;38;2;150;230;100mCOLOR\e[0m"
+$> printf "\e[0;38;2;150;230;100mCOLOR\e[0m"
+$> printf "\e[2;38;2;150;230;100mCOLOR\e[0m"
+
+# ---
+# NOTE: resets:
+Here's a little more on resetting:
+
+\e[0m resets all colors and attributes.
+\e[20m resets only attributes (underline, etc.), leaving colors unchanged.
+\e[39m resets only foreground color, leaving attributes unchanged.
+\e[49m resets only background color, leaving attributes unchanged.
+
+### CURRENT PROMPTS ###
+# export PS1=$'\[\e[1;36m\]\u\[\e[1;31m\]@\[\e[1;32m\]\h:\[\e[1;35m\]\w\[\e[1;31m\]\n\u21aa \[\e[0m\]'
+# export PS1=$'\n\[\e[01;38;5;75m\]\w\n$(parse_git_branch)\[\e[1;31m\]\u21AA \[\e[0m\] '
+export PS1=$'\n\[\e[01;38;5;75m\][\h] \w\n$(parse_git_branch)\[\e[1;31m\]\u21AA \[\e[0m\] '
+

@@ -1,0 +1,2 @@
+for FFF in $(find ~/majstaf/d_metsys_git/d_metsys_source/d_dotfiles/ -type f -name ".*"); do diff -q $FFF "$(echo $FFF | cut -d'/' -f8-)"; done
+

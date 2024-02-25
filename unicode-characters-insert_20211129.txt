@@ -1,0 +1,12 @@
+insert unicode chars (20211129):
+
+1 - in GTK-based editors
+ctrl+shift+U
+	unicode-code (eg U00BB)
+		<enter>
+
+2 - in vim:
+in insert mode
+	ctrl+v
+		unicode-code (eg U00BB)
+

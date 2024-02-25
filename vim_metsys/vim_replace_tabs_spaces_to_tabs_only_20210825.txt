@@ -1,0 +1,18 @@
+" display a list of commands in command mode pane
+q:
+
+" copy/yank as in normal mode
+" quit command mode with :q
+" paste in text with p
+
+" yank text in normal mode to register 'a'
+V"ay
+
+" paste in command mode
+ctrl+r a
+
+" replace tab/tabs + spaces to only tab/tabs
+s/\(^\t*\) */\1/
+
+'<,'>s/\(^\t*\) */\1/
+

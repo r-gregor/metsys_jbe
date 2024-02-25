@@ -1,0 +1,16 @@
+1 - Flash iso image to USB:
+$> sudo dd if=/path/to/iso/simename-linux.iso of=/dev/sdb bs=4M status=progress && sync
+
+2 - Restor for normal use:
+$> sudo wipefs --all /dev/sdb
+$> sudo cfdisk /dev/sdb
+    --> select dos
+    --> [new]
+    --> select whole size
+    --> select [primary]
+    --> select [write] --> yes
+    --> select [quit]
+
+$> sudo mkfs.vfat -n 'my-USB-key' /dev/sda1
+
+3 - TADA!

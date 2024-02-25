@@ -1,0 +1,15 @@
+vim issues warning:
+	Vim: Warning: Input is not from a terminal
+
+if command:
+	$> find . | fzf | xargs vim
+
+... and then terminal stops working correctly!
+
+Solution:
+	The reason this is happening is that xargs is not opening your tty in the child process. You need to add
+	the -o option in xargs for "open tty". This runs stty sane connected to your terminal. So the correct
+	command is:
+	$> find . | fzf |xargs -o vim
+---
+

@@ -1,0 +1,21 @@
+0 - Instal lsb (>= 3.2):
+	sudo apt-get install lsb
+	
+1 - Download EPSON L365 series (all-in-one) printer drivers:
+	epson-inkjet-printer-201401w_1.0.0-1lsb3.2_amd64.deb	(printer driver)
+	epson-printer-utility_1.0.0-1lsb3.2_amd64.deb		(epson-printer-utility)
+
+2 - Run: dpkg -i epson-*
+
+3 - Download EPSON L365 series (all-in-one) scanner drivers:
+	imagescan-bundle-ubuntu-14.04-1.1.9.x64.deb.tar.gz
+	imagescanv3_man_e.pdf
+	
+	--> unpack *.tar.gz,
+	--> goto into directory imagescan-bundle-ubuntu-14.04-1.1.9.x64.deb/
+	--> run ./install.sh
+
+4 - reboot
+
+5 - Some problems --> solution? add user to scanner group?
+	sudo usermod -a -G scanner rgregor

@@ -1,0 +1,53 @@
+filename: debian_dwm_suckless_minimal_install_20201116.txt
+from: https://www.youtube.com/watch?v=9chUKW_o8tE 
+LINUX DABBLER: [https://www.youtube.com/channel/UC3pasXoRUTKPpQaKtlJz62g]
+
+...
+after debian STABLE install:
+
+user@host:~ $> sudo apt install vim git
+user@host:~ $> sudo apt install \
+    libxft-dev \
+    libfontconfig-dev \
+    libx11-6 \
+    libxinerama-dev \
+    suckless-tools \
+    stterm \
+    xorg \
+    x11-xserver-utils \
+    xserver-xorg-dev \
+    xinit \
+    build-essential
+user@host:~ $> sudo apt install wget
+user@host:~ $> wget dl.suckless.org/dwm/dwm-6.2.tar.gz
+user@host:~ $> mkdir ~/bin
+user@host:~ $> tar -xvzf dwm-6.2.tar.gz
+user@host:~ $> cd dwm-6.2
+user@host:~/dwm-6.2 $> make
+user@host:~/dwm-6.2 $> cd ~/bin
+user@host:~/bin $> ln -sf ~/dwm-6/dwm ~/bin/
+user@host:~/bin $> vim ~/.xinitrc
+    # insert:
+    exec dwm
+    
+user@host:~/bin $> reboot # ~/bin not yet found by ~/.profile
+user@host:~/bin $> startx
+# in dwm-6.2 ## in dwm-6.2 ## in dwm-6.2 ## in dwm-6.2 ## in dwm-6.2 ## in dwm-6.2 ## in dwm-6.2 ## in dwm-6.2
+user@host:~$> st # no font scaling
+user@host:~$> sudo apt install rxvt
+user@host:~$> cd git
+user@host:~/git $> git clone https://github.org/linixdabbler/st
+user@host:~/git $> cd st
+user@host:~/git/st $> make
+user@host:~/git/st $> sudo apt remove stterm
+user@host:~/git/st $> cd ~/bin
+user@host:~/bin $> ln -sf ~/git/st ~/bin/
+user@host:~/bin $> st # weird font
+user@host:~/bin $> cd ~/git/st
+user@host:~/bin $> vim config.h
+    # change the start of *font:
+    static char *font Monospace: ...
+user@host:~/bin $> make
+user@host:~/bin $> cd
+user@host:~ $> sudo apt install firefox-esr
+# dmenu --> firefox --> suckless.org --> ...

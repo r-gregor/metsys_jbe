@@ -1,0 +1,27 @@
+# cat style command with syntax highlighting
+sudo apt install highlight
+sudo apt install highlight-common
+
+# ---
+# filetypes.conf:
+1 - download: https://github.com/andre-simon/highlight/blob/master/filetypes.conf
+2 - mkdir ~/.highlight/
+3 - cp filetypes.conf ~/.highlight/
+
+# ---
+# add to aliases_forall:
+
+# 20221216
+alias ccat='highlight -O ansi'
+
+# ---
+# add to funclist
+# 202212136
+function cless() {
+	if [ $# != 1 ]; then
+		return
+	fi
+
+	highlight -O  ansi $@ | less
+}
+

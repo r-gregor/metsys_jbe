@@ -1,0 +1,16 @@
+filename: vim-no-clipboard-support-fix_20210316.txt
+
+rgregor@jbez0rg ~ $> vim --version | grep clipboard
+-clipboard         +keymap            +printer           +vertsplit
++emacs_tags        +mouse_gpm         -sun_workshop      -xterm_clipboard
+
+# NO clipboard support: -clipboard -xterm_clipboard !!
+
+#FIX:
+rgregor@jbez0rg ~ $> sudo apt install vim-gtk3
+
+
+rgregor@jbez0rg ~ $> vim --version | grep clipboard
++clipboard         +keymap            +printer           +vertsplit
++emacs_tags        +mouse_gpm         -sun_workshop      +xterm_clipboard
+

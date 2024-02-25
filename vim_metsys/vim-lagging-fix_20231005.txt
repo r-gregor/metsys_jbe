@@ -1,0 +1,10 @@
+If vim is lagging or slows down when editing certain types of files:
+
+1 - issue commands:
+	:syntax off
+	:syntax on
+
+2 - permanent solution: .vimrc mapping:
+	" removes lagging when editing .h files
+	nnoremap <leader>st :syntax off<CR>:syntax on<CR>
+

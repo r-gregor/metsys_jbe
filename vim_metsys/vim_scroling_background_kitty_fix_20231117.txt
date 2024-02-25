@@ -1,0 +1,41 @@
+Scrolling in Vim makes background disappear
+
+Hello !
+
+Scrolling in Vim makes the background color of Vim disappear, and the background color of the terminal
+is used instead.
+https://streamable.com/wc1wx
+
+The black is really the background color of the terminal and not some default OpengGL black (I've tested
+with another color).
+
+OS is Linux Manjaro XFCE (latest version, stable branch, everything up-to-date). Kitty was downloaded
+through the AUR and its version is the latest one (0.2.7).
+---
+Add the following to your .vimrc
+
+" vim hardcodes background color erase even if the terminfo file does
+" not contain bce (not to mention that libvte based terminals
+" incorrectly contain bce in their terminfo files). This causes
+" incorrect background rendering when using a color theme with a
+" background color.
+let &t_ut=''
+
+---
+Incidentally, the latest version of kitty is 0.2.8
+And just as a bonus tip, if you want to make vim more efficient, use the following
+
+" General colors
+if has('gui_running') || has('nvim')
+	hi Normal        guifg=#f6f3e8 guibg=#242424
+else
+	" Set the terminal default background and foreground colors, thereby
+	" improving performance by not needing to set these colors on empty cells.
+	hi Normal guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
+	let &t_ti = &t_ti . "\033]10;#f6f3e8\007\033]11;#242424\007"
+	let &t_te = &t_te . "\033]110\007\033]111\007"
+endif
+
+Obviously change the colors in the above to match your color scheme.
+---
+

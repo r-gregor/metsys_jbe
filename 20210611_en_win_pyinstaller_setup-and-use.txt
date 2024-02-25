@@ -1,0 +1,155 @@
+gregor.redelonghi@cygwin-en /c/Users/gregor.redelonghi/BRISI/BRISI2
+$> cmd
+Microsoft Windows [Version 10.0.19041.985]
+(c) Microsoft Corporation. Vse pravice pridržane.
+
+C:\Users\gregor.redelonghi\BRISI\BRISI2>c:\Users\gregor.redelonghi\myprogs\winenv2\Scripts\activate.bat
+(winenv2) C:\Users\gregor.redelonghi\BRISI\BRISI2>pip install pyinstaller
+
+...
+
+(winenv2) C:\Users\gregor.redelonghi\BRISI\BRISI2>pip list
+
+Package                   Version
+------------------------- ---------
+altgraph                  0.17
+certifi                   2021.5.30
+chardet                   4.0.0
+future                    0.18.2
+idna                      2.10
+numpy                     1.20.3
+pefile                    2021.5.24
+Pillow                    8.2.0
+pip                       21.1.2
+pyinstaller               4.3
+pyinstaller-hooks-contrib 2021.1
+pywin32-ctypes            0.2.0
+requests                  2.25.1
+setuptools                56.0.0
+urllib3                   1.26.5
+
+(winenv2) C:\Users\gregor.redelonghi\BRISI\BRISI2>exit
+
+==========================================================================================================
+
+gregor.redelonghi@cygwin-en /c/Users/gregor.redelonghi/BRISI/BRISI2
+$> cmd
+Microsoft Windows [Version 10.0.19041.985]
+(c) Microsoft Corporation. Vse pravice pridržane.
+
+C:\Users\gregor.redelonghi\BRISI\BRISI2>c:\Users\gregor.redelonghi\myprogs\winenv2\Scripts\activate.bat
+
+(winenv2) C:\Users\gregor.redelonghi\BRISI\BRISI2>pyinstaller -F --noconsole c:\Users\gregor.redelonghi\BRISI\20210609\pn074_gui-simple-calculator-with-tkinter_202
+10610\simple_calculator\06_simpleCalculator_2.py
+59 INFO: PyInstaller: 4.3
+59 INFO: Python: 3.9.5
+69 INFO: Platform: Windows-10-10.0.19041-SP0
+69 INFO: wrote C:\Users\gregor.redelonghi\BRISI\BRISI2\06_simpleCalculator_2.spec
+69 INFO: UPX is not available.
+69 INFO: Extending PYTHONPATH with paths
+['c:\\Users\\gregor.redelonghi\\BRISI\\20210609\\pn074_gui-simple-calculator-with-tkinter_20210610\\simple_calculator',
+ 'C:\\Users\\gregor.redelonghi\\BRISI\\BRISI2']
+85 INFO: checking Analysis
+85 INFO: Building Analysis because Analysis-00.toc is non existent
+85 INFO: Initializing module dependency graph...
+85 INFO: Caching module graph hooks...
+89 WARNING: Several hooks defined for module 'win32ctypes.core'. Please take care they do not conflict.
+99 INFO: Analyzing base_library.zip ...
+2286 INFO: Processing pre-find module path hook distutils from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks\\pre
+_find_module_path\\hook-distutils.py'.
+2286 INFO: distutils: retargeting to non-venv dir 'C:\\Users\\gregor.redelonghi\\myprogs\\python-3.9.5-amd64_win\\lib'
+5514 INFO: Caching module dependency graph...
+5735 INFO: running Analysis Analysis-00.toc
+5737 INFO: Adding Microsoft.Windows.Common-Controls to dependent assemblies of final executable
+  required by c:\users\gregor.redelonghi\brisi\20210609\winenv2\scripts\python.exe
+5745 INFO: Analyzing c:\Users\gregor.redelonghi\BRISI\20210609\pn074_gui-simple-calculator-with-tkinter_20210610\simple_calculator\06_simpleCalculator_2.py
+5749 INFO: Processing module hooks...
+5749 INFO: Loading module hook 'hook-difflib.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks'...
+5749 INFO: Loading module hook 'hook-distutils.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks'...
+5749 INFO: Loading module hook 'hook-distutils.util.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks'...
+5755 INFO: Loading module hook 'hook-encodings.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks'...
+5849 INFO: Loading module hook 'hook-heapq.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks'...
+5854 INFO: Loading module hook 'hook-lib2to3.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks'...
+5890 INFO: Loading module hook 'hook-multiprocessing.util.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks'
+...
+5890 INFO: Loading module hook 'hook-pickle.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks'...
+5899 INFO: Loading module hook 'hook-sysconfig.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks'...
+5899 INFO: Loading module hook 'hook-xml.etree.cElementTree.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hook
+s'...
+5899 INFO: Loading module hook 'hook-xml.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks'...
+5964 INFO: Loading module hook 'hook-_tkinter.py' from 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks'...
+6139 INFO: checking Tree
+6139 INFO: Building Tree because Tree-00.toc is non existent
+6139 INFO: Building Tree Tree-00.toc
+6199 INFO: checking Tree
+6199 INFO: Building Tree because Tree-01.toc is non existent
+6199 INFO: Building Tree Tree-01.toc
+6309 INFO: checking Tree
+6309 INFO: Building Tree because Tree-02.toc is non existent
+6309 INFO: Building Tree Tree-02.toc
+6344 INFO: Looking for ctypes DLLs
+6389 INFO: Analyzing run-time hooks ...
+6389 INFO: Including run-time hook 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_multiprocessin
+g.py'
+6399 INFO: Including run-time hook 'c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth__tkinter.py'
+6404 INFO: Looking for dynamic libraries
+6699 WARNING: lib not found: api-ms-win-core-path-l1-1-0.dll dependency of C:\Users\gregor.redelonghi\myprogs\python-3.9.5-amd64_win\python39.dll
+7079 INFO: Looking for eggs
+7079 INFO: Using Python library C:\Users\gregor.redelonghi\myprogs\python-3.9.5-amd64_win\python39.dll
+7079 INFO: Found binding redirects:
+[]
+7089 INFO: Warnings written to C:\Users\gregor.redelonghi\BRISI\BRISI2\build\06_simpleCalculator_2\warn-06_simpleCalculator_2.txt
+7134 INFO: Graph cross-reference written to C:\Users\gregor.redelonghi\BRISI\BRISI2\build\06_simpleCalculator_2\xref-06_simpleCalculator_2.html
+7189 INFO: checking PYZ
+7189 INFO: Building PYZ because PYZ-00.toc is non existent
+7189 INFO: Building PYZ (ZlibArchive) C:\Users\gregor.redelonghi\BRISI\BRISI2\build\06_simpleCalculator_2\PYZ-00.pyz
+8039 INFO: Building PYZ (ZlibArchive) C:\Users\gregor.redelonghi\BRISI\BRISI2\build\06_simpleCalculator_2\PYZ-00.pyz completed successfully.
+8059 INFO: checking PKG
+8059 INFO: Building PKG because PKG-00.toc is non existent
+8059 INFO: Building PKG (CArchive) PKG-00.pkg
+10794 INFO: Building PKG (CArchive) PKG-00.pkg completed successfully.
+10820 INFO: Bootloader c:\users\gregor.redelonghi\brisi\20210609\winenv2\lib\site-packages\PyInstaller\bootloader\Windows-64bit\runw.exe
+10820 INFO: checking EXE
+10820 INFO: Building EXE because EXE-00.toc is non existent
+10820 INFO: Building EXE from EXE-00.toc
+10820 INFO: Copying icons from ['c:\\users\\gregor.redelonghi\\brisi\\20210609\\winenv2\\lib\\site-packages\\PyInstaller\\bootloader\\images\\icon-windowed.ico']
+10820 INFO: Writing RT_GROUP_ICON 0 resource with 104 bytes
+10820 INFO: Writing RT_ICON 1 resource with 3752 bytes
+10820 INFO: Writing RT_ICON 2 resource with 2216 bytes
+10820 INFO: Writing RT_ICON 3 resource with 1384 bytes
+10820 INFO: Writing RT_ICON 4 resource with 38188 bytes
+10820 INFO: Writing RT_ICON 5 resource with 9640 bytes
+10820 INFO: Writing RT_ICON 6 resource with 4264 bytes
+10820 INFO: Writing RT_ICON 7 resource with 1128 bytes
+10830 INFO: Updating manifest in C:\Users\gregor.redelonghi\BRISI\BRISI2\build\06_simpleCalculator_2\runw.exe.5c7uj946
+10830 INFO: Updating resource type 24 name 1 language 0
+10830 INFO: Appending archive to EXE C:\Users\gregor.redelonghi\BRISI\BRISI2\dist\06_simpleCalculator_2.exe
+13009 INFO: Building EXE from EXE-00.toc completed successfully.
+
+(winenv2) C:\Users\gregor.redelonghi\BRISI\BRISI2>
+
+(winenv2) C:\Users\gregor.redelonghi\BRISI\BRISI2>exit
+gregor.redelonghi@cygwin-en /c/Users/gregor.redelonghi/BRISI/BRISI2
+$> tree
+.
+|-- 06_simpleCalculator_2.spec
+|-- build
+|   `-- 06_simpleCalculator_2
+|       |-- 06_simpleCalculator_2.exe.manifest
+|       |-- Analysis-00.toc
+|       |-- base_library.zip
+|       |-- EXE-00.toc
+|       |-- PKG-00.pkg
+|       |-- PKG-00.toc
+|       |-- PYZ-00.pyz
+|       |-- PYZ-00.toc
+|       |-- Tree-00.toc
+|       |-- Tree-01.toc
+|       |-- Tree-02.toc
+|       |-- warn-06_simpleCalculator_2.txt
+|       `-- xref-06_simpleCalculator_2.html
+|-- dist
+|   `-- 06_simpleCalculator_2.exe
+`-- test
+gregor.redelonghi@cygwin-en /c/Users/gregor.redelonghi/BRISI/BRISI2
+$>

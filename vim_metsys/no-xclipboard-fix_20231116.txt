@@ -1,0 +1,6 @@
+sudo apt remove --purge vim
+sudo apt autoremove
+sudo apt install vim-gtk3
+vim --version
+vim --version | grep clip
+vim .vimrc
