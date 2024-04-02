@@ -1,0 +1,20 @@
+femoving snap commands (20240402):
+
+$> sudo systemctl disable snapd.service 
+$> sudo systemctl disable snapd.socket 
+$> sudo systemctl disable snapd.seeded.service 
+$> sudo snap remove firefox 
+$> sudo snap remove gnome-3-38-2004 
+$> sudo snap remove gnome-42-2204 
+$> sudo snap remove gtk-common-themes 
+$> sudo snap remove bare 
+$> sudo snap remove core20 
+$> sudo snap remove core22 
+$> sudo snap remove snapd 
+$> sudo snap list
+$> sudo apt autoremove --purge snapd
+$> ll /var/cache/snap
+$> rm -rf ~/snap/
+$> sudo reboot
+---
+
