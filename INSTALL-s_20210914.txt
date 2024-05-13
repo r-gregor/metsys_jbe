@@ -132,3 +132,10 @@ sudo apt install vim-gtk3
 sudo apt install vlc
 sudo apt install wget apt-transport-https gnupg2 software-properties-common
 sudo python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+---
+# install windows fonts 20240513
+sudo apt update
+sudo apt-get install ttf-mscorefonts-installer
+sudo fc-cache -f -v
+---
+
