@@ -1,0 +1,6 @@
+"ADD AT THE END OF .vimrc:
+
+" 20240310
+" TO ACCEPT TERMINAL BACKGROUND IMAGE kitty.conf
+hi Normal guibg=NONE ctermbg=NONE
+

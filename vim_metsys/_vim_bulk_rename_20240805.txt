@@ -1,0 +1,55 @@
+01: -> preview
+$> ls -1
+old_name_01.txt
+old_name_02.txt
+old_name_03.txt
+old_name_04.txt
+old_name_05.txt
+old_name_06.txt
+old_name_07.txt
+old_name_08.txt
+old_name_09.txt
+
+02: -> edit contents of dir in vim
+$> ls -1 |vim -
+
+03: in vim: -> rename filenames with mv command
+old_name_01.txt
+old_name_02.txt
+old_name_03.txt
+old_name_04.txt
+old_name_05.txt
+old_name_06.txt
+old_name_07.txt
+old_name_08.txt
+old_name_09.txt
+---------------------
+:%s/.*/mv -v "&" "&"
+
+03: in vim: -> replace pattern
+mv -v "old_name_01.txt" "old_name_01.txt"
+mv -v "old_name_02.txt" "old_name_02.txt"
+mv -v "old_name_03.txt" "old_name_03.txt"
+mv -v "old_name_04.txt" "old_name_04.txt"
+mv -v "old_name_05.txt" "old_name_05.txt"
+mv -v "old_name_06.txt" "old_name_06.txt"
+mv -v "old_name_07.txt" "old_name_07.txt"
+mv -v "old_name_08.txt" "old_name_08.txt"
+mv -v "old_name_09.txt" "old_name_09.txt"
+---------------------
+:'<;'>:s/old/new/
+
+04: in vim: -> run all commands with ":w !bash" or ":% |!bash"
+mv -v "old_name_01.txt" "new_name_01.txt"
+mv -v "old_name_02.txt" "new_name_02.txt"
+mv -v "old_name_03.txt" "new_name_03.txt"
+mv -v "old_name_04.txt" "new_name_04.txt"
+mv -v "old_name_05.txt" "new_name_05.txt"
+mv -v "old_name_06.txt" "new_name_06.txt"
+mv -v "old_name_07.txt" "new_name_07.txt"
+mv -v "old_name_08.txt" "new_name_08.txt"
+mv -v "old_name_09.txt" "new_name_09.txt"
+---------------------
+:% | !bash
+
+
