@@ -1,174 +1,204 @@
- 21  2020-12-07 19:09:19 sudo apt install arp-scan
-149  2020-12-07 19:09:19 sudo apt install vim
-215  2020-12-07 19:09:19 sudo apt install neofetch
-233  2020-12-07 19:09:19 sudo apt install terminator plank
-237  2020-12-07 19:09:19 sudo apt install dmenu
-383  2020-12-07 19:09:19 sudo apt install fonts-mononoki
-388  2020-12-07 19:09:19 sudo apt install lxtask
-703  2020-12-07 00:44:15 sudo apt install git
-737  2020-12-07 00:57:27 sudo apt install vlc
-762  2020-12-07 18:51:31 sudo apt install openvpn
-770  2020-12-07 18:59:06 sudo apt install pcmanfm
-781  2020-12-07 19:14:32 sudo apt update && sudo apt install libcanberra-gtk-module libgconf-2-4 libatomic1
-  8  2020-12-07 20:52:08 sudo apt install doublecmd
-  9  2020-12-07 20:52:24 sudo apt install doublecmd-gtk
- 34  2020-12-07 22:57:42 sudo apt install sshfs
-211  2020-12-08 00:25:26 sudo apt install ssh
-946  2020-12-08 22:58:09 sudo apt install chromium-browser
-117  2020-12-10 18:29:59 sudo apt install virtualbox virtualbox-ext-pack
-158  2020-12-11 20:21:52 sudo snap install --classic code
-184  2020-12-11 20:32:22 sudo apt install openjdk-11-jdk
-214  2020-12-11 20:55:47 sudo apt install openjfx openjfx-source
-499  2020-12-12 12:04:02 sudo apt install ./zoom_amd64.deb
-640  2020-12-13 18:29:49 sudo apt install htop
-724  2020-12-13 20:24:45 sudo apt install arandr
-728  2020-12-13 21:49:28 sudo apt install grub-customizer
-470  2020-12-18 17:36:12 sudo apt install lsb
-531  2020-12-18 17:59:34 sudo apt install xsane sane
-542  2020-12-18 18:14:46 sudo apt install simple-scan
- 97  2020-12-21 21:04:40 sudo apt install fonts-arkpandora ttf-mscorefonts-installer
-751  2020-12-22 21:08:36 sudo apt install xclip
-243  2020-12-23 20:46:54 sudo apt install gparted
-973  2020-12-29 12:13:45 sudo apt install atom
-996  2020-12-29 12:31:12 sudo apt install lynx
-610  2021-02-01 17:16:29 sudo apt install tmux
-618  2021-02-01 17:18:51 sudo apt install screen
-805  2021-02-05 20:23:14 sudo apt install groff
-806  2021-02-05 20:24:18 sudo apt install imagemagick-doc autotrace curl enscript ffmpeg gnuplot grads graphviz hp2xx html2ps libwmf-bin mplayer povray radiance texlive-base-bin transfig ufraw-batch inkscape
-809  2021-02-05 20:27:38 sudo apt install evince
-891  2021-02-07 20:39:48 sudo snap install --classic alacritty
-992  2021-02-10 19:53:37 sudo apt install touchpad-indicator
-594  2021-02-10 19:53:37 sudo apt install touchpad-indicator
-745  2021-02-19 20:54:33 sudo apt install w3m
-134  2021-03-10 16:40:25 sudo apt install libqt5core5a
-838  2021-03-16 21:52:18 sudo apt install vim-gtk3
-999  2021-03-20 15:59:58 snap install sqlitebrowser
-622  2021-03-16 21:52:18 sudo apt install vim-gtk3
-830  2021-03-20 15:59:58 snap install sqlitebrowser
-128  2021-03-21 23:21:17 sudo apt install sqlite3
-174  2021-03-23 18:31:09 sudo ./xampp-linux-x64-8.0.3-0-installer.run
-176  2021-03-23 18:31:09 sudo ./xampp-linux-x64-8.0.3-0-installer.run
-887  2021-04-02 21:52:17 sudo apt install youtube-dl
-666  2021-05-01 20:55:33 sudo apt-get install network-manager-openvpn
-667  2021-05-01 21:10:14 sudo apt-get install network-manager
-690  2021-06-05 20:14:08 sudo apt install python3-venv
-925  2021-06-11 22:29:11 sudo apt install software-properties-common
-938  2021-06-11 22:34:15 sudo apt install python3.9
-965  2021-06-11 22:46:45 sudo apt install build-essential checkinstall
-966  2021-06-11 22:47:20 sudo apt install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
-968  2021-06-11 22:49:31 sudo make altinstall
-831  2021-06-11 22:46:45 sudo apt install build-essential checkinstall
-861  2021-06-11 23:14:05 sudo apt install build-essential
-912  2021-06-11 23:38:05 /usr/local/bin/python3.9 -m install pyinstaller
-966  2021-06-11 23:49:04 sudo apt install python3-dev
-981  2021-06-11 23:55:44 sudo apt install python3.9-dev
-176  2021-06-12 00:47:29 sudo apt install python-wxgtk3.0
-249  2021-06-21 17:38:24 sudo apt install cheese
-669  2021-07-24 15:53:00 sudo apt install gpart
-711  2021-07-24 16:33:53 sudo apt-get install -f
-598  2021-08-17 21:07:30 sudo apt install ranger
-522  2021-08-28 15:23:31 sudo apt install nodejs
-632  2021-08-29 17:11:10 sudo apt install bacula-console-qt
-639  2021-08-29 17:13:55 sudo apt install bat
-924  2021-08-29 17:32:35 sudo snap install cpufetch
-970  2021-08-29 20:22:26 sudo snap install lsd
-972  2021-08-29 20:25:46 sudo apt install speedtest-cli
-188  2021-08-29 20:13:41 sudo apt install ncdu
-878  2021-09-14 17:35:18 sudo apt install fish
-885  2021-09-14 17:53:25 sudo apt install fd-find
-932  2021-09-14 21:50:52 sudo apt install exa
+  21  2020-12-07 19:09:19 sudo apt install arp-scan
+ 149  2020-12-07 19:09:19 sudo apt install vim
+ 215  2020-12-07 19:09:19 sudo apt install neofetch
+ 233  2020-12-07 19:09:19 sudo apt install terminator plank
+ 237  2020-12-07 19:09:19 sudo apt install dmenu
+ 383  2020-12-07 19:09:19 sudo apt install fonts-mononoki
+ 388  2020-12-07 19:09:19 sudo apt install lxtask
+ 703  2020-12-07 00:44:15 sudo apt install git
+ 737  2020-12-07 00:57:27 sudo apt install vlc
+ 762  2020-12-07 18:51:31 sudo apt install openvpn
+ 770  2020-12-07 18:59:06 sudo apt install pcmanfm
+ 781  2020-12-07 19:14:32 sudo apt update && sudo apt install libcanberra-gtk-module libgconf-2-4 libatomic1
+   8  2020-12-07 20:52:08 sudo apt install doublecmd
+   9  2020-12-07 20:52:24 sudo apt install doublecmd-gtk
+  34  2020-12-07 22:57:42 sudo apt install sshfs
+ 211  2020-12-08 00:25:26 sudo apt install ssh
+ 946  2020-12-08 22:58:09 sudo apt install chromium-browser
+ 117  2020-12-10 18:29:59 sudo apt install virtualbox virtualbox-ext-pack
+ 158  2020-12-11 20:21:52 sudo snap install --classic code
+ 184  2020-12-11 20:32:22 sudo apt install openjdk-11-jdk
+ 214  2020-12-11 20:55:47 sudo apt install openjfx openjfx-source
+ 499  2020-12-12 12:04:02 sudo apt install ./zoom_amd64.deb
+ 640  2020-12-13 18:29:49 sudo apt install htop
+ 724  2020-12-13 20:24:45 sudo apt install arandr
+ 728  2020-12-13 21:49:28 sudo apt install grub-customizer
+ 470  2020-12-18 17:36:12 sudo apt install lsb
+ 531  2020-12-18 17:59:34 sudo apt install xsane sane
+ 542  2020-12-18 18:14:46 sudo apt install simple-scan
+  97  2020-12-21 21:04:40 sudo apt install fonts-arkpandora ttf-mscorefonts-installer
+ 751  2020-12-22 21:08:36 sudo apt install xclip
+ 243  2020-12-23 20:46:54 sudo apt install gparted
+ 973  2020-12-29 12:13:45 sudo apt install atom
+ 996  2020-12-29 12:31:12 sudo apt install lynx
+ 610  2021-02-01 17:16:29 sudo apt install tmux
+ 618  2021-02-01 17:18:51 sudo apt install screen
+ 805  2021-02-05 20:23:14 sudo apt install groff
+ 806  2021-02-05 20:24:18 sudo apt install imagemagick-doc autotrace curl enscript ffmpeg gnuplot grads graphviz hp2xx html2ps libwmf-bin mplayer povray radiance texlive-base-bin transfig ufraw-batch inkscape
+ 809  2021-02-05 20:27:38 sudo apt install evince
+ 891  2021-02-07 20:39:48 sudo snap install --classic alacritty
+ 992  2021-02-10 19:53:37 sudo apt install touchpad-indicator
+ 594  2021-02-10 19:53:37 sudo apt install touchpad-indicator
+ 745  2021-02-19 20:54:33 sudo apt install w3m
+ 134  2021-03-10 16:40:25 sudo apt install libqt5core5a
+ 838  2021-03-16 21:52:18 sudo apt install vim-gtk3
+ 999  2021-03-20 15:59:58 snap install sqlitebrowser
+ 622  2021-03-16 21:52:18 sudo apt install vim-gtk3
+ 830  2021-03-20 15:59:58 snap install sqlitebrowser
+ 128  2021-03-21 23:21:17 sudo apt install sqlite3
+ 174  2021-03-23 18:31:09 sudo ./xampp-linux-x64-8.0.3-0-installer.run
+ 176  2021-03-23 18:31:09 sudo ./xampp-linux-x64-8.0.3-0-installer.run
+ 887  2021-04-02 21:52:17 sudo apt install youtube-dl
+ 666  2021-05-01 20:55:33 sudo apt-get install network-manager-openvpn
+ 667  2021-05-01 21:10:14 sudo apt-get install network-manager
+ 690  2021-06-05 20:14:08 sudo apt install python3-venv
+ 925  2021-06-11 22:29:11 sudo apt install software-properties-common
+ 938  2021-06-11 22:34:15 sudo apt install python3.9
+ 965  2021-06-11 22:46:45 sudo apt install build-essential checkinstall
+ 966  2021-06-11 22:47:20 sudo apt install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
+ 968  2021-06-11 22:49:31 sudo make altinstall
+ 831  2021-06-11 22:46:45 sudo apt install build-essential checkinstall
+ 861  2021-06-11 23:14:05 sudo apt install build-essential
+ 912  2021-06-11 23:38:05 /usr/local/bin/python3.9 -m install pyinstaller
+ 966  2021-06-11 23:49:04 sudo apt install python3-dev
+ 981  2021-06-11 23:55:44 sudo apt install python3.9-dev
+ 176  2021-06-12 00:47:29 sudo apt install python-wxgtk3.0
+ 249  2021-06-21 17:38:24 sudo apt install cheese
+ 669  2021-07-24 15:53:00 sudo apt install gpart
+ 711  2021-07-24 16:33:53 sudo apt-get install -f
+ 598  2021-08-17 21:07:30 sudo apt install ranger
+ 522  2021-08-28 15:23:31 sudo apt install nodejs
+ 632  2021-08-29 17:11:10 sudo apt install bacula-console-qt
+ 639  2021-08-29 17:13:55 sudo apt install bat
+ 924  2021-08-29 17:32:35 sudo snap install cpufetch
+ 970  2021-08-29 20:22:26 sudo snap install lsd
+ 972  2021-08-29 20:25:46 sudo apt install speedtest-cli
+ 188  2021-08-29 20:13:41 sudo apt install ncdu
+ 878  2021-09-14 17:35:18 sudo apt install fish
+ 885  2021-09-14 17:53:25 sudo apt install fd-find
+ 932  2021-09-14 21:50:52 sudo apt install exa
 ---
-pip install bs4
-pip install Cinemagoer
-pip install cloud-scraper
-pip install cloudscraper
-pip install help
-pip install imdbspider
-pip install ImdbSpider
-pip install lxml
-pip install python3-imdbpy
-pip install requests
-pip install -r requirements.txt
-pip install scrap-imdb
-pip install scrapimdb
-pip install -t requirements.txt
-pip install yt-dlp -U
-python3 -m pip3 install --upgrade pip
-python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
-python3 -m pip install --upgrade pi
-python3 -m pip install --upgrade pip
-sudo apt install alacritty
-sudo apt install arandr
-sudo apt install arp-scan
-sudo apt install build-essential
-sudo apt install chromium
-sudo apt install curl
-sudo apt install dmenu
-sudo apt install doublecmd
-sudo apt install doublecmd-*
-sudo apt install doublecmd-common doublecmd-gtk doublecmd-help-en doublecmd-plugins
-sudo apt install exfatprogs
-sudo apt install firefox
-sudo apt install fzf
-sudo apt install git
-sudo apt install google-chrome
-sudo apt install kitty plank
-sudo apt install kodi
-sudo apt install lxtask
-sudo apt install lynx
-sudo apt install manpages-dev
-sudo apt install manpages-posix-dev
-sudo apt install mc
-sudo apt install papirus-icon-theme
-sudo apt install pip
-sudo apt install python3.10-venv
-sudo apt install ranger
-sudo apt install rofi
-sudo apt install sqlitebrowser
-sudo apt install tmux
-sudo apt install valgrind
-sudo apt install vim
-sudo apt install vim-gtk3
-sudo apt install vlc
-sudo apt install wget apt-transport-https gnupg2 software-properties-common
-sudo python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+ pip install bs4
+ pip install Cinemagoer
+ pip install cloud-scraper
+ pip install cloudscraper
+ pip install help
+ pip install imdbspider
+ pip install ImdbSpider
+ pip install lxml
+ pip install python3-imdbpy
+ pip install requests
+ pip install -r requirements.txt
+ pip install scrap-imdb
+ pip install scrapimdb
+ pip install -t requirements.txt
+ pip install yt-dlp -U
+ python3 -m pip3 install --upgrade pip
+ python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+ python3 -m pip install --upgrade pi
+ python3 -m pip install --upgrade pip
+ sudo apt install alacritty
+ sudo apt install arandr
+ sudo apt install arp-scan
+ sudo apt install build-essential
+ sudo apt install chromium
+ sudo apt install curl
+ sudo apt install dmenu
+ sudo apt install doublecmd
+ sudo apt install doublecmd-*
+ sudo apt install doublecmd-common doublecmd-gtk doublecmd-help-en doublecmd-plugins
+ sudo apt install exfatprogs
+ sudo apt install firefox
+ sudo apt install fzf
+ sudo apt install git
+ sudo apt install google-chrome
+ sudo apt install kitty plank
+ sudo apt install kodi
+ sudo apt install lxtask
+ sudo apt install lynx
+ sudo apt install manpages-dev
+ sudo apt install manpages-posix-dev
+ sudo apt install mc
+ sudo apt install papirus-icon-theme
+ sudo apt install pip
+ sudo apt install python3.10-venv
+ sudo apt install ranger
+ sudo apt install rofi
+ sudo apt install sqlitebrowser
+ sudo apt install tmux
+ sudo apt install valgrind
+ sudo apt install vim
+ sudo apt install vim-gtk3
+ sudo apt install vlc
+ sudo apt install wget apt-transport-https gnupg2 software-properties-common
+ sudo python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
 ---
-# install windows fonts 20240513
-sudo apt update
-sudo apt-get install ttf-mscorefonts-installer
-sudo fc-cache -f -v
+ # install windows fonts 20240513
+ sudo apt update
+ sudo apt-get install ttf-mscorefonts-installer
+ sudo fc-cache -f -v
 ---
-829  2024-09-20 22:30:06 lsb_release -a
-848  2024-09-22 18:26:59 bash <(curl -L zellij.dev/launch)
-849  2024-09-22 19:08:16 sudo apt-cache search zellij
-850  2024-09-22 19:08:52 cargo install --locked zellij
-893  2024-09-23 20:20:52 rofi -show window
-894  2024-09-23 20:53:06 /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb
-895  2024-09-23 20:53:44 sudo /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb
-896  2024-09-23 20:54:36 /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb keyring.deb SHA256:f9bb4340b5ce0ded29b7e014ee9ce788006e9bbfe31e96c09b2118ab91fca734
-897  2024-09-23 20:56:21 sudo apt install ./keyring.deb
-898  2024-09-23 20:56:53 echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
-908  2024-09-23 21:01:14 sudo apt install i3*
-909  2024-09-23 21:02:55 cd .config/i3/
-913  2024-09-23 21:27:21 python3 -m pip install --upgrade pip
-915  2024-09-23 21:27:43 pip install qtile
-922  2024-09-23 21:32:28 mkdir -p ~/.config/qtile && cp /usr/share/doc/qtile/examples/config.py ~/.config/qtile/
-924  2024-09-23 21:32:46 /home/rgregor/.local/bin/qtile start
-932  2024-09-23 21:39:44 pip install xcffib
-934  2024-09-23 21:41:59 ll .local/bin/qtile
-935  2024-09-23 21:51:03 locate sessions
-936  2024-09-23 21:51:19 cd /usr/share/xsessions/
-940  2024-09-23 21:51:52 sudo cp i3.desktop qtile.desktop
-941  2024-09-23 21:51:57 sudo vim qtile.desktop
-944  2024-09-23 22:31:48 vim .config/i3/config
-948  2024-09-23 22:46:19 cd .config/alacritty/
-950  2024-09-23 22:46:30 vim alacritty.toml
-951  2024-09-23 22:47:43 cd .config/kitty/
-953  2024-09-23 22:47:51 vim kitty.conf
-962  2024-09-23 23:05:38 killall gnome-font-viewer
-964  2024-09-23 23:06:27 vim .config/i3/config
-967  2024-09-23 23:08:51 sudo apt install font-manager
-995  2024-09-23 23:44:20 vim .config/qtile/config.py
-998  2024-09-23 23:40:41 vim .config/qtile/config.py
+ 829  2024-09-20 22:30:06 lsb_release -a
+ 848  2024-09-22 18:26:59 bash <(curl -L zellij.dev/launch)
+ 849  2024-09-22 19:08:16 sudo apt-cache search zellij
+ 850  2024-09-22 19:08:52 cargo install --locked zellij
+ 893  2024-09-23 20:20:52 rofi -show window
+ 894  2024-09-23 20:53:06 /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb
+ 895  2024-09-23 20:53:44 sudo /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb
+ 896  2024-09-23 20:54:36 /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb keyring.deb SHA256:f9bb4340b5ce0ded29b7e014ee9ce788006e9bbfe31e96c09b2118ab91fca734
+ 897  2024-09-23 20:56:21 sudo apt install ./keyring.deb
+ 898  2024-09-23 20:56:53 echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
+ 908  2024-09-23 21:01:14 sudo apt install i3*
+ 909  2024-09-23 21:02:55 cd .config/i3/
+ 913  2024-09-23 21:27:21 python3 -m pip install --upgrade pip
+ 915  2024-09-23 21:27:43 pip install qtile
+ 922  2024-09-23 21:32:28 mkdir -p ~/.config/qtile && cp /usr/share/doc/qtile/examples/config.py ~/.config/qtile/
+ 924  2024-09-23 21:32:46 /home/rgregor/.local/bin/qtile start
+ 932  2024-09-23 21:39:44 pip install xcffib
+ 934  2024-09-23 21:41:59 ll .local/bin/qtile
+ 935  2024-09-23 21:51:03 locate sessions
+ 936  2024-09-23 21:51:19 cd /usr/share/xsessions/
+ 940  2024-09-23 21:51:52 sudo cp i3.desktop qtile.desktop
+ 941  2024-09-23 21:51:57 sudo vim qtile.desktop
+ 944  2024-09-23 22:31:48 vim .config/i3/config
+ 948  2024-09-23 22:46:19 cd .config/alacritty/
+ 950  2024-09-23 22:46:30 vim alacritty.toml
+ 951  2024-09-23 22:47:43 cd .config/kitty/
+ 953  2024-09-23 22:47:51 vim kitty.conf
+ 962  2024-09-23 23:05:38 killall gnome-font-viewer
+ 964  2024-09-23 23:06:27 vim .config/i3/config
+ 967  2024-09-23 23:08:51 sudo apt install font-manager
+ 995  2024-09-23 23:44:20 vim .config/qtile/config.py
+ 998  2024-09-23 23:40:41 vim .config/qtile/config.py
+---
+ 886  2024-09-29 17:43:57 sudo apt purge i3blocks
+ 887  2024-09-29 17:44:10 sudo apt autoremove
+ 888  2024-09-29 17:44:46 cd Downloads/
+ 889  2024-09-29 17:44:55 git clone https://github.com/Airblader/i3blocks-gaps.git
+ 890  2024-09-29 17:45:01 cd i3blocks-gaps/
+ 893  2024-09-29 17:45:24 make clean all
+ 894  2024-09-29 17:45:32 sudo make install
+ 895  2024-09-29 17:45:53 vim ~/.config/i3/config 
+ 896  2024-09-29 17:51:25 git clone https://github.com/vivien/i3blocks-contrib.git
+ 897  2024-09-29 17:51:37 mv i3blocks-contrib scripts
+ 899  2024-09-29 17:53:46 cp scripts/config.example ./config
+---
+ 828  2024-09-24 20:30:21 sudo apt install dunst
+ 972  2024-09-29 15:19:11 sudo apt install nitrogen
+1003  2024-09-29 19:20:15 sudo apt install color-picker
+ 892  2024-09-29 18:36:23 sudo apt install acpi #for battery script
+---
+ download NERD font 'RobotoMono Nerd Font' from: https://www.nerdfonts.com/font-downloads
+ 899  2024-09-29 19:08:41 font-manager &
+ 900  2024-09-29 19:13:05 fc-cache l
+ 901  2024-09-29 19:13:09 fc-cache -l
+ 902  2024-09-29 19:13:34 fc-cache 
+
+ select icons from: https://www.nerdfonts.com/cheat-sheet
+ 903  2024-09-29 19:15:01 vim ~/.config/i3/config 
+     edit .../i3/config:
+        font pango:RobotoMono Nerd Font 12
+        ... and inside bar { ... }, also:
+            font pango:RobotoMono Nerd Font 12
 ---
 
