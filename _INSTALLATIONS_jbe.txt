@@ -201,4 +201,9 @@
         ... and inside bar { ... }, also:
             font pango:RobotoMono Nerd Font 12
 ---
+ 312  2024-09-29 18:34:20 sudo apt install perl
+ 318  2024-09-29 18:36:23 sudo apt install acpi
+ 789  2024-10-02 20:41:51 sudo apt install plymouth-x11
+ 832  2024-10-02 21:02:24 sudo apt install feh
+---
 
