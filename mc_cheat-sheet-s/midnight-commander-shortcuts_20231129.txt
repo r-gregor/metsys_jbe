@@ -1,0 +1,82 @@
+filename: midnight-commander-shortcuts_20231129.txt
+https://tutorialtactic.com/keyboard-shortcuts/gnu-midnight-commander-shortcuts/
+
+43 Midnight Commander Keyboard Shortcuts
+
+-------------------------------------------------------------------------------------------------------------
+Most used Midnight Commander Shortcuts
+                                                                Midnight Commander      Midnight Commander
+Action                                                          Shortcut keys Windows   Shortcut keys Mac
+-------------------------------------------------------------------------------------------------------------
+Refresh active panel                                            Ctrl + R                Command + R
+Opens chmod dialog for marked file                              Ctrl + X then C         Command + X then C
+Opens chown dialog for marked file                              Ctrl + X then O         Command + X then O
+Opens search dialog                                             Alt + ?                 Option + ?
+Open the VFS list. If an FTP session times out, you can use     Ctrl + X then A         Command + X then A
+this to free the open vfs so you can log in again
+-------------------------------------------------------------------------------------------------------------
+File Panel Action Shortcuts
+                                                            Midnight Commander        Midnight Commander
+Action                                                      Shortcut keys Windows     Shortcut keys Mac
+-------------------------------------------------------------------------------------------------------------
+Move the selection bar to the previous entry in the panel   Up Arrow key              Up Arrow key
+Move the selection bar to the next entry in the panel       Down Arrow key            Down Arrow key
+Move the selection bar to the left                          Left Arrow key            Left Arrow key
+Move the selection bar to the right                         Right Arrow key           Right Arrow key
+Move the selection bar one page up                          Page Up key               Page Up key
+Move the selection bar one page down                        Page Down key             Page Down key
+Move the selection bar to the first entry in the panel      Home                      Home
+Move the selection bar to the last entry in the panel       End                       End
+Move the selection bar to the first visible entry in the    Alt + G                   Option + G
+panel
+Move the selection bar to the middle visible entry in the   Alt + R                   Option + R
+panel
+Move the selection bar to the last visible entry in the     Alt + J                   Option + J
+panel
+Start a quick filename search in the directory listing      Alt + S                   Option + S
+Change the charset of the current panel                     Alt + E                   Option + E
+Show the directory history                                  Alt + H                   Option + H
+Move to the next directory in the history                   Alt + U                   Option + U
+Move to the previous directory in the history               Alt + Y                   Option + Y
+Select (tag) a group of files                               +                         +
+Unselect a group of files                                   \                         \
+Invert selection on the current panel                       Alt + *                   Option + *
+Make the current directory of the current panel also the    Alt + I                   Option + I
+current directory of the other panel
+Move to the child directory                                 Ctrl + Page Down key      Command + Page Down key
+Move to the parent directory                                Ctrl + Page Up key        Command + Page Up key
+Tag or untag files                                          Insert                    Insert
+Tag the file and move the selection bar to the next entry   Shift + Down Arrow key    Shift + Down Arrow key
+Tag the file and move the selection bar to the previous     Shift + Up Arrow key      Shift + Up Arrow key
+entry
+-------------------------------------------------------------------------------------------------------------
+Function keys
+                                                        Midnight Commander         Midnight Commander
+Action                                                  Shortcut keys              Shortcut keys
+-------------------------------------------------------------------------------------------------------------
+Help                                                    F1                         F1
+Opens user menu                                         F2                         F2
+View selected file content                              F3                         F3
+Opens the file in an internal text editor               F4                         F4
+Copies selected file                                    F5                         F5
+Moving file                                             F6                         F6
+Make directory                                          F7                         F7
+Delete file or directory                                F8                         F8
+Opens the main menu at the top of the screen            F9                         F9
+Ends current action; editor, viewer, dialog window or   F10                        F10
+ends mc program
+-------------------------------------------------------------------------------------------------------------
+Shell Function Shortcuts
+                                                     Midnight Commander Shortcut  Midnight Commander Shortcut
+Action                                               keys                         keys
+-------------------------------------------------------------------------------------------------------------
+Copies selected filename in command line             Alt + Enter                  Option + Return
+Copies the full path of the selected file in the     Ctrl + Shift + Enter         Command + Shift + Return
+command line
+Shows command line history                           Alt + H                      Option + H
+-------------------------------------------------------------------------------------------------------------
+
+
+
+---
+

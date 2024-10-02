@@ -1,0 +1,15 @@
+20190419_settings
+
+[Appereance]
+Appereance_Style=Adwyita-dark
+Appereance_Icons=Revival
+Appereance_Fonts_Default_Font="Noto Sans / 9"
+Appereance_Fonts_Default_Monospace_Font="Monospace / 10"
+Appereance_Fonts_Rendering="Enable anti-aliasing"
+
+[Window Manager]
+Window_Manager_Style=Numix
+
+[Terminal Preferences]
+Terminal_Preferences_Appereance_Font="Roboto Mono Regular / 9"
+

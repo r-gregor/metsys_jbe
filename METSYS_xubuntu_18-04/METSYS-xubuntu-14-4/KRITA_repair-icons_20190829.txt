@@ -1,0 +1,12 @@
+NOTE: Krita 2.9 will be installed in /opt/ directory, you have to manually install the icons and launchers:
+
+In terminal run below command to copy the launcher (.desktop) files from /opt/ to system directory:
+
+cd /opt/project-neon/share/ && sudo cp -r applications/ /usr/share/
+Then copy Krita icons to system icons directory:
+
+cd /opt/project-neon/share/ && sudo cp -r icons/ /usr/share/
+Finally create soft link to the Krita executable:
+
+sudo ln -s /opt/project-neon/bin/krita /usr/bin/krita
+Restart computer and you should be able to start Krita 2.9 from menu.

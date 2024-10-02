@@ -1,0 +1,66 @@
+$> rgregor@rgregor-hp [/home/rgregor] 
+$> sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     3    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     3    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   599    0   599    0     0    576      0 --:--:--  0:00:01 --:--:--   576
+100 1726k  100 1726k    0     0   577k      0  0:00:02  0:00:02 --:--:-- 1325k
+
+$> rgregor@rgregor-hp [/home/rgregor] 
+$> sudo chmod a+rx /usr/local/bin/youtube-dl
+
+$> rgregor@rgregor-hp [/home/rgregor] 
+$> youtube-dl --version
+2019.09.12.1
+
+====================================================================================================
+https://ytdl-org.github.io/youtube-dl/download.html
+
+Remember youtube-dl requires Python version 2.6, 2.7, or 3.2+ to work except for Windows exe.
+
+Windows exe requires Microsoft Visual C++ 2010 Redistributable Package (x86) and does not require Python that is already embedded into the binary.
+2019.09.12.1 (sig)
+
+SHA256: 1b67e09b9f0947396a0c0b47e319d577101d566451f3af883ac296757067e9f3
+
+Windows exe (sig - SHA256 b2b84eb2ab63315b1946b6920c2231f899cbb11beae3a1b0d4e066b8a4a30e49)
+Full source + docs + binary tarball (sig - SHA256 ce27a84e861e4d234768bf3a466d3e0f9af7c58f2aac84b940feb2ce6640fb40)
+
+To install it right away for all UNIX users (Linux, OS X, etc.), type:
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+
+sudo chmod a+rx /usr/local/bin/youtube-dl
+
+If you do not have curl, you can alternatively use a recent wget:
+sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+
+sudo chmod a+rx /usr/local/bin/youtube-dl
+
+You can also use pip:
+sudo pip install --upgrade youtube_dl
+
+This command will update youtube-dl if you have already installed it. See the pypi page for more information.
+
+You can use Homebrew if you have it:
+brew install youtube-dl
+
+To check the signature, type:
+sudo wget https://yt-dl.org/downloads/latest/youtube-dl.sig -O youtube-dl.sig
+gpg --verify youtube-dl.sig /usr/local/bin/youtube-dl
+rm youtube-dl.sig
+
+The following GPG keys will be used to sign the binaries and the git tags:
+
+    Philipp Hagemeister 7D33 D762 FD6C 3513 0481 347F DB4B 54CB A482 6A18
+    Sergey M. ED7F 5BF4 6B3B BED8 1C87 368E 2C39 3E0F 18A9 236D
+
+Older releases are also signed with one of:
+
+    Philipp Hagemeister 0600 E1DB 6FB5 3A5D 95D8 FC0D F5EA B582 FAFB 085C (until 2013-06-01)
+    Filippo Valsorda 428D F5D6 3EF0 7494 BB45 5AC0 EBF0 1804 BCF0 5F6B (until 2014)
+
+    Creative Commons License
+    Copyright © 2006-2011 Ricardo Garcia Gonzalez
+    Copyright © 2011-2019 youtube-dl developers
+

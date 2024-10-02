@@ -1,0 +1,10 @@
+sudo apt-get install sshfs
+
+sudo usermod -a -G fuse $USER
+
+mkdir -p $HOME/PI
+
+sshfs -o idmap=user root@192.168.1.32:/var/media/MEDION_sA/Videos /home/rgregor/PI
+
+fusermount -u /home/rgregor/PI
+

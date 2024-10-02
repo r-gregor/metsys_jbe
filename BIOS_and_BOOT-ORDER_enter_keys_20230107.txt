@@ -1,0 +1,7 @@
+1 - entering BIOS:
+	repeatedljy pressing F1 at satrtup (when LENOVO logo apeares)
+		-> nedded to disable Autostart AT (USB, LAN, ...)
+
+2 - entering BOOT DEVICE order:
+	repeatedljy pressing F12 at satrtup (when LENOVO logo apeares)
+

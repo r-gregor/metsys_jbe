@@ -1,0 +1,106 @@
+sudo apt-get install konsole
+sudo apt-get install -y fonts-font-awesome
+sudo apt install "$PWD/megasync-xUbuntu_22.04_amd64.deb"
+sudo apt install alacritty
+sudo apt install arandr
+sudo apt install arp-scan
+sudo apt install build-essential
+sudo apt install build-essential libpython3-dev libdbus-1-dev
+sudo apt install cargo
+sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+sudo apt install cmake pkg-config mesa-utils libglu1-mesa-dev freeglut3-dev mesa-common-dev libglew-dev libglfw3-dev libglm-dev libao-dev libmpg123-dev
+sudo apt install curl
+sudo apt install dmenu
+sudo apt install dos2unix
+sudo apt install doublecmd-gtk doublecmd-plugins
+sudo apt install dunst
+sudo apt install enscript
+sudo apt install ffmpeg
+sudo apt install firefox
+sudo apt install fmt
+sudo apt install font-manager
+sudo apt install fonts-mononoki
+sudo apt install fzf
+sudo apt install git
+sudo apt install hexedit
+sudo apt install htop
+sudo apt install i3
+sudo apt install i3status dmenu i3lock xbacklight feh conky
+sudo apt install i3status feh conky
+sudo apt install i3status i3lock xbacklight feh conky
+sudo apt install kitty
+sudo apt install kodi
+sudo apt install libconfig-dev
+sudo apt install libstartup-notification0
+sudo apt install libstartup-notification0-dev
+sudo apt install libx11-xcb-dev
+sudo apt install libxcb-composite0-dev
+sudo apt install libxcb-damage0-dev
+sudo apt install libxcb-present-dev
+sudo apt install libxcb-sync-dev
+sudo apt install lxappearance
+sudo apt install lxtask
+sudo apt install lynx
+sudo apt install mc
+sudo apt install meson asciidoc
+sudo apt install neofetch
+sudo apt install nitrogen
+sudo apt install nnn
+sudo apt install openjdk-11-jdk
+sudo apt install paint
+sudo apt install pdftk
+sudo apt install pinta
+sudo apt install pkg-config
+sudo apt install plank
+sudo apt install python3-pip
+sudo apt install python3-pip -y
+sudo apt install ranger
+sudo apt install rofi
+sudo apt install startup-notification
+sudo apt install startup-notification-devel
+sudo apt install suckless-tools
+sudo apt install terminator
+sudo apt install uthash-dev
+sudo apt install valgrind
+sudo apt install vim
+sudo apt install vim-gtk3
+sudo apt install vlc
+sudo apt install w3m-img
+sudo apt install wget apt-transport-https gnupg2 software-properties-common
+sudo apt install xclip
+sudo apt install xcopy xsel
+sudo apt install xsane
+sudo apt install xsane -y
+sudo apt install xsel
+sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev libxcb-xrm-dev
+wget https://mega.nz/linux/repo/xUbuntu_22.04/amd64/megasync-xUbuntu_22.04_amd64.deb && sudo apt install "$PWD/megasync-xUbuntu_22.04_amd64.deb"
+---
+cp firefox_how_to_install_from_mozilla_NOT_as_snap_20231116.txt firefox_install_ppa.sh
+vim firefox_install_ppa.sh 
+chmod 775 firefox_install_ppa.sh 
+./firefox_install_ppa.sh 
+sudo desktop-file-install extra/linux/Alacritty.desktop
+---
+pip install folium
+pip install jupyter
+pip install pandas geojson
+pip install qtile
+pip install --reinstall xcffib
+pip install -r requirements.txt 
+pip install --upgrade pip
+pip install xcffib
+pip uninstall qtile
+pip uninstall xcffib
+---
+sudo meson install -C ../build
+sudo ninja -C build install
+---
+python3 -m pip install -U yt-dlp
+python3 -m pip install -U yt-dlp
+---
+# install windows fonts 20240513
+sudo apt update
+sudo apt-get install ttf-mscorefonts-installer
+sudo fc-cache -f -v
+---
+

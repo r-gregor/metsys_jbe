@@ -1,0 +1,22 @@
+from: https://stackoverflow.com/questions/14940369/understand-the-rsync-transfer-rate-in-its-output
+
+Understand the rsync transfer rate in its output
+
+I transferred a large file (>60GB) using rsync but I got confused when I was calculating the actual transfer rate. The output is:
+
+       dbdump.sql
+        69840316437 100%    7.75MB/s    2:23:09 (xfer#1, to-check=0/1)
+
+        sent 30 bytes  received 17317620159 bytes  2015199.88 bytes/sec
+        total size is 69840316437  speedup is 4.03
+
+The rate displayed directly from the second line is 7.75MB/s. But the rate I calculated from last line but one is about 2MB/s. However, if you divide the total size with the total time 69840316437/(2x3600+23x60+9)=8131367 byte/sec about 8MB/s. Which one is the actual mean transfer rate?
+
+***
+The 7.75MB/s is just the transfer speed reported for the last block of transfer - the statistics are reported once a second or so. It would appear that you have sparse file handling enabled, as well, because, while the file is 69GB in size, it only transferred 17GB. Either that, or, you had partially transferred the file in the past, and this run just finished it up, or maybe it had been fully transferred in the past and this run only sent the blocks that changed... The reported speed up is <full size> / <transferred size>, which is about 69 / 17 = 4.03 in this case - meaning it managed to fully replicate a 69GB file in the time it took to actually transfer a 17GB file.
+
+***
+Thank you for your answer. But the question remains: what is the actual mean transfer rate (physically)?
+
+***
+The 2015199.88 bytes/s bit should be your actual overall average transfer rate. But you didn't actually transfer 69GB for one of the reasons listed above, so the "effective" mean transfer rate is higher by about 4.03x (the speedup).

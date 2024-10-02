@@ -1,0 +1,9 @@
+ffmpeg "Gloria_Gaynor_-_I_Will_Survive_(Jesusful.com).mp3" 
+ffmpeg -ss 22 -i "Gloria_Gaynor_-_I_Will_Survive_(Jesusful.com).mp3" -acodec copy I_will_survive_cut1.mp3
+ffmpeg -ss 55 -i "Gloria_Gaynor_-_I_Will_Survive_(Jesusful.com).mp3" -acodec copy I_will_survive_cut2.mp3
+ffmpeg -ss 56 -i "Gloria_Gaynor_-_I_Will_Survive_(Jesusful.com).mp3" -acodec copy I_will_survive_cut3.mp3
+ffmpeg -ss 55.5 -i "Gloria_Gaynor_-_I_Will_Survive_(Jesusful.com).mp3" -acodec copy I_will_survive_cut3.mp3
+man ffmpeg
+man ffmpeg-utils
+---
+

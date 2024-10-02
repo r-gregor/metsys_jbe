@@ -1,0 +1,2 @@
+sudo rsync -av --progress --delete --exclude=".cache/" --exclude=".thumbnails/" /home/zala/ /media/zala/B1_2_EXT4/zala_lenovo/home/zala/
+

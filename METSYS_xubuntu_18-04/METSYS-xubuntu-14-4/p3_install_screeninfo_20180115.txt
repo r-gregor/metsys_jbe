@@ -1,0 +1,21 @@
+$> gregor.redelonghi@cygwin-en [/home/gregor.redelonghi]
+$> pip3 install screeninfo
+Collecting screeninfo
+  Downloading screeninfo-0.3.tar.gz
+Building wheels for collected packages: screeninfo
+  Running setup.py bdist_wheel for screeninfo ... done
+  Stored in directory: /home/gregor.redelonghi/.cache/pip/wheels/06/86/fc/b621bf463d21db1d1f290ea8264534e46313b4e1bb71501e8d
+Successfully built screeninfo
+Installing collected packages: screeninfo
+Successfully installed screeninfo-0.3
+
+$> gregor.redelonghi@cygwin-en [/home/gregor.redelonghi]
+$> python3
+Python 3.6.1 (default, Mar 21 2017, 21:49:16)
+[GCC 5.4.0] on cygwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from screeninfo import get_monitors
+    print(str(m))>>> for m in get_monitors():
+...     print(str(m))
+...
+monitor(1920x1200+0+0)

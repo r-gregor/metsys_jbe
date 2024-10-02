@@ -1,0 +1,8 @@
+### sudo rsync -avn --delete --progress --exclude .cache/ /home/ backup-home-hp-rgregor-FULL-BCKP/home/ | less
+sudo rsync -avn --exclude SLIKE/ --exclude .cache --delete --progress /home/ backup-home-hp-rgregor-FULL-BCKP/home/
+
+
+### SLIKE ...
+sudo rsync -avn --delete --progress /home/SLIKE/ backup-home-hp-rgregor-FULL-BCKP/home/SLIKE/
+
+

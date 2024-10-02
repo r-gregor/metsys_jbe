@@ -1,0 +1,49 @@
+﻿source-1: DBOR/RPi_extending-SD-card-life_01_20150520.txt
+source-2: DBOR/RPi_extending-SD-card-life_02_20150520.txt
+source-3: extend-life-raspberry-pis-sd-card_20140619.txt
+
+
+1 - Disable Swap
+	>sudo swapoff --all
+	>sudo apt-get remove dphys-swapfile
+		* For other distributions that use a swap partition instead of a swap file, remove the
+		appropriate line from /etc/fstab
+		
+	>sudo dphys-swapfile swapoff
+	>sudo dphys-swapfile uninstall
+	>sudo update-rc.d dphys-swapfile remove
+			
+		-{OR
+			>sudo swapoff --all
+			>sudo apt-get remove dphys-swapfile
+		}-
+		
+	* For other distributions that use a swap partition instead of a swap file, remove the
+	appropriate line from /etc/fstab
+		
+
+2 - put variable dirs to tmpfs
+	>sudo cp /etc/default/tmpfs /etc/default/tmpfs.ORIGINAL
+	>sudo vim edit /etc/default/tmpfs			# and set:
+		RAMLOCK=yes
+		RAMSHM=yes
+		RAMTMP=yes
+
+	>sudo cp /etc/fstab /etc/fstab.ORIGINAL
+	>sudo vim /etc/fstab
+		tmpfs   /var/log                tmpfs   size=20M,defaults,noatime,mode=0755 0 0
+		tmpfs   /var/cache/apt/archives tmpfs   size=100M,defaults,noexec,nosuid,nodev,mode=0755 0 0
+		tmpfs   /var/spool/cups         tmpfs   size=100M,defaults,noatime,mode=0755 0 0
+		tmpfs   /var/spool/cups/tmp     tmpfs   defaults,noatime,mode=0755 0 0
+		none    /var/run		tmpfs	size=2M,defaults,noatime,mode=0755 0 0
+		
+		
+		-{OR
+			tmpfs /tmp tmpfs defaults,noatime,nosuid,size=100m 0 0
+			tmpfs /var/tmp tmpfs defaults,noatime,nosuid,size=30m 0 0
+			tmpfs /var/log tmpfs defaults,noatime,nosuid,mode=0755,size=100m 0 0
+			tmpfs /var/run tmpfs defaults,noatime,nosuid,mode=0755,size=2m 0 0
+			tmpfs /var/spool/mqueue tmpfs defaults,noatime,nosuid,mode=0700,gid=12,size=30m 0 0
+		}-
+
+		

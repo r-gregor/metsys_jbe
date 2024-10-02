@@ -1,0 +1,373 @@
+    1  startx
+    2  raspi-config
+    3  sudoraspi-config
+    4  sudo raspi-config
+    5  sudo apt-get update
+    6  sudo sync && sudo shutdown -h now
+    7  logout
+    8  exit
+    9  ifconfig
+   10  less /etc/network/interfaces
+   11  less /etc/fstab
+   12  sudo 
+   13  cd /etc
+   14  sudo cp -v fstab fstab.ORIGINAL
+   15  vim
+   16  sudo nano /etc/fstab
+   17  exit
+   18  cd /etc/
+   19  sudo cp fstab fstab.new
+   20  nano
+   21  sudo nano fstab.new 
+   22  fg %1
+   23  cd /var
+   24  ll
+   25  ls -l
+   26  cd cache/
+   27  ls
+   28  cd apt/
+   29  ls
+   30  cd archives/
+   31  ls
+   32  cd
+   33  cd /var/log
+   34  ll
+   35  ls
+   36  cd
+   37  cd /var/run
+   38  ls
+   39  cd
+   40  cat /etc/fstab
+   41  free -m
+   42  sudo dphys-swapfile swap off
+   43  sudo dphys-swapfile swapoff
+   44  sudo dphys-swapfile uninstall
+   45  free -m
+   46  exit
+   47  shutdown -h now
+   48  sudo shutdown -h now
+   49  cd /etc/
+   50  nano fstab.new 
+   51  sudo nano fstab.new 
+   52  sudo rm fstab
+   53  sudo cp fstab.new fstab
+   54  exit
+   55  sudo shutdown -h now
+   56  mount
+   57  free -m
+   58  sudo dphys-swapfile swapoff
+   59  free -m
+   60  sudo dphys-swapfile uninstall
+   61  sudo apt-get remove dphys-swapfile 
+   62  sudo shutdown -h now
+   63  cd /etc/cups/
+   64  ls
+   65  ll
+   66  ls -l
+   67  sudo cp cupsd.conf cupsd.conf.ORIGINAL
+   68  sudo nano cupsd.conf
+   69  sudo cupsctl --remote-admin
+   70  sudo cupsctl --remote-any
+   71  sudo service cups restart
+   72  exit
+   73  cd /etc/cups/
+   74  sudo nano cupsd.conf
+   75  sudo rm cupsd.conf
+   76  sudo cp cupsd.conf.ORIGINAL cupsd.conf
+   77  sudo nano cupsd.conf
+   78  sudo usermod -a -G lpadmin pi
+   79  id pi
+   80  exit
+   81  free -m
+   82  mount
+   83  sudo apt-get update
+   84  sudo apt-get upgrade
+   85  dmesg
+   86  sudo apt-get install cups
+   87  .rpi.rgr1968.
+   88  pi
+   89  ll
+   90  free -m
+   91  moumt
+   92  mount
+   93  sudo sync && sudo shutdown -h now
+   94  sudo update-rc.d dphys-swapfile remove
+   95  exit
+   96  nano .bashrc 
+   97  cp .bashrc .bashrc.ORIGINAL
+   98  nano .bashrc
+   99  man sync
+  100  . .bashrc
+  101  alias | grep zau
+  102  exit
+  103  locale
+  104  export LCexport LC_ALL=^
+  105  export ?LC_ALL=
+  106  export LC_ALL="en_US.UTF-8£
+  107  "
+  108  export LC_ALL="en_US.UTF-8"
+  109  man locale
+  110  exit
+  111  zaustavitev-varna 
+  112  free -m
+  113  df
+  114  df -h
+  115  cd /etc
+  116  cd cups/
+  117  ll
+  118  ls -l
+  119  cd ..
+  120  cd /var/
+  121  ls
+  122  cd cache/
+  123  ls
+  124  cd cups/
+  125  ls
+  126  cd ..
+  127  find -iname *log*
+  128  sudo find -iname *log*
+  129  cd ..
+  130  sudo find -iname *log*
+  131  cd log/
+  132  ls
+  133  cd cups/
+  134  sudo ls cups/
+  135  sudo less cups/page_log
+  136  cd ..
+  137  cd spool/
+  138  ls
+  139  cd cups/
+  140  sudo ls -l
+  141  sudo ls -l cups/
+  142  cd ..
+  143  du -sh ./* | sort -hr
+  144  sudo du -sh ./* | sort -hr
+  145  cd spool/
+  146  ls
+  147  sudo du -sh ./* | sort -hr
+  148  cd
+  149  sudo nano /etc/fstab
+  150  export LC_ALL=en_US.UTF-8
+  151  sudo export LC_ALL=en_US.UTF-8
+  152  free -m
+  153  df -h
+  154  mount
+  155  locale
+  156  zaustavitev-varna 
+  157  uptime
+  158  sudo uname -a
+  159  exit
+  160  uname -a
+  161  free -m
+  162  mount
+  163  df -h
+  164  df -h | grep -vE (tmp|de) 
+  165  df -h | grep -vE '(tmp|de)' 
+  166  df -h | grep -vE '(tmp|devt)' 
+  167  blkid
+  168  sudo blkid
+  169  uptime
+  170  time
+  171  date
+  172  exit
+  173  sudo raspi-config
+  174  uname -a
+  175  date
+  176  locale
+  177  export LANGUAGE=en_US.UTF-8
+  178  export LANG=en_US.UTF-8
+  179  locale
+  180  nano ~/.bashrc
+  181  . .bashrc
+  182  locale
+  183  exit
+  184  sudo sync && sudo shutdown -r now
+  185  uname -a
+  186  uptime
+  187  date
+  188  locale
+  189  df -h
+  190  exit
+  191  uptime
+  192  df -h
+  193  exitexit
+  194  exit
+  195  df -h
+  196  du -ah | sort -hr | head -n30
+  197  exit
+  198  sudo find / -iname "*.ORIGINAL"
+  199  history
+  200  history | grep install
+  201  exit
+  202  uptime
+  203  df -h
+  204  cd /var/log
+  205  ll
+  206  ls -l
+  207  cd
+  208  zaustavitev-varna 
+  209  ll
+  210  ls -l
+  211  cd
+  212  ls -l
+  213  pwd
+  214  ls -a
+  215  df -h
+  216  exit
+  217  scanimage -L
+  218  sudo scanimage -L
+  219  scanimage --format=tiff > ~/maytestscan.tif
+  220  sudo scanimage --format=tiff > ~/maytestscan.tif
+  221  ll maytestscan.tif 
+  222  ls -l maytestscan.tif
+  223  exit
+  224  cd /etc/sane.d/
+  225  ls -l
+  226  ls -l sane*
+  227  sudo cp -v saned.conf saned.conf.ORIGINAL
+  228  sudo nano saned.conf
+  229  cd
+  230  cd /etc/default/
+  231  sudo cp -v saned saned.ORIGINAL
+  232  sudo nano saned
+  233  cd
+  234  zaustavitev-varna 
+  235  df -h
+  236  cd /run/
+  237  ll
+  238  ls -l
+  239  cd
+  240  df -h
+  241  exit
+  242  less /etc/default/saned
+  243  scanimage -L
+  244  sudo scanimage -L
+  245  ps aux | grep sane
+  246  ifconfig
+  247  exit
+  248  cd /etc/default/
+  249  ls
+  250  less saned
+  251  less cups 
+  252  ps aux | grep saned
+  253  scanimage -L
+  254  sudo scanimage -L
+  255  vim saned
+  256  sudo nano saned
+  257  sudo service saned restart
+  258  sudo scanimage -L
+  259  less saned.ORIGINAL 
+  260  exit
+  261  less /etc/passwd
+  262  cat /etc/passwd | grep s*
+  263  sudo nano /etc/sane.d/saned.conf
+  264  update-rc.d saned defaults
+  265  sudo update-rc.d saned defaults
+  266  sudo service saned restart
+  267  sudo scanimage -L
+  268  exit
+  269  fdisk -l
+  270  sudo fdisk -l
+  271  df -h
+  272  mount
+  273  blkid
+  274  fdisk -l
+  275  sudo 
+  276  sudo fdisk -l
+  277  df -h
+  278  exit
+  279  less /etc/sane.d/saned.conf
+  280  sudo nano /etc/sane.d/saned.conf
+  281  sudo service saned restart
+  282  exit
+  283  sudo usermod -a -G lp saned
+  284  groups saned
+  285  zaustavitev-varna 
+  286  groups saned
+  287  exit
+  288  ls -l
+  289  exog
+  290  exit
+  291  ls
+  292  ls -l
+  293  type zaustavitev-varna
+  294  exit
+  295  uptime
+  296  df -h
+  297  blkid
+  298  exit
+  299  ls -l
+  300  ps aux
+  301  ps aux|grep cups
+  302  
+  303  ps aux|grep cups
+  304  clear
+  305  df
+  306  top
+  307  ps aux -sort -rss
+  308  ps aux --sort -rss
+  309  ps aux --sort -rss | head
+  310  exit
+  311  ls-l
+  312  ls -l
+  313  ls
+  314  uptime
+  315  df -h
+  316  exit
+  317  ls -l
+  318  cd Desktop
+  319  ls
+  320  ls -a
+  321  cd
+  322  less ,bashrc
+  323  less ·bashrc
+  324  less .bashrc
+  325  ll
+  326  history | less
+  327  alias
+  328  . .bashrc
+  329  ll
+  330  df
+  331  df -h
+  332  cd /var/log
+  333  ls
+  334  cd cups
+  335  sudo cp cups
+  336  ls cups/
+  337  sudo ls cups/
+  338  sudo less cups/avces_log
+  339  sudo less cups/acces_log
+  340  sudo less cups/access_log
+  341  ls
+  342  du -h
+  343  sudo du -sh | sort -hr
+  344  sudo du -sh ./* .
+  345  less syslog
+  346  uptime
+  347  uname -a
+  348  exit
+  349  df -h
+  350  uptime
+  351  exit
+  352  zaustavitev-varna 
+  353  uptime
+  354  dmesg
+  355  uptime
+  356  df -h
+  357  exit
+  358  ll
+  359  ls -l
+  360  rm maytestscan.tif 
+  361  ll
+  362  ls -l
+  363  cd
+  364  ls -l
+  365  df -h
+  366  exit
+  367  histor<
+  368  history
+  369  qexit
+  370  exit
+  371  zaustavitev-varna 
+  372  uptime
+  373  history > rpi.malina1.history_20150530.txt

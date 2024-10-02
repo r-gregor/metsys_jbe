@@ -1,0 +1,241 @@
+mc key bindings 20231024:
+
+Miscellaneous Keys
+       Here are some keys which don't fall into any of the other categories:
+
+       Enter  if  there is some text in the command line (the one at the bottom of the panels), then that
+	   command is executed. If there is no text in the command line then if the selection bar is over a
+	   directory the Midnight Commander does a chdir(2) to the selected directory and reloads the information
+	   on the panel; if the selection is  an  executable file  then  it is executed. Finally, if the extension
+	   of the selected file name matches one of the extensions in the extensions file then the corresponding
+	   command is executed.
+
+       C-l    repaint all the information in Midnight Commander.
+       C-x c  run the Chmod command on a file or on the tagged files.
+       C-x o  run the Chown command on the current file or on the tagged files.
+       C-x l  run the hard link command.
+       C-x s  run the absolute symbolic link command.
+       C-x v  run the relative symbolic link command. See the File Menu section for more information about symbolic links.
+       C-x i  set the other panel display mode to information.
+       C-x q  set the other panel display mode to quick view.
+       C-x !  execute the External panelize command.
+       C-x h  run the add directory to hotlist command.
+       Alt-!  executes the Filtered view command, described in the view command.
+       Alt-?  executes the Find file command.
+       Alt-c  pops up the quick cd dialog.
+       C-o    when the program is being run in the Linux or FreeBSD console or under an xterm, it will show
+               you the output of the previous command.  When ran on the Linux console,  Midnight Commander uses
+               an external program (cons.saver) to handle saving and restoring of information on the screen.
+
+               When  the  subshell  support  is compiled in, you can type C-o at any time and you will be
+               taken back to Midnight Commander's main screen, to return to your application just type
+
+       C-o.  If you have an application suspended by using this trick, you won't be able to execute other
+             programs from Midnight Commander until you terminate the suspended application.
+---
+ Directory Panels
+       This section lists the keys which operate on the directory panels. If you want to know how to change
+       the appearance of the panels take a look at the section  on  Left  and  Right Menus.
+
+       Tab, C-i
+              change  the  current  panel.  The old other panel becomes the new current panel and the old
+              current panel becomes the new other panel. The selection bar moves from the old current panel to the
+              new current panel.
+
+       Insert, C-t
+              to tag files you may use the Insert key (the kich1 terminfo sequence).  To untag files, just
+              retag a tagged file.
+
+       Alt-e  to change charset of panel you may use Alt-e (M-e).  Recoding is made from selected codepage
+              into system codepage. To cancel the recoding, select "No translation"  in  the dialog of encodings.
+
+       Alt-g, Alt-r, Alt-j
+              used to select the top file in a panel, the middle file and the bottom one, respectively.
+
+       Alt-t  toggle  the current display listing to show the next display listing format.  With this it is
+            possible to quickly switch to brief listing, long listing, user defined listing format, and back
+            to the default.
+
+       C-\ (control-backslash)
+              show the directory hotlist and change to the selected directory.
+
+       +  (plus)
+              this is used to select (tag) a group of files. Midnight Commander will prompt for a selection
+              options. When Files only checkbox is on, only files  will  be  selected. If Files only is off,
+              as files as directories will be selected.  When Shell Patterns checkbox is on, the regular
+              expression is much like the filename globbing in the shell (* standing for zero or more
+              characters and ? standing for one character). If Shell Patterns is off, then the tagging of files is
+              done with normal regular expressions (see ed(1)). When Case sensitive checkbox is on, the selection
+              will be case sensitive characters.  If Case sensitive is off, the case will be ignored.
+
+       \ (backslash)
+              use the "\" key to unselect a group of files. This is the opposite of the Plus key.
+
+       up-key, C-p
+              move the selection bar to the previous entry in the panel.
+
+       down-key, C-n
+              move the selection bar to the next entry in the panel.
+
+       home, a1, Alt-<
+              move the selection bar to the first entry in the panel.
+
+       end, c1, Alt->
+              move the selection bar to the last entry in the panel.
+
+       next-page, C-v
+              move the selection bar one page down.
+
+       prev-page, Alt-v
+              move the selection bar one page up.
+
+       Alt-o  If the currently selected file is a directory, load that directory on the other panel and
+               moves the selection to the next file. If the currently selected file is not a directory, load
+               the parent directory on the other panel and moves the selection to the next file.
+
+       Alt-i  make the current directory of the current panel also the current directory of the other pane.
+              Put the other panel to the listing mode if needed.  If the current panel is panelized, the
+              other panel doesn't become panelized.
+
+       C-PageUp, C-PageDown
+              only when supported by the terminal: change to ".." and to the currently selected directory
+              respectively.
+
+       Alt-y  moves to the previous directory in the history, equivalent to clicking the < with the mouse.
+
+       Alt-u  moves to the next directory in the history, equivalent to clicking the > with the mouse.
+
+       Alt-S-h, Alt-H
+              displays the directory history, equivalent to depressing the 'v' with the mouse.
+---
+  Quick search
+       The Quick search mode allows you to perform fast file search in file panel.  Press C-s or Alt-s to
+       start a filename search in the directory listing.
+
+       When  the search is active, the user input will be added to the search string instead of the command
+       line. If the Show mini-status option is enabled the search string is shown on the mini-status line. When
+       typing, the selection bar will move to the next file starting with the typed letters. The Backspace
+       or DEL keys can be used to correct typing mistakes. If C-s is pressed again, the next match is
+       searched for.
+
+       If quick search is started with double pressing of C-s, the previous quick search pattern will be
+       used for current search.
+
+       Besides the filename characters, you can also use wildcard characters '*' and '?'.
+---
+  Shell Command Line
+       This section lists keys which are useful to avoid excessive typing when entering shell commands.
+
+       Alt-Enter
+              copy the currently selected file name to the command line.
+
+       C-Enter
+              same a Alt-Enter.  May not work on remote systems and some terminals.
+
+       C-S-Enter
+              copy the full path name of the currently selected file to the command line.  May not work on
+              remote systems and some terminals.
+
+       Alt-Tab
+              does the filename, command, variable, username and hostname completion for you.
+
+       C-x t, C-x C-t
+              copy the tagged files (or if there are no tagged files, the selected file) of the current panel
+              (C-x t) or of the other panel (C-x C-t) to the command line.
+
+       C-x p, C-x C-p
+              the first key sequence copies the current path name to the command line, and the second one
+              copies the unselected panel's path name to the command line.
+
+       C-q    the quote command can be used to insert characters that are otherwise interpreted by Midnight
+              Commander (like the '+' symbol)
+
+       Alt-p, Alt-n
+              use these keys to browse through the command history. Alt-p takes you to the last entry, Alt-n
+              takes you to the next one.
+
+       Alt-h  displays the history for the current input line.
+---
+ General Movement Keys
+       The  help viewer, the file viewer and the directory tree use common code to handle moving. Therefore
+       they accept exactly the same keys. Each of them also accepts some keys of its own.
+
+       Other parts of Midnight Commander use some of the same movement keys, so this section may be of use
+       for those parts too.
+
+       Up, C-p
+              moves one line backward.
+
+       Down, C-n
+              moves one line forward.
+
+       Prev Page, Page Up, Alt-v
+              moves one page up.
+
+       Next Page, Page Down, C-v
+              moves one page down.
+
+       Home, A1
+              moves to the beginning.
+
+       End, C1
+              move to the end.
+
+       The help viewer and the file viewer accept the following keys in addition the to ones mentioned above:
+
+       b, C-b, C-h, Backspace, Delete
+              moves one page up.
+
+       Space bar
+              moves one page down.
+
+       u, d   moves one half of a page up or down.
+
+       g, G   moves to the beginning or to the end.
+---
+  Input Line Keys
+       The input lines (they are used for the command line and for the query dialogs in the program) accept
+       these keys:
+
+       C-a    puts the cursor at the beginning of line.
+
+       C-e    puts the cursor at the end of the line.
+
+       C-b, move-left
+              move the cursor one position left.
+
+       C-f, move-right
+              move the cursor one position right.
+
+       Alt-f  moves one word forward.
+
+       Alt-b  moves one word backward.
+
+       C-h, Backspace
+              delete the previous character.
+
+       C-d, Delete
+              delete the character in the point (over the cursor).
+
+       C-@    sets the mark for cutting.
+
+       C-w    copies the text between the cursor and the mark to a kill buffer and removes the text from the
+              input line.
+
+       Alt-w  copies the text between the cursor and the mark to a kill buffer.
+
+       C-y    yanks back the contents of the kill buffer.
+
+       C-k    kills the text from the cursor to the end of the line.
+
+       Alt-p, Alt-n
+              Use these keys to browse through the command history. Alt-p takes you to the last entry, Alt-n
+              takes you to the next one.
+
+       Alt-C-h, Alt-Backspace
+              delete one word backward.
+
+       Alt-Tab
+              does the filename, command, variable, username and hostname completion for you.
+---
+

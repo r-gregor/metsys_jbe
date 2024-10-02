@@ -1,0 +1,12 @@
+sudo cp -vvv dropbox.desktop dropbox.desktop.ORIGINAL
+mousepad dropbox.desktop
+	Exec=dropbox start -i ==> Exec=dbus-launch dropbox start -i
+
+
+update db1 function in /home/forallusers/funclist:
+	dropbox start ==> Exec=dbus-launch dropbox start -i
+
+
+
+
+

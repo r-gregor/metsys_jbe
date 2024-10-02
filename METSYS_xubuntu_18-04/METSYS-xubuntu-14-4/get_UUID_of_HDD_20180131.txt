@@ -1,0 +1,14 @@
+get UUID of HDD:
+
+$> sudo blkid
+/dev/sda1: UUID="bae5c584-9778-498e-9eb5-7f0ff1881a26" TYPE="ext4" 
+/dev/sda2: UUID="f6d677cc-8e11-4b45-98ac-0867dc4492bb" TYPE="ext4" 
+/dev/sda3: UUID="a8d9a375-0d76-40b3-a350-08b502e90641" TYPE="ext4" 
+/dev/sda4: UUID="67995f8d-a133-4c4b-af16-2a652bc82389" TYPE="swap" 
+
+$> ls -l /dev/disk/by-uuid
+total 0
+lrwxrwxrwx 1 root root 10 jan 31 17:19 67995f8d-a133-4c4b-af16-2a652bc82389 -> ../../sda4
+lrwxrwxrwx 1 root root 10 jan 31 17:19 a8d9a375-0d76-40b3-a350-08b502e90641 -> ../../sda3
+lrwxrwxrwx 1 root root 10 jan 31 17:19 bae5c584-9778-498e-9eb5-7f0ff1881a26 -> ../../sda1
+lrwxrwxrwx 1 root root 10 jan 31 17:19 f6d677cc-8e11-4b45-98ac-0867dc4492bb -> ../../sda2

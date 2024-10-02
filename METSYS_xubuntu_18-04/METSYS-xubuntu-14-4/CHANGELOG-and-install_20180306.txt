@@ -1,0 +1,346 @@
+sudo apt-get install -y gdebi lxtask p7zip-full p7zip-rar synaptic xsane cheese google-chrome-stable ubuntu-drivers-common mplayer xfce4-goodies python-tk lsscsi youtube-dl
+
+sudo add-apt-repository ppa:libreoffice/ppa
+sudo apt-get update && sudo apt-get -y dist-upgrade
+sudo apt-get install libreoffice
+
+--- 20151105
+$> rgregor@hp-rgregor [/home/rgregor] 
+$> history | grep -E "(apt-get|apt-rep|apt-cache)"
+    2  2015-11-05 21:27:16 sudo apt-get update
+    3  2015-11-05 21:27:16 sudo apt-get upgrade
+    5  2015-11-05 21:27:16 sudo apt-get dist-upgrade
+
+  105  2015-10-31 23:48:02 sudo apt-get install xubuntu-restricted-extras
+  106  2015-10-31 23:50:25 sudo apt-get install vim vlc screen lynx imagemagick openshot arp-scan ufw gufw smartmontools pdftk lftp pinta lm-sensors doublecmd-gtk
+  108  2015-11-01 00:05:13 sudo apt-get install -y gdebi lxtask p7zip-full p7zip-rar synaptic xsane cheese ubuntu-drivers-common mplayer xfce4-goodies python-tk lsscsi youtube-dl
+  114  2015-10-31 23:48:02 sudo apt-get install xubuntu-restricted-extras
+  115  2015-10-31 23:50:25 sudo apt-get install vim vlc screen lynx imagemagick openshot arp-scan ufw gufw smartmontools pdftk lftp pinta lm-sensors doublecmd-gtk
+  136  2015-11-01 00:41:23 sudo add-apt-repository ppa:libreoffice/ppa
+  137  2015-11-01 00:45:23 sudo apt-get update && sudo apt-get -y dist-upgrade
+  138  2015-11-01 00:48:30 sudo apt-get install libreoffice
+  164  2015-11-01 01:39:03 sudo apt-cache search fglrx
+  165  2015-11-01 01:39:33 sudo apt-get install fglrx mesa-utils
+  195  2015-11-02 19:58:39 sudo apt-cache search powertop
+  196  2015-11-02 19:58:52 sudo apt-get install powertop
+  200  2015-11-02 19:58:39 sudo apt-cache search powertop
+  201  2015-11-02 19:58:52 sudo apt-get install powertop
+  317  2015-11-05 17:18:41 sudo apt-get install iperf
+
+  443  2015-11-05 20:26:38 sudo apt-cache search linux-headers-${uname -r}
+
+  476  2015-11-05 21:02:13 sudo add-apt-repository ppa:noobslab/icons && sudo apt-get update
+  477  2015-11-05 21:02:40 sudo apt-get install ultra-flat-icons-green
+
+  528  2015-11-05 21:54:55 ssh-keygen -t rsa
+  530  2015-11-05 21:56:20 ssh-copy-id pi@192.168.1.22
+
+
+--- 20151117
+  787  2015-11-15 12:16:16 sudo vim /etc/sane.d/net.conf	#enter IP of scan server (rpi: 192.168.1.22)
+  821  2015-11-15 18:47:02 cp Dropbox/ODPRTO/latest-config-and-sys-files/dot.vimrc-u.20130603 ~/.vimrc
+  822  2015-11-15 18:47:54 cp -r Dropbox/ODPRTO/latest-config-and-sys-files/dot.vim-en/ ~/.vim/
+  878  2015-11-17 19:50:10 watch 'upower -i /org/freedesktop/UPower/devices/battery_BAT0'	#display battery status --> alliased to "bttr"
+  891  2015-11-17 21:16:00 sudo ln -s /usr/bin/nautilus /usr/bin/files
+
+--- 20151201
+ 1276  2015-12-01 20:21:04 sudo apt-get install screenfetch
+ 1294  2015-12-01 20:35:32 sudo apt-get install acidrip
+ 1297  2015-12-01 20:38:57 sudo apt-get install handbrake handbrake-cli
+
+--- 20151208
+ 1322  2015-12-08 20:38:15 sudo add-apt-repository ppa:nemh/systemback
+ 1323  2015-12-08 20:38:38 sudo apt-get update
+ 1324  2015-12-08 20:39:23 sudo apt-get install systemback
+
+
+--- 20160106
+ 1477  2015-12-08 20:34:56 apt --installed list 
+
+ 1678  2015-12-30 14:34:00 sudo apt-get install audacious
+ 1691  2016-01-05 15:13:54 sudo apt-get install nmap zenmap
+ 1741  2016-01-06 20:35:54 sudo apt-get install glances
+
+--- 20160110
+ 2007  2016-01-10 16:12:57 sudo add-apt-repository ppa:notepadqq-team/notepadqq
+ 2008  2016-01-10 16:13:20 sudo apt-get update
+ 2009  2016-01-10 16:13:43 sudo apt-get install notepadqq
+ 2010  2016-01-10 16:14:34 sudo apt-get install notepadqq-gtk
+
+--- 20160123
+ 2339  2016-01-23 21:11:21 sudo add-apt-repository ppa:webupd8team/sublime-text-3
+ 2340  2016-01-23 21:11:35 sau	#sudo apt-get update -- alias ...
+ 2341  2016-01-23 21:12:12 sudo apt-get install sublime-text-installer
+
+ 2162  2016-01-23 21:43:36 sudo add-apt-repository ppa:clipgrab-team/ppa
+ 2163  2016-01-23 21:43:45 sau	#sudo apt-get update -- alias ...
+ 2164  2016-01-23 21:43:57 sudo apt-get install clipgrab
+
+--- 20160215
+2801  2016-02-15 11:14:11 sudo add-apt-repository ppa:xubuntu-dev/extras
+ 2802  2016-02-15 11:14:46 sudo apt-get update
+ 2803  2016-02-15 11:15:19 sudo apt-get install xfce4-hotcorner-plugin
+
+ 2808  2016-02-15 11:19:52 sudo apt-get install xfdashboard xfce4-hotcorner-plugin
+
+--- 20160217
+ 2453  2016-02-16 11:14:01 sudo apt-get purge systemback
+ 2454  2016-02-16 11:14:26 sudo apt-get autoremove
+ 2455  2016-02-16 11:14:46 sudo apt-get autoclean
+ 2456  2016-02-16 11:14:59 sudo apt-get clean
+
+ 2497  2016-02-16 16:19:46 sudo apt-get install hplip-gui
+ 2552  2016-02-17 10:49:03 sudo add-apt-repository ppa:upubuntu-com/icons
+ 2556  2016-02-17 10:50:21 sudo apt-get install vibrancy-colors-icon-themes
+
+--- 20160309
+ 2248  2016-02-23 16:18:29 sudo apt-get install touchpad-indicator
+ 2269  2016-02-23 16:50:38 for N in 25 31 32 33 37 39 41 42; do echo sudo apt-get purge linux-image.*3.19.0-${N}; done
+ 2270  2016-02-23 16:51:04 for N in 25 31 32 33 37 39 41 42; do echo sudo apt-get purge linux-image.*3.19.0-${N}.*; done
+ 2271  2016-02-23 16:51:14 for N in 25 31 32 33 37 39 41 42; do sudo apt-get purge linux-image.*3.19.0-${N}.*; done
+ 2442  2016-02-27 22:29:05 sudo apt-get install ogmrip
+ 2443  2016-02-27 22:30:46 sudo apt-get install mkvtoolnix-gui
+ 2450  2016-02-28 10:09:38 sudo apt-get install udftools
+ 2547  2016-02-29 15:37:34 sudo apt-get install --reinstall hplip
+ 2867  2016-03-08 20:24:13 sudo apt-get install fish
+
+--- 20160311
+ 2897  2016-03-11 18:40:40 sudo apt-get install feh
+
+--- 20160405 [ installing Google Earth ]
+ 2776  2016-04-05 22:36:34 sudo apt-get install lsb-core
+ 2777  2016-04-05 22:37:41 sudo apt-get install googleearth-package
+ 2778  2016-04-05 22:37:55 make-googleearth-package --help
+ 2779  2016-04-05 22:38:41 cd majfajls/DOLPOTEGI/
+ 2780  2016-04-05 22:39:15 make-googleearth-package --download --verbose
+ 2781  2016-04-05 22:44:21 sudo apt install libfreeimage3 libcurl3:i386 libsm6:i386 libfontconfig1:i386 libxt6:i386 libxrender1:i386 libxext6:i386 libgl1-mesa-glx:i386 libgl1-mesa-dri:i386
+ 2783  2016-04-05 22:44:55 sudo apt-get -f install
+ 2784  2016-04-05 22:47:10 sudo dpkg -i googleearth_6.0.3.2197+1.1.0-1_amd64.deb
+ 2785  2016-04-05 22:47:54 googleearth
+
+--- 20160420
+ 3062  2016-04-20 21:25:12 sudo apt-get purge notepadqq*
+ 3063  2016-04-20 21:27:18 sudo add-apt-repository --remove ppa:notepadqq-team/notepadqq
+
+--- 20160426
+3521  2016-04-26 18:45:29 sudo apt-get purge sublime-text-installer
+3531  2016-04-26 18:53:10 sudo add-apt-repository --remove ppa:webupd8team/sublime-text-3
+
+--- 20160514
+4741  2016-05-14 17:15:38 sudo apt install gnuplot python-gnuplot gnuplot-doc python-dev python-nose python-numpy-dbg python-numpy-doc
+2928  2016-05-17 20:32:00 sudo apt-get install gnuplot-x11
+
+--- 20160531
+2520  2016-05-31 21:49:45 sudo apt install audacity
+...
+2518  2016-05-31 22:36:38 sudo dpkg --list 'linux-image*'
+2517  2016-05-31 22:34:11 sudo apt-get purge linux-image-3.19.0-43*	# (all 43, 47, 49 ...)
+
+
+--- 20160615
+2814  2016-06-15 17:49:26 sudo cp -vvv /usr/share/applications/dropbox.desktop /usr/share/applications/dropbox.desktop.ORIGINAL
+	--> Dropbox-d_fixing-indicator-icon-and-menu_20160615.txt:
+		--> mousepad /usr/share/applications/dropbox.desktop ...
+		    ... Exec=dropbox start -i ==> Exec=dbus-launch dropbox start -i
+						       +---------+
+
+--- 20160621
+ 2930  2016-06-21 19:09:13 sudo apt-get install dmenu
+ 2931  2016-06-21 19:10:12 dmanu_path
+ 2932  2016-06-21 19:11:04 man dmenu
+ 2935  2016-06-21 19:11:31 dmenu_run
+
+--- 20160623
+## install vpnbook free VPN:
+## copy openvpn settings from vpnbook.com to Downloads/vpnbook/ ...
+ 2906  2016-06-23 16:32:39 sudo apt-get install openvpn
+ 2907  2016-06-23 16:33:13 cd Downloads/
+ 2908  2016-06-23 16:33:26 cd vpnbook/
+ 2929  2016-06-23 17:17:30 cd Downloads/vpnbook/
+ 2937  2016-06-23 17:27:35 sudo openvpn --config VPNBook.com-OpenVPN-Euro2/vpnbook-euro2-udp53.ovpn
+     
+ ## install popcorn time CE (comunitiy edition)
+ 2938  2016-06-23 18:30:35 cd majfajls/
+ 2940  2016-06-23 18:30:42 cd majprogs/
+ 2941  2016-06-23 18:30:46 mkdir popcorn-time-community-v0.4.0-2-64bit && cd popcorn-time-community-v0.4.0-2-64bit
+ 2942  2016-06-23 18:31:05 wget https://github.com/PopcornTime-CE/desktop/releases/download/v0.4.0-2/popcorn-time-community-v0.4.0-2-64bit.tar.xz
+ 2943  2016-06-23 18:31:42 tar --xz -xvf popcorn-time-community-v0.4.0-2-64bit.tar.xz
+ 2944  2016-06-23 18:31:53 ./install
+ 
+--- 20160821
+# install sunflower two pane file manager
+ 4338  2016-08-21 15:51:02 sudo add-apt-repository ppa:atareao/sunflower
+ 4339  2016-08-21 15:51:18 sudo apt-get update
+ 4340  2016-08-21 15:52:10 sudo apt-get install sunflower python-vte
+
+--- 20160829
+ ... download krita-3.0-x86_64.appimage from krita.org ...
+ 4587  2016-08-29 19:00:07 sudo cp /home/rgregor/Downloads/krita-3.0-x86_64.appimage /usr/local/bin/
+ 4588  2016-08-29 19:00:17 sudo chmod 755 /usr/local/bin/krita-3.0-x86_64.appimage 
+ 4589  2016-08-29 19:00:52 sudo ln -s /usr/local/bin/krita-3.0-x86_64.appimage /usr/bin/krita
+
+
+--- 20160929
+ 4653  2016-09-29 21:52:52 sudo add-apt-repository ppa:ricotz/docky
+ 4654  2016-09-29 21:53:06 sudo apt-get update
+ 4655  2016-09-29 21:53:52 sudo apt-get install docky
+
+--- 20161026
+ 4974  2016-10-26 23:52:34 dpkg -i remarkable_1.87_all.deb			[ dependeciies errors ]
+ 4975  2016-10-26 23:53:45 sudo apt-cache search gir1.2
+ 4978  2016-10-26 23:55:42 sudo apt-get install gir1.2-gtksource-3.0
+ 4980  2016-10-26 23:55:58 sudo apt-get -f install
+ 4982  2016-10-26 23:56:52 sudo apt-get install python3-markdown
+ 4983  2016-10-26 23:57:07 sudo apt-get install python3-bs4
+ 4984  2016-10-26 23:57:16 sudo dpkg -i remarkable_1.87_all.deb 
+
+ 4986  2016-10-26 23:45:38 git clone https://github.com/revans/bash-it.git ~/.bash_it
+ 4989  2016-10-26 23:47:05 cd .bash_it/
+	... still to do the setup (downloaded html tutorials are in [ ~/.bash_it ] ...
+
+--- 20161213
+ 2128  2016-12-13 16:30:51 sudo apt-get install cdargs
+
+--- 20170116
+ 3179  2017-01-16 23:26:56 sudo apt-get install exfat-fuse exfat-utils
+	(to be able to mount exfat formated drives ...)
+-
+--- 20170201
+ 3096  2017-01-31 20:03:28 sudo apt-get purge flatwoken-icons
+ 3099  2017-01-31 20:04:16 sudo apt-get purge faience*
+ 3101  2017-01-31 20:04:53 sudo apt-get purge sguare-beam-icons
+ 3102  2017-01-31 20:05:07 sudo apt-get purge square-beam-icons
+ 3104  2017-01-31 20:05:37 sudo apt-get purge faenza*
+ 3106  2017-01-31 20:05:58 sudo apt-get purge faba*
+ 3107  2017-01-31 20:06:20 sudo apt-get purge faba-icon*
+ 3109  2017-01-31 20:06:57 sudo apt-get purge ubudao*
+ 3111  2017-01-31 20:07:24 sudo apt-get purge azenis*
+ 3113  2017-01-31 20:09:49 sudo apt-get purge ilinux*
+ 3114  2017-01-31 20:10:00 sudo apt-get purge ilinux-icons
+ 3115  2017-01-31 20:10:16 sudo apt-get purge kawaiki*
+ 3116  2017-01-31 20:10:29 sudo apt-get purge nitrux2
+ 3117  2017-01-31 20:10:34 sudo apt-get purge nitrux*
+ 3118  2017-01-31 20:10:46 sudo apt-get purge nitrux*2
+ 3119  2017-01-31 20:10:52 sudo apt-get purge nitrux.*2
+ 3120  2017-01-31 20:11:04 sudo apt-get purge nitrux.*butt
+ 3121  2017-01-31 20:11:08 sudo apt-get purge nitrux.*butt*
+ 3122  2017-01-31 20:11:15 sudo apt-get purge nitrux.*butt.*
+ 3126  2017-01-31 20:12:25 sudo apt-get purge numix-icon.*circle
+ 3177  2017-01-31 20:04:53 sudo apt-get purge sguare-beam-icons
+ 3178  2017-01-31 20:05:07 sudo apt-get purge square-beam-icons
+ 3180  2017-01-31 20:05:37 sudo apt-get purge faenza*
+ 3182  2017-01-31 20:05:58 sudo apt-get purge faba*
+ 3183  2017-01-31 20:06:20 sudo apt-get purge faba-icon*
+ 3185  2017-01-31 20:06:57 sudo apt-get purge ubudao*
+ 3187  2017-01-31 20:07:24 sudo apt-get purge azenis*
+ 3189  2017-01-31 20:09:49 sudo apt-get purge ilinux*
+ 3190  2017-01-31 20:10:00 sudo apt-get purge ilinux-icons
+ 3191  2017-01-31 20:10:16 sudo apt-get purge kawaiki*
+ 3192  2017-01-31 20:10:29 sudo apt-get purge nitrux2
+ 3193  2017-01-31 20:10:34 sudo apt-get purge nitrux*
+ 3194  2017-01-31 20:10:46 sudo apt-get purge nitrux*2
+ 3195  2017-01-31 20:10:52 sudo apt-get purge nitrux.*2
+ 3196  2017-01-31 20:11:04 sudo apt-get purge nitrux.*butt
+ 3197  2017-01-31 20:11:08 sudo apt-get purge nitrux.*butt*
+ 3198  2017-01-31 20:11:15 sudo apt-get purge nitrux.*butt.*
+ 3202  2017-01-31 20:12:25 sudo apt-get purge numix-icon.*circle
+
+***
+
+ 1701  2017-01-17 20:30:06 sudo apt-get install conky conky-all
+ 3086  2017-01-31 19:43:24 sudo apt-get install colored-plastic-icons
+
+***
+
+ 1463  2017-01-11 18:13:43 sudo apt install midori
+ 3087  2017-01-31 19:54:09 sudo apt install revival-icons
+
+--- 20170214
+ 2835  2017-02-14 20:12:58 sudo apt install tmux
+
+--- 20170307
+ 2919  2017-03-07 21:33:39 sudo apt-get install plank
+ 2920  2017-03-07 21:34:29 plank
+ 2921  2017-03-07 21:46:15 cd .config/plank/dock1/launchers/
+ 2927  2017-03-07 21:48:23 plank --preferences
+ 2959  2017-03-07 21:53:49 sudo apt purge docky
+
+--- 20170320 INSTALL matplotlib :: for Python3 !!!
+  3618  2017-03-20 17:35:41 sudo apt-get install python3-pip
+ 3623  2017-03-20 17:42:22 pip3 install freetype
+ 3630  2017-03-20 17:47:06 sudo apt-get install libpng*
+ 3631  2017-03-20 17:50:58 sudo apt-get install libxft-dev
+ 3634  2017-03-20 18:00:39 sudo pip3 install matplotlib
+ 3640  2017-03-20 18:15:57 sudo apt-get install python-cairo-dev
+ 3644  2017-03-20 18:20:53 sudo apt-get install libffi-dev
+ 3645  2017-03-20 18:21:05 sudo pip3 install cairocffi
+
+ 3758  2017-03-20 20:44:43 sudo pip3 install beautifulsoup4		# needed upgrade only ...
+ 3759  2017-03-20 20:45:04 sudo pip3 install --upgrade beautifulsoup4
+
+--- 20170515
+  851  2017-04-05 15:40:45 sudo apt-get install byobu
+ 1129  2017-04-12 21:24:26 sudo apt-get install powertop
+ 2367  2017-05-14 17:25:19 sudo apt-get install geary
+ 2540  2017-05-15 18:00:55 sudo apt-get install links
+ 2549  2017-05-15 18:22:09 sudo apt install ncdu
+ 
+--- 20170521
+ 3338  2017-05-21 11:57:19 /usr/sbin/minidlna -R -f /etc/minidlna.conf
+ 3350  2017-05-21 15:09:00 sudo mv /etc/minidlna.conf.ORIGINAL{,.20170521}
+ 3351  2017-05-21 15:09:13 sudo vim /etc/minidlna.conf
+ 2932  2017-05-21 15:16:20 sudo service minidlna restart
+ 1692  2017-04-16 22:17:13 pip3 install requests
+ 2632  2017-05-14 17:25:19 sudo apt-get install geary
+ 3000  2017-05-15 18:00:55 sudo apt-get install links
+ 3007  2017-05-15 18:22:09 sudo apt install ncdu
+ 3016  2017-05-15 18:28:04 mv CHANGELOG-and-install_20170320.txt CHANGELOG-and-install_20170515.txt
+ 3298  2017-05-21 10:54:28 sudo apt-get install bum
+ 
+--- 20170628          
+ 2596  2017-06-28 06:54:44 sudo apt-get install pip3
+ 2598  2017-06-28 06:56:04 sudo apt-get install python3-setuptools
+ 2599  2017-06-28 06:56:20 sudo easy_install3 pip
+ 2601  2017-06-28 06:57:09 sudo pip3 install ipython
+ 2602  2017-06-28 06:58:00 sudo pip3 install pandas
+ 
+--- 20170915
+ 4038  2017-09-15 21:37:33 sudo apt-cache show drracket
+ 4039  2017-09-15 21:37:58 sudo apt install racket
+
+--- 20180204 
+ 4611  2018-02-04 14:45:52 sudo apt-get install xclip
+ 4980  2018-02-04 17:41:39 sudo apt-get install usb-creator-gtk
+ 4550  2018-02-04 18:58:38 sudo apt-get install bleachbit
+ 4994  2018-02-05 21:53:04 sudo apt-get install snapd
+ 
+--- 20180306
+ 4453  2018-02-27 20:04:53 sudo apt-get install kodi
+    NO VIDEO FIX: (install video-acceleration API - VA API):
+        <code>
+        sudo apt-add-repository ppa:wsnipex/vaapi
+        sudo apt-get update
+        sudo apt-get dist-upgrade
+        </code>
+        
+--- 20180917
+ 1448  2018-09-17 21:33:41 snap install notepadqq
+ 2385  2018-09-25 23:38:48 sudo apt install code-fonts
+ 2393  2018-09-25 23:56:03 touch ~/majfajls/coding/00_ostalo/FiraCode-font_download_and_install.sh
+ 2394  2018-09-25 23:56:08 mousepad ~/majfajls/coding/00_ostalo/FiraCode-font_download_and_install.sh
+ 2395  2018-09-25 23:57:37 bash ~/majfajls/coding/00_ostalo/FiraCode-font_download_and_install.sh
+ 2653  2018-10-02 20:33:53 sudo apt install coreutils
+ 2657  2018-10-02 20:35:58 sudo apt install realpath
+ 2838  2018-10-03 17:55:51 sudo apt install pandoc
+ 3586  2018-10-10 20:02:41 sudo apt-get install gscan2pdf
+
+--- 20181022
+ 4632  2018-10-22 20:14:49 sudo snap install pycharm-community --classic
+ 4649  2018-10-22 20:34:35 snap run pycharm-community &
+
+--- 
+
+ 
+
+
+

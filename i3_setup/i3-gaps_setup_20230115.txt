@@ -1,0 +1,22 @@
+ vim .config/i3/config 
+ mkdir /tmp/build
+ cd /tmp/build
+ git clone https://www.github.com/Airblader/i3 i3-gaps
+ cd i3-gaps/
+ git checkout gaps && git pull
+ sudo apt install meson asciidoc
+ sudo apt install pkg-config
+ apt search libsatrup notification
+ sudo apt install startup-notification
+ sudo apt install startup-notification-devel
+ sudo apt show startup-notification
+ sudo apt install libstartup-notification0
+ sudo apt install libstartup-notification0-dev
+ sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev libxcb-xrm-dev
+ meson -Ddocs=true -Dmans=true ../build
+ meson compile -C ../build
+ sudo meson install -C ../build
+ cd
+ history > ~/majstaf/metsys_muadib/i3-gaps_setup_20230115.txt
+ ---
+

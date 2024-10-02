@@ -1,0 +1,10 @@
+# audio same:
+ffmpeg -i FHD0171.MOV -vcodec libx264 -preset ultrafast -s 1280x720 -acodec copy FHD0171_720p.MOV
+
+# audio mp3 ...
+ffmpeg -i FHD0480.MOV -vcodec libx264 -preset ultrafast -s 1280x720 -acodec libmp3lame -aq 5 FHD0480_720p.MOV
+
+
+---
+# mencoder FHD0171.MOV -vop scale=640:480 -o FHD0171_720p.MOV
+mencoder FHD0171.MOV -vop scale=1280:720 -o FHD0171_720p.MOV

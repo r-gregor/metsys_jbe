@@ -1,0 +1,73 @@
+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+$mod+t exec /usr/bin/kitty
+$mod+Return exec /usr/bin/alacritty
+$mod+q kill
+$mod+d exec --no-startup-id dmenu_run
+$mod+h focus left
+$mod+j focus down
+$mod+k focus up
+$mod+l focus right
+$mod+Left focus left
+$mod+Down focus down
+$mod+Up focus up
+$mod+Right focus right
+$mod+Shift+j move left
+$mod+Shift+k move down
+$mod+Shift+l move up
+$mod+Shift+ccaron move right
+$mod+Shift+Left move left
+$mod+Shift+Down move down
+$mod+Shift+Up move up
+$mod+Shift+Right move right
+$mod+i split h
+$mod+v split v
+$mod+f fullscreen toggle
+$mod+s layout stacking
+$mod+w layout tabbed
+$mod+e layout toggle split
+$mod+Shift+space floating toggle
+$mod+space focus mode_toggle
+$mod+a focus parent
+$mod+1 workspace number $ws1
+$mod+2 workspace number $ws2
+$mod+3 workspace number $ws3
+$mod+4 workspace number $ws4
+$mod+5 workspace number $ws5
+$mod+6 workspace number $ws6
+$mod+7 workspace number $ws7
+$mod+8 workspace number $ws8
+$mod+9 workspace number $ws9
+$mod+0 workspace number $ws10
+$mod+Shift+1 move container to workspace number $ws1
+$mod+Shift+2 move container to workspace number $ws2
+$mod+Shift+3 move container to workspace number $ws3
+$mod+Shift+4 move container to workspace number $ws4
+$mod+Shift+5 move container to workspace number $ws5
+$mod+Shift+6 move container to workspace number $ws6
+$mod+Shift+7 move container to workspace number $ws7
+$mod+Shift+8 move container to workspace number $ws8
+$mod+Shift+9 move container to workspace number $ws9
+$mod+Shift+0 move container to workspace number $ws10
+$mod+Shift+c reload
+$mod+Shift+r restart
+$mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym ccaron resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+$mod+r mode "resize"
+
+$mod+c exec /usr/local/bin/volpejpersafler
+

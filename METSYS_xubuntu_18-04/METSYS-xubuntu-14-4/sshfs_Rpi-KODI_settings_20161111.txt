@@ -1,0 +1,1 @@
+sudo sshfs root@192.168.1.32:/var/media/MEDION_sA/Videos /home/rgregor/KRZ_Movies

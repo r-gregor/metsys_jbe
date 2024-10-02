@@ -1,0 +1,27 @@
+In order to work correctly when chaining sed commands with -e <command>, the command is to be
+placed between double quotes ("") instead of single quotes ('') specially if line delimited with "\":
+
+echo mv "\"${FFF}\"" $(echo "${FFF}" | sed \
+	-e "s/\s\+/_/g" \
+	-e "s/#//g" \
+	-e "s/!//g" \
+	-e "s/|//g" \
+	-e "s/｜//g" \
+	-e "s/：//g" \
+	-e "s/\+//g" \
+	-e "s/(//g" \
+	-e "s/)//g" \
+	-e "s/\[//g" \
+	-e "s/\]//g" \
+	-e "s/,/_/g" \
+	-e "s/<//g" \
+	-e "s/>//g" \
+	-e "s/://g" \
+	-e "s/;//g" \
+	-e "s:\&:-and-:g" \
+	-e "s/_-_/-/g" \
+	-e "s/_\{2,\}/_/g"
+)
+
+...
+

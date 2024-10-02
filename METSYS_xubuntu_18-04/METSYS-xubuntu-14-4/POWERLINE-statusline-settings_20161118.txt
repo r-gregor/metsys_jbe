@@ -1,0 +1,48 @@
+1 - install pip ...
+> sudo apt-get install python-pip
+...
+
+2 - install git ...
+> sudo apt-get install git
+...
+
+3 - install powerline ...
+> sudo pip install git+git://github.com/Lokaltog/powerline
+...
+
+4 - download powerline fonts and symbols ...
+> cd $SORSI/
+> wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+> wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+
+5 - cp powerline fonts and symbols to apropriate folders ...
+> sudo cp PowerlineSymbols.otf /usr/share/fonts/
+> fc-cache -vf /usr/share/fonts/
+...
+
+> sudo cp 10-powerline-symbols.conf /etc/fonts/conf.d/
+
+6 - locate the powerline setup script ...
+> pip show powerline-status
+---
+Name: powerline-status
+Version: 2.5.dev9999-git.bfd50a5a7a2df5cfb3cd118249ef0e7587d8a3ea
+Location: /usr/local/lib/python2.7/dist-packages
+Requires: 
+
+7 - update ~/.bashrc ...
+# add at the bottom of ~/.bashrc:
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+
+8 - reload (source) .bashrc ...
+
+
+9 - update ~/.vimrc ...
+# add at the bottom of ~/.vimrc: 
+set  rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
+

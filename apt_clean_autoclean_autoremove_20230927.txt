@@ -1,0 +1,14 @@
+apt clean
+The apt clean command is useful for removing file contents from the local package cache directory
+(/var/cach/apt/archives) and not only this, but it is also very useful for removing packages that were
+interrupted during installation or upgrade.
+
+apt autoclean
+It is also similar to apt clean the only difference that it only removes the obsolete version of the cache
+file, which is no longer available in the repository due to a higher version of the application being
+available.
+
+apt autoremove
+When you run apt autoremove, it will remove all the dependencies that have been installed during the
+installation of packages but are no longer needed by any other installed packages.
+

@@ -1,0 +1,2 @@
+sudo rsync -av -n --progress --delete --exclude=".cache/" --exclude=".thumbnails/" /home/rgregor/ /media/rgregor/B1_2_EXT4/rgregor_HP/home/rgregor
+

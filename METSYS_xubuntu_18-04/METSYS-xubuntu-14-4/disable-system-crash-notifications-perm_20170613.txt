@@ -1,0 +1,12 @@
+Disable system crash notifications:
+
+Disable system crash popup-s
+
+sudo rm /var/crash/*
+
+or forever:
+
+To disable apport, go back to your terminal window and issue the command sudo nano /etc/default/apport. In that file you should see the single, uncommented line:
+
+enabled=1
+To disable this, change the 1 to a 0 (zero) and save/close the file. At this point, apport will no longer bother you with application crash reports. Should the weight of guilt rest heavy on your shoulders, and you feel the need to start reporting bugs again, you can reenable apport by editing the /etc/default/apport file and switching the 0 back to a 1. The reports will start up once again.

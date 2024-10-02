@@ -1,0 +1,1 @@
+ffmpeg -i FHD0171.MOV -vcodec libx264 -preset ultrafast -s 1280x720 -acodec copy FHD0171_720p.MOV

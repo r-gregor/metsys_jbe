@@ -1,0 +1,9 @@
+ 1 - download src zip from https://github.com/gokcehan/lf
+
+unzip lf-master.zip
+cd lf-master/
+env CGO_ENABLED=0 GO111MODULE=on go get -u -ldflags="-s -w" github.com/gokcehan/lf
+./lf
+sudo find / -executable -name "lf*"
+~/go/bin/lf
+sudo ln -s /home/rgregor/go/bin/lf /usr/local/bin/

@@ -1,0 +1,67 @@
+openbox
+obconf
+obmenu
+tint2
+nitrogen        (nitrogen --restore)
+dmenu           (dmenu_run)
+rofi            (rofi -show run, window, ...)
+xcompmgr        (compositor --> transparency, shadows, ...)
+ 
+*********************************************************
+* small memmory and cpu footprint setup with openbox:   *
+* contents of autostart.sh:                             *
+*     tint2 &                                           *
+*     nitrogen --restore &                              *
+*     xcompmgr -cfF -t-9 -l-11 -r9 -o.95 D6 &           *
+*     plank &                                           *
+*     volti &                                           *
+*********************************************************
+
+Extras:
+polybar ??
+pcmanfm
+lxtask
+zenity      (popup messages: on login, reboot, shutdown, ...)
+
+--------------------------------------------------------------------------------------------------------------
+MINIMNAL install:
+(all installs after 1 done with: sudo apt install <> ...)
+1  - ubuntu minimal install
+2  - lightdm
+3  - openbox-gnome-session
+4  - openbox
+5  - gnome-terminal [lxterminal, terminator, ...] (graphical terminal)
+** reboot **
+6  - obmenu
+7  - gedit [mousepad, Leafpad, Pluma ??, ]
+    Add menu item:
+        label:      Edit Autostart
+        command:    gedit $HOME/.config/openbox/autostart.sh
+8  - tint2  (add to autostart: "tint2 &")
+9  - plank [docky, ...] (add to autostart: "plank &")
+10 - nitrogen (add to autostart: "nitrogen --restore &")
+11 - ubuntu-wallpapers [??]
+    Add menu item:
+        label:      reboot
+        command:    reboot
+        
+    Add menu item:
+        label:      shutdown
+        command:    shutdown now
+12 - pcmanfm
+13 - lxappereance
+14 - xcompmgr   (transparencies, auto-hide, ...) (add to autostart: "xcompmgr &")
+15 - firefox, thunderbird, ...
+16 - pulseaudio
+17 - pavucontrol (PulseAudio Volume Control)
+18 - volti (add to autostart: "volti &")
+19 - lxtask
+20 - gconf-editor (remove anchor icon from docky/plank ??, ...)
+21 - sudo nano /etc/lightdm/lightdm.conf
+    [SetDefaults]
+    autologin-user=[username]
+    autologin-user-timeout=0
+        <ctrl>+O, yctrl>+X
+22 - w3m
+23 - ranger (python3 -m pip install ranger-fm !!)
+24 - feh (??)

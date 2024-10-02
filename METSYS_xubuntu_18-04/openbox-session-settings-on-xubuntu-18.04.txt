@@ -1,0 +1,83 @@
+  811  2020-09-24 16:10:07 sudo apt install awesome dmenu
+  820  2020-09-24 16:16:14 sudo apt install rofi
+  822  2020-09-24 16:16:45 rofi -show window
+  829  2020-09-24 21:27:03 rofi -show run
+  830  2020-09-24 21:28:18 rofi -show list
+  831  2020-09-24 21:28:35 rofi -show run -dmenu
+  834  2020-09-24 21:30:02 rofi -show window
+  835  2020-09-24 21:30:20 rofi -show +windowcd
+  836  2020-09-24 21:30:30 rofi -show windowcd
+  837  2020-09-24 21:30:43 rofi -show +window
+  863  2020-09-25 20:27:47 sudo apt install obconf obmenu
+  869  2020-09-25 20:52:33 dmenu_run
+  871  2020-09-25 20:57:19 nano .config/openbox/autostart
+  887  2020-09-26 21:38:30 cd openbox-themes/
+  892  2020-09-26 21:40:40 cp -r Nord-Openbox ~/.themes/
+  901  2020-09-26 21:52:12 cd majfajls/DOLPOTEGI/openbox-themes/
+  902  2020-09-26 21:52:36 tar -xf 64954-Laza-openbox.tar.gz
+  903  2020-09-26 21:52:52 tar -xfzf 64954-Laza-openbox.tar.gz
+  904  2020-09-26 21:53:01 tar -xvzf 64954-Laza-openbox.tar.gz
+  929  2020-09-27 16:42:51 dmenu_run
+  918  2020-10-23 21:16:17 rofi-theme-selector
+  945  2020-10-24 21:21:38 cd .config/openbox/
+  918  2020-10-23 21:16:17 rofi-theme-selector
+  945  2020-10-24 21:21:38 cd .config/openbox/
+  948  2020-10-25 08:58:03 code .config/openbox/rc.xml
+  949  2020-10-25 09:04:31 nano .config/openbox/autostart
+  951  2020-10-25 09:17:23 code .config/openbox/rc.xml
+  973  2020-10-25 15:22:26 sudo apt install lxappearance
+  975  2020-10-25 15:23:09 sudo apt install lxappearance-obconf
+  976  2020-10-25 15:23:14 lxappearance
+--------------------------------------------------------------------------------------------------------------
+#SETUP:
+1  - install openbox, obmenu, obconf, dmenu, rofi, tint2, nitrogen
+2  - touch .config/openbox/autostart
+        $> cat ~/.config/openbox/autostart
+            nitrogen --restore &
+            tint2 &
+3  - copy ~/.config/openbox/rc.xml to rc.xml.original.txt
+4  - modify obmenu to run:
+        dmenu_run
+        rofi -show dmenu_run
+        obconf
+5  - modify ~/.config/openbox/rc.xml:
+<keyboard>
+...
+<!-- MY KEYBINDINGS -->
+<keybind key="A-d">
+  <action name="Execute">
+    <name>dmenu</name>
+    <command>dmenu_run</command>
+  </action>
+</keybind>
+<keybind key="A-r">
+  <action name="Execute">
+    <name>rofi RUN</name>
+    <command>rofi -show run</command>
+  </action>
+</keybind>
+<keybind key="A-w">
+  <action name="Execute">
+    <name>rofi RUN</name>
+    <command>rofi -show window</command>
+  </action>
+</keybind>
+<!-- MY KEYBINDINGS -->
+...
+
+6  - tint2 settings:
+For tint2, how do you configure the taskbar to always display what workspace you are on?
+
+in your Openbox config (or other window manager), assign a name for each desktop (may require Openbox restart)
+in your tint2rc
+
+# enable a text label widget that displays in the tint2 taskbar
+taskbar_name = 1
+# choose a color for the font that differs from the background 
+taskbar_name_font_color = #0005ff 100
+
+7  - appereance settings:
+install lxappearance and lxappearance-obconf (oopenbox plugin)
+run lxappearance and change the theme --> IT WORKS!!
+
+

@@ -1,0 +1,1724 @@
+    1  sudo apt update
+    2  sudo apt upgrade
+    3  exit
+    4  sudo apt-search google
+    5  sudo apt-cache search google
+    6  sudo apt-cache search google | grep ^google
+    7  sudo apt-cache search chrome
+    8  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    9  SUDO APT INSTALL PLANK
+   10  sudo apt install plank
+   11  plank &
+   12  exit
+   13  which plank
+   14  exit
+   15  sudo apt install arandr
+   16  exit
+   17  l
+   18  cd
+   19  cd .config/
+   20  l
+   21  cd kitty/
+   22  la -a
+   23  cd
+   24  exit
+   25  sudo apt install dmenu
+   26  dmenu
+   27  dmenu-run
+   28  man dmenu
+   29  dmenu_run &
+   30  ls
+   31  mkdir majstaf
+   32  cd majstaf/
+   33  mkdir majprogs
+   34  mkdir majtools
+   35  mkdir majdoks
+   36  mkdir majmedia
+   37  mkdir metsys_muadib
+   38  mkdir majbin
+   39  mkdir coding
+   40  sudo apt install kitty
+   41  kitty &
+   42  man kitty
+   43  cd /usr/share/doc/kitty
+   44  cd examples/
+   45  cp kitty.conf ~/.config/kitty/
+   46  exit
+   47  exit
+   48  sudo apt install terminator
+   49  exit
+   50  cd .config/kitty/
+   51  vim
+   52  sudo apt install vim
+   53  vim kitty.conf 
+   54  cd
+   55  l
+   56  exit
+   57  mkdir -p ~/.icons/shadow
+   58  cd ~/.icons/shadow
+   59  cp ~/Downloads/shadow-10.0.tar.xz .
+   60  ./shadowchangecolor.py 
+   61  cd
+   62  cd .icons/shadow/
+   63  rm -r ./*
+   64  cp ~/Downloads/shadow-10.0.tar.xz .
+   65  tar
+   66  tar -xvf shadow-10.0.tar.xz shadow
+   67  tar -xvJf shadow-10.0.tar.xz 
+   68  exit
+   69  sudo apt install vlc
+   70  df -h
+   71  sudo dpkg -l
+   72  sudo dpkg -l parole
+   73  sudo apt purge parole
+   74  sudo apt autoremove
+   75  sudo apt install kodi
+   76  exit
+   77  sudo cp -r /home/rgregor/.icons/* ~/.icons/
+   78  exit
+   79  sudo cp -r /home/rgregor/.icons/* .
+   80  sudo chown -R tadeja: ./*
+   81  exit
+   82  sudo apt-cache search double-commander
+   83  sudo apt-cache search double commander
+   84  sudo apt install doublecmd-gtk doublecmd-plugins
+   85  mc
+   86  sudo apt install mc
+   87  sudo mc
+   88  ll /home/tadeja/
+   89  sudo ls -l /home/tadeja/
+   90  exit
+   91  df
+   92  mkdir ~/.fonts
+   93  cp -r /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/Downloads/ttf-iosevka-11.* .
+   94  mv ttf-iosevka-11.* .fonts/
+   95  cd .fonts/
+   96  rm ttf-iosevka-11.3.0_NERD.zip 
+   97  sudo fc-cache -f
+   98  exit
+   99  cd /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/
+  100  find -type d -iname "*iosev*"
+  101  l
+  102  ls
+  103  exit
+  104  l
+  105  exit
+  106  l
+  107  exit
+  108  cd majstaf/majprogs/
+  109  cd javafx-sdk-11.0.2/
+  110  cd ..
+  111  cd st-0.8.4_
+  112  cd st-0.8.4_Dracula/
+  113  ./st
+  114  cd ..
+  115  cd -
+  116  l
+  117  vim config.def.h
+  118  sudo apt-cache search mononoki
+  119  sudo apt install fonts-mononoki
+  120  st
+  121  ./st 
+  122  cd ..
+  123  cd st-0.8.4_Nord/
+  124  ./st
+  125  l
+  126  exit
+  127  cd .config/kitty/
+  128  nano kitty.conf 
+  129  vim kitty.conf
+  130  exit
+  131  cd .config/kitty/
+  132  vim kitty.conf 
+  133  exit
+  134  l
+  135  exit
+  136  mkdir -p .config/kitty/kitty-themes/themes
+  137  rmdir .config/kitty/kitty-themes/themes
+  138  git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
+  139  sudo apt install git
+  140  git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
+  141  cd .config/kitty/kitty-themes/
+  142  cd themes/
+  143  cd
+  144  cd .config/kitty/
+  145  ln -s ./kitty-themes/themes/S ~/.config/kitty/theme.conf
+  146  ln -s ./kitty-themes/themes/Dracula.conf ~/.config/kitty/theme.conf
+  147  ln -snf ./kitty-themes/themes/Dracula.conf ~/.config/kitty/theme.conf
+  148  vim kitty.conf 
+  149  xit
+  150  exit
+  151  l
+  152  la
+  153  l
+  154  ls | column -c $(tput cols)
+  155  exit
+  156  sudo poweroff
+  157  exit
+  158  l
+  159  ls
+  160  ls -l
+  161  ls -l
+  162  ln -s ~/majstaf/coding/C_Cpp_d/c_d_testing ~/C_and_Cpp_testing
+  163  ls -l
+  164  ln -s ~/majstaf/coding/PYTHON_d/PYTHON_d_testing/ ~/PYTHON_d_testing
+  165  ln -s ~/majstaf/coding/JAVA_d/JAVA_d_testing/ ~/JAVA_d_testing
+  166  ls -l
+  167  cd C_and_Cpp_testing
+  168  l
+  169  cd cd088_BrthReminder-02_20221222/
+  170  ./BrthReminder 
+  171  cd ..
+  172  l
+  173  cd cd087_unicode-table-chars_20221218/
+  174  tree
+  175  ./Build_And_Run.sh 
+  176  tree
+  177  cd
+  178  exit
+  179  cd majstaf/
+  180  l
+  181  mkdir majsettings
+  182  l
+  183  sudo apt-cache searcj java
+  184  sudo apt-cache search java
+  185  sudo apt-cache search java | grep --color ^java
+  186  sudo apt-cache search openjdk
+  187  sudo apt-cache search openjdk-11
+  188  sudo apt-cache search openjdk-11 | grepc openjdk-11
+  189  sudo apt-cache search openjdk-11 | grep --color openjdk-11
+  190  sudo apt install openjdk-11-jdk
+  191  sudo apt-cache search build essential
+  192  sudo apt-cache search build essential | grep --color build
+  193  sudo apt-cache search build essential | grep --color ^build
+  194  sudo apt install build-essential
+  195  java --version
+  196  javac --version
+  197  gcc --version
+  198  py
+  199  python
+  200  python3
+  201  which python3
+  202  file /usr/bin/python3
+  203  type /usr/bin/python3
+  204  file /usr/bin/python3
+  205  cd /usr/bin/
+  206  ls p*
+  207  ls py*
+  208  ll py*
+  209  cd
+  210  java
+  211  cd majstaf/coding/JAVA_d/JAVA_d_testing/
+  212  l
+  213  cd jd077_rsort-by-datestamp_20220129/
+  214  ./RsortByEnddate_run
+  215  ./RsortByEnddate_run FAJLS/
+  216  cd ..
+  217  cd
+  218  go
+  219  majstaf/majprogs/go/bin/go
+  220  majstaf/majprogs/go/bin/go --version
+  221  majstaf/majprogs/go/bin/go version
+  222  apt-cache search go
+  223  apt-cache search go-lang
+  224  apt-cache search go-lang | grep --color go-lang
+  225  apt-cache search go-lang | grep --color ^go
+  226  apt-cache search go | grep --color ^go
+  227  apt-cache search 'go[ -_]' | grep --color ^go
+  228  d
+  229  cd
+  230  l
+  231  df -h
+  232  cd
+  233  cd
+  234  l
+  235  ls -l
+  236  cd
+  237  exit
+  238  cd C_and_Cpp_testing/
+  239  l
+  240  cd cd086_is_prime_20221208/
+  241  l
+  242  tree
+  243  ./test.sh 
+  244  make clean
+  245  tree
+  246  make
+  247  tree
+  248  bin/eulers_prime_generating_polynomial 
+  249  cd
+  250  cd majstaf/
+  251  mkdir majbashrc
+  252  exit
+  253  apt-cache search 'go[ -_]' | grep --color ^go
+  254  d
+  255  df -h
+  256  ls -l
+  257  exit
+  258  cd C_and_Cpp_testing/
+  259  cd cd086_is_prime_20221208/
+  260  tree
+  261  ./test.sh 
+  262  make clean
+  263  tree
+  264  make
+  265  tree
+  266  bin/eulers_prime_generating_polynomial 
+  267  cd majstaf/
+  268  mkdir majbashrc
+  269  exit
+  270  vim .bashrc
+  271  cd majstaf/majbashrc/
+  272  cd ..
+  273  mv majbashrc/ majrcs
+  274  cd majrcs/
+  275  cp /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/majstaf/forallusers/* .
+  276  cd ..
+  277  vim .bashrc
+  278  cd ..
+  279  vim .bashrc
+  280  . .bashrc
+  281  sbr
+  282  l
+  283  java
+  284  java -version
+  285  go version
+  286  cd majstaf/majrcs/
+  287  grep -r go ./*
+  288  grep -r GO ./*
+  289  cd 
+  290  c majstaf/
+  291  mkdir drpbx_muadib
+  292  cd .config/kitty/
+  293  cd
+  294  cp /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/.vimrc .
+  295  vim
+  296  cp -r /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/.vim/ .
+  297  vim .vimrc
+  298  vim .vimrc
+  299  la
+  300  ls
+  301  vim .vimrc
+  302  cd majstaf/majprogs/
+  303  cd st-0.8.4_Dracula/
+  304  st
+  305  ./st
+  306  cd ..
+  307  sudo ln -s ~/majstaf/majprogs/st-0.8.4_Dracula/st /usr/local/bin/std
+  308  std
+  309  sudo ln -s ~/majstaf/majprogs/st-0.8.4_Nord/st /usr/local/bin/stn
+  310  cd .config/kitty/
+  311  vim kitty.conf 
+  312  vim .config/kitty/kitty.conf 
+  313  vim .vimrc
+  314  cd majstaf/majprogs/
+  315  cd st-0.8.4_Dracula/
+  316  st
+  317  ./st
+  318  sudo ln -s ~/majstaf/majprogs/st-0.8.4_Dracula/st /usr/local/bin/std
+  319  std
+  320  sudo ln -s ~/majstaf/majprogs/st-0.8.4_Nord/st /usr/local/bin/stn
+  321  vim kitty.conf 
+  322  vim .config/kitty/kitty.conf 
+  323  cd .config/kitty/
+  324  vim theme.conf 
+  325  cd kitty-themes/
+  326  mv .git dot_git
+  327  cd themes/
+  328  cd ..
+  329  l
+  330  cd
+  331  vim .vimrc
+  332  cd .config/kitty/
+  333  vim kitty.conf 
+  334  sudo apt-cache search alacritty
+  335  man alacritty
+  336  cp -r /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/.config/alacritty ~/.config/
+  337  vim .config/alacritty/alacritty.yml
+  338  vim .config/alacritty/dracula_custom-1.yml 
+  339  cp -r /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/.config/alacritty ~/.config/
+  340  vim .config/alacritty/alacritty.yml
+  341  vim .config/alacritty/dracula_custom-1.yml 
+  342  vim .vimrc
+  343  cd /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/
+  344  cd majstaf/metsys/
+  345  ls | grep fzf
+  346  sudo apt install fzf
+  347  cat fzf_install-and-setup-history-search_20220907.txt 
+  348  vim ~/majstaf/majrcs/bashrc_forall 
+  349  cd
+  350  sudo apt install wget apt-transport-https gnupg2 software-properties-common
+  351  sudo add-apt-repository ppa:aslatter/ppa
+  352  sudo apt update
+  353  sudo apt install alacritty
+  354  sudo apt-get install konsole
+  355  cd majstaf/metsys/
+  356  ls | grep fzf
+  357  sudo apt install fzf
+  358  cat fzf_install-and-setup-history-search_20220907.txt 
+  359  vim ~/majstaf/majrcs/bashrc_forall 
+  360  sudo apt install wget apt-transport-https gnupg2 software-properties-common
+  361  sudo add-apt-repository ppa:aslatter/ppa
+  362  sudo apt update
+  363  sudo apt install alacritty
+  364  sudo apt-get install konsole
+  365  cd majstaf/
+  366  mkdir seznami
+  367  history > seznami/hstl_muadib_202301407.txt
+  368  cat seznami/hstl_muadib_202301407.txt 
+  369  cd ..
+  370  ls
+  371  ls --group-directories-first
+  372  ls --group-directories-first -l
+  373  l -F
+  374  l
+  375  cd
+  376  vim BIOS_and_BOOT-ORDER_enter_keys_20230107.txt
+  377  pef
+  378  pwf
+  379  ls --group-directories-first -l
+  380  l -F
+  381  vim BIOS_and_BOOT-ORDER_enter_keys_20230107.txt
+  382  pef
+  383  pwf
+  384  cd majstaf/
+  385  find -type f -name "bashrc*"
+  386  cd majrcs/
+  387  grep "/usr/share/doc/fzf/examples/completion.bash" *
+  388  sudo apt install fzf
+  389  cat /usr/share/doc/fzf/examples/completion.zsh 
+  390  cd /usr/share/doc/fzf/
+  391  cd examples/
+  392  cd
+  393  cd 
+  394  cd -
+  395  cd __STARO__/
+  396  l
+  397  ls | grep fzf
+  398  vim fzf_install-and-setup-history-search_20220907.txt 
+  399  vim /usr/share/doc/fzf/examples/completion.bash
+  400  sudo vim /usr/share/doc/fzf/examples/completion.bash
+  401  sbr
+  402  cp /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/majstaf/fourMeO.img .
+  403  majstaf/majbin/pripni-spsl 
+  404  un-mount_dev_sdcs 
+  405  mount
+  406  type un-mount_dev_sdcs 
+  407  file un-mount_dev_sdcs 
+  408  which un-mount_dev_sdcs 
+  409  cd majstaf/majrcs/
+  410  vim aliases_forall
+  411  sbr
+  412  un-mount_dev_sdbs 
+  413  pwf
+  414  vim aliases_forall
+  415  sbr
+  416  un-mount_dev_sdbs 
+  417  pwf
+  418  mkdir /mount/spsl
+  419  mkdir /mnt/spsl
+  420  cd majstaf/
+  421  cd majdoks/
+  422  ls
+  423  cd ..
+  424  find -name "*four*"
+  425  sudo mount -v fourMeO.img /mnt/spsl
+  426  cd /mnt/spsl/
+  427  vim majstaf/majbin/pripni-spsl 
+  428  find -name "*four*"
+  429  sudo mount -v fourMeO.img /mnt/spsl
+  430  vim majstaf/majbin/pripni-spsl 
+  431  sudo -v umount /mnt/spsl 
+  432  sudo umount -v /mnt/spsl 
+  433  vim majstaf/majbin/odpni-spsl 
+  434  mv fourMeO.img majstaf/
+  435  majstaf/majbin/pripni-spsl 
+  436  majstaf/majbin/odpni-spsl 
+  437  attr
+  438  chattr
+  439  man chattr
+  440  man lsattr
+  441  lsattr majstaf/fourMeO.img 
+  442  ll majstaf/fourMeO.img 
+  443  ll -h majstaf/fourMeO.img 
+  444  sudo ln -s ~/majstaf/majbin/pripni-spsl /usr/local/bin/
+  445  sudo ln -s ~/majstaf/majbin/odpni-spsl /usr/local/bin/
+  446  sudo ln -s ~/majstaf/majbin/listulb /usr/local/bin/
+  447  pripni-spsl 
+  448  cd /mnt/spsl/
+  449  fm
+  450  df -h
+  451  odpni-spsl 
+  452  listulb 
+  453  cd
+  454  cd
+  455  la
+  456  l
+  457  cd
+  458  df -h
+  459  pwf
+  460  pwf
+  461  mount
+  462  df
+  463  dfl
+  464  dflh
+  465  lsblk
+  466  tree .config/kitty/
+  467  vim .config/kitty/kitty.conf 
+  468  l
+  469  vim .config/kitty/kitty.conf 
+  470  kitty
+  471  l
+  472  kitty
+  473  vim .config/kitty/kitty.conf 
+  474  cd .config/kitty/
+  475  vim theme.conf 
+  476  vim .config/kitty/kitty.conf 
+  477  kitty
+  478  ls -lF /dev/disk/by-id/
+  479  hstl
+  480  history >> ~/majstaf/seznami/history_20230109_1811.txt
+  481  cd
+  482  sudo ln -s ~/majstaf/majbin/odpni-spsl /usr/local/bin/
+  483  sudo ln -s ~/majstaf/majbin/listulb /usr/local/bin/
+  484  pripni-spsl 
+  485  cd /mnt/spsl/
+  486  fm
+  487  df -h
+  488  odpni-spsl 
+  489  listulb 
+  490  df -h
+  491  pwf
+  492  pwf
+  493  mount
+  494  df
+  495  dfl
+  496  dflh
+  497  lsblk
+  498  tree .config/kitty/
+  499  vim .config/kitty/kitty.conf 
+  500  vim .config/kitty/kitty.conf 
+  501  kitty
+  502  kitty
+  503  vim .config/kitty/kitty.conf 
+  504  cd .config/kitty/
+  505  vim theme.conf 
+  506  vim .config/kitty/kitty.conf 
+  507  kitty
+  508  ls -lF /dev/disk/by-id/
+  509  hstl
+  510  history >> ~/majstaf/seznami/history_20230109_1811.txt
+  511  ls
+  512  tree coding/ majbin/
+  513  ll majbin/
+  514  l majbin/
+  515  l coding/
+  516  cp -r /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/.ssh .
+  517  cd .ssh
+  518  cd /media/rgregor/B1_2_EXT4/backup_jbez0rg/
+  519  cd home/
+  520  cd rgregor/
+  521  cat .gitconfig 
+  522  cp .gitconfig ~/
+  523  ls -a
+  524  cd drpbx_muadib/
+  525  ls -aF
+  526  cd majstaf/
+  527  cd majbin/
+  528  cd git-commands/
+  529  vim dkdb_push_all 
+  530  l
+  531  cd ..
+  532  cd /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/
+  533  la
+  534  cd majstaf/metsys/
+  535  ls | grep git
+  536  cd git/
+  537  vim git_fix-pathspec-submodule-error_20221020.txt 
+  538  vim cp_knowledge-base-txt_to_folder-for-git-backup_20220408-1.txt 
+  539  vim d_git_commands_20220409.txt 
+  540  vim d_git_commands_20220410.txt 
+  541  git status
+  542  dmts status
+  543  find -type f -name "git*"
+  544  vim ~/majstaf/majbin/git-commands/dmts_push_all 
+  545  vim ~/majstaf/majbin/git-commands/dkdb_push_all 
+  546  cd
+  547  cp .gitconfig ~/
+  548  cd drpbx_muadib/
+  549  ls -aF
+  550  cd majstaf/
+  551  cd majbin/
+  552  cd git-commands/
+  553  vim dkdb_push_all 
+  554  l
+  555  cd /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/
+  556  cd majstaf/metsys/
+  557  ls | grep git
+  558  cd git/
+  559  vim git_fix-pathspec-submodule-error_20221020.txt 
+  560  vim cp_knowledge-base-txt_to_folder-for-git-backup_20220408-1.txt 
+  561  vim d_git_commands_20220409.txt 
+  562  vim d_git_commands_20220410.txt 
+  563  git status
+  564  dmts status
+  565  find -type f -name "git*"
+  566  vim ~/majstaf/majbin/git-commands/dmts_push_all 
+  567  vim ~/majstaf/majbin/git-commands/dkdb_push_all 
+  568  df
+  569  dsf -h
+  570  cd 
+  571  cp majstaf/majmedia/_podnapisi/lilo-stitch-2002-* ~/Downloads/Lilo\ and\ Stitch\ \(2002\)/
+  572  cd ~/Downloads/Lilo\ and\ Stitch\ \(2002\)/
+  573  unzip lilo-stitch-2002-slovenian-yify-113310.zip 
+  574  mv Lilo\ \&\ Stitch-Slovenian.srt Lilo-slo.srt
+  575  ~/majstaf/coding/00_ukazi/iconv1-SLO-srt-WIN-to-UTF8.sh Lilo-slo.srt 
+  576  ~/majstaf/coding/00_ukazi/shorten-movie-name.sh 
+  577  ~/majstaf/coding/00_ukazi/rename-to-basename-with-new-ext.sh SLO-UTF8.srt Lilo.and.Stitch.2002.mp4 
+  578  rm Lilo-slo.srt SLO-UTF8.srt 
+  579  rm lilo-stitch-2002-slovenian-yify-113310.zip 
+  580  unzip lilo-stitch-2002-english-yify-113302.zip 
+  581  cp Lilo.and.Stitch.2002.srt{,.SLO.txt} 
+  582  ~/majstaf/coding/00_ukazi/rename-to-basename-with-new-ext.sh Lilo.and.Stitch.2002.1080p.720p.BluRay.x264.\[YTS.MX\]-English.srt Lilo.and.Stitch.2002.mp4 
+  583  vlc Lilo.and.Stitch.2002.mp4 &
+  584  mkdir english-subs
+  585  mv Lilo.and.Stitch.2002{,}_EN.srt
+  586  mv Lilo.and.Stitch.2002{,_EN}.srt
+  587  mv Lilo.and.Stitch.2002_EN.srt english-subs/
+  588  mv Lilo.and.Stitch.2002.srt{.SLO.txt ,}
+  589  mv Lilo.and.Stitch.2002.srt{.SLO.txt,}
+  590  rm *.zip
+  591  rm Lilo.and.Stitch.2002.1080p.720p.BluRay.x264.\[YTS.MX\]-English.srt 
+  592  df -h
+  593  cd
+  594  la
+  595  ls -a
+  596  vim .gitconfig 
+  597  cd majstaf/d_metsys_git/
+  598  cd d_metsys
+  599  cd ..
+  600  df
+  601  df -h
+  602  watch -d -n1 df -h
+  603  watch -d -n1 df
+  604  df
+  605  df -h
+  606  watch -d -n1 df -h
+  607  watch -d -n1 df
+  608  cd majrcs/
+  609  cd ..
+  611  grepc -r Dropbox ./*
+  612  grep -r Dropbox ./*
+  613  cd majstaf/
+  615  ls --group-directories-first
+  616  ls --group-directories-first -l
+  617  l -F
+  618  vim BIOS_and_BOOT-ORDER_enter_keys_20230107.txt
+  619  pef
+  620  pwf
+  621  ls --group-directories-first -l
+  622  l -F
+  623  vim BIOS_and_BOOT-ORDER_enter_keys_20230107.txt
+  624  pef
+  625  pwf
+  626  find -type f -name "bashrc*"
+  627  cd majrcs/
+  628  grep "/usr/share/doc/fzf/examples/completion.bash" *
+  629  sudo apt install fzf
+  630  cat /usr/share/doc/fzf/examples/completion.zsh 
+  631  cd /usr/share/doc/fzf/
+  632  cd examples/
+  633  cd -
+  634  cd __STARO__/
+  635  ls | grep fzf
+  636  vim fzf_install-and-setup-history-search_20220907.txt 
+  637  vim /usr/share/doc/fzf/examples/completion.bash
+  638  sudo vim /usr/share/doc/fzf/examples/completion.bash
+  639  cp /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/majstaf/fourMeO.img .
+  640  majstaf/majbin/pripni-spsl 
+  641  un-mount_dev_sdcs 
+  642  type un-mount_dev_sdcs 
+  643  file un-mount_dev_sdcs 
+  644  which un-mount_dev_sdcs 
+  645  pwf
+  646  pwf
+  647  mkdir /mount/spsl
+  648  mkdir /mnt/spsl
+  649  cd majdoks/
+  650  find -name "*four*"
+  651  sudo mount -v fourMeO.img /mnt/spsl
+  652  cd /mnt/spsl/
+  653  vim majstaf/majbin/pripni-spsl 
+  654  find -name "*four*"
+  655  sudo mount -v fourMeO.img /mnt/spsl
+  656  vim majstaf/majbin/pripni-spsl 
+  657  sudo -v umount /mnt/spsl 
+  658  sudo umount -v /mnt/spsl 
+  659  vim majstaf/majbin/odpni-spsl 
+  660  mv fourMeO.img majstaf/
+  661  majstaf/majbin/pripni-spsl 
+  662  majstaf/majbin/odpni-spsl 
+  663  attr
+  664  chattr
+  665  man chattr
+  666  man lsattr
+  667  lsattr majstaf/fourMeO.img 
+  668  ll majstaf/fourMeO.img 
+  669  ll -h majstaf/fourMeO.img 
+  670  sudo ln -s ~/majstaf/majbin/pripni-spsl /usr/local/bin/
+  671  sudo ln -s ~/majstaf/majbin/odpni-spsl /usr/local/bin/
+  672  sudo ln -s ~/majstaf/majbin/listulb /usr/local/bin/
+  673  pripni-spsl 
+  674  cd /mnt/spsl/
+  675  fm
+  676  df -h
+  677  odpni-spsl 
+  678  df -h
+  679  pwf
+  680  pwf
+  681  dfl
+  682  dflh
+  683  lsblk
+  684  tree .config/kitty/
+  685  vim .config/kitty/kitty.conf 
+  686  vim .config/kitty/kitty.conf 
+  687  kitty
+  688  kitty
+  689  vim .config/kitty/kitty.conf 
+  690  vim theme.conf 
+  691  vim .config/kitty/kitty.conf 
+  692  kitty
+  693  ls -lF /dev/disk/by-id/
+  694  history >> ~/majstaf/seznami/history_20230109_1811.txt
+  695  sudo ln -s ~/majstaf/majbin/odpni-spsl /usr/local/bin/
+  696  sudo ln -s ~/majstaf/majbin/listulb /usr/local/bin/
+  697  pripni-spsl 
+  698  cd /mnt/spsl/
+  699  fm
+  700  df -h
+  701  odpni-spsl 
+  702  df -h
+  703  pwf
+  704  pwf
+  705  dfl
+  706  dflh
+  707  lsblk
+  708  tree .config/kitty/
+  709  vim .config/kitty/kitty.conf 
+  710  vim .config/kitty/kitty.conf 
+  711  kitty
+  712  kitty
+  713  vim .config/kitty/kitty.conf 
+  714  vim theme.conf 
+  715  vim .config/kitty/kitty.conf 
+  716  kitty
+  717  ls -lF /dev/disk/by-id/
+  718  history >> ~/majstaf/seznami/history_20230109_1811.txt
+  719  tree coding/ majbin/
+  720  ll majbin/
+  721  l majbin/
+  722  l coding/
+  723  cp -r /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/.ssh .
+  724  cd .ssh
+  725  cd /media/rgregor/B1_2_EXT4/backup_jbez0rg/
+  726  cd home/
+  727  cd rgregor/
+  728  cat .gitconfig 
+  729  cp .gitconfig ~/
+  730  ls -aF
+  731  cd majbin/
+  732  cd git-commands/
+  733  vim dkdb_push_all 
+  734  cd majstaf/metsys/
+  735  ls | grep git
+  736  cd git/
+  737  vim git_fix-pathspec-submodule-error_20221020.txt 
+  738  vim cp_knowledge-base-txt_to_folder-for-git-backup_20220408-1.txt 
+  739  vim d_git_commands_20220409.txt 
+  740  vim d_git_commands_20220410.txt 
+  741  git status
+  742  find -type f -name "git*"
+  743  vim ~/majstaf/majbin/git-commands/dmts_push_all 
+  744  vim ~/majstaf/majbin/git-commands/dkdb_push_all 
+  745  cp .gitconfig ~/
+  746  ls -aF
+  747  cd majbin/
+  748  cd git-commands/
+  749  vim dkdb_push_all 
+  750  cd majstaf/metsys/
+  751  ls | grep git
+  752  cd git/
+  753  vim git_fix-pathspec-submodule-error_20221020.txt 
+  754  vim cp_knowledge-base-txt_to_folder-for-git-backup_20220408-1.txt 
+  755  vim d_git_commands_20220409.txt 
+  756  vim d_git_commands_20220410.txt 
+  757  git status
+  758  find -type f -name "git*"
+  759  vim ~/majstaf/majbin/git-commands/dmts_push_all 
+  760  vim ~/majstaf/majbin/git-commands/dkdb_push_all 
+  761  dsf -h
+  762  cp majstaf/majmedia/_podnapisi/lilo-stitch-2002-* ~/Downloads/Lilo\ and\ Stitch\ \(2002\)/
+  763  cd ~/Downloads/Lilo\ and\ Stitch\ \(2002\)/
+  764  unzip lilo-stitch-2002-slovenian-yify-113310.zip 
+  765  mv Lilo\ \&\ Stitch-Slovenian.srt Lilo-slo.srt
+  766  ~/majstaf/coding/00_ukazi/iconv1-SLO-srt-WIN-to-UTF8.sh Lilo-slo.srt 
+  767  ~/majstaf/coding/00_ukazi/shorten-movie-name.sh 
+  768  ~/majstaf/coding/00_ukazi/rename-to-basename-with-new-ext.sh SLO-UTF8.srt Lilo.and.Stitch.2002.mp4 
+  769  rm Lilo-slo.srt SLO-UTF8.srt 
+  770  rm lilo-stitch-2002-slovenian-yify-113310.zip 
+  771  unzip lilo-stitch-2002-english-yify-113302.zip 
+  772  cp Lilo.and.Stitch.2002.srt{,.SLO.txt} 
+  773  ~/majstaf/coding/00_ukazi/rename-to-basename-with-new-ext.sh Lilo.and.Stitch.2002.1080p.720p.BluRay.x264.\[YTS.MX\]-English.srt Lilo.and.Stitch.2002.mp4 
+  774  vlc Lilo.and.Stitch.2002.mp4 &
+  775  mkdir english-subs
+  776  mv Lilo.and.Stitch.2002{,}_EN.srt
+  777  mv Lilo.and.Stitch.2002{,_EN}.srt
+  778  mv Lilo.and.Stitch.2002_EN.srt english-subs/
+  779  mv Lilo.and.Stitch.2002.srt{.SLO.txt ,}
+  780  mv Lilo.and.Stitch.2002.srt{.SLO.txt,}
+  781  rm *.zip
+  782  rm Lilo.and.Stitch.2002.1080p.720p.BluRay.x264.\[YTS.MX\]-English.srt 
+  783  df -h
+  784  vim .gitconfig 
+  785  cd majstaf/d_metsys_git/
+  786  cd d_metsys
+  787  mv 0a_povezave/ majstaf/
+  788  mv 0a_povezave majstaf/
+  789  cd 0a_povezave/
+  790  ls -l
+  791  ls -l --xolor
+  792  ls -l --color
+  793  cp -r 0a_povezave majstaf/
+  794  rm -r 0a_povezave/
+  795  df
+  796  cd drpbx_muadib/
+  797  mount
+  798  un-mount_dev_sdbs 
+  799  cp -r /media/rgregor/B1_2_EXT4/PRENOS_20230110/Dropbox/* ./
+  800  mv {drpbx,Dropbox}_muadib/
+  801  cd Dropbox_muadib/
+  802  cd majstaf/
+  803  vim majstaf/majrcs/bashrc_forall 
+  804  cd /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/
+  805  vim .bashrc
+  806  cd majstaf/forallusers/
+  807  cd 
+  808  grep -r dkdb ./*
+  809  vim aliases_forall
+  810  less setup.txt 
+  813  cd /media/rgregor/B1_2_EXT4/PRENOS_20230110/
+  814  vim .dropbox
+  815  cd ODPRTO/
+  816  ls -a
+  817  cd majstaf/d_kdb/
+  818  cd knowledgedb.git/
+  819  cd ll
+  820  cd /media/rgregor/B1_2_EXT4/backup_jbez0rg/home/rgregor/majstaf/metsys/
+  821  cd seznami/
+  822  cat * | grep git
+  823  cat * | grep bare
+  824  grep -l '\-\-bare' *.txt | xargs cat | less
+  825  grep -l '\-\-bare' *.txt
+  826  grep --color '\-\-bare' *.txt
+  829  mv Dropbox{_muadib,}
+  830  echo "TEST 20230110" > Dropbox/ODPRTO/_TXT/TEST_20230110.txt
+  831  cd Dropbox/ODPRTO/
+  832  cd _TXT/
+  833  ls
+  834  ls -t | head
+  835  dkdb commit -m "TEST from mouadib 20230110"
+  836  dkdb remote
+  837  dkdb remote -v
+  838  vim ~/majstaf/coding/git-commands/dkdb_push_all.sh 
+  839  l
+  840  cd .ssh/
+  841  ssh
+  842  sshd
+  843  cd majstaf/d_metsys_git/d_metsys_source/d_dotfiles/
+  844  cd .config/kitty/
+  845  ll .config/
+  846  cp -rn .config/kitty ~/majstaf/d_metsys_git/d_metsys_source/d_dotfiles/.config/
+  847  dmts comit -m "added .config/kitty 20230110"
+  848  dmts commit -m "added .config/kitty 20230110"
+  849  ssh-agent -s
+  850  ssh-add ~/.ssh/github-jbez0rg
+  851  ssh-add ~/.ssh/gitlab-jbez0rg
+  852  ~/majstaf/coding/git-commands/dkdb_push_all.sh 
+  853  sudo apt-cache search dropbox
+  854  dropbox status
+  855  cd .
+  857  rm -r Dropbox/
+  859  Dropbox/
+  860  cd Dropbox/
+  861  cd ..
+  862  rm -r ~/Dropbox/
+  863  mv Dropbox/ ~/drpbx
+  864  watch -d -n1 dropbox status
+  865  dkdb commit -m "deleted TEST 20230110"
+  866  diff majstaf/majrcs/aliases_forall ~/majstaf/d_metsys_git/d_metsys_source/d_forallusers/aliases_forall
+  867  cd majstaf/majrcs/
+  868  mv ~/majstaf/d_metsys_git/d_metsys_source/d_{forallusers,majrcs}
+  869  diff . ~/majstaf/d_metsys_git/d_metsys_source/d_majrcs/
+  870  diff ./ ~/majstaf/d_metsys_git/d_metsys_source/d_majrcs/
+  871  cp -i bashrc_forall aliases_forall_fish aliases_forall ~/majstaf/d_metsys_git/d_metsys_source/d_majrcs/
+  872  diff -q . ~/majstaf/d_metsys_git/d_metsys_source/d_majrcs/
+  873  dmts add .
+  874  dmts commit -m "rename d_forallusers into d_majrcs (muadib) 20230110"
+  875  ~/majstaf/coding/git-commands/dmts_push_all.sh 
+  877  dkdb add .
+  878  dkdb commit -m "TEST from muadib 20230110"
+  879  sudo ln -s ~/majstaf/majbin/softlink1-fname-to-ulb /usr/local/bin/
+  880  softlink1-fname-to-ulb ~/majstaf/majbin/git-commands/dkdb_push_all 
+  881  softlink1-fname-to-ulb ~/majstaf/majbin/git-commands/dmts_push_all 
+  882  listulb 
+  883  dkdb status
+  884  dkdb_push_all 
+  885  dmts status
+  886  dmts_push_all 
+  887  la
+  888  cd
+  889  sudo sed -i s/isSet/is_set/ /usr/bin/dropbox
+  890  db1
+  891  dbs
+  892  db0
+  893  which hstl
+  894  type hstl
+  895  which hst
+  896  ll majstaf/seznami/
+  897  unset gPth
+  898  . .bashrc
+  899  grep hstl majstaf/majrcs/aliases_forall
+  900  >gPth=$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt
+  901  >gPth="$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt"
+  902  gPth="$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt"
+  903  echo $gPth
+  904  gPth=$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt
+  905  vim majstaf/majrcs/aliases_forall
+  906  sbr
+  907  hstl
+  908  which hst
+  909  ll majstaf/seznami/
+  910  unset gPth
+  911  . .bashrc
+  912  grep hstl majstaf/majrcs/aliases_forall
+  913  >gPth=$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt
+  914  >gPth="$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt"
+  915  gPth="$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt"
+  916  echo $gPth
+  917  gPth=$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt
+  918  vim majstaf/majrcs/aliases_forall
+  919  cd majstaf/majrcs/
+  920  vim funclist 
+  921  grep hstl ./*
+  922  vim aliases_forall_fish 
+  923  sbr
+  924  hstl
+  925  cd majstaf/seznami/
+  926  fm
+  927  mv hstl_muadib_202301{4,}07.txt 
+  928  mv {,_}hstl_muadib_20230107.txt 
+  929  mv history_20230109_1811.txt hstld_20230109_1811.txt 
+  930  mv hstld_20230109_1811{,00}.txt 
+  931  cd
+  932  pwf
+  933  hstl
+  934  which hst
+  935  ll majstaf/seznami/
+  936  unset gPth
+  937  . .bashrc
+  938  grep hstl majstaf/majrcs/aliases_forall
+  939  >gPth=$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt
+  940  >gPth="$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt"
+  941  gPth="$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt"
+  942  echo $gPth
+  943  gPth=$HOME/majstaf/seznami/hstld_$(date +'%Y%m%d-%H%M%S').txt
+  944  vim majstaf/majrcs/aliases_forall
+  945  grep hstl ./*
+  946  vim aliases_forall_fish 
+  947  hstl
+  948  cd majstaf/seznami/
+  949  fm
+  950  mv hstl_muadib_202301{4,}07.txt 
+  951  mv {,_}hstl_muadib_20230107.txt 
+  952  mv history_20230109_1811.txt hstld_20230109_1811.txt 
+  953  mv hstld_20230109_1811{,00}.txt 
+  954  pwf
+  955  vim majstaf/majrcs/bashrc_forall 
+  956  cd majstaf/
+  958  l
+  959  cd _TXT
+  960  cd majstaf/majrcs/
+  961  cd majrcs
+  962  cd
+  963  vim bashrc_forall 
+  964  cd _TXT/
+  965  cd ..
+  966  cd | fzf --reverse
+  967  cd $(ls | fzf --reverse)
+  968  cd -
+  969  cd majrcs/
+  970  vim funclist 
+  971  sbr
+  972  cd 
+  973  cd majrcs/
+  974  cd $(ls -aF | fzf --reverse)
+  975  vim majstaf/majrcs/funclist 
+  976  sbr
+  977  cd majrcs/
+  978  cd _TXT
+  979  cd majstaf/majrcs/
+  980  cd majrcs
+  981  vim bashrc_forall 
+  982  cd _TXT/
+  983  cd | fzf --reverse
+  984  cd $(ls | fzf --reverse)
+  985  cd majrcs/
+  986  vim funclist 
+  987  cd 
+  988  cd majrcs/
+  989  cd $(ls -aF | fzf --reverse)
+  990  vim majstaf/majrcs/funclist 
+  991  cd majrcs/
+  992  sbr
+  993  type sbr
+  994  cd majstaf/
+  995  cd majsettings/
+  996  cd ..
+  997  rm -r majsettings/
+  998  dkdb status
+  999  dmts status
+ 1000  l
+ 1001  cd go
+ 1002  cd -
+ 1003  cp -rn Downloads/Lilo\ and\ Stitch\ \(2002\)/ /media/rgregor/1545-AB81/majmedia/Movies/
+ 1004  un-mount_dev_sd
+ 1005  cd metsys_muadib/
+ 1006  cd __STARO__/
+ 1007  grep -r sudo ./*
+ 1008  cp -rn Downloads/Lilo\ and\ Stitch\ \(2002\)/ /media/rgregor/EKSFAT/media/Movies/
+ 1009  df
+ 1010  cd
+ 1011  un-mount_dev_sdbs 
+ 1012  pwf
+ 1013  fm
+ 1014  mv hstl_muadib_202301{4,}07.txt 
+ 1015  mv {,_}hstl_muadib_20230107.txt 
+ 1016  mv history_20230109_1811.txt hstld_20230109_1811.txt 
+ 1017  mv hstld_20230109_1811{,00}.txt 
+ 1018  pwf
+ 1019  vim majstaf/majrcs/bashrc_forall 
+ 1020  cd majstaf/
+ 1022  cd _TXT
+ 1023  cd majstaf/majrcs/
+ 1024  cd majrcs
+ 1025  vim bashrc_forall 
+ 1026  cd _TXT/
+ 1027  cd | fzf --reverse
+ 1028  cd $(ls | fzf --reverse)
+ 1029  cd -
+ 1030  cd majrcs/
+ 1031  vim funclist 
+ 1032  sbr
+ 1033  cd 
+ 1034  cd majrcs/
+ 1035  cd $(ls -aF | fzf --reverse)
+ 1036  vim majstaf/majrcs/funclist 
+ 1037  sbr
+ 1038  cd majrcs/
+ 1039  cd _TXT
+ 1040  cd majstaf/majrcs/
+ 1041  cd majrcs
+ 1042  vim bashrc_forall 
+ 1043  cd _TXT/
+ 1044  cd | fzf --reverse
+ 1045  cd $(ls | fzf --reverse)
+ 1046  cd majrcs/
+ 1047  vim funclist 
+ 1048  cd 
+ 1049  cd majrcs/
+ 1050  cd $(ls -aF | fzf --reverse)
+ 1051  vim majstaf/majrcs/funclist 
+ 1052  cd majrcs/
+ 1053  sbr
+ 1054  type sbr
+ 1055  cd majstaf/
+ 1056  cd majsettings/
+ 1057  rm -r majsettings/
+ 1058  cd go
+ 1059  cd -
+ 1060  cp -rn Downloads/Lilo\ and\ Stitch\ \(2002\)/ /media/rgregor/1545-AB81/majmedia/Movies/
+ 1061  un-mount_dev_sd
+ 1062  cd metsys_muadib/
+ 1063  cp -rn Downloads/Lilo\ and\ Stitch\ \(2002\)/ /media/rgregor/EKSFAT/media/Movies/
+ 1064  df
+ 1065  un-mount_dev_sdbs 
+ 1066  pwf
+ 1067  db1
+ 1068  dkdb status
+ 1069  grep -r sudo ./*
+ 1070  grep -r PASS ./*
+ 1071  cd __STARO__/
+ 1072  vim fzf_install-and-setup-history-search_20220907.txt 
+ 1073  echo $TERM
+ 1074  sudo visudo
+ 1075  sudo apt-cache search visudo
+ 1076  sudo apt-cache search double
+ 1077  sudo apt update
+ 1078  sudo apt upgrade
+ 1079  sudo apt autoremove
+ 1080  ls
+ 1081  cd d_metsys_git/d_metsys_source/d_dotfiles/
+ 1082  ls -a
+ 1083  for FFF in $(find -type f); do diff -q ~/$(basename $FFF); done
+ 1084  for FFF in $(find -type f); do diff -q $FFF ~/$(basename $FFF); done
+ 1085  for FFF in $(find -type f); do echo $FFF; done
+ 1086  sudo apt search xclip
+ 1087  sudo apt install xclip
+ 1088  sudo apt install xcopy xsel
+ 1089  sudo apt install xsel
+ 1090  sudo apt install vim-gtk3
+ 1091  vim --version | grep 'clipboard'
+ 1092  hstl
+ 1093  vim ~/majstaf/metsys_muadib/vim_copy-to-clipboard_setup_20230111.txt
+ 1094  cp ~/majstaf/metsys_muadib/vim_copy-to-clipboard_setup_20230111.txt ~/majstaf/d_metsys_git/d_metsys_source/d_setups/
+ 1095  cd ~/majstaf/d_metsys_git/d_metsys_source/d_setups/
+ 1096  la
+ 1097  l
+ 1098  dkdb add .
+ 1099  dmts add .
+ 1100  dmts commit -m "added vim_copy-to-clipboard_ 20230111"
+ 1101  dmts remotes -v
+ 1102  dkdb_push_all 
+ 1103  vim majstaf/seznami/hstld_20230111-225034.txt 
+ 1104  vim ~/majstaf/majbin/git-commands/dmts_push_all 
+ 1105  cd .ssh/
+ 1106  cd __STARO__/git/
+ 1107  cat ./* | less
+ 1108  dmts remote -v
+ 1109  dmts push github_dmetsys master
+ 1110  dmts push gitlab_dmetsys master
+ 1111  cd d_metsys_git/
+ 1112  cd d_metsys
+ 1113  cd ..
+ 1114  ll gitd 
+ 1115  vim gitd 
+ 1116  less setup.txt 
+ 1117  grep dmts majstaf/seznami/hstld_20230111-225034.txt 
+ 1118  grep agent ~/majstaf/seznami/hstld_20230111-225034.txt 
+ 1119  ssh-agent -s
+ 1120  grep ssh ~/majstaf/seznami/hstld_20230111-225034.txt 
+ 1121  ssh-add ~/.ssh/github-jbez0rg
+ 1122  ssh-add ~/.ssh/gitlab-jbez0rg
+ 1123  man ssh-add
+ 1124  cd .ssh
+ 1125  vim config
+ 1126  cd
+ 1127  dmts
+ 1128  dmts status
+ 1129  dmts_push_all 
+ 1130  vim ~/.ssh/config 
+ 1131  ssh-agent -s
+ 1132  grep ssh ~/majstaf/seznami/hstld_20230111-225034.txt 
+ 1133  ssh-add ~/.ssh/github-jbez0rg
+ 1134  ssh-add ~/.ssh/gitlab-jbez0rg
+ 1135  man ssh-add
+ 1136  cd .ssh
+ 1137  vim config
+ 1138  dmts
+ 1139  dmts status
+ 1140  vim ~/.ssh/config 
+ 1141  dmts_push_all 
+ 1142  vim ~/majstaf/metsys_muadib/ssh_git_acces_error_fix_20230111.txt
+ 1143  dkdb status
+ 1144  dkdb_push_all 
+ 1145  hstl 
+ 1146  cd C_and_Cpp_testing/
+ 1147  l
+ 1148  cd cd088_BrthReminder-02_20221222/
+ 1149  ./BrthReminder 
+ 1150  cd
+ 1151  BrthReminder_c 
+ 1152  pwf
+ 1153  vim ~/.ssh/config 
+ 1154  vim ~/majstaf/metsys_muadib/ssh_git_acces_error_fix_20230111.txt
+ 1155  hstl 
+ 1156  cd C_and_Cpp_testing/
+ 1157  l
+ 1158  cd cd088_BrthReminder-02_20221222/
+ 1159  ./BrthReminder 
+ 1160  BrthReminder_c 
+ 1161  pwf
+ 1162  dmts status
+ 1163  dmts_push_all 
+ 1164  dkdb status
+ 1165  dkdb_push_all 
+ 1166  cd .ssh/
+ 1167  vim config 
+ 1168  cd
+ 1169  vim .gitconfig 
+ 1170  dmts log --oneline
+ 1171  dmts log
+ 1172  kdkb log
+ 1173  dkdb log
+ 1175  cd Dropbox/
+ 1176  cd ..
+ 1177  ll majstaf/
+ 1178  softlink1-fname-to-ulb ~/majstaf/majbin/jarrun 
+ 1179  softlink1-fname-to-ulb ~/majstaf/majbin/jarxrun
+ 1180  vim /etc/sudoers
+ 1181  sudo vim /etc/sudoers
+ 1182  sudo visudo
+ 1183  which kitty
+ 1184  sudo apt shoe i3
+ 1185  sudo apt show i3
+ 1186  sudo visudo
+ 1187  sudo visudo
+ 1188  sudo apt show dunst
+ 1189  sudo apt show i3
+ 1190  sudo apt show suckless-tools
+ 1191  sudo apt install suckless-tools
+ 1192  sudo apt install dunst
+ 1193  sudo apt install i3
+ 1194  cd .config/i3/
+ 1195  vim config 
+ 1196  sudo logout
+ 1197  pwf
+ 1198  vim config 
+ 1199  sudo logout
+ 1200  pwf
+ 1201  db1
+ 1202  sudo ln -s /snap/bin/firefox /usr/local/bin/
+ 1203  sudo mv /usr/local/bin/{firefox,ff} 
+ 1204  /usr/local/bin/ff 
+ 1205  vim majstaf/majrcs/aliases_forall
+ 1206  sudo rm /usr/local/bin/ff 
+ 1207  im majstaf/majrcs/funclist 
+ 1208  vim majstaf/majrcs/funclist 
+ 1209  sbr
+ 1210  ff
+ 1211  firefox
+ 1212  which firefox
+ 1213  snap run firefox
+ 1214  snap run firefox &
+ 1215  snap run firefox 2> /dev/null
+ 1216  snap run firefox & 2> /dev/null
+ 1217  snap run firefox 2> /dev/null &
+ 1218  snap run firefox 2>/dev/null &
+ 1219  /snap/bin/firefox %u 2>/dev/null
+ 1220  /snap/bin/firefox 2>/dev/null
+ 1221  /snap/bin/firefox 2>/dev/null &
+ 1222  which firefox
+ 1223  file /snap/bin/firefox
+ 1224  ll /snap/bin/firefox
+ 1225  snap help
+ 1226  snap help run
+ 1227  snap run firefox
+ 1228  snap run firefox & 2>/dev/null
+ 1229  export BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop; /snap/bin/firefox %u
+ 1230  export BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop; /snap/bin/firefox
+ 1231  export BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop; /snap/bin/firefox &
+ 1232  export BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop; /snap/bin/firefox & 2>/dev/null
+ 1233  nohup export BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop; /snap/bin/firefox & 2>/dev/null
+ 1234  export BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop; /snap/bin/firefox & 2>/dev/null && exit
+ 1235  export BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop; /snap/bin/firefox &; exit
+ 1236  export BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop; /snap/bin/firefox && exit
+ 1237  export BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop; /snap/bin/firefox &; exit
+ 1238  export BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop; /snap/bin/firefox && exit
+ 1239  cd /snap/bin/
+ 1240  cd /usr/bin/
+ 1241  l
+ 1242  ll snap
+ 1243  type snap
+ 1244  /usr/bin/snap
+ 1245  /usr/bin/snap firefox
+ 1246  cd ..
+ 1247  cd
+ 1248  which firefox
+ 1249  /usr/bin/snap /snap/bin/firefox
+ 1250  /usr/bin/snap run firefox
+ 1251  /usr/bin/snap /snap/bin/firefox
+ 1252  /usr/bin/snap run firefox
+ 1253  vim majstaf/majrcs/funclist 
+ 1254  sbr
+ 1255  vim majstaf/majbin/ff
+ 1256  majstaf/majbin/ff
+ 1257  sbr
+ 1258  vim majstaf/majbin/ff
+ 1259  majstaf/majbin/ff
+ 1260  softlink1-fname-to-ulb majstaf/majbin/ff
+ 1261  cp -i majstaf/majbin/ff ~/majstaf/d_metsys_git/d_metsys_source/d_majbin/
+ 1262  dmts add .
+ 1263  dmts status
+ 1264  dmts commit -m "updated ff 20230112 (muadib)"
+ 1265  dmts_push_all 
+ 1266  ff
+ 1267  ff http://www.google.com
+ 1268  which ff
+ 1269  type $(which ff)
+ 1270  file $(which ff)
+ 1271  /snap/bin/ firefox
+ 1272  /snap/bin/run firefox
+ 1273  cat /usr/local/bin/ff
+ 1274  /usr/bin/snap run ff
+ 1275  /usr/bin/snap run firefox
+ 1276  /usr/bin/snap run ff
+ 1277  ff google.com
+ 1278  which ff
+ 1279  ff google.com &
+ 1280  /usr/bin/snap run firefox
+ 1281  /usr/bin/snap run firefox google.com
+ 1282  less nohup.out 
+ 1283  rm nohup.out 
+ 1284  cd .config/i3/
+ 1285  vim config 
+ 1286  cd .config/i3/
+ 1287  vim config 
+ 1288  kitty
+ 1289  la
+ 1290  sudo shutdown -r now
+ 1291  pf
+ 1292  cd .config/i3/
+ 1293  vim config 
+ 1294  cd .config/i3/
+ 1295  vim config 
+ 1296  cd .config/i3/
+ 1297  vim config 
+ 1298  sudo apt install python3-pip
+ 1299  pip version
+ 1300  pip install --upgrade pip
+ 1301  pip --version
+ 1302  pip install xcffib
+ 1303  pip install qtile
+ 1304  sudo apt show i3
+ 1305  sudo apt purge i3
+ 1306  sudo apt autoremove
+ 1307  sudo apt autoremove
+ 1308  pip uninstall qtile
+ 1309  pip uninstall xcffib
+ 1310  pip install --reinstall xcffib
+ 1311  pip install xcffib
+ 1312  cd
+ 1313  pwf
+ 1314  cd /var/crash/
+ 1315  sudo rm _usr_bin_xfce4-session.1000.crash 
+ 1316  pwf
+ 1317  sudo rm _usr_bin_xfce4-session.1000.crash 
+ 1318  pwf
+ 1319  pkillall plank
+ 1320  killall plank
+ 1321  sudo rm /usr/share/xsessions/i3*
+ 1322  ll /usr/share/xsessions
+ 1323  vim ~/Downloads/qtile.desktop
+ 1324  pip uninstall xcffib
+ 1325  pip install xcffib
+ 1326  pip install qtile
+ 1327  sudo cp ~/Downloads/qtile.desktop /usr/share/xsessions/
+ 1328  sudo cp ~/Downloads/qtile.desktop /usr/share/xsessions/
+ 1329  echo $EDITOR
+ 1330  echo $TERM
+ 1331  dmenu
+ 1332  pip install xcffib
+ 1333  pip install qtile
+ 1334  sudo cp ~/Downloads/qtile.desktop /usr/share/xsessions/
+ 1335  sudo cp ~/Downloads/qtile.desktop /usr/share/xsessions/
+ 1336  echo $EDITOR
+ 1337  echo $TERM
+ 1338  dmenu
+ 1339  cd .config/qtile/
+ 1340  llđ
+ 1341  cd i3/
+ 1342  ll config 
+ 1343  l
+ 1344  vim config 
+ 1345  cd ..
+ 1346  cd qtile/
+ 1347  vim config.py 
+ 1348  pwf
+ 1349  vim .config/qtile/config.py 
+ 1350  pwf
+ 1351  pwf
+ 1352  firefox
+ 1353  firefox &
+ 1354  updatedb
+ 1355  sudo updatedb
+ 1356  locate libqtile
+ 1357  locate libqtile/layout
+ 1358  cd .local/lib/python3.10/site-packages/libqtile/layout/
+ 1359  vim ~/.config/qtile/config.py 
+ 1360  vim .config/qtile/config.py 
+ 1361  vim .config/qtile/config.py 
+ 1362  locate libqtile/layout
+ 1363  cd .local/lib/python3.10/site-packages/libqtile/layout/
+ 1364  vim ~/.config/qtile/config.py 
+ 1365  vim .config/qtile/config.py 
+ 1366  vim .config/qtile/config.py 
+ 1368  cd ..
+ 1369  cd -
+ 1370  yes "rm -r drpbx/"
+ 1371  yes | "rm -r drpbx/"
+ 1372  rm -r drpbx/
+ 1373  yes | rm -r drpbx/
+ 1374  df -h
+ 1375  cd
+ 1376  which kitty
+ 1377  ACCCC
+ 1378  yes "rm -r drpbx/"
+ 1379  yes | "rm -r drpbx/"
+ 1380  rm -r drpbx/
+ 1381  yes | rm -r drpbx/
+ 1382  df -h
+ 1383  which kitty
+ 1384  ACCCC
+ 1385  sudo apt show ranger
+ 1386  sudo apt install ranger
+ 1387  cd .config/ranger/
+ 1388  cp /usr/share/doc/ranger/tools/
+ 1389  cp /usr/share/doc/ranger/config/rc.conf.gz .
+ 1390  unzip rc.conf.gz 
+ 1391  fm
+ 1392  rm rc.conf.gz 
+ 1393  vim rc.conf 
+ 1394  cd
+ 1395  sudo apt install w3m-img
+ 1396  vim .config/ranger/rc.conf 
+ 1397  ranger --help
+ 1398  ranger --help | less
+ 1399  man ranger
+ 1400  cd /usr/share/doc/ranger/config/colorschemes/
+ 1401  cd 
+ 1402  l
+ 1403  r
+ 1404  dmts status
+ 1405  dkdb status
+ 1406  pwf
+ 1407  which firefox
+ 1408  which ff
+ 1409  firefox
+ 1410  vim .config/qtile/config.py 
+ 1411  sudo reboot
+ 1412  dkdb status
+ 1413  pwf
+ 1414  which firefox
+ 1415  firefox
+ 1416  vim .config/qtile/config.py 
+ 1417  sudo reboot
+ 1418  dm
+ 1419  cd majstaf/majrcs/
+ 1420  which ff
+ 1421  type $(which ff)
+ 1422  file $(which ff)
+ 1423  vim /usr/local/bin/ff 
+ 1424  sudo chmod 755 majstaf/majbin/dm
+ 1425  majstaf/majbin/dm
+ 1426  majstaf/majbin/ff
+ 1427  cd majstaf/majbin/
+ 1428  cat ff
+ 1429  cat dm 
+ 1430  mv dm dm-ff
+ 1431  mv ff dm
+ 1432  mv dm-ff ff
+ 1433  ff
+ 1434  ./ff
+ 1435  ./dm
+ 1436  l
+ 1437  softlink1-fname-to-ulb ~/majstaf/majbin/dm
+ 1438  d
+ 1439  f
+ 1440  cd /usr/local/bin/
+ 1441  ln -s ff 
+ 1442  ln -s ff f
+ 1443  sudo ln -s ff f
+ 1444  sudo ln -s dm d
+ 1445  cd
+ 1446  vim ~/.config/qtile/config.py 
+ 1447  sudo rm /usr/share/xsessions/qtile.desktop 
+ 1448  ll /usr/share/xsessions/
+ 1449  cd
+ 1450  sudo reboot
+ 1451  l
+ 1452  ls -l
+ 1453  cd
+ 1454  xprop
+ 1455  xprop
+ 1456  xprop
+ 1457  sudo apt install i3
+ 1458  sudo reboot
+ 1459  sudo install installi3 i3status dmenu i3lock xbacklight feh conky
+ 1460  sudo install i3status dmenu i3lock xbacklight feh conky
+ 1461  sudo apt install i3status dmenu i3lock xbacklight feh conky
+ 1462  sudo apt install i3status i3lock xbacklight feh conky
+ 1463  sudo apt install i3status feh conky
+ 1464  sudo reboot
+ 1465  dpkg-query -L i3-wm | grep i3\.desktop
+ 1466  ll /usr/share/xsessions/
+ 1467  updatedb
+ 1468  sudo updatedb
+ 1469  locate i3.desktop
+ 1470  sudo cp /usr/share/applications/i3.desktop /usr/share/xsessions/
+ 1471  sudo reboot
+ 1472  ll /usr/share/xsessions/
+ 1473  vim /usr/share/xsessions/i3.desktop 
+ 1474  vim /usr/share/xsessions/xubuntu.desktop 
+ 1475  sudo vim /usr/share/xsessions/i3.desktop 
+ 1476  sudo reboot
+ 1477  cd .config/i3/
+ 1478  vim config 
+ 1479  vim .config/i3/config 
+ 1480  :q
+ 1481  vim .config/i3/config 
+ 1482  :q
+ 1483  mkdir /tmp/build
+ 1484  cd /tmp/build
+ 1485  git clone https://www.github.com/Airblader/i3 i3-gaps
+ 1486  cd i3-gaps/
+ 1487  git checkout gaps && git pull
+ 1488  sudo apt install meson asciidoc
+ 1489  sudo apt install pkg-config
+ 1490  apt search libsatrup notification
+ 1491  sudo apt install startup-notification
+ 1492  sudo apt install startup-notification-devel
+ 1493  sudo apt show startup-notification
+ 1494  sudo apt install libstartup-notification0
+ 1495  sudo apt install libstartup-notification0-dev
+ 1496  sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev libxcb-xrm-dev
+ 1497  meson -Ddocs=true -Dmans=true ../build
+ 1498  meson compile -C ../build
+ 1499  sudo meson install -C ../build
+ 1500  cd
+ 1501  history > ~/majstaf/metsys_muadib/i3-gaps setuop_20230115.txt
+ 1502  history > ~/majstaf/metsys_muadib/i3-gaps_setup_20230115.txt
+ 1503  vim .config/i3/config 
+ 1504  hstl
+ 1505  cd
+ 1506  sudo reboot
+ 1507  sudo apt install xsane -y
+ 1508  vim .config/i3/config 
+ 1509  pwf
+ 1510  vim .config/i3/config 
+ 1511  sudo apt install nitrogen
+ 1512  nitrogen &
+ 1513  vim .config/i3/config 
+ 1514  pwf
+ 1515  man isdigit
+ 1516  sudo apt install nitrogen
+ 1517  nitrogen &
+ 1518  vim .config/i3/config 
+ 1519  cd C_and_Cpp_testing
+ 1520  cd cd088_BrthReminder-02_20221222/
+ 1521  l
+ 1522  ./BrthReminder 
+ 1523  cd
+ 1524  pwf
+ 1525  cd
+ 1526  cat /var/lib/AccountsService/users/rgregor
+ 1527  sudo cat /var/lib/AccountsService/users/rgregor
+ 1528  uname -a
+ 1529  sudo apr install neofetch
+ 1530  sudo apt install neofetch
+ 1531  neofetch
+ 1532  pwf
+ 1533  cd .config/i3/
+ 1534  vim config 
+ 1535  man i3
+ 1536  pwf
+ 1537  pwf
+ 1538  cd .config/
+ 1539  l
+ 1540  mkdir -p ~/.config/i3status
+ 1541  cp /etc/i3status.conf ~/.config/i3status/config
+ 1542  vim ~/.config/i3status/config
+ 1543  sudo apt-get install -y fonts-font-awesome
+ 1544  mkdir -p ~/.config/i3status
+ 1545  cp /etc/i3status.conf ~/.config/i3status/config
+ 1546  vim ~/.config/i3status/config
+ 1547  sudo apt-get install -y fonts-font-awesome
+ 1548  cd/usr/lib/lightdm/
+ 1549  cd /usr/lib/lightdm/
+ 1550  vim guest-session-auto.sh 
+ 1551  vim lightdm-greeter-session 
+ 1552  cat /var/lib/AccountsService/users/
+ 1553  sudo cd /var/lib/AccountsService/users/
+ 1554  cd /var/lib/AccountsService/users/
+ 1555  sudo ls -l /var/lib/AccountsService/users/
+ 1556  sudo vim /var/lib/AccountsService/users/rgregor
+ 1557  cat $XDG_CACHE_HOME/sessions/
+ 1558  cat $XDG_CACHE_HOME/sessions
+ 1559  echo $XDG_CACHE_HOME/
+ 1560  ll /usr/share/xsessions/
+ 1561  ll ~/.xsession-errors
+ 1562  cat ~/.xsession-errors
+ 1563  cd
+ 1564  cat /etc/lightdm/lightdm.conf.d/
+ 1565  ll /etc/lightdm/lightdm.conf
+ 1566  cat /etc/lightdm/lightdm.conf
+ 1567  ls -l /etc/lightdm/lightdm.conf.d/
+ 1568  ls -l /etc/lightdm/lightdm-gtk-greeter.conf 
+ 1569  less /etc/lightdm/lightdm-gtk-greeter.conf 
+ 1570  ls -l /etc/lightdm/
+ 1571  less /etc/lightdm/lightdm.conf.d/
+ 1572  cd /etc/lightdm/lightdm.conf.d/
+ 1573  cd ..
+ 1574  vim .config/i3/config 
+ 1575  vim .config/i3status/config 
+ 1576  rofi
+ 1577  db1
+ 1578  dmts status
+ 1579  dkdb status
+ 1580  cd/usr/lib/lightdm/
+ 1581  cd /usr/lib/lightdm/
+ 1582  vim guest-session-auto.sh 
+ 1583  vim lightdm-greeter-session 
+ 1584  cat /var/lib/AccountsService/users/
+ 1585  sudo cd /var/lib/AccountsService/users/
+ 1586  cd /var/lib/AccountsService/users/
+ 1587  sudo ls -l /var/lib/AccountsService/users/
+ 1588  sudo vim /var/lib/AccountsService/users/rgregor
+ 1589  cat $XDG_CACHE_HOME/sessions/
+ 1590  cat $XDG_CACHE_HOME/sessions
+ 1591  echo $XDG_CACHE_HOME/
+ 1592  ll /usr/share/xsessions/
+ 1593  ll ~/.xsession-errors
+ 1594  cat ~/.xsession-errors
+ 1595  cat /etc/lightdm/lightdm.conf.d/
+ 1596  ll /etc/lightdm/lightdm.conf
+ 1597  cat /etc/lightdm/lightdm.conf
+ 1598  ls -l /etc/lightdm/lightdm.conf.d/
+ 1599  ls -l /etc/lightdm/lightdm-gtk-greeter.conf 
+ 1600  less /etc/lightdm/lightdm-gtk-greeter.conf 
+ 1601  ls -l /etc/lightdm/
+ 1602  less /etc/lightdm/lightdm.conf.d/
+ 1603  cd /etc/lightdm/lightdm.conf.d/
+ 1604  vim .config/i3/config 
+ 1605  vim .config/i3status/config 
+ 1606  rofi
+ 1607  db1
+ 1608  dmts status
+ 1609  dkdb status
+ 1610  sudp apt shoe picom
+ 1611  mkdir sorsi
+ 1612  cd sorsi/
+ 1613  git clone https://github.com/jonaburg/picom
+ 1614  git submodule update --init --recursive
+ 1615  sudo apt show x11-xcb
+ 1616  sudo apt show libx11-xcb-dev
+ 1617  sudo apt install libx11-xcb-dev
+ 1618  sudo apt show libxcb-damage0-dev
+ 1619  sudo apt install libxcb-damage0-dev
+ 1620  sudo apt show libxcb-sync-dev
+ 1621  sudo apt install libxcb-sync-dev
+ 1622  sudo apt show libxcb-composite0-dev
+ 1623  sudo apt install libxcb-composite0-dev
+ 1624  sudo apt show libxcb-present-dev
+ 1625  sudo apt install libxcb-present-dev
+ 1626  sudo apt show uthash-dev
+ 1627  sudo apt install uthash-dev
+ 1628  sudo apt show libconfig-dev
+ 1629  sudo apt install libconfig-dev
+ 1630  sudo apt install cmake pkg-config mesa-utils libglu1-mesa-dev freeglut3-dev mesa-common-dev libglew-dev libglfw3-dev libglm-dev libao-dev libmpg123-dev
+ 1631  sudo apt install build-essential libpython3-dev libdbus-1-dev
+ 1632  meson --buildtype=release . build
+ 1633  ninja -C build
+ 1634  sudo ninja -C build install
+ 1635  cd .config/
+ 1636  picom -b
+ 1637  l
+ 1638  audo apt show picom
+ 1639  sudo apt show picom
+ 1640  updatedb
+ 1641  sudo updatedb
+ 1642  locate picom
+ 1643  locate picom | grep conf
+ 1644  vim /home/rgregor/majstaf/sorsi/picom/picom.sample.conf
+ 1645  cp /home/rgregor/majstaf/sorsi/picom/picom.sample.conf ~/.config/
+ 1646  cd ~/.config
+ 1647  mkdir picom
+ 1648  mv picom.sample.conf picom/
+ 1649  cd picom/
+ 1650  cp picom.sample.conf picom.conf 
+ 1651  picom --config ~/.config/picom/picom.conf -b
+ 1652  cd __STARO__/
+ 1653  ls -t
+ 1654  cd ..
+ 1655  cd
+ 1656  cd majstaf/
+ 1657  cd metsys_muadib/
+ 1658  grep -r --color false ./*
+ 1659  grep -r --color '=false' ./*
+ 1660  grep -r --color '= false' ./*
+ 1661  vim i3-gaps
+ 1662  vim picom.conf 
+ 1663  vim ~/xopicom.conf 
+ 1664  vim ~/.config/picom/picom.conf 
+ 1665  grep -r --color '= false' ./*
+ 1666  vim i3-gaps
+ 1667  vim picom.conf 
+ 1668  vim ~/xopicom.conf 
+ 1669  la
+ 1670  vim ~/.config/picom/picom.conf 
+ 1671  picom --config ~/.config/picom/picom.conf -b
+ 1672  pwf
+ 1673  vim .config/i3/config 
+ 1674  feh
+ 1675  feh --bg-scale /home/rgregor/majstaf/majvolpejpers/majvolpejpers_bob2/index3.jpeg &
+ 1676  sudo apt show lxappereance
+ 1677  sudo apt show lxapereance
+ 1678  history > majstaf/metsys_muadib/i3_picom_setup_20230117.txt
+ 1679  feh --bg-scale /home/rgregor/majstaf/majvolpejpers/majvolpejpers_bob2/index3.jpeg &
+ 1680  sudo apt-show lxapearance
+ 1681  sudo apt show lxapearance
+ 1682  sudo apt show lxappearance
+ 1683  sudo apt install lxappearance
+ 1684  lxappearance &
+ 1685  la
+ 1686  alsamixer 
+ 1687  la
+ 1688  alsamixer 
+ 1689  amixer 
+ 1690  alsamixer
+ 1691  cd C_and_Cpp_testing
+ 1692  c
+ 1693  l
+ 1694  cd cd088_BrthReminder-02_20221222/
+ 1695  vim src/BrthReminder.c 
+ 1696  ./BrthReminder 
+ 1697  cd
+ 1698  pavucontrol &
+ 1699  cd
+ 1700  pavucontrol &
+ 1701  dmts status
+ 1702  dkdb add .
+ 1703  dkdb commit -m "bash_i3_wallpaper-shufler-setup_20230117.txt"
+ 1704  dkdb_push_all 
+ 1705  dkdb status
+ 1706  db0
+ 1707  db0
+ 1708  ll Pictures/
+ 1709  cp majstaf/majvolpejpers/majvolpejpers_bob2/index3.jpeg ./Pictures/
+ 1710  cd Pictures/
+ 1711  cd
+ 1712  cd majstaf/coding/00_ukazi/
+ 1713  vim volpejpersafler.sh
+ 1714  chmod 755 volpejpersafler.sh 
+ 1715  ./volpejpersafler.sh 
+ 1716  cp volpejpersafler.sh ~/majstaf/majbin/
+ 1717  cd ~/majstaf/majbin/
+ 1718  mv volpejpersafler{.sh,} 
+ 1719  l
+ 1720  softlink1-fname-to-ulb volpejpersafler 
+ 1721  db0
+ 1722  feh --bg-scale /home/rgregor/majstaf/majvolpejpers/majvolpejpers_bob2/index3.jpeg &
+ 1724  cd ODPRTO/_LINUX_SYSTEM/
+ 1725  ls -t | head
+ 1726  vim bash_i3_wallpaper-shufler-setup_20230117.txt 
+ 1727  vim .config/i3/config 
+ 1728  cd majstaf/metsys_muadib/
+ 1729  mkdir i3_setup
+ 1730  mv i3-gaps* i3_picom_setup_20230117.txt i3_setup/
+ 1731  cd i3_setup/
+ 1732  ll i3-gaps
+ 1733  rm i3-gaps
+ 1734  cp i3-gaps_setup_20230115.txt i3-commands_20230115.txt 
+ 1735  vim i3-gaps_setup_20230115.txt 
+ 1736  ll
+ 1737  history
+ 1738  history > history_20230117.txt

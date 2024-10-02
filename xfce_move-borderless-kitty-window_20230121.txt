@@ -1,0 +1,5 @@
+Moving and resizing borderless kitty window - xfce
+
+move:	Alt+left-mouse-button
+resize:	Alt+right-mouse-button
+

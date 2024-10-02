@@ -1,0 +1,25 @@
+Android: AVD KVM setup 20190901
+
+I believe you are trying to run AVD on Linux machine in KVM mode(called HAXM on Windows and OS X machines)
+
+Install KVM by executing following command
+
+$ sudo apt-get install qemu-kvm libvirt-bin virtinst bridge-utils cpu-checker
+
+Next check KVM installed successfully by executing following command
+
+$ kvm-ok
+
+the output will be something like this
+
+INFO: /dev/kvm exists
+KVM acceleration can be used
+
+Next add your username to KVM and libvirtd and run the AVD from the tools directory of your android SDK
+
+$sudo adduser `id -un` libvirtd	(libvirt ??)
+$sudo adduser `id -un` kvm
+
+$ ./emulator64-x86 -avd < your AVD name> -qemu -m 2047 -enable-kvm
+
+Note: To find the names of your available AVDs, open the AVD manager from tools folder of android sdk by executing command $./android avd

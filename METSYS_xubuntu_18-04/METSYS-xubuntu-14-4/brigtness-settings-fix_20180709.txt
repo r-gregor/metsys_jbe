@@ -1,0 +1,12 @@
+No Brightness settins fix --> it is contained in xfce4-power-manager:
+	sudo apt-get install xubuntu-desktop 
+...doesn't install package xfce4-power-manager. So installing this package helped me to solve this problem:
+
+1-install
+	sudo apt-get install xfce4-power-manager xfce4-power-manager-data xfce4-power-manager-plugins
+Next reboot your laptop and enjoy it.
+
+2-add to top pannel (brightness plugin is awailable as items that can be added)
+
+
+

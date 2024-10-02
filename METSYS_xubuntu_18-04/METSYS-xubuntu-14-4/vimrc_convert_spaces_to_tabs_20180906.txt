@@ -1,0 +1,12 @@
+Subject: update dot_vimrc
+
+" setup indentations to be 4 spaces, and TABs are 4 spaces also:
+" set expandtab
+set shiftwidth=4
+set tabstop=4
+set smartindent
+
+1 - comment out expandtab --> tabs NOT spaces
+2 - add smartindent --> follows tab from previous line
+
+LP,

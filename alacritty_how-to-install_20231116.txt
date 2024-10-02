@@ -1,0 +1,965 @@
+How To Install And Configure Alacritty Terminal Emulator In Linux
+
+Alacritty – A Lightweight And Blazingly Fast Terminal Emulator
+April 21, 2023
+
+In this article, we will take a look at one of the popular terminal emulators named Alacritty and how
+to install Alacritty in various Linux distributions, and finally how to configure Alacritty terminal
+emulator to get the most of it.
+What is Alacritty?
+
+Alacritty is a cross-platform, GPU-accelerated terminal emulator. It is an OpenGL terminal emulator
+written in Rust Programming language. Thanks to the OpenGL renderer and the high throughput parser,
+Alacritty is incredibly fast and extremely lightweight Terminal emulator in existence.
+
+Since it has been developed to focus only on simplicity and performance in mind, Alacritty Terminal
+emulator doesn't include many fancy features like tabs and spilts that you use in other Terminal emulators,
+for example Terminology.
+
+Alacritty supports major operating systems, including Linux, BSD, Mac OS, and Windows.
+Alacritty Features
+
+Some of the core features of alacritty are as follows.
+
+    Yaml-based configuration.
+    Multi Window.
+    Opening the URL into the browser directly from the terminal.
+    Vi mode.
+    Search Mode - Normal and VI search.
+    Customizable color schemes.
+    Customizable keybindings.
+    Hints & Selection Expansion.
+
+Install Alacritty in Linux
+
+As stated already, Alacritty can also be installed on macOS and Windows but our focus is only on linux
+for this article.
+
+Before installing Alacritty in Linux, you need to set up Rust programming language to build and install
+alacritty. Refer the following guide to know how to install Rust in Linux.
+
+    Install Rust Programming Language In Linux
+
+Next install the necessary development tools in your Linux box.
+
+Alpine Linux:
+
+$ sudo apk add cmake pkgconf freetype-dev fontconfig-dev python3 libxcb-dev
+
+Arch Linux, EndeavourOS, and Manjaro Linux:
+
+$ sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon python
+
+Debian, Ubuntu and derivatives:
+
+$ sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
+python3
+
+Fedora:
+
+$ sudo dnf install cmake freetype-devel fontconfig-devel libxcb-devel libxkbcommon-devel g++
+
+RHEL 8:
+
+$ sudo dnf install cmake freetype-devel fontconfig-devel libxcb-devel libxkbcommon-devel
+$ sudo dnf group install "Development Tools"
+
+OpenSUSE:
+
+$ sudo zypper install cmake freetype-devel fontconfig-devel libxcb-devel libxkbcommon-devel
+
+FreeBSD:
+
+$ pkg install cmake freetype2 fontconfig pkgconf python3
+
+OpenBSD:
+
+$ pkg_add rust python
+
+Always keep an eye on the official installation instructions as it may change in future.
+
+After installing Rust and other required dependencies, git clone the alacritty project repository.
+
+$ git clone https://github.com/alacritty/alacritty.git
+$ cd alacritty
+
+Next, run the following command to start the build. This command should be submitted under the cloned
+alacritty directory.
+
+$ cargo build --release
+
+Once the build is completed the binary will be generated under alacritty/target/release/alacritty.
+
+A few additional steps are needed to set up the Term info, Desktop entry, and man page.
+
+Heads Up: The following commands should be submitted from the cloned alacritty directory.
+
+Run the following command to set up the term info.
+
+$ sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+
+Run the following command to set up the desktop entry.
+
+$ sudo cp target/release/alacritty /usr/local/bin # or anywhere else in $PATH
+$ sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+$ sudo desktop-file-install extra/linux/Alacritty.desktop
+$ sudo update-desktop-database
+
+Run the following command to set up the man page.
+
+$ sudo mkdir -p /usr/local/share/man/man1
+$ gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
+$ gzip -c extra/alacritty-msg.man | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null
+
+If all the above instructions went successfully, you should see the alacritty icon in your system menu.
+Alacritty Icon in System MenuAlacritty Icon in System Menu
+Alacritty Configuration File Path
+
+Alacritty by default will not create a configuration file. You have to create a configuration file named
+"alacritty.yml" in any of the following locations.
+
+$XDG_CONFIG_HOME/alacritty/alacritty.yml
+$XDG_CONFIG_HOME/alacritty.yml
+$HOME/.config/alacritty/alacritty.yml
+$HOME/.alacritty.yml
+
+You can download the default configuration file from the project repository. This file has all the
+supported parameters and all are commented out by default. You can use this file as a reference to create
+your configuration file.
+Alacritty Default Configuration FileAlacritty Default Configuration File
+Create Configuration From Scratch
+
+In the upcoming sections, I am going to show you the most important parameters which will help you set
+up the terminal very quickly. Furthermore, you can explore the advanced features and add them to the
+config file if required.
+
+Heads Up: The configuration file is in yaml format. Lookout for proper indentation.
+Live Configuration Reload
+
+By default, alacritty supports live configuration changes. If you wish to disable it add the following
+property to the configuration file.
+
+live_config_reload: false
+
+Window Configurations
+1. Window Title
+
+At the top of the terminal, you will see the title of the terminal which is set to "Alacritty" by default.
+Alacritty Terminal Window TitleAlacritty Terminal Window Title
+
+You can set your own title by adding the following property to the config file. Here I am setting the
+title as "Term-Alacritty".
+
+window:
+  title: Term-Alacritty
+
+Custom Title for Alacritty TerminalCustom Title for Alacritty Terminal
+
+You can also enable or disable the dynamic title.
+
+window:
+  # title: Term-Alacritty
+  dynamic_title: true
+
+2. Startup Mode
+
+You can decide on which mode the terminal window should start with.
+
+    Fullscreen: Terminal will take the full screen without the title bar.
+    Maximized: This is like pressing the maximize button in the title bar.
+    Windowed: It uses the dimensions to position the terminal window.
+
+startup_mode: Windowed # Supported => Windowed, Maximized, Fullscreen
+
+3. Window Dimension & Window Position
+
+You can set the window dimension and position using the following properties. The dimension represents
+the lines/columns in the terminal and the position represents the pixels.
+
+dimensions:
+  columns: 151
+  lines: 39
+position:
+  x: 300
+  y: 150
+
+4. Opacity
+
+The opacity property decides the background transparency of your terminal. The value can be set from
+0.0 which is fully transparent to 1.0 which is opaque.
+
+opacity: 0.5 # Supported => 0.0(fully transparent) -> 1.0(opaque)
+
+Alacritty Terminal Background TransparencyAlacritty Terminal Background Transparency
+Cursor Settings
+
+You can set the shape and blink for the cursor by adding the following yaml configuration. You can set
+the different shapes for default alacritty and vi modes. This helps in identifying the current mode easily.
+
+cursor:
+  style:
+    shape: underline       # Supported => ▇ Block, _ Underline, | Beam
+    blinking: off          # Supported => Never, off, on, Always
+    vi_mode_style: Beam
+
+Alacritty cursor - Normal mode:
+Alacritty Cursor - Normal ModeAlacritty Cursor - Normal Mode
+
+Alacritty cursor - Vi mode:
+Alacritty Cursor - Vi ModeAlacritty Cursor - Vi Mode
+Copy On Select
+
+If you are familiar with Putty, you probably will know this. Selecting any line in the putty will get
+copied to the clipboard. Most linux terminals do not implement this natively. You can enable this feature
+in alacritty by adding the following yaml configuration.
+
+selection:
+  save_to_clipboard: true
+
+Scrollback Buffer
+
+The Scrollback buffer allows you to scroll your terminal till the given lines. Let’s say you have
+given the scrollback buffer as 1000, then you can scroll back to the previous 1000 lines in your terminal.
+
+scrolling:
+  history: 2000
+
+To disable scrolling, set the value to '0'.
+Startup Directory
+
+By default when you start the terminal it will use the user's home directory as the startup directory
+unless you open the terminal explicitly from within any directory. You can set the custom startup
+directory by setting the following parameter.
+
+working_directory: "/home/ostechnix/Desktop/"
+
+Default Shell
+
+By default, the terminal uses the default shell setup in the user profile. You can override this by
+adding the following parameters. Here my default shell is /bin/bash, but I am using /bin/fish as my
+default shell and passed --private to start the shell with private mode.
+
+shell:
+  program: /bin/fish
+  args:
+    - --private
+
+To know about fish private mode, please refer the guide below.
+
+    How To Launch Fish Shell In Private Mode In Linux
+
+Font Settings
+
+You can set the font and font size by adding the following properties in the configuration file. You
+can add font and its style for normal, bold, italic, and bold_italic font types.
+
+You can run the fc-list command to check the list of installed fonts. I am using "Ubuntu Mono" font.
+
+$ fc-list | grep -i "fira code"
+fc-list | grep -i "ubuntu mono"
+/usr/share/fonts/truetype/ubuntu/UbuntuMono-RI.ttf: Ubuntu Mono:style=Italic
+/usr/share/fonts/truetype/ubuntu/UbuntuMono-B.ttf: Ubuntu Mono:style=Bold
+/usr/share/fonts/truetype/ubuntu/UbuntuMono-BI.ttf: Ubuntu Mono:style=Bold Italic
+/usr/share/fonts/truetype/ubuntu/UbuntuMono-R.ttf: Ubuntu Mono:style=Regular
+
+font:
+  size: 13
+  offset:
+    x: 0
+    y: 1
+  normal:
+    family: Ubuntu Mono
+    style: Regular
+  bold:
+    family: Ubuntu Mono
+    style: Bold
+  italic:
+    family: Ubuntu Mono
+    style: Regular Italic
+  bold_italic:
+    family: Ubuntu Mono
+    style: Bold Italic
+
+Ubuntu Mono FontUbuntu Mono Font
+Color Schemes
+
+You can set multiple color schemes under the "schemes" section and set anyone as the default color in the
+"colors" properties.
+
+schemes:
+
+  darcula: &darcula
+    primary:
+      background: '0x282a36'
+      foreground: '0xf8f8f2'
+    normal:
+      black:   '0x000000'
+      red:     '0xff5555'
+      green:   '0x50fa7b'
+      yellow:  '0xf1fa8c'
+      blue:    '0xcaa9fa'
+      magenta: '0xff79c6'
+      cyan:    '0x8be9fd'
+      white:   '0xbfbfbf'
+    bright:
+      black:   '0x282a35'
+      red:     '0xff6e67'
+      green:   '0x5af78e'
+      yellow:  '0xf4f99d'
+      blue:    '0xcaa9fa'
+      magenta: '0xff92d0'
+      cyan:    '0x9aedfe'
+      white:   '0xe6e6e6'
+
+  atom_one_light: &atom_one_light
+    primary:
+      background: '0xf8f8f8'
+      foreground: '0x2a2b33'
+    normal:
+      black:   '0x000000'
+      red:     '0xde3d35'
+      green:   '0x3e953a'
+      yellow:  '0xd2b67b'
+      blue:    '0x2f5af3'
+      magenta: '0xa00095'
+      cyan:    '0x3e953a'
+      white:   '0xbbbbbb'
+    bright:
+      black:   '0x000000'
+      red:     '0xde3d35'
+      green:   '0x3e953a'
+      yellow:  '0xd2b67b'
+      blue:    '0x2f5af3'
+      magenta: '0xa00095'
+      cyan:    '0x3e953a'
+      white:   '0xffffff'
+
+colors: *atom_one_light
+
+Here, I am setting "atom_one_light" as the color scheme.
+Atom One Light Color SchemeAtom One Light Color Scheme
+
+The above-mentioned step is a manual approach. Alternatively, you can clone all the themes from github
+and import the desired theme into the alacritty.yml file using the import statement.
+
+Run the following commands to clone the themes.
+
+mkdir -p ~/.config/alacritty/themes
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+
+Add the import statement into the alacritty.yml file. All you have to do is replace the {theme} in the
+syntax with the theme file name.
+
+# syntax
+import:
+ - ~/.config/alacritty/themes/themes/{theme}.yaml
+
+import:
+  - ~/.config/alacritty/themes/themes/argonaut.yaml
+
+Here I am using the argonaut theme.
+Argonaut Theme for AlacrittyArgonaut Theme for Alacritty
+Alacritty Keybindings
+
+As foretold, Alacritty supports normal mode, vi mode, and search mode. Each mode comes with predefined
+key bindings. You can get the key bindings from the alacritty.yml reference file downloaded from github.
+
+For example, if you wish to go to vi mode then you can use "SHIFT + CTRL + SPACE".
+Alacritty KeybindingsAlacritty Keybindings
+
+Setting custom keybindings is pretty simple. Grab any action from the reference file and add it to the
+alacritty.yml by just changing the key and mods. Here, I have changed the ToggleViMode keystroke to
+"CTRL + SPACE" instead of "CTRL + SHIFT + SPACE".
+
+key_bindings:
+  - { key: Space,mods: Control,mode: ~Search,action: ToggleViMode }
+
+Conclusion
+
+Alacritty is very popular in terminal space and easy to set up. Deep dive by spending a few hours in the
+terminal and you will love all the features it offers. Alacritty is actively maintained. If you think
+of any new features to be added, you can raise an enhancement request in the github.
+
+Resources:
+
+    Alacritty Website
+    Alacritty GitHub Repository
+
+AlacrittyLinuxLinux TerminalOpenGLOpensourceRustTerminal Emulator
+0 comment 5
+Karthick
+
+Karthick is a passionate software engineer who loves to explore new technologies. He is a public speaker
+and loves writing about technology especially about Linux and opensource.
+Previous post
+How To Upgrade To Fedora 38 From Fedora 37 [Workstation And Server]
+Next post
+How To Install Fedora 38 [A Step By Step Guide]
+You May Also Like
+Leave a Comment
+
+Save my name, email, and website in this browser for the next time I comment.
+* By using this form you agree with the storage and handling of your data by this website.
+
+This site uses Akismet to reduce spam. Learn how your comment data is processed.
+Search
+Keep in touch
+Facebook
+Twitter
+Linkedin
+Youtube
+Email
+Reddit
+Rss
+Home	Fedora How To Upgrade To Fedora 38 From Fedora 37 [Workstation And Server]
+FedoraLinuxLinux AdministrationLinux BasicsLinux CommandsLinux DistributionsUnix/Linux Beginners
+How To Upgrade To Fedora 38 From Fedora 37 [Workstation And Server]
+A Step By Step Guide To Upgrade Fedora 37 To Fedora 38
+Written by sk Published: April 19, 2023Last Updated on April 25, 2023 37.8K views
+1 comment 5
+
+Fedora 38 has been released!! This step by step tutorial explains how to upgrade to Fedora 38 from Fedora
+37 and older versions. If you're already using Fedora 37, you can now safely upgrade to Fedora 38 desktop
+or server edition for latest features, performance and stability improvements.
+
+Prerequisites
+
+Before upgrading to Fedora 38, you need to do a few important tasks.
+
+    It is strongly RECOMMENDED to Backup your important data before upgrading to Fedora 38. This should
+    be your first step when you want to upgrade any system, regardless of the underlying operating
+    system. Make sure you've backup of all important files, directories, configuration settings, browser
+    bookmarks, and dot files etc.
+    Fedora 38 upgrade will probably take several minutes to complete. So make sure you've stable Internet
+    connection and uninterrupted power supply.
+    During upgrade, your system will reboot automatically to apply updates. So ensure that there aren't
+    any important jobs currently running (E.g. Scheduled backups).
+    See the Fedora 38 common issues and decide if you want to proceed.
+    Upgrades to the very next release (e.g. 37 to 38) as well as upgrades skipping one release (e.g. 36 to
+    38) are both supported. Upgrades across more than two releases are not supported. For example - you
+    can't go from Fedora 35 to 38. It might work sometimes. However, if you encounter with any issues,
+    you won't get any support. In such cases, first upgrade to next release (i.e. 35 to 36) and then
+    try to upgrade from 36 to 38. It is always recommended to upgrade to next release before it reaches EOL.
+
+Well, without further ado, let us start Fedora 38 upgrade task!
+Upgrade to Fedora 38 from Fedora 37
+
+Fedora 38 upgrade task can be done in two methods. We can upgrade to Fedora 38 via GNOME software (GUI)
+and from command line (CLI). First, we will see the Graphical method using GNOME Software. This is
+suitable for those who use Fedora desktop edition.
+
+Before get started, update your Fedora 37 system:
+
+$ sudo dnf --refresh update
+
+$ sudo dnf upgrade
+
+Reboot your system to apply the updates:
+
+$ sudo reboot
+
+Let us check the current version using the following commands:
+
+$ cat /etc/fedora-release
+
+To view the detailed version output, run this instead:
+
+$ cat /etc/os-release
+
+Sample Output:
+Check Fedora Version From CommandlineCheck Fedora Version From Commandline
+
+As you can see, we have currently Fedora 37 on our system. Let us upgrade Fedora 37 to Fedora 38 via
+any one of the methods given below.
+1. Upgrade to Fedora 38 Workstation via GNOME Software
+
+Step 1: Open your Gnome Software Center and go to Updates section. You will see a notification that says -
+Fedora 38 Now Available. Click the Download button to download Fedora 38 packages.
+Download Fedora 38 From Gnome SoftwareDownload Fedora 38 From Gnome Software
+
+The required packages for upgrading to Fedora 38 will be downloaded now. This will take a while depending
+on the Internet speed.
+Downloading Fedora Linux 38Downloading Fedora Linux 38
+
+Step 2: Once the Fedora 38 download is complete, you will be prompted to restart and upgrade. Click the
+"Restart & Upgrade" button to continue installing the updates.
+
+Step 3: A new pop up window will appear and prompt you to click Restart & Install Upgrade button. Just
+click on it to reboot your Fedora system.
+Click Restart And Upgrade ButtonClick Restart And Upgrade Button
+
+Enter the sudo password to trigger the updates.
+Enter Sudo Password to Start Offline UpdatesEnter Sudo Password to Start Offline Updates
+
+One more pop up window will appear again and prompt you to press "Restart & Install" button.
+Click Restart And Install ButtonClick Restart And Install Button
+
+After system reboot, the downloaded packages will be installed. This will take a while depending on
+the number of packages to install. Make sure your system is plugged into the power outlet and you have
+uninterrupted power supply.
+Installing Fedora UpdatesInstalling Fedora Updates
+
+After the updates have installed, the system will automatically reboot and log in to the brand new Fedora
+38 workstation desktop.
+Fedora 38 DesktopFedora 38 Desktop
+
+You can check if your Fedora system is up-to-date under Updates section in Gnome Software.
+Check for Updates in Gnome SoftwareCheck For Updates In Gnome Software
+
+Congratulations! We've successfully upgraded to Fedora 38 Gnome workstation edition!
+
+Step 4: Open a Terminal window and check the installed Fedora version using command:
+
+$ cat /etc/fedora-release
+Fedora release 38 (Thirty Eight)
+
+To view the detailed output, run:
+
+$ cat /etc/os-release
+
+Sample output:
+
+NAME="Fedora Linux"
+VERSION="38 (Workstation Edition)"
+ID=fedora
+VERSION_ID=38
+VERSION_CODENAME=""
+PLATFORM_ID="platform:f38"
+PRETTY_NAME="Fedora Linux 38 (Workstation Edition)"
+ANSI_COLOR="0;38;2;60;110;180"
+LOGO=fedora-logo-icon
+CPE_NAME="cpe:/o:fedoraproject:fedora:38"
+DEFAULT_HOSTNAME="fedora"
+HOME_URL="https://fedoraproject.org/"
+DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/f38/system-administrators-guide/"
+SUPPORT_URL="https://ask.fedoraproject.org/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
+REDHAT_BUGZILLA_PRODUCT="Fedora"
+REDHAT_BUGZILLA_PRODUCT_VERSION=38
+REDHAT_SUPPORT_PRODUCT="Fedora"
+REDHAT_SUPPORT_PRODUCT_VERSION=38
+SUPPORT_END=2024-05-14
+VARIANT="Workstation Edition"
+VARIANT_ID=workstation
+
+Check Fedora 38 Version From TerminalCheck Fedora 38 Version From Terminal
+
+Alternatively, You can check the Fedora version under Settings -> About section.
+Check Fedora 38 Version From Settings SectionCheck Fedora 38 Version From Settings Section
+2. Upgrade to Fedora 38 Server from Commandline
+
+This method is for those who runs Fedora server edition in their system.
+
+Step 1: Update your current Fedora 37 server using commands:
+
+$ sudo dnf --refresh update
+
+$ sudo dnf upgrade
+
+Reboot your system to apply the updates.
+
+$ sudo reboot
+
+Step 2: Install dnf upgrade plugin, which will help you to download Fedora 38 packages, by running the
+following command:
+
+$ sudo dnf install dnf-plugin-system-upgrade
+
+Step 3: Download Fedora 38 packages using command:
+
+$ sudo dnf system-upgrade download --releasever=38
+
+This command will download all latest packages and display the summary of what packages are going to
+be replaced, updated, upgraded, or downgraded. This task should take several minutes to complete as it
+downloads a lot of packages.
+
+If some of your packages have unsatisfied dependencies, the upgrade will refuse to continue until you
+run it again with an extra --allowerasing option.
+
+$ sudo dnf system-upgrade download --releasever=38 --allowerasing
+
+Step 4: Once all packages are downloaded, run the following command to start actual upgrade.
+
+$ sudo dnf system-upgrade reboot
+
+Your system will reboot automatically and upgrade task will start to install all downloaded packages.
+
+Upon successful upgrade, the system reboots into the new Fedora 38 server edition.
+Fedora Post-upgrade Tasks
+
+In this section, we will do a few post-upgrade tasks such as changing the hostname, removing unwanted
+packages, updating configuration files, deleting orphaned symlinks, and cleaning up old kernels etc.
+
+The steps provided below are applicable for both Fedora desktop and server editions.
+1. Change Hostname
+
+I usually use distribution's name as hostname. For example, the hostname for my Fedora 38 desktop would
+be fedora38. If you're anything like me, change the hostname to match with your current version.
+
+To change hostname, run:
+
+$ sudo hostnamectl set-hostname fedora38
+
+2. Clean DNF Metadata Cache
+
+After upgrade, the cached metadata and transacation can cleared using the following commands:
+
+$ sudo dnf system-upgrade clean
+
+$ sudo dnf clean packages
+
+3. Remove Old Packages
+
+List all packages with broken or unsatisfied dependencies, run:
+
+$ sudo dnf update
+
+$ sudo dnf repoquery --unsatisfied
+
+List all duplicate packages using command:
+
+$ sudo dnf repoquery --duplicates
+
+List all packages that are not in the repositories:
+
+$ sudo dnf list extras
+
+If you don't need them anymore, simply run the following commands to remove old, and unused packages.
+
+$ sudo dnf remove $(sudo dnf repoquery --extras --exclude=kernel,kernel-*)
+
+$ sudo dnf autoremove
+
+4. Clean Up Retired Packages
+
+A few packages will be retired in each Fedora release. They could be obsolete or the maintainer abandoned
+the packages. The retired packages packages will not get any updates. Not even security updates.
+
+To remove obsolete and retired packages, run:
+
+$ sudo dnf install remove-retired-packages
+
+$ remove-retired-packages
+
+5. Update System Configuration Files
+
+To update system configuration files, use rpmconf tool.
+
+To install rpmconf tool, run:
+
+$ sudo dnf install rpmconf
+
+Once the install is complete, run the following command:
+
+$ sudo rpmconf -a
+
+6. Clean Up Old Kernels
+
+The dnf autoremove command will not remove any unused kernels to avoid unintentional Kernel removals. If
+you want to remove old kernels, you can use the following command:
+
+$ sudo dnf remove $(dnf repoquery --installonly --latest-limit=-3)
+
+The above command will remove all old kernels and retain only the latest 3 kernels.
+
+Heads Up: It is HIGHLY RECOMMENDED to keep at least two kernels. Because, if there is a problem in the
+current Kernel version after upgrading, you can safely switch to the older kernel.
+7. Remove Broken Symlinks
+
+After system upgrade, there would be some unused symlinks left in your system. You need to find and
+delete the dangling soft links or symlinks that don't point anywhere.
+
+To find broken symlinks in /usr directory, run:
+
+$ sudo symlinks -r /usr | grep dangling
+
+To remove the dangling symlinks, run:
+
+$ sudo symlinks -r -d /usr
+
+Finally, reboot your system:
+
+$ sudo reboot
+
+Start using the latest Fedora 38 edition.
+Conclusion
+
+In this guide, we have seen how to upgrade to Fedora 38 from Fedora 37 via Gnome Software center and
+from terminal. At the end, we included a few post-upgrade steps that needs to be done to cleanup the
+newly upgraded fedora system.
+
+Related Read:
+
+    How To Install Fedora 38 [A Step By Step Guide]
+
+FedoraFedora 38LinuxLinux administrationLinux distributionUpgrade FedoraUpgrade to Fedora 38
+1 comment 5
+sk
+
+Senthilkumar Palani (aka SK) is the Founder and Editor in chief of OSTechNix. He is a Linux/Unix enthusiast
+and FOSS supporter. He lives in Tamilnadu, India.
+Previous post
+Install FreeBSD 13.2
+Next post
+How To Install And Configure Alacritty Terminal Emulator In Linux
+You May Also Like
+1 comment
+Doug May 11, 2023 - 4:22 am
+
+worked like a champ
+Reply
+Leave a Comment
+
+Save my name, email, and website in this browser for the next time I comment.
+* By using this form you agree with the storage and handling of your data by this website.
+
+This site uses Akismet to reduce spam. Learn how your comment data is processed.
+Search
+Keep in touch
+Facebook
+Twitter
+Linkedin
+Youtube
+Email
+Reddit
+Rss
+About OSTechNix
+
+Ostechnix Footer Logo
+
+
+
+OSTechNix (Open Source, Technology, Nix*) regularly publishes the latest news, how-to articles, tutorials
+and tips & tricks about free and opensource software and technology.
+Archives
+Popular Posts
+
+    1
+    Yt-dlp Commands: The Complete Tutorial For Beginners (2023)
+    September 30, 2023
+    2
+    How To Safely Remove Ubuntu Linux From Dual Boot Windows
+    May 31, 2023
+    3
+    How To Switch Between Multiple PHP Versions In Ubuntu
+    August 9, 2018
+
+    AboutContact UsPrivacy PolicySitemapTerms and Conditions
+
+OSTechNix © 2023. All Rights Reserved. This site is licensed under CC BY-NC 4.0.
+
+This website uses cookies to improve your experience. By using this site, we will assume that you're OK
+with it. Accept Read More
+Managed by Google. Complies with IAB TCF. CMP ID: 300
+
+
+---
+https://linux.how2shout.com/how-to-install-alacritty-terminal-on-ubuntu-22-04-lts/#6_Download_Alacritty_Source_code
+
+How to install Alacritty Terminal on Ubuntu 22.04 LTS
+October 12, 2022
+
+Learn the steps and commands to install Alacritty terminal on Ubuntu 22.04 jammy jellyfish Linux using
+the PPA repo or by compiling it from source code.
+
+Alacritty terminal is known for its fast speed. It’s written in Rust and uses OpenGL for rendering to
+be the fastest terminal emulator available. It is the simplest terminal emulator for Linux because the
+developers want to increase its performance of it. That means you won’t find things like tabs, splits,
+or GUI config editor. Therefore, this terminal is for those who are Linux using some old system or have
+limited resources, or looking for a performance-centric Terminal.
+
+It is not for those who want some fancy Terminal with dozens of features such as Tabby and Terminator
+instead a simple, minimal one that can use the GPU to enhance the performance. Well, it is a relatively
+new Terminal as compared to other popular names such as Gnome terminal or XFCE terminal.
+
+Here in this tutorial article, where we know how to install and use Alacritty on Ubuntu 22.04 Linux…
+On the Page hide
+Steps to install Alacritty on Ubuntu 22.04 Linux
+01. Update Ubuntu 22.04
+02. Add Alacritty PPA repository
+03. Install Alacritty Terminal on Ubuntu 22.04
+04. Install Developer Tools
+05. Configure Rust on Ubuntu 22.04
+06. Download Alacritty Source code
+07. Start Compiling process
+08. Create a Desktop shortcut
+09. Run Alacritty Terminal
+10. For Customization
+11. Pre-built Terminal Themes
+12. How to update Alacritty
+13. Uninstall Alacritty from Ubuntu 22.04
+Steps to install Alacritty on Ubuntu 22.04 Linux
+
+There are two ways to install Alacritty on Ubuntu one is using the PPA repository and the other is by
+compiling its source code available on GitHub.
+
+#1st Method using PPA repo
+
+1. Update Ubuntu 22.04
+Open your default terminal, you can use the keyboard shortcut Ctrl+Alt+T. After that before moving
+further and adding PPA, run the system update using the given command.
+
+$> sudo apt update && sudo apt upgrade
+
+2. Add Alacritty PPA repository
+Well, those who don’t want to add some third-party PPA repository on their Ubuntu 22.04 can go for the
+second method given in this tutorial i.e using source code. However, users looking for a simple way can
+use the PPA.
+
+$> sudo add-apt-repository ppa:aslatter/ppa -y
+
+3. Install Alacritty Terminal on Ubuntu 22.04
+Once you have added the PPA repository, we can install the Alacritty terminal on Ubuntu  22.04 using
+the APT package manager of the system like any other common open-source software.
+
+$> sudo apt install alacritty
+
+#2nd Method- By Compiling the Alacritty source code.
+4. Install Developer Tools
+
+There may be some users who don’t want to add any extra PPA repo on their Ubuntu system although it is
+safe, now. Yet, if an additional repository is something you don’t want then compile the source. For
+that, first install the developer tools in your Ubuntu 22.04. Here is the command for that.
+
+sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev \
+python3 -y
+
+5. Configure Rust on Ubuntu 22.04
+As Alacritty is written in Rust programming language, hence our system also needs Rust to run this
+terminal emulator application. To install it, just run the given command.
+
+$> sudo curl https://sh.rustup.rs -sSf | sh
+
+Note: Once the installation is completed, close your Terminal and open it again, so that it can be loaded
+into the system and recognize the Rust command line tool.
+
+6. Download Alacritty Source code
+Now, we need to copy the source from the GitHub repository of Alacritty, for that we can use the Git
+command line tool.
+
+$> sudo apt install git -y
+
+Clone Source code:
+
+$> git clone https://github.com/jwilm/alacritty.git
+
+7. Start Compiling process
+After cloning source code, switch to its directory, here is the command to do that:
+
+$> cd alacritty
+
+Now use cargo to build:
+
+$> cargo build --release
+
+To confirm, the Alacritty terminal is installed without any error, run:
+
+sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+
+infocmp alacritty
+
+If the output is without any error that means, everything is alright and working fine.
+Alacritty Terminal is installed without any error
+8. Create a Desktop shortcut
+
+Once the installation process of building Alacritty source code is done, it will save the compiled binary
+under a directory, here is the path to that: /target/release/alacritty present under your Alacritty’s
+git cloned directory.
+
+Without leaving Alacritty directory, run the given commands.
+
+sudo cp target/release/alacritty /usr/local/bin
+
+sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+
+sudo desktop-file-install extra/linux/Alacritty.desktop
+
+sudo update-desktop-database
+
+Shell completions
+
+Ad
+
+Ad
+
+To get automatic completions for Alacritty’s flags and arguments you can install the provided shell
+completions.
+
+echo "source $(pwd)/extra/completions/alacritty.bash" >> ~/.bashrc
+
+9. Run Alacritty Terminal
+
+After following any of the above two methods, you will have the Alacritty Terminal on your Ubuntu 22.04
+installed. Now, to run it, click on the Activities link given in the Ubuntu Taskbar and search for the
+Terminal. Soon you will see the icon of it, click the same to launch.
+Run Alacritty
+Install Alacritty Terminal on Ubuntu 22.04 LTS Linux
+10. For Customization
+
+To customize the look and feel of the Terminal, we can create Alacritty YML Configuration. You can get
+the default one here on Github.
+
+or for the current one while doing the article use the given commands:
+
+mkdir $HOME/.config/alacritty
+
+cd $HOME/.config/alacritty
+
+wget https://github.com/alacritty/alacritty/releases/download/v0.11.0-rc3/alacritty.yml
+
+Now you have the file. Edit the same to configure the Terminal as per your choice.
+
+Ad
+
+Ad
+
+nano $HOME/.config/alacritty/alacritty.yml
+
+To save the file, use: Ctrl+O, hit the Enter key, and then exit: Ctrl+X.
+11. Pre-built Terminal Themes
+
+You can also, use the pre-built themes. For that you can use the NPM:
+
+sudo apt install npm
+
+Install Themes:
+
+sudo npm i -g alacritty-themes
+
+alacritty-themes
+
+A list of themes will  appear, use the navigation and select the one you want to apply:
+Alacritty Terminal Themes
+12. How to update Alacritty
+
+If you have used the PPA package manager then simply run the system command to update the Alacritty
+Terminal to its latest version.
+
+sudo apt update && sudo apt upgrade
+
+Those who have followed the Source code compilation, need to run the above-given steps (of the second
+method) to compile the latest available source code.
+
+Ad
+
+Ad
+13. Uninstall Alacritty from Ubuntu 22.04
+
+Well, if you didn’t like this Terminal application then to remove Alacritty completely from your Ubuntu
+22.04 system by following the given commands:
+
+For PPA users:
+
+sudo apt autoremove --purge alacritty
+
+For source compiled users:
+
+sudo rm /usr/local/bin/alacritty
+
+sudo rm /usr/share/pixmaps/Alacritty.svg
+
+sudo rm /usr/share/applications/Alacritty.desktop
+
+sudo update-desktop-database
+
+Also, delete the source code directory which you have cloned from GitHub.

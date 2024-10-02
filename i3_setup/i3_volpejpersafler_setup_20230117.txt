@@ -1,0 +1,25 @@
+feh --bg-scale /home/rgregor/majstaf/majvolpejpers/majvolpejpers_bob2/index3.jpeg &
+cd ODPRTO/_LINUX_SYSTEM/
+vim bash_i3_wallpaper-shufler-setup_20230117.txt 
+---
+vim majstaf/coding/00_ukazi/volpejpersafler.sh
+
+<code>
+   #!/usr/bin/env bash
+
+   BG_DIR="/home/rgregor/majstaf/majvolpejpers/majvolpejpers_bob2"
+   BG=$(ls ${BG_DIR} | shuf -n1)
+   feh --bg-scale "$BG_DIR/$BG"
+</code>
+---
+vim /home/rgregor/.config/i3/config
+
+<code>
+exec_always --no-startup-id picom --experimental-backends -b
+# exec_always --no-startup-id picom -b
+
+# 20230117 bind volpejpersafler to WIN+c:
+bindsym $mod+c exec /usr/local/bin/volpejpersafler
+</code>
+---
+

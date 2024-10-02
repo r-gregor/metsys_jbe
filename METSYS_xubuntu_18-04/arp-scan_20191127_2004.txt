@@ -1,0 +1,10 @@
+Interface: enp38s0, datalink type: EN10MB (Ethernet)
+Starting arp-scan 1.9 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
+192.168.64.1	64:6e:ea:79:5c:6b	Iskratel d.o.o.
+192.168.64.2	b0:48:7a:d0:9c:c4	TP-LINK TECHNOLOGIES CO., LTD.
+192.168.64.32	b8:27:eb:86:38:d5	Raspberry Pi Foundation
+192.168.64.104	40:a3:cc:46:4a:88	(Unknown)
+192.168.64.105	e8:3a:12:eb:39:68	(Unknown)
+
+5 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.9: 256 hosts scanned in 2.738 seconds (93.50 hosts/sec). 5 responded

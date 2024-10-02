@@ -1,0 +1,181 @@
+
+WHAT I DID:
+1. Disabling apt-daily and apt-daily-upgrade at boot:
+$> sudo systemctl disable apt-daily.service apt-daily-upgrade.service && sudo systemctl disable apt-daily.timer apt-daily-upgrade.timer
+
+2. Disabling fsck on /home partition at boot:
+$> edit /etc/fstab and changed check flag for non root/boot partition from 2 to 0 (last digit):
+    $> cat /etc/fstab
+    # /etc/fstab: static file system information.
+    #
+    # Use 'blkid' to print the universally unique identifier for a
+    # device; this may be used with UUID= as a more robust way to name devices
+    # that works even if disks are added and removed. See fstab(5).
+    #
+    # <file system> <mount point>   <type>  <options>       <dump>  <pass>
+    # / was on /dev/sda1 during installation
+    UUID=1e0187a8-5afc-4eca-ab8b-de335f3f00a4 /               ext4    errors=remount-ro 0       1
+    # /home was on /dev/sda2 during installation
+    UUID=8ccb8887-657d-4889-8a35-1010148528ce /home           ext4    defaults        0       0
+    /swapfile                                 none            swap    sw              0       [0]
+
+RESULT:
+$> systemd-analyze
+Startup finished in 4.189s (kernel) + 33.336s (userspace) = 37.526s
+graphical.target reached after 33.328s in userspace
+
+$> systemd-analyze blame
+         18.753s systemd-journal-flush.service
+         18.649s dev-sda1.device
+         10.903s lvm2-monitor.service
+         10.339s systemd-tmpfiles-setup-dev.service
+          9.382s systemd-sysctl.service
+          6.451s snapd.service
+          5.971s networkd-dispatcher.service
+          4.413s NetworkManager.service
+          4.280s udisks2.service
+          3.893s NetworkManager-wait-online.service
+          3.335s libvirtd.service
+          2.772s keyboard-setup.service
+          2.356s ModemManager.service
+          2.199s accounts-daemon.service
+          1.779s grub-common.service
+          1.757s thermald.service
+          1.685s dev-loop1.device
+          1.599s upower.service
+          1.529s dev-loop4.device
+          1.409s plymouth-start.service
+          1.156s dev-loop3.device
+          1.061s dev-loop2.device
+           986ms systemd-modules-load.service
+           828ms apport.service
+           826ms lm-sensors.service
+           823ms systemd-journald.service
+           796ms bluetooth.service
+           791ms avahi-daemon.service
+           787ms speech-dispatcher.service
+           784ms gpu-manager.service
+           783ms ecbd.service
+           768ms wpa_supplicant.service
+           761ms pppd-dns.service
+           739ms colord.service
+           691ms snap-pycharm\x2dcommunity-175.mount
+           654ms snap-android\x2dstudio-81.mount
+           648ms dev-loop5.device
+           647ms dev-loop0.device
+           636ms dev-loop6.device
+           612ms snap-code-23.mount
+           602ms dev-loop7.device
+           595ms snap-android\x2dstudio-82.mount
+
+# BEFORE: -------------------------------------------------------------------------
+$> systemd-analyze
+Startup finished in 4.365s (kernel) + 3min 29.530s (userspace) = 3min 33.896s
+graphical.target reached after 34.952s in userspace
+
+$> systemd-analyze blame
+    1min 49.327s apt-daily.service
+     1min 5.278s apt-daily-upgrade.service
+         19.959s motd-news.service
+         19.234s systemd-journal-flush.service
+         19.189s dev-sda1.device
+         11.663s lvm2-monitor.service
+          9.678s systemd-sysctl.service
+          9.432s systemd-udevd.service
+          7.963s snapd.service
+          5.743s networkd-dispatcher.service
+          5.709s NetworkManager.service
+          4.662s udisks2.service
+          4.187s ModemManager.service
+          4.111s NetworkManager-wait-online.service
+          4.067s accounts-daemon.service
+          3.940s gpu-manager.service
+          3.740s thermald.service
+          3.202s libvirtd.service
+          2.985s dev-loop6.device
+          1.805s dev-loop1.device
+          1.743s plymouth-start.service
+          1.543s dev-loop4.device
+          1.199s systemd-modules-load.service
+          1.189s dev-loop3.device
+          1.167s systemd-tmpfiles-setup-dev.service
+          1.104s keyboard-setup.service
+          1.092s upower.service
+          1.078s wpa_supplicant.service
+          1.055s dev-loop0.device
+          1.038s systemd-journald.service
+          1.030s dev-loop7.device
+           920ms rsyslog.service
+           897ms snap-android\x2dstudio-81.mount
+           824ms systemd-random-seed.service
+           809ms polkit.service
+           787ms snap-pycharm\x2dcommunity-175.mount
+           750ms systemd-fsck@dev-disk-by\x2duuid-8ccb8887\x2d657d\x2d4889\x2d8a35\x2d1010148528ce.service
+           720ms dev-loop5.device
+           707ms swapfile.swap
+           701ms systemd-rfkill.service
+           606ms snap-pycharm\x2dcommunity-172.mount
+           556ms dev-loop2.device
+
+$> systemd-analyze critical-chain
+The time after the unit is active or started is printed after the "@" character.
+The time the unit takes to start is printed after the "+" character.
+
+graphical.target @34.952s
+└─multi-user.target @34.952s
+  └─xinetd.service @34.905s +46ms
+    └─network-online.target @34.903s
+      └─NetworkManager-wait-online.service @30.791s +4.111s
+        └─NetworkManager.service @25.080s +5.709s
+          └─dbus.service @24.827s
+            └─basic.target @24.823s
+              └─sockets.target @24.823s
+                └─snapd.socket @24.799s +23ms
+                  └─sysinit.target @24.797s
+                    └─apparmor.service @24.268s +527ms
+                      └─local-fs.target @24.262s
+                        └─run-user-1000-gvfs.mount @1min 4.179s
+                          └─run-user-1000.mount @58.633s
+                            └─local-fs-pre.target @15.701s
+                              └─lvm2-monitor.service @4.037s +11.663s
+                                └─lvm2-lvmetad.service @6.758s
+                                  └─systemd-journald.socket @3.992s
+                                    └─system.slice @3.992s
+                                      └─-.slice @3.954s
+
+# =============================================================
+# POSSIBLE SOLUTIONS:
+
+### WATCHOUT!!
+### disable makes the unit disabled during boot. But that unit can be started anytime after boot.
+### mask disables the unit completely. It can't be started without unmasking.
+### That automatically implies it will fail during boot.
+
+
+
+# 1: masking services
+systemctl mask apt-daily.service
+systemctl mask apt-daily-upgrade.service
+systemctl mask NetworkManager-wait-online.service
+
+# to undo the masking:
+# do this to "unmask" these services
+systemctl unmask apt-daily.service
+systemctl unmask apt-daily-upgrade.service
+systemctl unmask NetworkManager-wait-online.service
+
+# -----------------------------------------------
+
+# 2:
+#!/bin/sh
+
+systemctl mask apt-daily.service apt-daily-upgrade.service
+systemctl disable apt-daily.service apt-daily-upgrade.service
+systemctl disable apt-daily.timer apt-daily-upgrade.timer
+# =============================================================
+
+
+SOLUTIONS:
+https://forums.linuxmint.com/viewtopic.php?t=275698
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=844453
+https://askubuntu.com/questions/1110612/slow-boot-time-apt-daily-upgrade-service-and-apt-daily-service-on-xubuntu-18-04?noredirect=1&lq=1

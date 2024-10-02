@@ -1,0 +1,18 @@
+filename: remove-old-kernel_updated-version_20170915.txt
+
+...
+
+   Although this method works just fine, it is more reliable and efficient
+   to use a handy script called “byobu” that combines all the commands
+   above into a single program with useful options such as specifying
+   number of kernels to keep on the system.
+
+   Install byobu script package which provides a program called
+   purge-old-kernels used for removing old kernels and header packages
+   from the system.
+$ sudo apt install byobu
+
+   Then remove old kernels like so (the command below allows 2 kernels to
+   be kept on the system).
+$ sudo purge-old-kernels --keep 2
+

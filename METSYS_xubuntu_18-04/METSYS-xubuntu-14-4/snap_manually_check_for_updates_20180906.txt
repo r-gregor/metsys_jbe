@@ -1,0 +1,9 @@
+
+
+Subject: DONT FORGET
+
+Don’t forget you can manually check for Snap updates by running:
+
+snap refresh
+
+LP,

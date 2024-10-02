@@ -1,0 +1,3 @@
+RSYNC new files only:
+rsync with the option
+	--ignore-existing       skip updating files that exist on receiver

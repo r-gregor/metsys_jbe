@@ -1,0 +1,1 @@
+FJL="Fifty.Shades.of.Grey.2015.UNRATED.SLOSubs.BRRip.XviD-BLiNK.srt"; iconv -f WINDOWS-1250 -t utf8 $FJL >> SLO.srt

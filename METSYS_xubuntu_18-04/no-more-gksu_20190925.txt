@@ -1,0 +1,63 @@
+filename: no-more-gksu_20190925.txt
+https://www.linuxuprising.com/2018/04/gksu-removed-from-ubuntu-heres.html
+
+gksu Removed From Ubuntu, Here's The Recommended Replacement
+August 1, 2018
+
+Ubuntu 18.04 no gksu
+The gksu package, which provides GTK+ front-ends for su (gksu) and sudo (gksudo), was removed from the
+Ubuntu 18.04 repositories (and Linux Mint 19 Tara), so it won't be available starting with this Ubuntu release.
+
+gksu is used to allow elevating your permissions when running graphical applications, for example in case you
+want to run a graphical text editor as root to edit a system file, or to be able to remove or add a file to a system folder.
+
+How to edit system files using a GUI without gksu?
+
+Enter admin://. The recommended way of performing operations that require elevated permissions using a GUI is
+by using the gvfs admin backend, which is available in both Ubuntu 18.04 LTS (and Linux Mint 19 Tara) and 17.10,
+by using the admin:// prefix.
+
+All you have to do is open Nautilus (or Nemo), press Ctrl + L so you can type in its address bar,
+and type admin:// followed by the path of the folder containing the file you want to edit, and enter your
+password. After doing this, you can use any GUI application to alter system files, like Nautilus to
+add / delete files or folders, Gedit (or Xed in Linux Mint 19) to edit text file, and so on.
+
+admin instead of gksu ubuntu
+Here's an example. Let's say you want to edit the Grub file. Instead of using gksu gedit /etc/default/grub,
+you can open Nautilus / Nemo and type: admin:///etc/default. You'll be asked for your password and after you
+enter it, you can open the grub file with Gedit (or Xed in Linux Mint 19), then save it.
+
+Note that there are 3 forward slashes after admin: because 2 are required by default and the 3rd is from the
+path that follows, which begins with a slash: /etc/default. One more thing: in Nautilus, don't enter the direct
+path to a file but to a folder containing the file you want to edit.
+
+In the same way you can run Gedit from a terminal to open a system file and edit it, for example:
+
+    gedit admin:///etc/default/grub
+
+This will prompt for your password and then open the file in Gedit, allowing you to edit it.
+
+---
+https://forums.linuxmint.com/viewtopic.php?t=268140
+
+...
+gksu hasn't been maintained for many years and was only left to rot in the Ubuntu repository because some
+programs unfortunately still depended on it. Such programs have been migrating to PolKit's pkexec.
+
+Your examples of Synaptic, GParted and Update Manager all use pkexec now (if they didn't already before).
+PolKit allows for finer level of control than was possible with gksu. No longer does the entire program need
+to run as root.
+
+In short; removing gksu doesn't meaningfully affect users of Ubuntu or Linux Mint, aside from making their
+systems safer.
+
+As for editing system configuration files: aside from pkexec, gvfs now has builtin support for
+admin:// paths that automatically invoke PolKit as needed. So you can open Nautilus and press Ctrl+L and type
+the path admin:///etc/default to open the /etc/default directory with required elevated privileges.
+Opening a file from there with Gedit also opens that file with required elevated privileges. From the command
+line you can also use the admin:// paths so you could do gedit admin:///etc/default/grub to directly open
+/etc/default/grub for editing with Gedit. I guess that admin:// paths should also work with Linux Mint's
+developed software on Linux Mint 19 but I haven't tested that yet.
+...
+
+---

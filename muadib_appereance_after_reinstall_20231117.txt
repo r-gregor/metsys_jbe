@@ -1,0 +1,10 @@
+20231117
+WM:
+theme:          Adawaita-dark
+icons:          BeautyLine
+window-style:   Greybird-dark
+---
+dock:           plank
+theme:          darkGlass
+---
+

@@ -1,0 +1,41 @@
+$> sudo dd if=/dev/null of=~/majfajls/fourMeO.img bs=1M count=2048	( --> 2.0GB img file)
+$> fdisk ~/majfajls/fourMeO.img						(create partition table)
+	g	(create gpt partition table)
+	n	(next ... accept default values)
+	w	(write to img)
+
+$> mkfs.ext4 ~/majfajls/fourMeO.img					(make ext4 filesystem on partition)
+$> sudo mkdir /mnt/spsl
+$> sudo chown -R rgregor: /mnt/spsl
+$> sudo mount -o loop majfajls/fourMeO.img /mnt/spsl/
+$> cp -rv ~/majfajls/majdoks/.spsl/* ./
+$> cp -rv ~/majfajls/majdoks/.spsl/.filmcki/* /mnt/spsl/
+$> rm -rv ~/majfajls/majdoks/.spsl
+$> sudo chown -R rgregor: /mnt/spsl/
+$> sudo umount -v /mnt/spsl
+
+# THEN:
+sudo rmdir /mnt/spsl
+
+$> nano /home/rgregor/majfajls/coding/00_ukazi/pripni_spsl.sh
+		#! /usr/bin/env bash
+		# pripni_spsl.sh
+
+		echo "Mounting $HOME/majfajls/fourMeO.img --to-- /mnt/spsl ..."
+		sudo mkdir -v /mnt/spsl
+		sudo chattr -i /home/rgregor/majfajls/fourMeO.img
+		sudo mount -v /home/rgregor/majfajls/fourMeO.img /mnt/spsl
+
+$> nano /home/rgregor/majfajls/coding/00_ukazi/odpni_spsl.sh
+		#! /usr/bin/env bash
+		# pripni_spsl.sh
+
+		echo "UN-mounting /mnt/spsl ..."
+		sudo umount -v /mnt/spsl
+		sudo chattr +i /home/rgregor/majfajls/fourMeO.img
+		sudo rmdir -v /mnt/sps
+
+$> ln -s /home/rgregor/majfajls/coding/00_ukazi/pripni_spsl.sh /usr/local/bin/pripni_spsl
+$> ln -s /home/rgregor/majfajls/coding/00_ukazi/odpni_spsl.sh /usr/local/bin/odpni_spsl
+
+# DONE

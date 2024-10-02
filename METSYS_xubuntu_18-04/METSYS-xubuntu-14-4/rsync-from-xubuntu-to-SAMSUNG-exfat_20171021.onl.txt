@@ -1,0 +1,6 @@
+### AUTOMOUNT
+rsync -rltDv -n --progress /home/rgregor/majfajls/FILMCKI/iz-KORUZE/Movies/ /media/rgregor/5AC9-6D5E/iz-KORUZE/Movies/
+# rsync -rltDv --progress /home/rgregor/majfajls/FILMCKI/iz-KORUZE/Movies/ /media/rgregor/5AC9-6D5E/iz-KORUZE/Movies/
+
+rsync -rltDv -n --progress /home/rgregor/majfajls/FILMCKI/iz-KORUZE/TV\ Shows/ /media/rgregor/5AC9-6D5E/iz-KORUZE/TV\ Shows/
+# rsync -rltDv --progress /home/rgregor/majfajls/FILMCKI/iz-KORUZE/TV\ Shows/ /media/rgregor/5AC9-6D5E/iz-KORUZE/TV\ Shows/

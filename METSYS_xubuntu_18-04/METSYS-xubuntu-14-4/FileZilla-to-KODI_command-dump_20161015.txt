@@ -1,0 +1,33 @@
+Response:	fzSftp started
+Command:	open "root@192.168.1.32" 22
+Command:	Pass: ********
+Status:	Connected to 192.168.1.32
+Status:	Retrieving directory listing...
+Command:	cd "/media/MEDION_sA/Videos"
+Response:	New directory is: "/var/media/MEDION_sA/Videos"
+Command:	ls
+Status:	Listing directory /var/media/MEDION_sA/Videos
+Status:	Directory listing successful
+
+...
+
+Command:	cd "/var/media/MEDION_sA/Videos/Maggie's Plan (2015)"
+Response:	New directory is: "/var/media/MEDION_sA/Videos/Maggie's Plan (2015)"
+Command:	put "/home/rgregor/majfajls/FILMCKI/iz-KORUZE/Maggie's Plan (2015)/WWW.YTS.AG.vtt" "WWW.YTS.AG.vtt"
+Status:	local:/home/rgregor/majfajls/FILMCKI/iz-KORUZE/Maggie's Plan (2015)/WWW.YTS.AG.vtt => remote:/var/media/MEDION_sA/Videos/Maggie's Plan (2015)/WWW.YTS.AG.vtt
+Status:	File transfer successful, transferred 16,4 KB in 1 second
+Status:	Starting upload of /home/rgregor/majfajls/FILMCKI/iz-KORUZE/Maggie's Plan (2015)/WWW.YTS.AG.srt
+Command:	put "/home/rgregor/majfajls/FILMCKI/iz-KORUZE/Maggie's Plan (2015)/WWW.YTS.AG.srt" "WWW.YTS.AG.srt"
+Status:	local:/home/rgregor/majfajls/FILMCKI/iz-KORUZE/Maggie's Plan (2015)/WWW.YTS.AG.srt => remote:/var/media/MEDION_sA/Videos/Maggie's Plan (2015)/WWW.YTS.AG.srt
+Status:	File transfer successful, transferred 16,4 KB in 1 second
+Status:	Starting upload of /home/rgregor/majfajls/FILMCKI/iz-KORUZE/Maggie's Plan (2015)/Maggie's.Plan.2015.720p.BluRay.x264.srt
+Command:	put "/home/rgregor/majfajls/FILMCKI/iz-KORUZE/Maggie's Plan (2015)/Maggie's.Plan.2015.720p.BluRay.x264.srt" "Maggie's.Plan.2015.720p.BluRay.x264.srt"
+Status:	local:/home/rgregor/majfajls/FILMCKI/iz-KORUZE/Maggie's Plan (2015)/Maggie's.Plan.2015.720p.BluRay.x264.srt => remote:/var/media/MEDION_sA/Videos/Maggie's Plan (2015)/Maggie's.Plan.2015.720p.BluRay.x264.srt
+Status:	File transfer successful, transferred 16,4 KB in 1 second
+Status:	Disconnected from server
+Status:	File transfer successful, transferred 754,0 MB in 131 seconds
+Status:	Disconnected from server
+Status:	Connecting to 192.168.1.32...
+
+Status:	Disconnected from server
+

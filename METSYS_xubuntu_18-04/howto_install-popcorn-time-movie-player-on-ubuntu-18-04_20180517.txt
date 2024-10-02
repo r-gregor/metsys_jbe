@@ -1,0 +1,97 @@
+filename: howto_install-popcorn-time-movie-player-on-ubuntu-18-04_20180517.txt
+https://linuxconfig.org/how-to-install-popcorn-time-movie-player-on-ubuntu-18-04-bionic-beaver-linux
+
+How to install Popcorn Time movie player on Ubuntu 18.04 Bionic Beaver Linux
+14 May 2018
+
+Objective
+   Popcorn Time streams movies and TV shows from torrents directly into your screen. The objective is to
+   install Popcorn Time movie streamer on Ubuntu 18.04 Bionic Beaver Linux.
+   Warning: There are multiple projects under different domain names claiming to be the "Popcorn Time"
+   movie player on the Internet. These projects are malware clones, so avoid for all cost. The official
+   website of the Popcorn Time movie player is https://popcorntime.sh/.
+
+
+Operating System and Software Versions
+     * Operating System: - Ubuntu 18.04 Bionic Beaver
+     * Software: - Popcorn Time 0.3.10
+
+Requirements
+   Privileged access to your Ubuntu System as root or via sudo command is required.
+
+Difficulty
+   EASY
+
+Conventions
+     * # - requires given [29]linux commands to be executed with root privileges either directly as a
+       root user or by use of sudo command
+     * $ - requires given [30]linux commands to be executed as a regular non-privileged user
+
+Instructions
+
+Install Prerequisites
+   Let's start by the installation of all prerequisites:
+$ sudo apt update && sudo apt install libcanberra-gtk-module libgconf-2-4
+
+Download Popcorn Time binaries
+   In this section we will download and extract Popcorn Time binaries into the /opt/popcorn-time
+   directory:
+$ sudo mkdir /opt/popcorn-time
+
+   Next, download and extract popcorn-time:
+FOR 32-BIT SYSTEM EXECUTE:
+$ sudo wget -O- https://get.popcorntime.sh/build/Popcorn-Time-0.3.10-Linux-32.tar.xz | sudo tar Jx -C /opt/popcorn-time
+
+FOR 64-BIT SYSTEM EXECUTE:
+$ sudo wget -O- https://get.popcorntime.sh/build/Popcorn-Time-0.3.10-Linux-64.tar.xz | sudo tar Jx -C /opt/popcorn-time
+
+   Give it some time. Depending on your internet speed the download may take some time.
+
+Create executable link
+   Now, that Popcorn Time binaries are installed, we will create a symbolic link of the
+   /opt/popcorn-time/Popcorn-Time binary to /usr/bin/popcorn-time. This will allow non-privileged users
+   to start Popcorn Time via terminal without any additional configuration:
+$  sudo ln -sf /opt/popcorn-time/Popcorn-Time /usr/bin/popcorn-time
+
+Create Desktop Launcher
+   Open up terminal and use your favorite text editor (eg. vim) and create the launcher shortcut.
+   The below command uses the vim editor to create the new /usr/share/applications/popcorntime.desktop
+   desktop entry:
+$ sudo nano /usr/share/applications/popcorntime.desktop
+
+   Insert the following content into the above created file:
+[Desktop Entry]
+Version = 1.0
+Type = Application
+Terminal = false
+Name = Popcorn Time
+Exec = /usr/bin/popcorn-time
+Icon = /opt/popcorn-time/popcorntime.png
+Categories = Application;
+
+   Lastly, download the Popcorn Time's icon:
+$ sudo wget -qO /opt/popcorn-time/popcorntime.png goo.gl/wz8ifr
+
+   Search Activities menu to start Popcorn Time. Accept License.
+
+---------------------------------------------------------------
+  177  sudo mkdir /opt/popcorn-time
+  178  cd /opt/popcorn-time/
+
+  181  sudo cp -rv Popcorn-Time-0.3.10-Linux-64/* /opt/popcorn-time/
+  182  sudo ln -sf /opt/popcorn-time/Popcorn-Time /usr/bin/popcorn-time
+  183  sudo nano /usr/share/applications/popcorntime.desktop
+  184  sudo wget -qO /opt/popcorn-time/popcorntime.png goo.gl/wz8ifr
+  185  history
+  186  find -iname "*popcorn*"
+  187  mousepad ODPRTO/_TXT/popcorn-time_install-on-debian-9_20180227.txt
+  188  mousepad ODPRTO/_TXT/howto_install-popcorn-time-movie-player-on-ubuntu-18-04_20180517.txt
+  189  cd /opt/popcorn-time/
+
+  191  ./Popcorn-Time 
+  192  sudo ./Popcorn-Time 
+  193  sudo apt-cache search libgconf | grep libgconf
+  194  sudo apt-get install libgconf-2-4
+
+---
+

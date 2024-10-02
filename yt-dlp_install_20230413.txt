@@ -1,0 +1,36 @@
+$> sudo python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+Collecting https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+  Downloading https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz (2.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 12.9 MB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting brotli
+  Downloading Brotli-1.0.9-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (2.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 10.1 MB/s eta 0:00:00
+Collecting certifi
+  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 KB 25.3 MB/s eta 0:00:00
+Collecting pycryptodomex
+  Downloading pycryptodomex-3.17-cp35-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 21.9 MB/s eta 0:00:00
+Collecting mutagen
+  Downloading mutagen-1.46.0-py3-none-any.whl (193 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.6/193.6 KB 27.6 MB/s eta 0:00:00
+Collecting websockets
+  Downloading websockets-11.0.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (129 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 KB 30.7 MB/s eta 0:00:00
+Building wheels for collected packages: yt-dlp
+  Building wheel for yt-dlp (pyproject.toml) ... done
+  Created wheel for yt-dlp: filename=yt_dlp-2023.3.4-py2.py3-none-any.whl size=2677409 sha256=7494d0be617cdbd6e77f2ed4f4094bb0d1d51603956a0b125472e9ce73643e94
+  Stored in directory: /tmp/pip-ephem-wheel-cache-37fgk957/wheels/4c/91/d1/c5369304e2f7afb660bb6eee093af5a7d3c0ea05a3c1e8c797
+Successfully built yt-dlp
+Installing collected packages: brotli, websockets, pycryptodomex, mutagen, certifi, yt-dlp
+  Attempting uninstall: pycryptodomex
+    Found existing installation: pycryptodomex 3.11.0
+    Not uninstalling pycryptodomex at /usr/lib/python3/dist-packages, outside environment /usr
+    Can't uninstall 'pycryptodomex'. No files were found to uninstall.
+Successfully installed brotli-1.0.9 certifi-2022.12.7 mutagen-1.46.0 pycryptodomex-3.17 websockets-11.0.1 yt-dlp-2023.3.4
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+

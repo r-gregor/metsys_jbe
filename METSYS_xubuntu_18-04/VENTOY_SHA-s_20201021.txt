@@ -1,0 +1,7 @@
+SHA-256
+
+ventoy-1.0.25-windows.zip:   f3ae9e1f64a64a768abd7fd8c373f6bee07d3592a0cd334b59f95aa9e5338e18
+ventoy-1.0.25-linux.tar.gz:  43c1600df4d1b0980262761f5ba30c834a75a0fa0504cba29ef5fdb274a508e8
+			     43c1600df4d1b0980262761f5ba30c834a75a0fa0504cba29ef5fdb274a508e8  /home/rgregor/majfajls/majprogs/Ventoy_multiUSB/ventoy-1.0.25-linux.tar.gz
+
+ventoy-1.0.25-livecd.iso:    7c10c81c797e0372430ff61a810676e791680def9c138eafb008b1ac11a9e5a3
