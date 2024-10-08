@@ -1,0 +1,9 @@
+dmenu FONT settings:
+
+command:
+	dmenu -fn '<font name>-<font size>'
+
+like:
+	choice=$(echo -e "logout\nreboot\nshutdown\nquit" | dmenu -fn 'Ubuntu Mono-18' -l 5 -p "logout/poweroff:")
+ ...
+ 
