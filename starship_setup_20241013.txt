@@ -1,0 +1,10 @@
+curl -sS https://starship.rs/install.sh | sh
+starship print-config > ~/.config/starship.toml
+vim ~/.config/starship.toml
+cd .config/starship/
+wget "https://starship.rs/presets/toml/gruvbox-rainbow.toml"
+cd .config/starship/
+cp starship_ORIGINAL.toml starship.toml
+starship preset gruvbox-rainbow -o ~/.config/starship/starship.toml 
+starship preset gruvbox-rainbow -o ~/.config/starship/gruvbox-rainbow.toml 
+cp -r gruvbox-rainbow.toml ~/starship.toml
