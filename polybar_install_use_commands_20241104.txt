@@ -1,0 +1,11 @@
+sudo apt install polybar
+cd .config/
+mkdir polybar
+cd polybar/
+cp /etc/polybar/config.ini .
+cp config.ini{,.original}
+vim launch.sh
+vim config.ini
+killall polybar && ./launch.sh 
+vim ../i3/config 
+
