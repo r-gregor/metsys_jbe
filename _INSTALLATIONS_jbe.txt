@@ -222,3 +222,9 @@
  1000  2024-10-16 18:54:31 sudo apt install nala
 ---
 
+  995  2024-11-08 19:45:48 sudo apt show volumeicon-alsa 
+  996  2024-11-08 19:46:04 sudo apt install volumeicon-alsa 
+  997  2024-11-08 19:47:28 volumeicon &
+  999  2024-11-08 19:50:50 vim ~/.config/i3/configj
+---
+
