@@ -222,6 +222,21 @@
  1000  2024-10-16 18:54:31 sudo apt install nala
 ---
 
+  411  2024-11-04 17:47:46 sudo apt install polybar
+  413  2024-11-04 17:48:10 mkdir polybar
+  414  2024-11-04 17:48:15 cd polybar/
+  415  2024-11-04 17:48:28 cp /etc/polybar/config.ini
+  420  2024-11-04 17:56:38 polybar bar
+  427  2024-11-04 18:02:56 cd .config/polybar/
+  441  2024-11-04 18:11:12 vim polybar_install_use_commands_20241104.txt
+  442  2024-11-04 18:13:13 cp -i polybar_install_use_commands_20241104.txt ~/majstaf/jbegit/metsys_jbe/
+  509  2024-11-04 18:59:03 killall polybar && polybar bar & disown
+  510  2024-11-04 18:46:49 polybar bar & disown
+  511  2024-11-04 18:47:12 vim .config/polybar/launch.sh
+  520  2024-11-04 19:08:30 vim .config/polybar/config.ini
+  531  2024-11-04 19:17:08 killall polybar && polybar bar & disown
+---
+
   995  2024-11-08 19:45:48 sudo apt show volumeicon-alsa 
   996  2024-11-08 19:46:04 sudo apt install volumeicon-alsa 
   997  2024-11-08 19:47:28 volumeicon &
