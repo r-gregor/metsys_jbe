@@ -1,0 +1,12 @@
+  913  2024-11-10 17:40:56 sudo apt install libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libepoxy-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev meson ninja-build uthash-dev
+  925  2024-11-10 17:44:08 sudo apt install cmake
+  918  2024-11-10 17:42:45 cd ~/majstaf/sorsi/
+  919  2024-11-10 17:42:47 cd picom_build_20241110/
+  920  2024-11-10 17:43:11 git clone https://github.com/yshui/picom.git
+  921  2024-11-10 17:43:17 cd picom/
+  926  2024-11-10 17:44:20 meson setup --buildtype=release build
+  927  2024-11-10 17:44:57 ninja -C build
+  929  2024-11-10 17:45:49 sudo ninja -C build install
+  939  2024-11-10 17:47:26 picom --backend glx
+  940  2024-11-10 17:48:01 which picom
+  943  2024-11-10 17:49:41 history >> ~/majstaf/metsys/picom_install_jbe_20241110.txt
