@@ -237,9 +237,24 @@
   531  2024-11-04 19:17:08 killall polybar && polybar bar & disown
 ---
 
-  995  2024-11-08 19:45:48 sudo apt show volumeicon-alsa 
-  996  2024-11-08 19:46:04 sudo apt install volumeicon-alsa 
+  192  2024-11-04 19:01:17 sudo apt install fonts-font-awesome fonts-powerline
+  995  2024-11-08 19:45:48 sudo apt show volumeicon-alsa
+  996  2024-11-08 19:46:04 sudo apt install volumeicon-alsa
   997  2024-11-08 19:47:28 volumeicon &
-  999  2024-11-08 19:50:50 vim ~/.config/i3/configj
+  999  2024-11-08 19:50:50 vim ~/.config/i3/config
+---
+
+  457  2024-11-09 19:54:14 sudo apt install pcmanfm
+  # picom install:
+  606  2024-11-10 17:32:56 sudo apt install meson
+  611  2024-11-10 17:36:01 sudo apt install libpcre++-dev 
+  624  2024-11-10 17:32:56 sudo apt install meson
+  629  2024-11-10 17:36:01 sudo apt install libpcre++-dev 
+  635  2024-11-10 17:40:56 sudo apt install libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libepoxy-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev meson ninja-build uthash-dev
+  646  2024-11-10 17:44:08 sudo apt install cmake
+---
+  # enable enter password window display in i3;
+  920  2024-11-11 19:19:15 sudo apt install lxpolkit
+
 ---
 
