@@ -1,0 +1,109 @@
+# all listed packages are to bi installed with:
+# $> sudo apt install -y <package_name>
+# ==========================================================================================================
+xorg
+avahi-daemon
+acpi
+acpid
+build-essential
+gvfs-backends
+gnome-disk-utility
+gparted
+sha256sum
+xfce4-power-manager
+pulseaudio
+pavucontrol
+pamixer
+pulsemixer
+network-manager
+# network-manager-gnome ??
+nm-applet
+libnotify-bin
+libnotify-dev
+thunar
+thunar-archive-plugin
+thunar-volman
+file-roller
+lxappearance
+lxtask
+lxterminal
+pcmanfm
+mousepad
+xclip
+# xrandr
+#	could be allready installed by previous xorg-* package
+arandr
+dialog
+vim
+git
+rsync
+curl
+wget
+nala
+plocate
+	# $> sudo updatedb
+	# %> locate ...
+libfuse2
+	# needed for appimage files
+feh
+nitrogen
+picom
+polybar
+rofi
+i3
+	# it's meta package: it installs:
+#	i3-wm, i3lock, i3status, suckmess-tools (for dmenu)
+fonts-recommended
+fonts-font-awesome
+fonts-terminus
+firefox-esr
+w3m
+lynxd
+ranger
+mc
+
+# ==========================================================================================================
+# list of packafes from bookworm scripts:
+# xorg
+# xserver-xorg
+# xbacklight
+# xbindkeys
+# xvkbd
+# xinput
+# build-essential
+# git
+# policykit-1-gnome
+# network-manager
+# network-manager-gnome
+# thunar
+# thunar-archive-plugin
+# thunar-volman
+# file-roller
+# lxappearance
+# dialog
+# mtools
+# dosfstools
+# avahi-daemon
+# acpi
+# acpid
+# gvfs-backends
+# xfce4-power-manager
+# pulseaudio
+# pavucontrol
+# pamixer
+# pulsemixer
+# feh
+# fonts-recommended
+# fonts-font-awesome
+# fonts-terminus
+# papirus-icon-theme
+# exa
+# scrot
+# rofi
+# dunst
+# libnotify-bin
+# libnotify-dev
+# xdotool
+# unzip
+# ==========================================================================================================
+

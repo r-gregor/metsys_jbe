@@ -1,0 +1,14 @@
+Option 1:
+$> sudo dpkg-reconfigure console-setup
+
+Option 2:
+Choose a font with setfont.
+Usually they are listed in one of these:
+	/usr/share/consolefonts
+	/usr/share/kbd/consolefonts
+
+For example, to use the font /usr/share/kbd/consolefonts/ter-v32n.psf.gz, you can enter:
+$> setfont ter-v32n
+
+
+

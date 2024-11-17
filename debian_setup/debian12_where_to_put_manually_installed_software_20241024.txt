@@ -1,0 +1,150 @@
+filename: debian12_where_to_put_manually_installed_software_20241024.txt
+
+debian 12: where to put manually installed software?
+
+***
+For a system-wide installation (for all users) that's not through your package manager, you'd want to put it
+in /usr/local/bin, though some prefer something in /opt/something-or-other. For a user-specific installation,
+you'd want to put it in ~/. local/bin or ~/. local/appdata/bin .
+
+***
+I keep nonprivileged scripts and software at my $HOME, and the ones that require elevated privileges, I keep
+at /opt. I guess /usr/local is fine as well. I keep some custom elevated binaries at /usr/local/bin
+
+***
+3rd party software usually should be installed into /opt. I like to keep small utility scripts that are only
+for my personal use in ~/.bin and add that to $PATH.
+
+***
+ If you're unzipping an installer (ie. not installing via apt-get or compiling from source) you will likely
+ want to install it to a path in your home folder (eg. ~/.local/usr or some other path under ~/).
+
+You could also put it under /opt/name-of-thing (if you want it to be accessible by other users -- might not
+make sense if you are the only user of the system).
+
+I would not recommend putting it into default system folders (like /usr or /usr/local) due to it being mixed
+in with other things and not being easy for a new user to remove.
+
+By easy to remove I mean you have to remove individual files and folders related to thing that was installed
+(while taking care not to remove unrelated stuff).
+
+If you install to /opt/name-of-thing or into ~/name-of-thing, etc you could simply remove directory
+'name-of-thing' and it is uninstalled without any major headaches.
+
+***
+By the way, if you are installing binaries from source (with make etc) then you should take a look at
+checkinstall (https://wiki.debian.org/CheckInstall). It makes a .deb package out of the binaries and installs
+it with dpkg (or apt dunno which) so you can just remove it later on easily.
+
+***
+is /usr/local good enough?
+
+Yes, if you're installing software not from Debian repository, and not registered packaged 3rd party software.
+
+If you're doing registered packaged 3rd party software - most notably commercial 3rd party software, that
+would typically go under /opt and it would generally already be configured by the package to install there -
+e.g. Oracle database software.
+
+If applicable, as for related variable data, that would generally be under /var/local (alas, that used to be
+in FHS (2.1) ... but later revision removed it - so it's no longer actually specified ... but for lack of a
+better location, I say put it under /var/local) for software that's under /usr/local, and for software under
+/opt, /var/opt.
+
+And, again, if applicable, configuration files for /usr/local software under /etc/local (and sym linked to
+that from /usr/local/etc, or under /usr/local/etc, but not that /usr is read-only, so, thus to typically be
+able to modify such configurations, they'd be under /etc/local with /user/local/etc sym link to /etc/local),
+and for software under /opt, configuration files generally under /etc/opt
+
+FHS is a good thing - and Debian follows FHS.
+
+/usr "/usr" "read-only" (ro) "must not be written to" (of course that excludes, e.g. software maintenance,
+like installing/removing programs, but /usr can be mounted ro (note that some distros don't let /usr be
+separate from / but many *nix, including Debian, allow /usr to be a filesystem separate from /, systemd
+however requires /usr be present/mounted, even for system maintenance mode or the like, whereas sysvinit
+doesn't ... well, unless one has moved the /bin and /sbin content to /usr in which case /usr will still need
+to be present - and I think newer installs may be defaulting to that)).
+
+/usr/local "The /usr/local hierarchy is for use by the system administrator when installing software locally.
+It needs to be safe from being overwritten when the system software is updated. It may be used for programs
+and data that are shareable amongst a group of hosts, but not found in /usr." "The following directories, or
+symbolic links to directories, must be in /usr/local" "etc Host-specific system configuration for local
+binaries" "/usr/local/etc may be a symbolic link to /etc/local"
+
+/etc/local (see above)
+/var/local (2.1)
+/opt
+/etc/opt
+/var/opt
+
+***
+if globally installed putting into /opt and symlinking it's binary to /usr/local/bin i think would be best way
+to keeping it tidy.
+
+If locally installed maybe creating a /.programs in your home folder and putting it there would be best way to
+keeping it tidy.
+
+***
+If the application has a makefile, or for example for Python apps if the application uses distutils (e.g., has
+a setup.py file), or a similar build/install system, you should install it into /usr/local/. This is often the
+default behavior.
+
+From what I understand, /usr/local/ has a hierarchy that is similar to /usr/. However, directories like
+/usr/bin/ and /usr/lib/ are usually reserved for packages installed via apt. So a program expecting to get
+"installed" into /usr/ should work fine in /usr/local/.
+
+If you just need to extract a tarball and run directly (e.g. Firefox) then put it into /opt/. A program that
+just needs one directory and will get all files/libraries relative to that directory can get one directory for
+itself in /opt/.
+
+***
+############################################################################################
+# It's good to remember that /usr does not stand for user but rather unix system resources #
+############################################################################################
+
+As such, I tend to figure that any distribution has the rights to stomp all over over contents of /usr, and
+that my specific additions to the system go in /usr/local, which I preserve before doing an upgrade.
+
+Meanwhile, applications and other things go in /opt.
+
+Some people feel comfortable putting stuff in /home, though I rarely follow that convention.
+
+All that said, I let the distribution package manager do things its way first, and then do the above when hand
+rolling stuff.
+
+***
+Install unstable programs like firefox devel in /home/user/opt/ makes it a lot easier to remove, and no
+confusion for other users as to what version they should use... So if it is not a program for global use,
+install it in a subfolder in your home directory (/home/user/).
+
+Never install programs in /usr/, it is likely to cause chaos, things installed in /usr/ is meant to be for
+distribution packages only. /usr/local/ is for packages locally compiled. And the structure works in exactly
+the same way! files in /usr/local/ will be prioritized over files in /usr/.
+
+/opt/ should be used for installation of pre-compiled (binary) packages (Thunderbird, Eclipse, Netbeans, IBM
+NetSphere, etc) and the like. But if they are only for a single user they should be put in your home
+directory.
+
+If you want to be able to run a program installed in a "weird" location (like /home/user/opt/firefox/) without
+typing the whole path you need to add it to your $PATH variable, you can do this be adding a line like this in
+your /home/user/.profile
+
+export PATH=/home/user/opt/firefox:$PATH
+
+The folder name should be the one where the executable file you need to run is located.
+
+***
+The Linux Filesystem Hierarchy Standard indicates /usr/local.
+
+From http://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/usr.html:
+	The original idea behind '/usr/local' was to have a separate ('local') '/usr' directory on every machine
+	besides '/usr', which might be just mounted read-only from somewhere else. It copies the structure of
+	'/usr'. These days, '/usr/local' is widely regarded as a good place in which to keep self-compiled or
+	third-party programs. The /usr/local hierarchy is for use by the system administrator when installing
+	software locally. It needs to be safe from being overwritten when the system software is updated. It may
+	be used for programs and data that are shareable amongst a group of hosts, but not found in /usr. Locally
+	installed software must be placed within /usr/local rather than /usr unless it is being installed to
+	replace or upgrade software in /usr.
+
+
+---
+

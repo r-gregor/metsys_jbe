@@ -1,0 +1,75 @@
+### Initial, after minimal debian12 install
+### 20241111 (en)
+
+sudo apt update && sudo apt upgrade
+
+sudo apt install -y git vim zram-tools nala unzip tar
+sudo vim /etc/default/zramswap
+sudo systemctl restart zramswap.service
+
+### Dependencies
+sudo apt install -y build-essential cmake cmake-extras curl gettext libnotify-bin light meson ninja-build libxcb-util
+
+### Desktops
+sudo apt install -y xorg xserver-xorg xinit xbacklight xbindkeys xvkbd xinput policykit-1-gnome network-manager network-manager-gnome
+sudo apt install xfce4 xfce4-goodies i3 polybar
+
+### Goodies
+sudo apt install -y lxappearance lxtask (volumeicon-alsa) nitrogen feh dunst xdotool libnotifi-dev
+sudo apt install -y exa ffmpeg gimp mkvtoolnix-gui redshift brightnessct scrot eog evince pdfarranger
+sudo apt install -y figlet cpu-x udns-utils whois curl tree neofetch dmenu rofi fzf xfce4-power-manager
+sudo apt install -y sxiv inkscape mpv vlc audacity kdenlive obs-studio rhythmbox ncmpcpp
+sudo apt install -y gparted gnome-disk-utility numlockx galculator btop htop bat redshift
+
+### Sound
+sudo apt install -y pipewire pavucontrol pamixer
+
+### Flatpak
+sudo apt install -y flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+### Terminals
+sudo apt install -y kitty alacritty tilix
+
+### Text editors
+vim mousepad (l3afpad)
+
+### Network File Tools/System events
+sudo apt install -y dialog mtools dosfstools avahi-daemon acpi gvfs-backends
+sudo systemctl enable avahi-daemon
+sudo systemctl enable acpi
+
+### File managers
+sudo apt install -y thunar thunar-archive-plugin thunar-volman file-roller pcmanfm ranger mc nnn lf
+
+### Web browsers
+sudo apt install -y firefox-esr
+curl -fSsL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg >> /dev/null
+echo deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google-chrome.list
+sudo apt update
+sudo apt install google-chrome-stable
+	# or:
+flatpak install flathub com.google.Chrome
+
+### Printing and bluetooth
+sudo apt install -y cups system-config-printer simple-scan xsane bluez blueman
+sudo systemctl enable cups
+sudo systemctl enable bluetooth
+
+### Fonts and icons
+sudo apt install -y fonts-recomended fonts-ubunt fonts-font-awesome fonts-terminus papirus-icon-theme
+
+### Display manager
+### documentation (5+): https://wiki.debian.org/SDDM
+sudo apt install --no-instal-recomends -y sddm
+sudo systemctl enable sddm
+	# or
+sudo systemctl disable lightdm && sudo systemctl enable sddm
+sudo apt install -y sddm-theme
+	# sudo vim /usr/lib/sddm/sddm.conf.d/default.conf
+	# sudo vim /etc/sddm.conf
+sudo vim /etc/sddm.conf.d/[...]_settings.conf
+
+### AT THE VERY END
+sudo apt autoremove
+
