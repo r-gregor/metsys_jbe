@@ -1,0 +1,28 @@
+# xfce DE
+xfce4 (4.18)
+	Meta-package for the Xfce Lightweight Desktop Environment
+
+	recomends:
+		desktop-base
+		tango-icon-theme
+		thunar-volman (>= 4.18.0)
+		xfce4-notifyd
+		xfce4-goodies
+		xfce4-power-manager (>= 4.18.0)
+
+
+# i3 WM
+i3 (4.22-2)
+	metapackage (i3 window manager, screen locker, menu, statusbar)
+	This metapackage installs the i3 window manager (i3-wm), the i3lock screen locker,
+	i3status (for system information) and suckless-tools (for dmenu).
+	These are all the tools you need to use the i3 window manager efficiently.
+
+	recomends:
+		dunst, i3lock, suckless-tools
+
+# polybar
+polybar (3.6.3-1)
+	INSTALL FROM SOURCE --> newer version contains systray
+
+
