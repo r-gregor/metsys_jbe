@@ -1,0 +1,53 @@
+cp ~/Downloads/fsplit_en.sh.txt ~/majstaf/majbin/
+cd ~/majstaf/majbin/
+mv fsplit{_en.sh.txt,}
+chmod 755 fsplit
+rm b-find-lnx-executables_v1
+rm b_find_*
+rm b-convert-txt-to-pdf-en
+mv b-convert-txt-to-pdf{_v2,}
+rm dclean-movie-dname.V5.backup
+rm get_jbediffs_backup
+rm check_if_mvs_in_both_dirs_backup.txt
+rm contains.backup.txt
+rm logout_menu_dmn.backup
+rm unedrscores-to-hypens-d
+rm underscores-to-hypens-d
+rm spaces-to-dots
+rm convert-fname-to-lower-with-hypens
+for FFF in $(find * -maxdepth 0 -type f); do stat $FFF --printf="%s"; echo " $FFF"; done | sort -hr | clm
+rm cnk*
+rm dbk dm
+rm fndb_*
+rm go-project-env-d.bekap
+rm -i kodi1
+rm mRUN-d-cdng
+rm -r NEW_git-commands/
+rm -r novo/ NOVO/
+rm -r OLD_git-commands/
+rm -r RUN-d-cdng
+rm TODO.txt
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do echo $FFF; done
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do echo diff -q /home/rgregor/majstaf/jbegit/majbin_jbe/$(echo $FFF | sed 's:jbegit/::') $FFF; done
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do echo diff -q $(echo $FFF | sed 's:jbegit/::') $FFF; done
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do diff -q $(echo $FFF | sed 's:jbegit/::') $FFF; done
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do diff -q $(echo $FFF | sed -e 's:jbegit/::' 's:_jbe::') $FFF; done
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do echo "diff -q $(echo $FFF | sed -e 's:jbegit/::' -e 's:_jbe::') $FFF"; done
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do diff -q $(echo $FFF | sed -e 's:jbegit/::' -e 's:_jbe::') $FFF; done | grep -v Brth | cut -d':' -f2
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do diff -q $(echo $FFF | sed -e 's:jbegit/::' -e 's:_jbe::') $FFF; done | grep -v Brth
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do diff -q $(echo $FFF | sed -e 's:jbegit/::' -e 's:_jbe::') $FFF | grep -v Brth; done
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do diff -q $(echo $FFF | sed -e 's:jbegit/::' -e 's:_jbe::') $FFF; done
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do diff -q $(echo $FFF | sed -e 's:jbegit/::' -e 's:_jbe::') $FFF; done > BRISI_LIST_20241127
+for FFF in $(find ~/majstaf/jbegit/majbin_jbe/* -type f); do diff -q $(echo $FFF | sed -e 's:jbegit/::' -e 's:_jbe::') $FFF; done &> BRISI_LIST_20241127
+cat BRISI_LIST_20241127 | grep -v "Brth\|w3" | cut -d':' -f2
+for FFF in $(cat BRISI_LIST_20241127 | grep -v "Brth\|w3" | cut -d':' -f2); do echo $basename $FFF; done
+for FFF in $(cat BRISI_LIST_20241127 | grep -v "Brth\|w3" | cut -d':' -f2); do cut -d'/' -f5-
+for FFF in $(cat BRISI_LIST_20241127 | grep -v "Brth\|w3" | cut -d':' -f2); do cut -d'/' -f5- ; done
+for FFF in $(cat BRISI_LIST_20241127 | grep -v "Brth\|w3" | cut -d':' -f2); do echo $FFF | cut -d'/' -f5- ; done
+for FFF in $(cat BRISI_LIST_20241127 | grep -v "Brth\|w3" | cut -d':' -f2); do echo $FFF | cut -d'/' -f6- ; done
+for FFF in $(cat BRISI_LIST_20241127 | grep -v "Brth\|w3" | cut -d':' -f2); do echo rm -v "~/majstaf/mdngit/majbin_jbe/$(echo $FFF | cut -d'/' -f6-)" ; done
+for FFF in $(cat BRISI_LIST_20241127 | grep -v "Brth\|w3" | cut -d':' -f2); do echo rm -v "~/majstaf/jbegit/majbin_jbe/$(echo $FFF | cut -d'/' -f6-)" ; done
+for FFF in $(cat BRISI_LIST_20241127 | grep -v "Brth\|w3" | cut -d':' -f2); do echo rm -i "~/majstaf/jbegit/majbin_jbe/$(echo $FFF | cut -d'/' -f6-)" ; done
+for FFF in $(cat BRISI_LIST_20241127 | grep -v "Brth\|w3" | cut -d':' -f2); do rm -i "~/majstaf/jbegit/majbin_jbe/$(echo $FFF | cut -d'/' -f6-)" ; done
+for FFF in $(cat BRISI_LIST_20241127 | grep -v "Brth\|w3" | cut -d':' -f2); do rm -i "$HOME/majstaf/jbegit/majbin_jbe/$(echo $FFF | cut -d'/' -f6-)" ; done
+rm fndb_* mRUN-d-cdng RUN-d-cdng
