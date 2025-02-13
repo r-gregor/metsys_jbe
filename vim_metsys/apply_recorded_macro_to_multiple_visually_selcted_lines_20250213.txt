@@ -1,0 +1,5 @@
+1 - record a macro ('q') for single line with final advance on to a next line
+2 - visual select multiple lines to aplly macro to
+3 - type
+        :norm @q
+
