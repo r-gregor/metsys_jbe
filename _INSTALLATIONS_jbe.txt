@@ -252,9 +252,14 @@
   629  2024-11-10 17:36:01 sudo apt install libpcre++-dev 
   635  2024-11-10 17:40:56 sudo apt install libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libepoxy-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev meson ninja-build uthash-dev
   646  2024-11-10 17:44:08 sudo apt install cmake
+  864  2024-11-11 17:59:21 sudo apt install sddm
+  322  2024-12-15 23:24:14 sudo apt install gsimplecal
 ---
   # enable enter password window display in i3;
   920  2024-11-11 19:19:15 sudo apt install lxpolkit
+
+---
+  900  2025-04-24 19:12:47 sudo apt install zoxide
 
 ---
 
