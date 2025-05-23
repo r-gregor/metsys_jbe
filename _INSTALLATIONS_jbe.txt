@@ -221,7 +221,6 @@
   999  2024-10-16 18:54:06 sudo apt show nala
  1000  2024-10-16 18:54:31 sudo apt install nala
 ---
-
   411  2024-11-04 17:47:46 sudo apt install polybar
   413  2024-11-04 17:48:10 mkdir polybar
   414  2024-11-04 17:48:15 cd polybar/
@@ -236,14 +235,12 @@
   520  2024-11-04 19:08:30 vim .config/polybar/config.ini
   531  2024-11-04 19:17:08 killall polybar && polybar bar & disown
 ---
-
   192  2024-11-04 19:01:17 sudo apt install fonts-font-awesome fonts-powerline
   995  2024-11-08 19:45:48 sudo apt show volumeicon-alsa
   996  2024-11-08 19:46:04 sudo apt install volumeicon-alsa
   997  2024-11-08 19:47:28 volumeicon &
   999  2024-11-08 19:50:50 vim ~/.config/i3/config
 ---
-
   457  2024-11-09 19:54:14 sudo apt install pcmanfm
   # picom install:
   606  2024-11-10 17:32:56 sudo apt install meson
@@ -257,9 +254,10 @@
 ---
   # enable enter password window display in i3;
   920  2024-11-11 19:19:15 sudo apt install lxpolkit
-
 ---
   900  2025-04-24 19:12:47 sudo apt install zoxide
-
+---
+  735  2025-05-12 17:53:23 sudo apt install libfuse2
+  911  2025-05-19 17:42:15 sudo apt install dialog
 ---
 
