@@ -20,8 +20,8 @@ rclone copy _2025_1_PROJEKTI mega_gren:ENERGETIKA/_2025_1_PROJEKTI
 rclone sync --progress _2025_1_PROJEKTI mega_gren:ENERGETIKA/_2025_1_PROJEKTI
 # ---
 rclone copy --update $(cygpath -w "/c/Users/gregor.redelonghi/Downloads") mega_gren:ENERGETIKA/Downloads --progress
-rclone copy --update $(cygpath -w "/c/Users/gregor.redelonghi/2025/_2025_1_PROJEKTI") mega_gren:ENERGETIKA/_2025_1_PROJEKTI --progress
 rclone copy --update $(cygpath -w "/c/Users/gregor.redelonghi/2025/Tehnicne-zahteve_2025") mega_gren:ENERGETIKA/Tehnicne-zahteve_2025 --progress
+rclone copy --update $(cygpath -w "/c/Users/gregor.redelonghi/2025/_2025_1_PROJEKTI") mega_gren:ENERGETIKA/_2025_1_PROJEKTI --progress
 rclone sync --update $(cygpath -w "/c/Users/gregor.redelonghi/2025/_2025_1_PROJEKTI") mega_gren:ENERGETIKA/_2025_1_PROJEKTI --progress
 # ---
 
