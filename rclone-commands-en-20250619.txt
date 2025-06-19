@@ -1,0 +1,27 @@
+rclone config
+rclone remote
+rclone ncdu mrganz:
+rclone ncdu mega_gren:ENERGETIKA
+rclone ncdu mega_gren: | sort -nr | less
+rclone ncdu help
+rclone lsd mega_gren:ENERGETIKA
+rclone lsd mega_gren:
+rclone ls meganz:
+rclone ls mega_gren: | sort -nr | less
+rclone ls mega_gren: | sort -nr | head
+rclone ls dropbox:
+rclone listremotes
+# ---
+rclone copy --update $(cygpath -w "/c/Users/gregor.redelonghi/2025/_2025_1_PROJEKTI") mega_gren:ENERGETIKA/_2025_1_PROJEKTI
+rclone copy Tehnicne-zahteve_2025 mega_gren:ENERGETIKA/Tehnicne-zahteve_2025
+rclone copy majprogs_en mega_gren:ENERGETIKA/majprogs_en --filter-from majprogs-yes-no.txt --progress --update
+rclone copy majprogs_en mega_gren:ENERGETIKA/majprogs_en --filter-from majprogs-yes-no.txt --progress
+rclone copy _2025_1_PROJEKTI mega_gren:ENERGETIKA/_2025_1_PROJEKTI
+rclone sync --progress _2025_1_PROJEKTI mega_gren:ENERGETIKA/_2025_1_PROJEKTI
+# ---
+rclone copy --update $(cygpath -w "/c/Users/gregor.redelonghi/Downloads") mega_gren:ENERGETIKA/Downloads --progress
+rclone copy --update $(cygpath -w "/c/Users/gregor.redelonghi/2025/_2025_1_PROJEKTI") mega_gren:ENERGETIKA/_2025_1_PROJEKTI --progress
+rclone copy --update $(cygpath -w "/c/Users/gregor.redelonghi/2025/Tehnicne-zahteve_2025") mega_gren:ENERGETIKA/Tehnicne-zahteve_2025 --progress
+rclone sync --update $(cygpath -w "/c/Users/gregor.redelonghi/2025/_2025_1_PROJEKTI") mega_gren:ENERGETIKA/_2025_1_PROJEKTI --progress
+# ---
+

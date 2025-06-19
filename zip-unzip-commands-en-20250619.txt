@@ -1,0 +1,19 @@
+ zip test.zip .*
+ unzip -l test.zip 
+ zip -e dotfiles-en-20250619.zip .*
+ unzip -l dotfiles-en-20250619.zip 
+ unzip dotfiles-en-20250619.zip 
+ unzip -P z7m17s11G. dotfiles-en-20250619.zip 
+ unzip dotfiles-en-20250619.zip 
+ rclone copyto dotfiles-en-20250619.zip mega_gren:TESTING/dotfiles-testing.zip
+ unzip dotfiles-testing.zip 
+ unzip dotfiles-testing.zip
+ unzip -l dotfiles-en-20250619.zip | less
+ unzip -l dotfiles-en-20250619.zip 
+ unzip -l dotfiles-en-20250619.zip | grep ss
+ uzip dotfiles-en-20250619.zip 
+ unzip dotfiles-en-20250619.zip 
+ zip -er dotfiles-en-r-20250619.zip .*
+ zip -er dotfiles-en-r-20250619.zip .* -x ".cache/*" ".tmp/*" @
+ unzip -l dotfiles-en-r-20250619.zip | less
+
