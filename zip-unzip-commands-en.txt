@@ -1,3 +1,4 @@
+--- 20250619 ---
 zip test.zip .*
 unzip -l test.zip 
 zip -e dotfiles-en-20250619.zip .*
@@ -16,4 +17,5 @@ unzip dotfiles-en-20250619.zip
 zip -er dotfiles-en-r-20250619.zip .*
 zip -er dotfiles-en-r-20250619.zip .* -x ".cache/*" ".tmp/*" @
 unzip -l dotfiles-en-r-20250619.zip | less
+---
 
