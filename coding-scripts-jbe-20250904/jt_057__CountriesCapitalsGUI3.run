@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+/home/rgregor/majstaf/majbin/jarxrun  /home/rgregor/JAVA_d_testing/jd057_CountryCapitalsGui_jsnon_20200422/V3/jars/CountriesCapitalsGUI3-1.jar &
+
