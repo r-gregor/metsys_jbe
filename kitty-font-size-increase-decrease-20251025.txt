@@ -1,0 +1,9 @@
+1 -to increase font size in st shell:
+ctrl+shift+Plus
+
+2 -to decrease font size in st shell:
+ctrl+shift+Minus
+
+3 -to set font size to initial size:
+ctrl+shift+BackSpace
+
