@@ -1,0 +1,12 @@
+Get escape sequence with piping tput command to hexdump command:
+
+$> tput cup 6 20; echo "UUUUUUUUUUUUUUUU"
+$> tput cup $(( $(tput lines) / 2)) 15; echo "HY IN THE MIDDLE"
+$> tput cup 6 60 | hexdump -C
+	output:
+00000000  1b 5b 37 3b 36 31 48                              |.[7;61H|
+00000007
+
+$> printf "\E[7;61H"
+$> printf "\E[7;61H"; echo "UAHAHAHAHA"
+

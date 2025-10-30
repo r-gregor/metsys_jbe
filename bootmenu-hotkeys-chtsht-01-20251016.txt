@@ -1,0 +1,234 @@
+filename: bootmenu-hotkeys-chtsht-01-20251016.txt
+https://www.winusb.net/articles/hotkeys-for-entering-the-boot-menu-from-different-manufacturers-complete-table.html
+
+Hotkeys for entering the boot menu from different manufacturers: complete table
+March 7, 2024
+
+hot keys boot menu
+
+Table of keys for calling models of personal computers and motherboards
+-------------------------------------------------
+Manufacturer                       Hotkey
+-------------------------------------------------
+Acer                               F12
+ASRock                             F11
+Atermiter                          F11
+Asus                               F8
+BioStar                            F9
+Dell                               F12
+ECS (Elitegroup Computer Systems)  F11
+Esonic                             Esc
+EVGA                               F7
+Foxconn                            Esc
+Fujitsu                            F12
+Gigabyte                           F12
+HP                                 F9 or Esc+F9
+Gigabyte                           F12
+Huananzhi                          F7
+Intel                              F10
+Lenovo                             F12
+Machinist                          F11
+MSI (Micro-Star International)     F11
+Pegatron                           F11
+SuperMicro                         F11
+Zotac                              F11
+-------------------------------------------------
+
+
+Table of keys for calling models of laptops and tablets
+-------------------------------------------------------------------------------------------------------------
+Manufacturer Model                                                          Hotkey
+-------------------------------------------------------------------------------------------------------------
+Acer         All                                                            F12
+             -----------------------------------------------------------------------------------------------
+             VivoBook f200ca, f202e, q200e, s200e, s400ca, s500ca, u38n,    Esc
+             v500ca, v550ca, v551, x200ca, x202e, x550ca, z202e
+             -----------------------------------------------------------------------------------------------
+             N550JV, N750JV, N550LF, Rog g750jh, Rog g750jw, Rog g750jx     Esc
+ASUS         Zenbook Infinity ux301, Infinity ux301la, Prime ux31a, Prime   * requires disabling the "Fast
+             ux32vd, R509C, Taichi 21, Touch u500vz, Transformer Book TX300 Boot" and "Secure Boot Control"
+                                                                            options in the settings
+             -----------------------------------------------------------------------------------------------
+             other laptop models                                            F8
+-------------------------------------------------------------------------------------------------------------
+Compaq       All models                                                     Esc or F9
+-------------------------------------------------------------------------------------------------------------
+Dell         All models                                                     F12
+-------------------------------------------------------------------------------------------------------------
+eMachines    All models                                                     F12
+-------------------------------------------------------------------------------------------------------------
+Fujitsu      All models                                                     F12
+-------------------------------------------------------------------------------------------------------------
+MSI          All models                                                     F11
+(MicroStar)
+-------------------------------------------------------------------------------------------------------------
+NEC          All models                                                     F5
+-------------------------------------------------------------------------------------------------------------
+Packard Bell All models                                                     F12
+-------------------------------------------------------------------------------------------------------------
+                                                                            F2
+             series Ativ Book 2, 8, 9                                       * requires disabling the "Fast
+                                                                            Boot" options in the settings
+                                                                            Esc
+Samsung      Series 5 Ultra, Series 7 Chronos, Series 9 Ultrabook           * requires disabling the "Fast
+                                                                            Boot" options in the settings
+             ------------------------------------------------------------------------------------------------
+             NC10, np300e5c, np300e5e, np350v5c, np355v5c, np365e5c,        Esc
+             np550p5c
+             ------------------------------------------------------------------------------------------------
+             other laptop models                                            Esc or F12
+-------------------------------------------------------------------------------------------------------------
+             VAIO Duo, Pro, Flip, Tap, Fit                                  separate button on the laptop
+                                                                            panel
+Sony        -------------------------------------------------------------------------------------------------
+             VAIO, PCG, VGN                                                 F11
+             VGN                                                            Esc or F10
+-------------------------------------------------------------------------------------------------------------
+Toshiba      All models                                                     F12
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+https://www.disk-image.com/faq-bootmenu.htm
+
+Home > Frequently Asked Questions > Hot keys for BootMenu / BIOS Settings
+
+Hot keys for BootMenu / BIOS Settings
+
+Below is a list of PC brands with their corresponding hot-keys.
+-------------------------------------------------------------------------------------------------------------
+Manufacturer Type      Models        Boot   Boot Once             BIOS Change Priority
+                                     Menu                         Key
+-------------------------------------------------------------------------------------------------------------
+                                     Esc,                         Del,
+ACER                                 F12,                         F2
+                                     F9
+-------------------------------------------------------------------------------------------------------------
+                       AspireOne,
+ACER         netbook   Aspire        F12                          F2
+                       Timeline
+-------------------------------------------------------------------------------------------------------------
+                                            The "F12 Boot Menu"
+ACER         netbook   Aspire v3,    F12    must be enabled in    F2
+                       v5, v7               BIOS. It is disabled
+                                            by default.
+-------------------------------------------------------------------------------------------------------------
+APPLE                  After 2006    Option
+-------------------------------------------------------------------------------------------------------------
+ASUS         desktop                 F8                           F9
+-------------------------------------------------------------------------------------------------------------
+ASUS         laptop                  Esc                          F9
+-------------------------------------------------------------------------------------------------------------
+ASUS         laptop    R503C         F8                           DEL
+-------------------------------------------------------------------------------------------------------------
+ASUS         netbook   Eee PC 1025c  Esc                          F2   Boot Tab, Boot Device Priority, 1st
+                                                                       Boot Device, Removable Device, F10
+-------------------------------------------------------------------------------------------------------------
+COMPAQ                 Presario      Esc,                         F10  BIOS "Advanced Tab", Boot Order
+                                     F9
+-------------------------------------------------------------------------------------------------------------
+                       Dimension,           Select "USB Flash
+DELL         desktop   Inspiron,     F12    Drive"                F2
+                       Latitude
+-------------------------------------------------------------------------------------------------------------
+                       Inspiron One
+DELL         desktop   2020, 2305,   F12    Select "USB Flash     F2
+                       2320, 2330           Drive"
+                       All-In-One
+-------------------------------------------------------------------------------------------------------------
+                                            Select "USB Storage        Settings->General->Boot Sequence->"USB
+DELL         laptop    Inspiron      F12    Device"               F2   Storage Device", then up arrow,
+                                                                       [Apply]--[Exit]
+-------------------------------------------------------------------------------------------------------------
+                                            Select "USB Storage
+DELL         laptop    Precision     F12    Device" from boot     F12
+                                            menu
+-------------------------------------------------------------------------------------------------------------
+EMACHINES                            F12                          Tab,
+                                                                  Del
+-------------------------------------------------------------------------------------------------------------
+                                     Esc,                         Esc,
+HP           generic                 F9                           F10,
+                                                                  F1
+-------------------------------------------------------------------------------------------------------------
+HP           desktop   Media Center  Esc                          F10  BIOS "Advanced" tab, Boot Order, Move
+                                                                       "USB Device" before "Hard Drive"
+-------------------------------------------------------------------------------------------------------------
+                                                                       BIOS "Advanced" tab, Boot Order, Move
+HP           desktop   Pavilion 23   Esc    Select boot media     F10  "USB Device" before "Hard Drive". For
+                       All In One           from the menu              non-UEFI media, disable secure boot
+                                                                       and enable legacy support
+-------------------------------------------------------------------------------------------------------------
+HP           desktop   Pavilion g6   Esc                          F10  BIOS "Advanced" tab, Boot Order, Move
+                       and g7                                          "USB Device" before "Hard Drive"
+-------------------------------------------------------------------------------------------------------------
+HP           desktop   Pavilion HPE  Esc    Then F9 for "Boot     Esc  Storage tab, Boot Order, Legacy Boot
+                       PC, h8-1287c         Menu"                 F10  Sources
+-------------------------------------------------------------------------------------------------------------
+HP           desktop   Pavilion PC,  Esc    Then F9 for "Boot     Esc  Storage tab, Boot Order, Legacy Boot
+                       p6 2317c             Menu"                 F10  Sources
+-------------------------------------------------------------------------------------------------------------
+HP           desktop   Pavilion PC,  Esc    Then F9 for "Boot     Esc  Storage tab, Boot Order, Legacy Boot
+                       p7 1297cb            Menu"                 F10  Sources
+-------------------------------------------------------------------------------------------------------------
+HP           desktop   TouchSmart    Esc    Then F9 for "Boot     Esc  Storage tab, Boot Order, Legacy Boot
+                       520 PC               Menu"                 F10  Sources
+-------------------------------------------------------------------------------------------------------------
+                                            Select "Patriot
+HP           laptop    2000          Esc    Memory" on the Boot   Esc
+                                            Option Menu
+-------------------------------------------------------------------------------------------------------------
+HP           notebook  Pavilion      Esc                          F10  BIOS "Advanced" tab, Boot Order, Move
+                                                                       "USB Device" before "Hard Drive"
+-------------------------------------------------------------------------------------------------------------
+HP           notebook  ENVY dv6 and  Esc    Then F9 for "Boot     Esc  F10 Storage tab, Boot Order, Legacy
+                       dv7 PC               Menu"                      Boot Sources
+-------------------------------------------------------------------------------------------------------------
+INTEL                                F10
+-------------------------------------------------------------------------------------------------------------
+                                     F12,                         F1,
+LENOVO       desktop                 F8,                          F2
+                                     F10
+-------------------------------------------------------------------------------------------------------------
+LENOVO       laptop                  F12                          F1,
+                                                                  F2
+-------------------------------------------------------------------------------------------------------------
+                                     F12 or
+LENOVO       laptop    IdeaPad P500  Fn +                         F2
+                                     F11
+-------------------------------------------------------------------------------------------------------------
+NEC                                  F5                           F2
+-------------------------------------------------------------------------------------------------------------
+PACKARD BELL                         F8                           F1,
+                                                                  Del
+-------------------------------------------------------------------------------------------------------------
+SAMSUNG                              F12, Esc
+-------------------------------------------------------------------------------------------------------------
+                                                                       Boot Tab, Select "Boot Device
+SAMSUNG      netbook   NC10          Esc                          F2   Priority", Press Return, Up/Down to
+                                                                       Highlight, F6/F5 to change priority
+-------------------------------------------------------------------------------------------------------------
+                       Series 5                                        Boot Tab, Select "Boot Device
+SAMSUNG      ultrabook Ultra and     Esc                          F2   Priority", Press Return, Up/Down to
+                       Series 7                                        Highlight, F6/F5 to change priority
+                       Chronos
+-------------------------------------------------------------------------------------------------------------
+SHARP                                                             F2
+-------------------------------------------------------------------------------------------------------------
+                       VAIO, PCG,                                 F1,
+SONY                   VGN           F11                          F2,
+                                                                  F3
+-------------------------------------------------------------------------------------------------------------
+SONY                   VGN Esc       F10                          F2   BIOS "BOOT" section, "External Device
+                                                                       Boot" enabled
+-------------------------------------------------------------------------------------------------------------
+                       Protege,                                   F1,
+TOSHIBA                Satellite,    F12                          Esc
+                       Tecra
+-------------------------------------------------------------------------------------------------------------
+TOSHIBA                Equium F12    F12                          F12
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+
