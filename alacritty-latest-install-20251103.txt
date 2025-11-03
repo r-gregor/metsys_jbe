@@ -1,0 +1,32 @@
+# from: https://github.com/alacritty/alacritty/blob/master/INSTALL.md
+# ---
+rustup override set stable
+rustup update stable
+sudo apt install cmake g++ pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
+cd majstaf/majprogs/
+git clone https://github.com/alacritty/alacritty.git
+cd alacritty/
+cd majstaf/majprogs/alacritty/
+cargo build --release
+infocmp alacritty
+	# if no terminfo database install with:
+	sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+cd target/release/
+./alacritty
+alacritty migrate
+sudo mv /usr/local/bin/alacritty{,.old}
+sudo cp alacritty /usr/local/bin/
+/usr/local/bin/alacritty.old --version
+alacritty --version
+alacritty
+# change import to general.import in alacritty.toml (remove config error)
+vim ~/.config/alacritty/alacritty.toml
+	# #import = ["/home/rgregor/.config/alacritty/dracula_custom-1.toml"]
+	# general.import = ["/home/rgregor/.config/alacritty/dracula.toml"]
+# ---
+
+  976  2025-11-03 20:08:08 sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+  979  2025-11-03 20:08:08 sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+ 1000  2025-11-03 20:13:40 histpry | grep tic
+ 1001  2025-11-03 20:13:45 history | grep tic
+ 1002  2025-11-03 20:13:53 history | grep tic >> alacritty-latest-install-20251103.txt
