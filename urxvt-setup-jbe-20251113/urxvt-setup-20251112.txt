@@ -12,7 +12,7 @@ cp .Xresources .urxvt-colors-default-1
 mv .Dracula-Xresources-color-theme .urxvt-colors-Dracula-1
 vim .urxvt-colors-default-1
 xrdb .Xresources
-vim .Xresources 
+vim .Xresources
 vim .urxvt-colors-Dracula-1
 printf '\33]50;%s\007' "xft:UbuntuMono Nerd Font-26"
 printf '\33]50;%s\007' "xft:UbuntuMono Nerd Font-18
