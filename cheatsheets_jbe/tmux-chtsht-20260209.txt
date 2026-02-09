@@ -1,0 +1,102 @@
+filename: tmux-chtsht-20260209.txt
+https://linuxize.com/cheatsheet/tmux/
+
+Tmux Cheatsheet
+Feb 2, 2026
+
+tmux is a terminal multiplexer that lets you manage multiple sessions, windows, and panes in a single
+terminal. This cheatsheet covers the most common commands and key bindings.
+
+--------------------------------------------------------------------------------------------------------------
+Start and Exit
+--------------------------------------------------------------------------------------------------------------
+tmux                        Start a new session
+tmux new -s work            Start session named work
+tmux ls                     List sessions
+tmux kill-session -t work   Kill session work
+tmux kill-server            Stop tmux server
+exit                        Exit current shell (pane)
+Attach and Switch
+tmux attach                 Attach to last session
+tmux attach -t work         Attach to session work
+tmux switch -t work         Switch to session work
+tmux detach                 Detach from session
+--------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------
+Prefix Key (Default prefix is Ctrl+b)
+--------------------------------------------------------------------------------------------------------------
+Ctrl+b                      Enter tmux command mode
+Ctrl+b ?                    Show key bindings
+Ctrl+b :                    Open command prompt
+Windows
+Ctrl+b c                    Create new window
+Ctrl+b ,                    Rename current window
+Ctrl+b &                    Kill current window
+Ctrl+b n                    Next window
+Ctrl+b p                    Previous window
+Ctrl+b 0-9                  Switch to window by number
+--------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------
+Panes
+--------------------------------------------------------------------------------------------------------------
+Ctrl+b %                    Split pane vertically
+Ctrl+b "                    Split pane horizontally
+Ctrl+b x                    Kill current pane
+Ctrl+b o                    Cycle panes
+Ctrl+b q                    Show pane numbers
+Ctrl+b ;                    Toggle last active pane
+Ctrl+b z                    Zoom/unzoom pane
+--------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------
+Pane Navigation
+--------------------------------------------------------------------------------------------------------------
+Ctrl+b left|up|right|down arrow          Move between panes
+Ctrl+b Ctrl+left|up|right|down arrow     Resize pane
+Ctrl+b Alt+1                             Even-horizontal layout
+Ctrl+b Alt+2                             Even-vertical layout
+Ctrl+b Alt+5                             Tiled layout
+--------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------
+Copy Mode
+--------------------------------------------------------------------------------------------------------------
+Ctrl+b [                    Enter copy mode
+q                           Exit copy mode
+Space                       Start selection
+Enter                       Copy selection
+Ctrl+b ]                    Paste buffer
+--------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------
+Common Commands
+--------------------------------------------------------------------------------------------------------------
+tmux rename-session -t work newname      Rename session
+tmux new -s work -d                      Start detached session
+tmux rename-window -t 1 editor           Rename window 1
+tmux kill-pane -t 2                      Kill pane 2
+tmux list-keys                           List all key bindings
+--------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------
+Configuration
+--------------------------------------------------------------------------------------------------------------
+~/.tmux.conf                             User config file
+tmux source-file ~/.tmux.conf            Reload config
+set -g mouse on                          Enable mouse mode
+setw -g mode-keys vi                     Use vi keys in copy mode
+--------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------
+Useful Patterns
+--------------------------------------------------------------------------------------------------------------
+tmux new -s work -d \; new-window -t work:2 \; attach -t work  Create session, window, attach
+`tmux ls                                                       cat`
+tmux has-session -t work                                       Check if session exists
+--------------------------------------------------------------------------------------------------------------
+
+
+---
+

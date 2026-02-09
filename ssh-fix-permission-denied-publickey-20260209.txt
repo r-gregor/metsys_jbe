@@ -1,0 +1,198 @@
+filename: ssh-fix-permission-denied-publickey-20260209.txt
+https://linuxize.com/post/fix-ssh-permission-denied-publickey/
+
+How to Fix SSH "Permission Denied (publickey)" Error
+Feb 5, 2026
+
+The "Permission denied (publickey)" error occurs when the SSH server rejects your connection because it
+cannot verify your identity using public key authentication.
+
+output
+user@remote_host: Permission denied (publickey).
+
+This is one of the most common SSH errors. In this guide, we will go through the most frequent causes
+and how to fix them.
+
+Debugging the Connection
+Before trying specific fixes, run SSH in verbose mode to see exactly where the authentication fails:
+$> ssh -v user@remote_host
+
+For even more detail, use -vv or -vvv:
+$> ssh -vvv user@remote_host
+
+Look for lines like:
+debug1: Offering public key: /home/user/.ssh/id_ed25519
+debug1: Server accepts key: /home/user/.ssh/id_ed25519
+
+or:
+debug1: Trying private key: /home/user/.ssh/id_ed25519
+debug1: No more authentication methods to try.
+
+The verbose output tells you which keys are being tried and where the process fails.
+
+Common Causes and Fixes
+1. Public Key Not on the Remote Server
+The most common cause is that your public key is not in the remote server's ~/.ssh/authorized_keys file.
+
+Copy your public key to the server:
+$> ssh-copy-id user@remote_host
+
+If ssh-copy-id is not available, copy it manually:
+$> cat ~/.ssh/id_ed25519.pub | ssh user@remote_host "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> \
+~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+
+For more details, see our guide on how to copy SSH keys with ssh-copy-id.
+
+2. Wrong File Permissions
+SSH is strict about file permissions. If the permissions are too open, the SSH server will reject the key.
+
+On the remote server, set the correct permissions:
+$> chmod 700 ~/.ssh
+$> chmod 600 ~/.ssh/authorized_keys
+
+On the local machine, set the correct permissions on your private key:
+$> chmod 600 ~/.ssh/id_ed25519
+
+The SSH server will also reject keys if the home directory is writable by others:
+$> chmod 755 ~
+
+These checks are enforced by the StrictModes yes setting in /etc/ssh/sshd_config, which is enabled by
+default. Do not disable it - fix the permissions instead.
+
+3. Wrong User or Hostname
+Make sure you are connecting as the correct user. The key must be in that user's authorized_keys file:
+$> ssh deploy@remote_host
+
+If you have a host alias in your SSH config file , verify it points to the correct hostname and user.
+
+4. SSH Agent Not Running
+If your key is protected with a passphrase and the SSH agent is not running, the key will not be offered
+to the server.
+
+Start the SSH agent and add your key:
+$> eval "$(ssh-agent -s)"
+$> ssh-add ~/.ssh/id_ed25519
+
+To list the keys currently loaded in the agent:
+$> ssh-add -l
+
+5. Wrong Key Being Used
+If you have multiple SSH keys, the client may be offering the wrong one. Specify the key explicitly:
+$> ssh -i ~/.ssh/id_ed25519 user@remote_host
+
+Or configure it in your ~/.ssh/config:
+~/.ssh/configini
+
+Host remote_host
+    HostName 192.168.1.10
+    User deploy
+    IdentityFile ~/.ssh/id_ed25519
+
+6. Public Key Authentication Disabled on the Server
+If public key authentication is disabled on the server, key-based login will not work regardless of your
+key setup. Check /etc/ssh/sshd_config on the server:
+PasswordAuthentication no
+PubkeyAuthentication yes
+
+If PubkeyAuthentication is set to no, key-based login will not work. Change it to yes and restart SSH:
+$> sudo systemctl restart sshd
+
+7. Key Type Not Accepted
+Some servers are configured to accept only certain key types. If your key type is not allowed, the server
+will reject it.
+
+Check the PubkeyAcceptedAlgorithms setting in /etc/ssh/sshd_config:
+PubkeyAcceptedAlgorithms +ssh-rsa
+
+If you are using an older RSA key, the server may require you to explicitly allow it. This should be a last
+resort because ssh-rsa is deprecated on modern OpenSSH. A better solution is to generate a new Ed25519 key:
+$> ssh-keygen -t ed25519
+
+8. SELinux Blocking Access
+On systems with SELinux enabled (RHEL, CentOS, Fedora), SELinux may prevent the SSH server from reading
+the authorized_keys file.
+
+Check for SELinux denials:
+$> sudo ausearch -m avc -ts recent
+
+Restore the correct SELinux context:
+$> sudo restorecon -R ~/.ssh
+
+9. Home Directory on Network Storage
+If the user's home directory is on NFS or another network filesystem, the SSH server may not be able to
+read the authorized_keys file before the filesystem is mounted.
+
+You can configure an alternative location for authorized keys in /etc/ssh/sshd_config:
+AuthorizedKeysFile /etc/ssh/authorized_keys/%u
+
+Then place the user's keys in /etc/ssh/authorized_keys/username.
+
+Troubleshooting
+
+Server-Side Debugging
+If you have access to the server, check the authentication log for error details:
+
+On Ubuntu and Debian:
+$> sudo tail -f /var/log/auth.log
+
+On CentOS, RHEL, and Fedora:
+$> sudo tail -f /var/log/secure
+
+You can also run the SSH server in debug mode temporarily on a different port:
+$> sudo /usr/sbin/sshd -d -p 2222
+
+Then connect to it from the client:
+$> ssh -p 2222 user@remote_host
+
+The server will print detailed authentication information to the terminal.
+
+Quick Reference
+--------------------------------------------------------------------------
+Problem                                  Fix
+--------------------------------------------------------------------------
+Key not on server                        ssh-copy-id user@host
+Wrong permissions on ~/.ssh              chmod 700 ~/.ssh
+Wrong permissions on authorized_keys     chmod 600 ~/.ssh/authorized_keys
+Wrong permissions on private key         chmod 600 ~/.ssh/id_ed25519
+SSH agent not running                    eval "$(ssh-agent -s)" && ssh-add
+Wrong key offered                        ssh -i ~/.ssh/key user@host
+SELinux blocking access                  sudo restorecon -R ~/.ssh
+Check auth log (Ubuntu)                  sudo tail -f /var/log/auth.log
+Debug SSH connection                     ssh -vvv user@host
+--------------------------------------------------------------------------
+
+FAQ
+Why does SSH care about file permissions?
+SSH refuses to use keys with overly permissive file permissions because other users on the system could
+read your private key or modify your authorized_keys file. This is a security feature, not a bug.
+
+I copied my key but it still doesn't work. What should I check?
+Check the permissions on the remote ~/.ssh directory (700), the authorized_keys file (600), and the home
+directory (755 or stricter). Also verify you are connecting as the correct user.
+
+How do I check which keys the SSH client is trying?
+Run ssh -v user@host and look for lines starting with debug1: Offering public key or debug1: Trying
+private key. This shows which keys are being offered to the server.
+
+Does this error always mean a key problem?
+Not always. If the server has PasswordAuthentication no and PubkeyAuthentication no, all authentication
+methods are disabled and you will see this error regardless.
+
+Can I temporarily enable password login to fix the key?
+Yes. If you have console access, set PasswordAuthentication yes in /etc/ssh/sshd_config, restart SSH,
+copy your key with ssh-copy-id, then disable password authentication again.
+
+I get this error on an AWS, GCP, or Azure instance. What should I check?
+Cloud instances use a specific key pair set during provisioning. Make sure you are using that key: ssh
+-i ~/.ssh/my-cloud-key.pem user@host. The default username also varies by provider (e.g., ec2-user on
+Amazon Linux, ubuntu on Ubuntu instances, azureuser on Azure). Check your provider's documentation for
+the correct username.
+
+Conclusion
+The "Permission denied (publickey)" error is almost always caused by a missing key, wrong file permissions,
+or the SSH client offering the wrong key. Start by running ssh -v to identify the problem, then work
+through the fixes above.
+
+
+---
+

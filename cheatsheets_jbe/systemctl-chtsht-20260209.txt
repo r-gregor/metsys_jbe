@@ -1,0 +1,89 @@
+filename: systemctl-chtsht-20260209.txt
+https://linuxize.com/cheatsheet/systemctl/
+
+systemctl Cheatsheet
+Feb 6, 2026
+
+Quick reference for systemctl service and systemd unit management
+
+systemctl is the systemd command-line tool for managing services and other units. This cheatsheet covers
+common service actions, unit inspection, and system-wide controls.
+
+-------------------------------------------------------------------------------------
+Service Control
+Start, stop, and restart services.
+-------------------------------------------------------------------------------------
+systemctl start nginx                Start a service
+systemctl stop nginx                 Stop a service
+systemctl restart nginx              Restart a service
+systemctl reload nginx               Reload configuration without full restart
+systemctl try-restart nginx          Restart only if running
+systemctl reload-or-restart nginx    Reload or restart if reload unsupported
+-------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------
+Enable at Boot
+Control whether a service starts automatically.
+-------------------------------------------------------------------------------------
+systemctl enable nginx               Enable at boot
+systemctl disable nginx              Disable at boot
+systemctl enable --now nginx         Enable and start immediately
+systemctl disable --now nginx        Disable and stop immediately
+systemctl is-enabled nginx           Check if enabled
+-------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------
+Status and State
+Check service state and details.
+-------------------------------------------------------------------------------------
+systemctl status nginx               Show status and recent logs
+systemctl is-active nginx            Check if active
+systemctl is-failed nginx            Check if failed
+systemctl show nginx                 Show unit properties
+systemctl show -p ExecStart nginx    Show a specific property
+-------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------
+List Units
+Find units and see what is running.
+-------------------------------------------------------------------------------------
+systemctl list-units                      List active units
+systemctl list-units --type=service       List active services
+systemctl list-units --all                List all units
+systemctl list-unit-files                 List unit files and enablement
+systemctl list-unit-files --type=service  List service unit files
+-------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------
+Unit Files
+Inspect and edit unit files.
+-------------------------------------------------------------------------------------
+systemctl cat nginx                  Show unit file content
+systemctl edit nginx                 Create override drop-in
+systemctl edit --full nginx          Edit full unit file
+systemctl daemon-reload              Reload systemd units after changes
+-------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------
+Masking and Dependencies
+Prevent services from starting or inspect dependencies.
+-------------------------------------------------------------------------------------
+systemctl mask nginx                         Prevent a unit from starting
+systemctl unmask nginx                       Remove mask
+systemctl list-dependencies nginx            Show dependencies
+systemctl list-dependencies --reverse nginx  Show reverse dependencies
+-------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------
+System Actions
+System-wide power and state controls.
+-------------------------------------------------------------------------------------
+systemctl reboot      Reboot the system
+systemctl poweroff    Power off the system
+systemctl halt        Halt the system
+systemctl suspend     Suspend
+systemctl hibernate   Hibernate
+-------------------------------------------------------------------------------------
+
+---
+
