@@ -1,0 +1,33 @@
+filename: gmail-dump__from-ME-imap-folder-as-txt-20260214.txt
+
+AI Overview:
+
+To dump Gmail emails into text format, the most effective methods include using Google Takeout for bulk
+exporting to MBOX (then converting to text), using Mozilla Thunderbird with the ImportExportTools NG add-on to
+save as plain text/HTML, or using third-party tools like ConverterTools or RecoveryTools for direct TXT
+conversion.
+
+Methods for Dumping Gmail to Text:
+1 - Bulk Export (Recommended): Use Google Takeout to download all mail in MBOX format, then convert the MBOX
+    file to individual text files using a converter tool.
+
+2 - Mozilla Thunderbird (Free & Efficient):
+  * Install Thunderbird and configure your Gmail account via IMAP.
+  * Install the ImportExportTools NG add-on.
+  * Right-click a folder, select ImportExportTools, and choose "Export all messages in folder" -> "Plain text
+    format".
+
+3 - Individual Emails (Manual):
+  * Print to PDF: Open an email, click Print, save as PDF, then open in Word and save as .txt.
+  * Copy/Paste: Copy email content and paste into Notepad.
+
+4 - Third-Party Converters: Tools like SysTools or ConverterTools allow selecting specific folders and
+    converting them directly into .txt, .doc, or .html formats.
+
+Important Notes:
+  * Attachments: Manual methods (copy/paste) do not save attachments, whereas dedicated tools often can.
+  * Volume: For thousands of emails, desktop clients (Thunderbird) or specialized converter tools are more
+    efficient than manual method.
+
+---
+
