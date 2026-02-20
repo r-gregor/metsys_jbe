@@ -1,0 +1,11 @@
+# from:	filename: bash-arrays-in-scripts-5p-20260216.txt
+		https://oneuptime.com/blog/post/2026-01-24-bash-arrays/view
+
+# Sort keys before iterating
+echo -e "\nSorted Inventory:"
+echo "----------------"
+IFS=$'\n' sorted_keys=($(sort <<< "${!inventory[*]}"))
+for fruit in "${sorted_keys[@]}"; do
+	printf "%-10s: %d\n" "$fruit" "${inventory[$fruit]}"
+done
+
