@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 # filename: array-to-function-test.sh
-# 20260304 mdb v1
+# 20260304 jbe v1
 # last 20260304
 # ---
 
