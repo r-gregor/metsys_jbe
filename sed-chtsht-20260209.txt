@@ -1,0 +1,139 @@
+filename: sed-chtsht-20260209.txt
+https://linuxize.com/cheatsheet/sed/
+
+Sed Cheatsheet
+Feb 4, 2026
+
+Sed is a stream editor for filtering and transforming text. This cheatsheet covers common editing tasks,
+addressing, substitutions, and in-place edits.
+
+-------------------------------------------------------------------------------------------------------------
+Syntax
+General command forms.
+-------------------------------------------------------------------------------------------------------------
+sed 'script' file                            Run sed script on a file
+sed -n 'script' file                         Suppress auto-print, print only with p
+printf '%s\n' "text" | sed 'script'          Read from stdin
+sed -e 'cmd1' -e 'cmd2' file                 Multiple commands
+sed -f script.sed file                       Read commands from file
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Options
+Common CLI flags.
+-------------------------------------------------------------------------------------------------------------
+sed -n 'script' file                         Suppress auto-print
+sed -E 'script' file                         Extended regex (GNU and BSD)
+sed -r 'script' file                         Extended regex (GNU only)
+sed -i 'script' file                         Edit in place (GNU sed)
+sed -i.bak 'script' file                     Edit in place with backup
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Substitution
+Replace text with s/old/new/.
+-------------------------------------------------------------------------------------------------------------
+sed 's/old/new/' file                        Replace first match on each line
+sed 's/old/new/g' file                       Replace all matches
+sed 's/old/new/2' file                       Replace second match
+sed 's/old/new/Ig' file                      Case-insensitive replace (GNU sed)
+`sed 's                                      /usr
+sed -n 's/old/new/p' file                    Print only lines with replacements
+sed 's/old/new/w out.txt' file               Write changed lines to file
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Addresses
+Apply commands to specific lines.
+-------------------------------------------------------------------------------------------------------------
+sed '3s/a/b/' file                           Substitute on line 3 only
+sed '1,5s/a/b/' file                         Lines 1 through 5
+sed '/pattern/s/a/b/' file                   Lines matching pattern
+sed '3,/pattern/s/a/b/' file                 Line 3 through first match
+sed '/start/,/end/d' file                    Delete range between patterns
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Print And Delete
+Control output and remove lines.
+-------------------------------------------------------------------------------------------------------------
+sed -n 'p' file                              Print all lines (same as cat)
+sed -n '3p' file                             Print line 3 only
+sed -n '/pattern/p' file                     Print matching lines
+sed -n '1,5p' file                           Print range of lines
+sed 'd' file                                 Delete all lines (prints nothing)
+sed '3d' file                                Delete line 3
+sed '/pattern/d' file                        Delete matching lines
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Insert, Append, Change
+Add or replace whole lines.
+-------------------------------------------------------------------------------------------------------------
+sed '2i\\new line' file                      Insert before line 2
+sed '2a\\new line' file                      Append after line 2
+sed '2c\\new line' file                      Replace line 2
+sed '/pattern/i\\new line' file              Insert before matches
+sed '/pattern/a\\new line' file              Append after matches
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Other Commands
+Useful non-substitution commands.
+-------------------------------------------------------------------------------------------------------------
+sed 'y/abc/xyz/' file                        Translate characters
+sed '=' file                                 Print line numbers
+sed 'q' file                                 Quit after first line
+sed '3q' file                                Quit after line 3
+sed 'n' file                                 Read next line, skip current output
+sed 'N' file                                 Append next line to pattern space
+sed '/pattern/r other.txt' file              Read file after matches
+sed '/pattern/w out.txt' file                Write matching lines to file
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+In-Place Editing
+Write changes back to files.
+-------------------------------------------------------------------------------------------------------------
+sed -i 's/old/new/g' file                    Edit in place (GNU sed)
+sed -i.bak 's/old/new/g' file                Edit in place with backup
+sed -i '' 's/old/new/g' file                 Edit in place on macOS/BSD
+sed -i -e 's/a/b/' -e 's/c/d/' file          Multiple edits in place
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Regular Expressions
+Use regex and capture groups.
+-------------------------------------------------------------------------------------------------------------
+sed 's/[0-9]\{4\}/YEAR/' file                Replace 4-digit numbers
+sed -E 's/[0-9]{4}/YEAR/g' file              Extended regex (GNU and BSD)
+sed 's/\(foo\)bar/\1baz/' file               Capture group (basic)
+sed -E 's/(foo)bar/\1baz/' file              Capture group (extended)
+sed -E 's#(https?)://#\1://#' file           Use groups and alternate delimiter
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Line Selection
+Select by position or pattern.
+-------------------------------------------------------------------------------------------------------------
+sed -n '1p' file                             First line
+sed -n '$p' file                             Last line
+sed -n '1~2p' file                           Every 2nd line (GNU sed)
+sed -n '/error/,+2p' file                    Match plus next 2 lines
+sed -n '/start/,/end/p' file                 Print between patterns
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Common Patterns
+Useful one-liners.
+-------------------------------------------------------------------------------------------------------------
+sed 's/[[:space:]]\+$//' file                Trim trailing whitespace
+sed 's/^[[:space:]]\+//' file                Trim leading whitespace
+sed 's/[[:space:]]\+/ /g' file               Collapse whitespace
+sed '/^#/d;/^$/d' file                       Remove comments and blank lines
+sed -n 'n;p' file                            Print even lines
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

@@ -1,0 +1,118 @@
+filename: zip-unzip-chtsht-20260223.txt
+https://linuxize.com/cheatsheet/zip-unzip/
+
+Quick reference for creating, listing, testing, and extracting ZIP archives in Linux
+Feb 20, 2026
+
+ZIP archives are widely used for sharing files across Linux, macOS, and Windows. This cheatsheet covers the
+most common `zip` and `unzip` command patterns for creating archives, updating them, and extracting files
+safely.
+
+-------------------------------------------------------------------------------------------------------------
+Basic Syntax
+Common command forms for ZIP operations.
+-------------------------------------------------------------------------------------------------------------
+zip [OPTIONS] archive.zip files   Create or update ZIP archive
+unzip [OPTIONS] archive.zip       Extract ZIP archive
+zip -r archive.zip directory/     Recursively archive a directory
+unzip archive.zip -d /path/       Extract to a specific directory
+unzip -t archive.zip              Test archive integrity
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Create ZIP Archives
+Create archives from files and directories.
+-------------------------------------------------------------------------------------------------------------
+zip archive.zip file1 file2          Archive multiple files
+zip -r project.zip project/          Archive directory recursively
+zip -j archive.zip path/to/file      Archive files without directory paths (flat)
+zip -9 -r backup.zip /etc/           Maximum compression
+zip -0 -r store.zip media/           No compression (faster)
+zip -r logs.zip /var/log -x "*.gz"   Exclude matching files
+zip -q -r archive.zip dir/           Create archive silently (no output)
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Update Existing Archives
+Add, refresh, or remove archive entries.
+-------------------------------------------------------------------------------------------------------------
+zip archive.zip newfile.txt    Add file to existing archive
+zip -r archive.zip newdir/     Add directory to existing archive
+zip -u archive.zip file.txt    Update only changed files
+zip -d archive.zip "*.tmp"     Delete matching entries
+zip -FS archive.zip            Sync archive with filesystem state
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+List and Inspect
+Check archive contents before extraction.
+-------------------------------------------------------------------------------------------------------------
+unzip -l archive.zip       List archived files
+unzip -Z -v archive.zip    Detailed listing (sizes, ratio, methods)
+zipinfo archive.zip        Display archive metadata
+zipinfo -1 archive.zip     List filenames only
+unzip -t archive.zip       Test archive integrity
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Extract Archives
+Extract all files or selected paths.
+-------------------------------------------------------------------------------------------------------------
+unzip archive.zip                    Extract into current directory
+unzip archive.zip -d /tmp/extract    Extract to target directory
+unzip archive.zip file.txt           Extract one file
+unzip archive.zip "dir/*"            Extract matching path pattern
+unzip -n archive.zip                 Never overwrite existing files
+unzip -o archive.zip                 Overwrite existing files without prompt
+unzip -q archive.zip                 Extract silently (no output)
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Password-Protected Archives
+Create and extract encrypted ZIP files.
+-------------------------------------------------------------------------------------------------------------
+zip -e secure.zip file.txt           Create encrypted archive (interactive password)
+zip -er secure-dir.zip secrets/      Encrypt directory archive
+unzip secure.zip                     Extract encrypted ZIP (prompts for password)
+zipcloak archive.zip                 Add encryption to an existing archive
+zipcloak -d archive.zip              Remove encryption from archive
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Split Archives
+Split large ZIP files into smaller chunks.
+-------------------------------------------------------------------------------------------------------------
+zip -r -s 100m backup.zip bigdir/      Create split archive with 100 MB parts
+zip -s 0 split.zip --out merged.zip    Recombine split ZIP into one file
+unzip split.zip                        Extract split archive (all parts required)
+zip -s 2g -r media.zip media/          Create split archive with 2 GB parts
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Troubleshooting
+Common ZIP/UNZIP problems and checks.
+-------------------------------------------------------------------------------------------------------------
+unzip: cannot find or open             Verify path and filename, then run ls -lh archive.zip
+CRC error during extraction            Run unzip -t archive.zip to test integrity
+Files overwritten without warning      Use unzip -n archive.zip to skip existing files
+Wrong file permissions after extract   Check with ls -l, then adjust using chmod/chown
+Password prompt fails                  Re-enter password carefully; verify archive is encrypted with zipinfo
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Related Guides
+Use these guides for full walkthroughs.
+-------------------------------------------------------------------------------------------------------------
+How to Zip Files and Directories in Linux                   Detailed ZIP creation examples
+[https://linuxize.com/post/how-to-zip-files-and-directories-in-linux/]
+
+How to Unzip Files in Linux                                 Detailed extraction methods
+[https://linuxize.com/post/how-to-unzip-files-in-linux/]
+
+Tar Cheatsheet                                              Sar and compressed archive reference/
+[https://linuxize.com/post/how-to-unzip-files-in-linux/]
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

@@ -1,0 +1,166 @@
+filename: docker-chtsht-20260209.txt
+https://linuxize.com/cheatsheet/docker/
+
+Docker Cheatsheet
+Feb 1, 2026 *
+
+Docker is a platform for building, shipping, and running applications in containers. This cheatsheet covers
+essential Docker commands for managing containers, images, volumes, networks, and Docker Compose. A handy
+quick reference for daily Docker workflows.
+
+----------------------------------------------------------------------------
+Container Lifecycle
+Create, start, stop, and remove containers.
+----------------------------------------------------------------------------
+docker run image                           Create and start a container
+docker run -d image                        Run container in background
+docker run -it image sh                    Run with interactive shell
+docker run --name myapp image              Run with a custom name
+docker run -p 8080:80 image                Map host port to container port
+docker run -v /host:/container image       Mount a volume
+docker start container                     Start a stopped container
+docker stop container                      Gracefully stop a container
+docker restart container                   Restart a container
+docker rm container                        Remove a stopped container
+docker rm -f container                     Force remove a running container
+docker kill container                      Kill a container (SIGKILL)
+docker pause container                     Pause a running container
+docker unpause container                   Unpause a container
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Container Inspection
+Monitor and inspect running containers.
+----------------------------------------------------------------------------
+docker ps                                  List running containers
+docker ps -a                               List all containers
+docker logs container                      View container logs
+docker logs -f container                   Follow log output
+docker inspect container                   Detailed container info (JSON)
+docker top container                       List running processes
+docker stats                               Live resource usage for all containers
+docker stats container                     Live resource usage for one container
+docker port container                      Show port mappings
+docker diff container                      Show filesystem changes
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Images
+Pull, build, and manage Docker images.
+----------------------------------------------------------------------------
+docker pull image:tag                      Pull image from registry
+docker push image:tag                      Push image to registry
+docker build -t name .                     Build image from Dockerfile
+docker build -f Dockerfile.dev .           Build with custom Dockerfile
+docker images                              List local images
+docker rmi image                           Remove an image
+docker tag source target:tag               Tag an image
+docker save image > file.tar               Save image to tar archive
+docker load < file.tar                     Load image from tar archive
+docker history image                       Show image layer history
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Dockerfile Instructions
+Key instructions for writing Dockerfiles.  
+----------------------------------------------------------------------------
+FROM image:tag                             Base image
+RUN command                                Execute command during build
+CMD ["executable"]                         Default command at runtime
+ENTRYPOINT ["executable"]                  Fixed command at runtime
+COPY src dest                              Copy files from host
+ADD src dest                               Copy files (supports URLs, tar)
+WORKDIR /path                              Set working directory
+EXPOSE 80                                  Document container port
+ENV KEY=value                              Set environment variable
+ARG KEY=value                              Build-time variable
+VOLUME ["/data"]                           Create mount point
+USER username                              Set runtime user
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Volumes
+Manage persistent data with volumes.
+----------------------------------------------------------------------------
+docker volume create vol                   Create a named volume
+docker volume ls                           List volumes
+docker volume inspect vol                  Volume details
+docker volume rm vol                       Remove a volume
+docker volume prune                        Remove unused volumes
+docker run -v vol:/data image              Mount named volume
+docker run -v /host:/data image            Bind mount host directory
+docker run --tmpfs /tmp image              Mount tmpfs (in-memory)
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Networks
+Create and manage container networks.
+----------------------------------------------------------------------------
+docker network create net                  Create a network
+docker network ls                          List networks
+docker network inspect net                 Network details
+docker network rm net                      Remove a network
+docker network connect net container       Connect container to network
+docker network disconnect net container    Disconnect from network
+docker run --network net image             Run container on network
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Docker Compose
+Manage multi-container apps with Docker Compose.
+----------------------------------------------------------------------------
+docker compose up                          Create and start services
+docker compose up -d                       Start in background
+docker compose down                        Stop and remove services
+docker compose down -v                     Also remove volumes
+docker compose build                       Build service images
+docker compose ps                          List running services
+docker compose logs                        View service logs
+docker compose logs -f service             Follow logs for a service
+docker compose exec service sh             Shell into running service
+docker compose pull                        Pull service images
+docker compose restart                     Restart all services
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+System & Cleanup
+Monitor disk usage and clean up resources.
+----------------------------------------------------------------------------
+docker system df                           Show Docker disk usage
+docker system prune                        Remove unused data
+docker system prune -a                     Remove all unused data
+docker image prune                         Remove dangling images
+docker image prune -a                      Remove all unused images
+docker container prune                     Remove stopped containers
+docker volume prune                        Remove unused volumes
+docker network prune                       Remove unused networks
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Exec & Copy
+Run commands in containers and copy files.
+----------------------------------------------------------------------------
+docker exec -it container sh               Open shell in container
+docker exec container command              Run command in container
+docker exec -u root container cmd          Run as specific user
+docker cp container:/path ./local          Copy from container
+docker cp ./local container:/path          Copy to container
+docker attach container                    Attach to running container
+docker wait container                      Wait for container to stop
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Registry & Login
+Authenticate and interact with registries.
+----------------------------------------------------------------------------
+docker login                               Log in to Docker Hub
+docker login registry.example.com          Log in to private registry
+docker logout                              Log out from registry
+docker search term                         Search Docker Hub
+docker push user/image:tag                 Push image to registry
+docker pull user/image:tag                 Pull image from registry
+----------------------------------------------------------------------------
+
+
+---
+
