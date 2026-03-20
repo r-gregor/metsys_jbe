@@ -1,0 +1,193 @@
+filename: curl-chtsht-20260317.txt
+https://linuxize.com/cheatsheet/curl/
+
+curl Cheatsheet
+Jan 12, 2026
+
+Quick reference for curl command-line HTTP client
+Curl is a versatile command-line tool for transferring data using various protocols including HTTP, HTTPS,
+FTP, and more. This cheatsheet covers common use cases from simple downloads to complex API interactions with
+authentication and custom headers.
+
+-------------------------------------------------------------------------------------------------------------
+Basic Requests
+Make simple HTTP requests.
+-------------------------------------------------------------------------------------------------------------
+curl url            GET request
+curl -o file url    Save to file
+curl -O url         Save with original name
+curl -s url         Silent mode
+curl -v url         Verbose output
+curl -I url         Headers only (HEAD)
+curl -L url         Follow redirects
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+HTTP Methods
+Use different HTTP request methods.
+-------------------------------------------------------------------------------------------------------------
+curl -X GET url        GET request
+curl -X POST url       POST request
+curl -X PUT url        PUT request
+curl -X DELETE url     DELETE request
+curl -X PATCH url      PATCH request
+curl -X OPTIONS url    OPTIONS request
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+POST Data
+Send data with POST requests.
+-------------------------------------------------------------------------------------------------------------
+curl -d "data" url                 POST form data
+curl -d @file url                  POST from file
+curl --data-urlencode "k=v" url    URL encode data
+curl -F "file=@path" url           Upload file
+curl -F "field=value" url          Multipart form
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+JSON Data
+Work with JSON APIs.
+-------------------------------------------------------------------------------------------------------------
+curl --json '{"key":"value"}' url                                    POST JSON
+curl --json @data.json url                                           POST JSON from file
+echo '{}' | curl --json @- url                                       POST JSON from stdin
+curl -d '{"key":"value"}' -H "Content-Type: application/json" url    POST JSON (older curl)
+curl -H "Accept: application/json" url                               Request JSON
+curl url | jq                                                        Parse JSON response
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Headers
+Set custom HTTP headers.
+-------------------------------------------------------------------------------------------------------------
+curl -H "Header: Value" url                 Add header
+curl -H "Authorization: Bearer token" url   Auth header
+curl -H "Content-Type: text/xml" url        Content type
+curl -A "User-Agent" url                    User agent
+curl -e "referer" url                       Referer header
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Authentication
+Handle various authentication methods.
+-------------------------------------------------------------------------------------------------------------
+curl -u user:pass url                       Basic auth
+curl -u user url                            Prompt for password
+curl --digest -u user:pass url              Digest auth
+curl --ntlm -u user:pass url                NTLM auth
+curl -H "Authorization: Bearer token" url   Bearer token
+curl --oauth2-bearer token url              OAuth2 bearer
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Cookies
+Send and receive cookies.
+-------------------------------------------------------------------------------------------------------------
+curl -b "name=value" url                    Send cookie
+curl -b cookies.txt url                     Send from file
+curl -c cookies.txt url                     Save cookies
+curl -b cookies.txt -c cookies.txt url      Read and save
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+SSL/TLS
+Handle HTTPS and certificates.
+-------------------------------------------------------------------------------------------------------------
+curl -k url                        Ignore SSL errors
+curl --insecure url                Ignore SSL errors
+curl --cacert ca.crt url           Use CA cert
+curl --cert client.crt url         Client cert
+curl --key client.key url          Client key
+curl --cert client.pem:pass url    Cert with password
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Proxy
+Route requests through proxies.
+-------------------------------------------------------------------------------------------------------------
+curl -x proxy:port url             HTTP proxy
+curl -x socks5://proxy:port url    SOCKS5 proxy
+curl --proxy-user user:pass url    Proxy auth
+curl --noproxy "*.local" url       Bypass proxy
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Download
+Download files and resume transfers.
+-------------------------------------------------------------------------------------------------------------
+curl -o file url            Save to file
+curl -O url                 Use remote filename
+curl -O url1 -O url2        Multiple files
+curl -C - -O url            Resume download
+curl --limit-rate 1M url    Limit speed
+curl -# url                 Progress bar
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Upload
+Upload files to servers.
+-------------------------------------------------------------------------------------------------------------
+curl -T file url                           Upload file (PUT)
+curl -F "file=@path" url                   Form upload
+curl -F "file=@path;type=image/png" url    With content type
+curl --upload-file file url                Upload file
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+FTP
+Work with FTP servers.
+-------------------------------------------------------------------------------------------------------------
+curl ftp://server/file              Download file
+curl -T file ftp://server/          Upload file
+curl -u user:pass ftp://server/     FTP with auth
+curl --ftp-ssl ftp://server/        FTP over SSL
+curl ftp://server/ --list-only      List directory
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Timeouts
+Control connection timing.
+-------------------------------------------------------------------------------------------------------------
+curl --connect-timeout 10 url     Connect timeout
+curl -m 30 url                    Max time
+curl --max-time 30 url            Max time
+curl --retry 3 url                Retry on failure
+curl --retry-delay 5 url          Delay between retries
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Output Control
+Format and filter output.
+-------------------------------------------------------------------------------------------------------------
+curl -s url                                   Silent (no progress)
+curl -S url                                   Show errors in silent
+curl -w "%{http_code}" url                    Print HTTP code
+curl -w "%{time_total}" url                   Print total time
+curl -o /dev/null -s -w "%{http_code}" url    Status code only
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Debug
+Troubleshoot requests.
+-------------------------------------------------------------------------------------------------------------
+curl -v url                   Verbose
+curl -vv url                  More verbose
+curl --trace file url         Full trace to file
+curl --trace-ascii file url   ASCII trace
+curl -D headers.txt url       Dump headers
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Common Patterns
+Frequently used combinations.
+-------------------------------------------------------------------------------------------------------------
+curl -sL url                            Silent, follow redirects
+curl -fsSL url                          Fail silently on errors
+curl --json '{"key":"value"}' url       JSON POST
+curl -u user:pass -XPUT -d @file url    Auth PUT from file
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+
