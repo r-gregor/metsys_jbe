@@ -1,0 +1,34 @@
+    # file manipulation chtsht
+fj = open('filename.txt', 'rt')
+
+fj.read()               --> reads entire file as string and leaves pointer at "the end"" of fj!
+fj.read().split()       --> reads entire file into a list of all the words
+fj.read(N)              --> reads file from current pointer location to location "N" (bytes = chars)
+
+fj.seek(0)              --> go to the beginning of fj
+fj.tell()               --> show the pointer location (bytes = chars)
+
+fj.readline()           --> reads a "single" line as string and sets pointer to the beginning of next line
+fj.readline().split()   --> reads a "single" line and "splits" it into a list of words
+
+fj.readlines()          --> reads entire file into a list of all the complete lines
+fj.read().split('\n')   --> same as fj.readlines() exept without "\n" (adds adiitional '' at the end) [***1]
+
+
+    !!! DO NOT FORGET !!!
+fj.close()
+
+    or:
+with open('filename.txt', 'rt') as fj:
+    ...
+    (all must be under indented block, as fj is automatically closed when block ends)
+    ...
+    
+
+    
+---
+[***1]
+    # print all but the last '' line:
+BL2 = fj.read().split('\n')
+for i in range(len(BL2) - 1): print(BL2[i])
+
