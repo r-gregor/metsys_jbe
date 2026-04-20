@@ -1,0 +1,8 @@
+1 - Download "WinFontsForALl" from "https://apps.gorilla.moe/winfontsforall/"
+2 - unzip and copy dir to %USERPROFILE%\myprogs\
+3 - create dir: %USERPROFILE%\Fonts\
+4 - run %USERPROFILE%\myprogs\WinFontsForAll\setup.exe
+5 - copy *.ttf into %USERPROFILE%\Fonts\
+6 - make shure Windows Fonts For All Users" option to autostart is ticked!
+7 - reboot, et Voila!
+

@@ -1,0 +1,24 @@
+# FILENAME: WIN-10_wallpapers_save_20200526.txt
+
+$> gregor.redelonghi@cygwin-en [/home/gregor.redelonghi]
+source="/c/Users/gregor.redelonghi/AppData/Local/Packages/Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy/LocalState/Assets"
+dest="/c/Users/gregor.redelonghi/majstaf/BRISI/SLIKE"
+
+$> gregor.redelonghi@cygwin-en [/home/gregor.redelonghi]
+$> cp -v ${source}/* ${dest}/
+
+$> gregor.redelonghi@cygwin-en [/home/gregor.redelonghi]
+$> cd $dest
+
+$> gregor.redelonghi@cygwin-en [/c/Users/gregor.redelonghi/majstaf/BRISI/SLIKE]
+$> for FFF in $(\ls -1); do mv $FFF ${FFF}.jpg; done
+'226ba6287f5f36d8ff7f3256b82fb44c1b3fc33859b5f6e3231d16a80a0c69a7' -> '226ba6287f5f36d8ff7f3256b82fb44c1b3fc33859b5f6e3231d16a80a0c69a7.jpg'
+'37a34f938e7c79f8602810ea6cf1e442a68cad9508941960934358fc2507c7d0' -> '37a34f938e7c79f8602810ea6cf1e442a68cad9508941960934358fc2507c7d0.jpg'
+'43d8ffcd6502649c92ba1968a079358fc892619a43ea312956848f410a81b9c0' -> '43d8ffcd6502649c92ba1968a079358fc892619a43ea312956848f410a81b9c0.jpg'
+'7f5ae4a30dc45a222884cc92e681b83d9928e63c4a478c3241d67444f8463836' -> '7f5ae4a30dc45a222884cc92e681b83d9928e63c4a478c3241d67444f8463836.jpg'
+'7f794c56e5fe109047d539592a16c3be581cce472c50d848f56bb69a83fde3eb' -> '7f794c56e5fe109047d539592a16c3be581cce472c50d848f56bb69a83fde3eb.jpg'
+'8cf8925072918049d539634ab71a56c5e6cf02b95aad8f8b88300719cc7f53de' -> '8cf8925072918049d539634ab71a56c5e6cf02b95aad8f8b88300719cc7f53de.jpg'
+'a30fc95ba2de5cfcdf3dbd379c4216cde08f679149f227a011befacd8ed2094f' -> 'a30fc95ba2de5cfcdf3dbd379c4216cde08f679149f227a011befacd8ed2094f.jpg'
+'b83a362010bc5d3da0bb84a4425245d61c025ecc09a50b34a2c282856cb7b13f' -> 'b83a362010bc5d3da0bb84a4425245d61c025ecc09a50b34a2c282856cb7b13f.jpg'
+
+# choose ...
