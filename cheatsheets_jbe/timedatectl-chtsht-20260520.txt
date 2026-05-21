@@ -1,0 +1,102 @@
+filename: timedatectl-chtsht-20260520.txt
+https://linuxize.com/cheatsheet/timedatectl/
+
+timedatectl Cheatsheet
+Apr 21, 2026
+
+Quick reference for checking time status, changing time zones, controlling NTP sync, and setting the system
+clock with timedatectl
+
+timedatectl is the systemd command-line tool for viewing and changing the system time, date, time zone, RTC
+settings, and NTP synchronization. This cheatsheet covers the most useful commands for day-to-day time
+management and troubleshooting.
+
+-------------------------------------------------------------------------------------------------------------
+Basic Status
+Check the current time, date, time zone, and sync state.
+-------------------------------------------------------------------------------------------------------------
+timedatectl                                           Show current time, time zone, and NTP status
+timedatectl status                                    Show the same formatted status explicitly
+timedatectl show                                      Show status in key-value format
+timedatectl show --property=Timezone --value          Print the current time zone only
+timedatectl show --property=NTPSynchronized --value   Print whether the clock is synchronized
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Time Zones
+List and change time zone settings.
+-------------------------------------------------------------------------------------------------------------
+timedatectl list-timezones                      List all available time zones
+timedatectl list-timezones | grep -i berlin     Filter the time zone list
+sudo timedatectl set-timezone Europe/Berlin     Set the system time zone
+sudo timedatectl set-timezone Etc/UTC           Switch the system back to UTC
+timedatectl show --property=Timezone --value    Confirm the current time zone in scripts
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+NTP Synchronization
+Enable, disable, and inspect time synchronization.
+-------------------------------------------------------------------------------------------------------------
+sudo timedatectl set-ntp true                Enable automatic time sync
+sudo timedatectl set-ntp false               Disable automatic time sync
+timedatectl timesync-status                  Show the current NTP server, offset, and poll interval
+timedatectl show-timesync                    Show timesync details in key-value format
+timedatectl show --property=NTP --value      Show whether NTP is enabled
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Set Time and Date
+Disable NTP first when setting the clock manually.
+-------------------------------------------------------------------------------------------------------------
+sudo timedatectl set-ntp false                     Turn off NTP before manual changes
+sudo timedatectl set-time '2026-04-21 14:30:00'    Set both date and time
+sudo timedatectl set-time '14:30:00'               Set the time only
+sudo timedatectl set-time '2026-04-21'             Set the date only
+sudo timedatectl set-ntp true                      Re-enable NTP after manual changes
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+RTC and Hardware Clock
+Control whether the RTC uses UTC or local time.
+-------------------------------------------------------------------------------------------------------------
+timedatectl show --property=LocalRTC --value             Check whether the RTC uses local time
+sudo timedatectl set-local-rtc 0                         Set the RTC to UTC
+sudo timedatectl set-local-rtc 1                         Set the RTC to local time
+sudo timedatectl set-local-rtc 1 --adjust-system-clock   Switch RTC mode and adjust the system clock
+timedatectl                                              Confirm the RTC in local TZ status line
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Script-Friendly Output
+Extract single values for shell scripts and automation.
+-------------------------------------------------------------------------------------------------------------
+timedatectl show --property=Timezone --value            Get the current time zone
+timedatectl show --property=LocalRTC --value            Get the RTC mode
+timedatectl show --property=CanNTP --value              Check whether NTP is supported
+timedatectl show --property=NTP --value                 Check whether NTP is enabled
+timedatectl show --property=NTPSynchronized --value     Check whether the clock is synchronized
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Remote and Container Use
+Run timedatectl against another host or a local container.
+-------------------------------------------------------------------------------------------------------------
+timedatectl -H user@server status                             Check time settings on a remote host over SSH
+timedatectl -H root@server set-timezone UTC                   Change the remote host time zone
+timedatectl -M mycontainer status                             Check time settings in a local container
+timedatectl -M mycontainer show --property=Timezone --value   Print the container time zone only
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Quick Fixes
+Use these when timedatectl does not behave as expected.
+-------------------------------------------------------------------------------------------------------------
+sudo timedatectl set-ntp false      Fix Automatic time synchronization is enabled before set-time
+timedatectl timesync-status         Check which server is syncing the clock
+timedatectl --no-pager              Print directly without opening a pager
+sudo date -s '2026-04-21 14:30:00'  Set the clock on non-systemd systems where timedatectl does not work
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+
