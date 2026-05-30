@@ -1,0 +1,12 @@
+'&> /dev/null' is a "bashism": it's a non-portable way of writing '> /dev/null 2>&1'
+
+so:
+
+	nohup [command] >& /dev/null &
+
+should be:
+
+	(nohup [command] &) > /dev/null 2>&1
+
+---
+
