@@ -1,0 +1,62 @@
+# fname: c-project-structure-with-makefile-20260602.txt
+# 2026602
+# ---
+
+app-name/
+    +-- src/
+    |    +-- *.c
+    |
+    +-- include/
+    |    +-- *.h
+    |
+    +-- versions/
+    |    +-- *-v{1,2,3, ...}.c
+    |
+    +-- testing/
+    |
+    +-- bin/ #crated by make
+    |    +-- *.exe
+    |
+    +-- obj/ #crated by make
+         +-- *.o
+
+##########################################################################
+# from: How To Make a Makefile for Beginners!
+#       https://www.youtube.com/watch?v=HmbByRhh3Sk
+
+[Makefile]
+# Compiler flags
+CC      := gcc
+CFLAGS  := -Wall -Wextra -Werror -std=c11 -Iinclude
+
+# Directories
+SRC_DIR := src
+BIN_DIR := bin
+OBJ_DIR := obj
+TARGET  := bin/app-name
+
+SRCS    := $(wildcard $(SRC_DIR)/*.c)
+OBJS    := $(SRCS:$SRC_DIR/%.c=$(OBJ_DIR)/%.o)
+
+# Default rule
+all: $(TARGET)
+
+# | $(BIN_DIR): Order only prerequisite: making shure BIN_DIR exists
+$(TARGET): $(OBJS) | $(BIN_DIR)
+	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
+
+# | $(OBJ_DIR): Order only prerequisite: making shure OBJ_DIR exists
+# $< --> prerequisites: (after ':')
+# $@ --> target: (before ':')
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BIN_DIR) $(OBJ_DIR):
+	mkdir -p $@
+
+clean:
+	@echo "Cleaning up build artifacts ..."
+	rm -rf $(OBJ_DIR) $(BIN_DIR)
+
+.PHONY: all clean
+
