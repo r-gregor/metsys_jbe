@@ -1,0 +1,139 @@
+filename: git-chtsht-20260320.txt
+https://linuxize.com/cheatsheet/git/
+
+Git Cheatsheet
+Feb 9, 2026
+
+Quick reference for common Git commands and workflows
+
+Git is a distributed version control system used to track changes in source code. This cheatsheet covers
+everyday commands for working with repositories, branches, commits, and remote collaboration.
+
+-------------------------------------------------------------------------------------------------------------
+Getting Started
+Initialize and configure Git.
+-------------------------------------------------------------------------------------------------------------
+git init                                 Initialize a new repository
+git clone url                            Clone a remote repository
+git status                               Show working tree status
+git config --global user.name "Name"     Set global name
+git config --global user.email "email"   Set global email
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Staging and Committing
+Add changes and create commits.
+-------------------------------------------------------------------------------------------------------------
+git add file              Stage a file
+git add .                 Stage all changes
+git commit -m "message"   Commit staged changes
+git commit --amend        Amend last commit
+git revert commit         Revert a commit
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Branches
+Create, list, and switch branches.
+-------------------------------------------------------------------------------------------------------------
+git branch               List branches
+git branch name          Create a branch
+git switch name          Switch branch
+git switch -c name       Create and switch
+git branch -d name       Delete local branch
+git branch -D name       Force delete branch
+git branch -m new-name   Rename current branch
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Merge and Rebase
+Combine branches and rewrite history.
+-------------------------------------------------------------------------------------------------------------
+git merge branch           Merge branch into current
+git merge --no-ff branch   Merge with merge commit
+git merge --abort          Abort merge in progress
+git rebase branch          Rebase onto branch
+git rebase -i HEAD~3       Interactive rebase last 3
+git rebase --abort         Abort rebase in progress
+git cherry-pick commit     Apply a single commit
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Remote Repositories
+Work with remotes and synchronization.
+-------------------------------------------------------------------------------------------------------------
+git remote -v                     List remotes
+git remote add origin url         Add remote
+git remote set-url origin url     Change remote URL
+git remote remove origin          Remove remote
+git fetch                         Fetch from remote
+git pull                          Fetch and merge
+git push                          Push to remote
+git push -u origin branch         Push and set upstream
+git push origin --delete branch   Delete remote branch
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Stash
+Temporarily save uncommitted changes.
+-------------------------------------------------------------------------------------------------------------
+git stash                     Stash changes
+git stash push -m "message"   Stash with message
+git stash list                List stashes
+git stash pop                 Apply and remove latest
+git stash apply stash@{0}     Apply without removing
+git stash drop stash@{0}      Delete a stash
+git stash clear               Delete all stashes
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+History and Diff
+Inspect history and changes.
+-------------------------------------------------------------------------------------------------------------
+git log                      View commit history
+git log --oneline --graph    Compact graph view
+git log -p file              History of a file
+git show commit              Show a commit
+git blame file               Show who changed each line
+git reflog                   Show reference log (recovery)
+git diff                     Unstaged diff
+git diff --staged            Staged diff
+git diff branch1..branch2    Compare branches
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Undo and Cleanup
+Discard or reset changes safely.
+-------------------------------------------------------------------------------------------------------------
+git restore file             Discard local changes
+git restore --staged file    Unstage a file
+git reset --soft HEAD~1      Undo commit, keep changes
+git reset --hard HEAD        Reset to last commit
+git clean -fd                Remove untracked files/dirs
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Tags
+Create and manage tags.
+-------------------------------------------------------------------------------------------------------------
+git tag                           List tags
+git tag v1.0.0                    Create tag
+git tag -a v1.0.0 -m "msg"        Annotated tag
+git push --tags                   Push all tags
+git tag -d v1.0.0                 Delete local tag
+git push origin --delete v1.0.0   Delete remote tag
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+.gitignore
+Exclude files from version control.
+-------------------------------------------------------------------------------------------------------------
+*.log                   Ignore all .log files
+node_modules/           Ignore directory
+!important.log          Negate ignore rule
+**/build                Ignore in any directory
+git rm --cached file    Untrack a tracked file
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

@@ -1,0 +1,188 @@
+filename: apt-chtsht-20260326.txt
+https://linuxize.com/cheatsheet/apt/
+
+apt Cheatsheet
+Jan 12, 2026
+
+Quick reference for apt package manager commands
+
+Apt (Advanced Package Tool) is the default package manager for Debian-based Linux distributions including
+Ubuntu, Linux Mint, and Debian. This cheatsheet covers essential commands for installing, updating, removing,
+and managing software packages.
+
+-------------------------------------------------------------------------------------------------------------
+Update & Upgrade
+Keep your system up to date.
+-------------------------------------------------------------------------------------------------------------
+sudo apt update                          Update package lists
+sudo apt upgrade                         Upgrade installed packages
+sudo apt full-upgrade                    Upgrade with removals
+sudo apt dist-upgrade                    Smart upgrade
+sudo apt update && sudo apt upgrade -y   Update and upgrade
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Install Packages
+Install new software packages.
+-------------------------------------------------------------------------------------------------------------
+sudo apt install package             Install package
+sudo apt install pkg1 pkg2           Install multiple
+sudo apt install package=version     Install specific version
+sudo apt install -y package          Install without prompt
+sudo apt install ./file.deb          Install local .deb
+sudo apt reinstall package           Reinstall package
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Remove Packages
+Uninstall software packages.
+-------------------------------------------------------------------------------------------------------------
+sudo apt remove package        Remove package
+sudo apt purge package         Remove with config
+sudo apt autoremove            Remove unused deps
+sudo apt autoremove --purge    Remove unused + config
+sudo apt clean                 Clear package cache
+sudo apt autoclean             Clear old cache
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Search & Info
+Find and learn about packages.
+-------------------------------------------------------------------------------------------------------------
+apt search keyword            Search packages
+apt show package              Show package details
+apt-cache policy package      Show versions/sources
+apt-cache depends package     Show dependencies
+apt-cache rdepends package    Show reverse deps
+apt-cache madison package     Show available versions
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+List Packages
+View installed and available packages.
+-------------------------------------------------------------------------------------------------------------
+apt list --installed          List installed
+apt list --upgradable         List upgradable
+apt list package              List specific package
+apt list --all-versions pkg   All versions
+dpkg -l                       List all (dpkg)
+dpkg -l | grep keyword        Search installed
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Package Files
+Find which package owns a file.
+-------------------------------------------------------------------------------------------------------------
+dpkg -S /path/to/file         Find package owner
+dpkg -L package               List package files
+apt-file search filename      Search by filename
+apt-file list package         List files in pkg
+apt-file update               Update file database
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Repositories
+Manage package sources.
+-------------------------------------------------------------------------------------------------------------
+sudo add-apt-repository ppa:user/repo       Add PPA
+sudo add-apt-repository -r ppa:user/repo    Remove PPA
+sudo apt edit-sources                       Edit sources.list
+apt-cache policy                            Show repositories
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Sources File
+Configure package sources manually.
+-------------------------------------------------------------------------------------------------------------
+/etc/apt/sources.list             Main sources file
+/etc/apt/sources.list.d/          Additional sources
+deb http://... distro main        Binary packages
+deb-src http://... distro main    Source packages
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Hold Packages
+Prevent packages from upgrading.
+-------------------------------------------------------------------------------------------------------------
+sudo apt-mark hold package        Hold package
+sudo apt-mark unhold package      Unhold package
+apt-mark showhold                 Show held packages
+sudo apt-mark auto package        Mark as auto
+sudo apt-mark manual package      Mark as manual
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Download Only
+Download packages without installing.
+-------------------------------------------------------------------------------------------------------------
+apt download package              Download .deb
+apt source package                Download source
+sudo apt install -d package       Download only
+apt-get --download-only upgrade   Download upgrades
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Fix Problems
+Resolve package issues.
+-------------------------------------------------------------------------------------------------------------
+sudo apt --fix-broken install       Fix broken deps
+sudo apt install -f                 Fix broken deps
+sudo dpkg --configure -a            Configure pending
+sudo apt clean && sudo apt update   Clear and refresh
+sudo apt --fix-missing install      Fix missing
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+DEB Packages
+Work with .deb files directly.
+-------------------------------------------------------------------------------------------------------------
+sudo dpkg -i file.deb      Install .deb
+sudo dpkg -r package       Remove package
+sudo dpkg -P package       Purge package
+dpkg -I file.deb           Show .deb info
+dpkg -c file.deb           List .deb contents
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Simulate & Dry Run
+Preview what will happen.
+-------------------------------------------------------------------------------------------------------------
+apt install -s package      Simulate install
+apt upgrade -s              Simulate upgrade
+apt remove -s package       Simulate remove
+apt --dry-run install pkg   Dry run
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Cache Management
+Manage the package cache.
+-------------------------------------------------------------------------------------------------------------
+sudo apt clean                    Delete all cached
+sudo apt autoclean                Delete old cached
+du -sh /var/cache/apt/archives    Cache size
+/var/cache/apt/archives/          Cache location
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Configuration
+Configure apt behavior.
+-------------------------------------------------------------------------------------------------------------
+/etc/apt/apt.conf                     Main config
+/etc/apt/apt.conf.d/                  Config directory
+APT::Get::Assume-Yes "true";          Auto yes
+Acquire::http::Proxy "http://...";    Set proxy
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Useful Combinations
+Common command patterns.
+-------------------------------------------------------------------------------------------------------------
+sudo apt update && sudo apt upgrade -y       Full update
+sudo apt autoremove && sudo apt autoclean    Cleanup
+apt list --installed | wc -l                 Count installed
+sudo apt install --reinstall package         Reinstall
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

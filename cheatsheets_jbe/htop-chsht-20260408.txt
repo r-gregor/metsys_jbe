@@ -1,0 +1,100 @@
+filename: htop-chsht-20260408.txt
+https://linuxize.com/cheatsheet/htop/
+
+htop Cheatsheet
+Apr 6, 2026
+
+Quick reference for monitoring processes, sorting tasks, filtering output, and managing processes with htop in
+Linux
+
+The 'htop' command is an interactive process viewer for Linux with color-coded meters, search, filtering, tree
+view, and keyboard shortcuts for managing processes. This cheatsheet covers the most useful startup options,
+navigation keys, sorting controls, process actions, and display settings.
+
+-------------------------------------------------------------------------------------------------------------
+Basic Usage
+Start htop and limit the view when needed.
+-------------------------------------------------------------------------------------------------------------
+htop                  Start htop with the default interactive view
+htop -u username      Show only processes owned by one user
+htop -p 1234,5678     Monitor only the specified PIDs
+htop -t               Start in tree view
+sudo htop             Run with elevated privileges to manage more processes
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Navigation and Search
+Move around the process list and find what you need quickly.
+-------------------------------------------------------------------------------------------------------------
+Arrow keys            Move up and down through processes
+Page Up / Page Down   Scroll one page at a time
+Home / End            Jump to the top or bottom of the list
+F3 or /               Search for a process by name
+F4 or \\              Filter the process list
+Space                 Tag or untag the selected process
+U                     Clear all tags
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Sorting and Views
+Change how processes are grouped and sorted.
+-------------------------------------------------------------------------------------------------------------
+P                     Sort by CPU usage
+M                     Sort by memory usage
+T                     Sort by running time
+F5                    Toggle tree view
+F6                    Choose a sort column
+htop -s PERCENT_MEM   Start sorted by memory usage
+H                     Toggle display of user threads
+K                     Toggle display of kernel threads
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Process Actions
+Manage processes directly from inside htop.
+-------------------------------------------------------------------------------------------------------------
+F7                        Decrease nice value (raise priority)
+F8                        Increase nice value (lower priority)
+F9                        Send a signal to the selected process
+15 SIGTERM                Ask a process to exit cleanly
+9 SIGKILL                 Force a process to stop immediately
+2 SIGINT                  Interrupt a process, similar to Ctrl+C
+q or F10                  Quit htop
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Startup Options
+Useful options for changing the initial view.
+-------------------------------------------------------------------------------------------------------------
+htop -d 20                    Refresh every 2 seconds
+htop -C                       Use monochrome mode
+htop -H                       Highlight new and old processes
+htop --readonly               Disable process-kill and renice actions
+htop --sort-key PERCENT_CPU   Start sorted by CPU usage
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Customization
+Adjust the display and save the layout.
+-------------------------------------------------------------------------------------------------------------
+F2                        Open the setup menu
+Columns                   Add, remove, or reorder process columns
+Meters                    Change header meters and display style
+Display options           Toggle tree lines, thread names, and other UI settings
+~/.config/htop/htoprc     Configuration file where settings are saved
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Troubleshooting
+Quick checks for common htop issues.
+-------------------------------------------------------------------------------------------------------------
+htop: command not found     Install htop with apt or dnf first
+Cannot renice a process     Run htop with sudo to change priorities for other users´ processes
+Cannot kill a process       Confirm you have permission, then use F9 with SIGTERM first
+Process list is too noisy   Use F4 to filter or start with -u USER
+Fast processes disappear    Lower the update interval with -d
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+
