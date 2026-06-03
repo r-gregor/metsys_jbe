@@ -1,24 +1,19 @@
 # fname: c-project-structure-with-makefile-20260602.txt
-# 2026602
+# 20260603:
 # ---
 
-app-name/
-    +-- src/
-    |    +-- *.c
-    |
-    +-- include/
-    |    +-- *.h
-    |
-    +-- versions/
-    |    +-- *-v{1,2,3, ...}.c
-    |
-    +-- testing/
-    |
-    +-- bin/ #crated by make
-    |    +-- *.exe
-    |
-    +-- obj/ #crated by make
-         +-- *.o
+project_name/
+|-- src/        ... sorce code
+|-- include/    ... header files
+|-- bin/        ... compiled binaries
+|-- archive/    ... older vessions
+|-- data/       ... external data: images, text files, ...
+|-- doc/        ... documentation
+|-- lib/        ... external/local libraries
+|-- Makefile*
+|-- obj/        ... temporary object files
+|-- scripts/    ... build/management scripts
+`-- test/       ... testing
 
 ##########################################################################
 # from: How To Make a Makefile for Beginners!
