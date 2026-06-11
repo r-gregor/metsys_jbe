@@ -1,0 +1,45 @@
+fname: google-chrome-enable-vertical-tabs-20260611.txt
+https://toolfolio.io/productive-value/how-to-enable-vertical-tabs-on-chrome
+
+How to Enable Vertical Tabs on Chrome (Complete Guide)
+
+Chrome finally adds vertical tabs. Here’s how to enable them early and what to expect once your tabs move to
+the side.
+
+Step 1: Install Chrome Beta or Chrome Canary
+Vertical tabs are not available in the stable version of Google Chrome yet.
+
+To access them now, you need either Chrome Beta or Chrome Canary.
+
+Step 2: Open the Chrome Flags Page
+Once Chrome Beta or Canary is installed, open the browser and type chrome://flags into the address bar. For
+this post, am using Chrome Beta.
+
+This page contains experimental features that are still under development. Google hides features like vertical
+tabs here before they are ready for wide release.
+
+Step 3: Search for the Vertical Tabs Flag At the top of the flags page, use the search bar and type vertical
+tabs.
+
+This filters the long list of experimental options and brings the correct flag into view. You do not need to
+scroll or manually hunt for it.
+
+Next to the Vertical Tabs flag, click the dropdown menu and change it from Default to Enabled.
+
+After enabling the flag, Chrome will show a Relaunch button at the bottom of the screen.
+
+Click it. Chrome will close and reopen automatically, applying the vertical tabs feature in the background.
+
+Step 4: Move Tabs to the Side After Chrome restarts, right-click the area above the address bar.
+In the menu that appears, select Move tabs to the side.
+
+Your tabs will immediately shift from the top of the browser to a vertical sidebar on the left.
+
+Step 5: Restart Chrome If the Old Tab Bar Still Appears
+If you still see the traditional horizontal tab bar after switching, fully close Chrome and reopen it once
+more. In some cases, Chrome needs a second restart to fully apply the layout change.
+
+After that, only the vertical tabs should remain.
+
+---
+
