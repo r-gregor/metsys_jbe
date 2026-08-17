@@ -1,0 +1,6 @@
+Howto get RSA ssh key bit length:
+$> for FFF in ~/.ssh/*.pub; do ssh-keygen -l -f $FFF; don
+
+
+---
+
