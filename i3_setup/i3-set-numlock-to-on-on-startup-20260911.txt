@@ -1,0 +1,6 @@
+filename: i3-set-numlock-to-on-on-startup-20260911.txt
+exec --no-startup-id numlockx on
+
+
+---
+
