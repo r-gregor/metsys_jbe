@@ -1,0 +1,71 @@
+# -*- conf -*-
+
+#--- General ---#
+
+# Start a terminal
+super + Return
+	$TERMINAL
+
+# Start rofi (program launcher)
+super + d
+	rofi -show drun
+
+# mpv
+super + {_,shift} + m
+	play {_,queue}
+
+#--- Control ---#
+
+# Reload sxhkd config
+super + ctrl + r
+	pkill -USR1 -x sxhkd && notify-send -t 1000 "sxhkd reloaded."
+
+# System
+super + shift + s
+	system
+
+# Screen brightness
+super + {F2,F3}
+	brictl {dec,inc} 10
+
+# Screenshot (fullscreen, selection, active window)
+@Print
+	printscreen
+
+# Screen record
+ctrl + @Print
+	aliases screencast
+
+# Volume
+XF86Audio{LowerVolume,RaiseVolume,Mute}
+	volctl {dec 5,inc 5,toggle}
+
+# Touchpad toggle
+XF86HomePage
+	inputctl -d toggle
+
+# Touchscreen toggle
+XF86Search
+	inputctl -s toggle
+
+#--- Notification ---#
+
+ctrl + {_,shift} + space
+	 dunstctl {close,close-all}
+
+ctrl + grave
+	 dunstctl history-pop
+
+ctrl + shift + period
+	 dunstctl context
+
+#--- Mouse ---#
+
+# Front side button
+button9
+	xdotool key "Home"
+
+# Back side button
+button8
+	xdotool keydown "Control_L" key "r" keyup "Control_L"
+

@@ -1,0 +1,41 @@
+filename: ff-editing-bookmarks-externally-20260924.txt
+20260924
+
+Google query: edit firefox bookmarks from outside of firefox?
+
+AI Overview:
+Yes, you can edit Firefox bookmarks from outside the browser by modifying the underlying SQLite database file,
+but Firefox must be completely closed when you do this.
+
+Where Bookmarks Live
+Firefox stores all bookmarks, history, and tags in a file named places.sqlite inside your Firefox profile
+folder. To find your profile folder, open your system file manager and navigate to your Firefox profile
+directory:
+  * Windows: C:\Users\<YourUsername>\AppData\Roaming\Mozilla\Firefox\Profiles\<ProfileName>\
+  * Mac: /Users/<YourUsername>/Library/Application Support/Firefox/Profiles/<ProfileName>/
+  * Linux: /home/<YourUsername>/.mozilla/firefox/<ProfileName>/
+
+How to Edit Outside Firefox
+  * Close Firefox completely. If Firefox is running, it locks the database and can corrupt your changes or
+    overwrite them.
+  * Make a backup copy of places.sqlite just in case something goes wrong.
+  * Open a dedicated database program like DB Browser for SQLite.
+  * Open your places.sqlite file inside the program.
+  * Look at the two main tables used for bookmarks:
+      - moz_bookmarks: Contains the folder structure, titles, and item positions.
+      - moz_places: Contains the actual web addresses (URLs).
+
+    Apply your SQL updates or manual edits, then save the database changes.
+
+Alternative Method: Export, Edit, and Re-import
+If direct database editing feels too risky, use the text-file workflow:
+  * Export your bookmarks as an HTML file from inside Firefox (Manage Bookmarks > Import and Backup > Export
+    Bookmarks to HTML).
+  * Open that HTML file in any plain text editor or code editor to perform batch renames or URL changes using
+    "Find and Replace".
+  * Clear your old bookmarks in Firefox and import the modified HTML file. (Note: Importing HTML appends
+    bookmarks rather than replacing folders cleanly, so clearing first is often required for clean updates.)
+
+
+---
+

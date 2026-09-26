@@ -1,0 +1,60 @@
+# -*-conf-*-
+
+#--- Control ---#
+
+# Reload i3 config
+super + shift + r
+	i3-msg restart
+
+#--- Window ---#
+
+# Kill focused window
+super + shift + q
+	i3-msg kill
+
+# Fullscreen window
+super + f
+	i3-msg fullscreen toggle
+
+# Focus / move window
+super + {_,shift} + {Left,Down,Up,Right}
+	  i3-msg {focus,move} {left,down,up,right}
+
+# Resize window
+super + alt + {Left,Down,Up,Right}
+	  i3-msg resize {shrink width,shrink height,grow height,grow width} \
+	  10 px or 10 ppt
+
+# Floating window
+super + space
+	i3-msg focus mode_toggle
+super + shift + space
+	i3-msg floating toggle, sticky disable
+
+# Sticky floating window
+super + shift + f
+	i3-msg fullscreen disable, floating enable, sticky enable; \
+	$HOME/.local/bin/wm/hover.sh
+
+#--- Workspace ---#
+
+# Toggle container horizontal/vertical split
+super + {h,v}
+	i3-msg split {h,v}
+
+# Container layout
+super + {s,w,e}
+	i3-msg layout {stacking,tabbed,toggle split}
+
+# Switch to workspace
+super + {1-9,0}
+	i3-msg workspace $WS{1-9,0}
+
+# Move focused container to workspace
+super + shift + {1-9,0}
+	i3-msg move container to workspace $WS{1-9,0}
+
+# Move workspace to monitor
+super + ctrl + {Left,Right}
+	i3-msg move workspace to output {left,right}
+
