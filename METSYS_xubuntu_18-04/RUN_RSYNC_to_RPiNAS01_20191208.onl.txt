@@ -1,0 +1,9 @@
+sudo rsync -avr -e ssh \
+--delete \
+--exclude=".cache/" \
+--exclude=".thumbnails/" \
+--exclude="rgregor/SLIKE" \
+--exclude="rgregor/KRZ_*" \
+--info=progress2 \
+/home/ \
+pi@rpinas01:/mnt/BACKUP2/hp-probook-1430s/home/

@@ -1,0 +1,93 @@
+fname: dot-vimrc-mdb-mapped-commands-20260907.txt
+----------------------------------------------------------------------------------------------------------
+mapping type    mapping             description
+----------------------------------------------------------------------------------------------------------
+nnoremap        <space>.            :set listchars+=space:⋅
+nnoremap        <space>,            :set listchars-=space:⋅
+noremap         ,stb                :so ~/.vimrc <bar> :set syntax=bash<CR>
+noremap         ,stz                :so ~/.vimrc <bar> :set syntax=zig<CR>
+noremap         ,stp                :so ~/.vimrc <bar> :set syntax=python<CR>
+noremap         ,stc                :so ~/.vimrc <bar> :set syntax=c<CR>
+noremap         ,stj                :so ~/.vimrc <bar> :set syntax=java<CR>
+inoremap        ${{                 insert enclosing brackets/square/curly
+inoremap        {{                  insert enclosing brackets/square/curly
+inoremap        ((                  insert enclosing brackets/square/curly
+inoremap        [[                  insert enclosing brackets/square/curly
+inoremap        [[[                 insert enclosing brackets/square/curly
+nnoremap        ,b                  break line at position 110 chars
+inoremap        sout                System.out.println(""); (java)
+inoremap        <C-f>               insert file search:  <C-x><C-f>
+nnoremap        <silent>,dq         add single quotes arround the word
+nnoremap        <silent>,sq         add double quotes arround the word
+nnoremap        <silent>,uq         remove quotes arround the word (un-quote)
+nnoremap        ,n                  :call NumberToggle()
+nnoremap        ,d                  search for [12] or [123] in file and ask to delete
+vnoremap        ,pt                 comment out python visual block
+vnoremap        ,pu                 un-comment python visual block
+vnoremap        ,jv                 comment out java visual block
+vnoremap        ,ju                 un-comment java visual block
+vnoremap        ,ht                 comment out html visual block
+vnoremap        ,hu                 un-comment html visual block
+vnoremap        ,<space>            ...
+vnoremap        ,t                  ...
+vnoremap        ,cc                 C-style comment out visual block
+vnoremap        ,cu                 un-comment C-style visual block
+vnoremap        ,cd                 enclose visual selection between <code></code> tags
+vnoremap        ,rr                 shift tab and remove spaces
+noremap         <leader>c           clone current line or selection
+vnoremap        <leader>c           clone current line or selection
+nnoremap        <F5>                :NERDTreeToggle<CR>
+nnoremap        <leader>pv          vim´s file explorer (Netrw) in left column of size 30 (close with :bd)
+nnoremap        <leader>r           :Ranger
+nnoremap        <leader>s           Creplace ' ;' or ' ' at zhe end of the line with ';'
+nnoremap        <Space>j            move entire lines UP an d DOWN
+nnoremap        <Space>k            move entire lines UP an d DOWN
+vnoremap        <Space>j            move entire lines UP an d DOWN
+vnoremap        <Space>k            move entire lines UP an d DOWN
+nnoremap        ,4                  replace start of the line with '$> ' prompt
+vnoremap        ,4                  replace start of the line with '$> ' prompt
+nnoremap        <Space>4            replace $ at the start of the line with '$> ' prompt
+vnoremap        <Space>4            replace $ at the start of the line with '$> ' prompt
+nnoremap        <leader>n           :NERDTree<CR>
+nnoremap        <leader>ff          :FZF<CR>
+nnoremap        <leader>fe          :FZF -e<CR>
+vnoremap        <C-t>               replaces tabs to 4 spaces in visual block
+nnoremap        <leader>st          removes lagging when editing .h files
+nnoremap        ;;                  put semicolon at the end of the line
+vnoremap        ;;                  put semicolon at the end of the line
+noremap         ,lc                 copy http link into the [number] holder for the link after lyxd-ed document
+map             ,bt                 open all buffers into separate tabs
+noremap         ,tr                 table row dividers
+noremap         <space>f            move '{' after 'func() '
+noremap         <space>ss           :set syntax=<CR>
+noremap         <space>ssh          :set syntax=sh<CR>
+noremap         <space>ssc          :set syntax=c<CR>
+noremap         <space>ssj          :set syntax=java<CR>
+noremap         <space>ssp          :set syntax=python<CR>
+noremap         <space>sst          :set syntax=text<CR>
+noremap         <space>ssg          :set syntax=go<CR>
+nnoremap        <space>=            select whole 'main() { ... }' block, formate it with '='
+nnoremap        <space>v            :so ~/.vimrc <BAR> set syntax=c <BAR> :noh<CR>
+nnoremap        ,sb                 move line under the cursor inside []
+vnoremap        ,sb                 move selected text into []
+nnoremap        <Leader>b           change buffer to file from list
+nnoremap        <space>4t           replace leading 4 spaces to tabs
+vnoremap        <space>4t           replace leading 4 spaces to tabs
+nnoremap        <space>2t           replace leading 2 spaces to tabs
+vnoremap        <space>2t           replace leading 2 spaces to tabs
+nnoremap        <space>9            replace ' inside words with ´
+vnoremap        ,rt                 retab visual sellection>
+vnoremap        <space>sq           move selected text between ''
+vnoremap        <space>dq           move selected text between ""
+nnoremap        ,ds                 remove '[...]' in current line
+vnoremap        ,ds                 remove '[...]' in current line
+nnoremap        ,dt                 insert datestamp 'YYYYmmdd'
+inoremap        ,dt                 insert datestamp 'YYYYmmdd'
+vnoremap        ,dt                 insert datestamp 'YYYYmmdd'
+noremap         ,wd                 write and close buffer
+noremap         ,mf                 change from 'nonmodifiable' to 'modifiable'
+noremap         ,nf                 change from 'modifiable' to 'nonmodifiable'
+vnoremap        1q                  put sellection inside double or single quotes
+vnoremap        2q                  put sellection inside double or double quotes
+----------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,8 @@
+
+" 20240116
+" custom color settings for TAB and SPACE chars
+:hi Whitespacechar ctermfg=DarkGray
+:hi Tabspacechar   ctermfg=DarkGray
+:match Whitespacechar / \+$/
+:match Tabspacechar /\t/
+

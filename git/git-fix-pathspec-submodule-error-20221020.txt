@@ -1,0 +1,13 @@
+ $> cd en_dotfiles/
+ $> mv .vim .vim2
+ $> git rm -r --cached .vim
+ $> rm -r .vim
+ $> mv .vim2/ .vim
+ $> git status
+ $> git add .
+ $> git status
+ $> git commit -m "updated (3) .vim/ 20221020"
+ $> git_push_all 
+
+ # git => ndot || git => dmts
+

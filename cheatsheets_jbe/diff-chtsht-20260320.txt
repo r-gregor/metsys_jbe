@@ -1,0 +1,83 @@
+filename: diff-chtsht-20260320.txt
+https://linuxize.com/cheatsheet/diff/
+
+diff Cheatsheet
+Mar 18, 2026 *
+
+Quick reference for the diff command: compare files, output formats, filtering, and patch workflow
+
+diff compares two files or directories line by line and shows the differences. This cheatsheet covers output
+formats, filtering options, directory comparison, and patch creation.
+
+-------------------------------------------------------------------------------------------------------------
+Basic Usage
+Compare files and save output.
+-------------------------------------------------------------------------------------------------------------
+diff file1 file2                 Compare two files (normal format)
+diff -u file1 file2              Unified format (most common)
+diff -c file1 file2              Context format
+diff -y file1 file2              Side-by-side format
+diff file1 file2 > file.patch    Save diff to a patch file
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Output Symbols
+What each symbol means in the diff output.
+-------------------------------------------------------------------------------------------------------------
+<    normal           Line from file1 (removed)
+>    normal           Line from file2 (added)
+-    unified/context  Line removed
++    unified/context  Line added
+!    context          Line changed
+@@   unified          Hunk header with line numbers
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Directory Comparison
+Compare entire directory trees.
+-------------------------------------------------------------------------------------------------------------
+diff -r dir1 dir2     Compare directories recursively
+diff -rq dir1 dir2    Only report which files differ
+diff -rN dir1 dir2    Treat absent files as empty
+diff -rNu dir1 dir2   Unified recursive diff (for patches)
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Filtering
+Ignore specific types of differences.
+-------------------------------------------------------------------------------------------------------------
+-i                    Ignore case differences
+-w                    Ignore all whitespace
+-b                    Ignore changes in whitespace amount
+-B                    Ignore blank lines
+--strip-trailing-cr   Ignore Windows carriage returns
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Common Options
+-------------------------------------------------------------------------------------------------------------
+-u        Unified format
+-c        Context format
+-y        Side-by-side format
+-U n      Show n lines of context (default: 3)
+-C n      Show n lines of context (context format)
+-W n      Set column width for side-by-side
+-s        Report when files are identical
+--color   Colorize output
+-q        Brief output (only whether files differ)
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Patch Workflow
+Create and apply patches with diff and patch.
+-------------------------------------------------------------------------------------------------------------
+diff -u file1 file2 > file.patch    Create a patch for a single file
+diff -rNu dir1 dir2 > dir.patch     Create a patch for a directory
+patch file1 < file.patch            Apply patch to file1
+patch -p1 < dir.patch               Apply directory patch
+patch -R file1 < file.patch         Reverse (undo) a patch
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

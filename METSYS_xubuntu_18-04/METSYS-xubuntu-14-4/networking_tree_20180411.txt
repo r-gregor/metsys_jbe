@@ -1,0 +1,47 @@
+ROUTER (WAN) / 64:6e:ea:4a:61:a9 / 192.168.64.1 (fix)
+	|
+	+---- TP-LINK (Access Point) / b0:48:7a:d0:9c:c4 / 192.168.64.2 (fix)
+	|           |
+	|           +---- Gregor (wlan) / d0:df:9a:e9:06:c7 / 192.168.64.211 (fix)
+	|           |     Samsung A3 / d8:5b:2a:c6:0f:b3 / 192.168.64.xxx (dhcp)
+	|           |     Samsung J5 / ??? / 192.168.64.xxx (dhcp) / sluzbeni
+	|           |
+	|           +---- Mark (wlan) / 20:16:d8:b1:6b:2d / 192.168.64.xxx (dhcp)
+	|           |     Samsung / bc:44:86:b9:72:9f / 192.168.64.xxx (dhcp)
+	|           |
+	|           +---- Zala (wlan) / d0:7e:35:b8:a2:ea / 192.168.64.xxx (dhcp)
+	|           |     Samsung J5 / /  (dhcp)
+	|           |	
+	|           +---- Tadeja (wlan)
+	|           |	  Samsung A5 /  /  / sluzbeni
+	|           |
+	|           +---- 
+	|           |
+	|           +---- 
+	|           |
+	|           +---- 
+	|
+	+---- RPi (KODI) / b8:27:eb:86:38:d5 / 192.168.64.32 (LAN-fix)
+	|
+	+---- rgregor / 10:1f:74:f2:4e:89 / 192.168.64.201 (LAN-fix)
+	|
+	+---- Mark / 
+	|
+	+---- Zala / 
+	|
+	+---- 
+	|
+
+
+
+192.168.64.1	64:6e:ea:4a:61:a9	(MODEM/ROUTER)
+192.168.64.2	b0:48:7a:d0:9c:c4	(TP-LINK - access point)
+192.168.64.32	b8:27:eb:86:38:d5	(RPi/KODI)
+192.168.64.xxx	20:16:d8:b1:6b:2d	(Mark/wlan)
+192.168.64.xxx	bc:44:86:b9:72:9f	(Mark/Samsung)
+192.168.64.201	b8:27:eb:86:38:d5	(rgregor_hp/lan/fix)
+192.168.64.211	d0:df:9a:e9:06:c7	(rgregor_hp/wlan/fix)
+192.168.64.xxx	d8:5b:2a:c6:0f:b3	(Gregor/Samsung A3)
+...
+
+

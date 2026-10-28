@@ -1,0 +1,42 @@
+$ mount
+/dev/root on / type ext4 (rw,noatime,data=ordered)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=243020k,nr_inodes=60755,mode=755)
+tmpfs on /run type tmpfs (rw,nosuid,noexec,noatime,size=49460k,mode=755)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=98900k)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+/dev/mmcblk0p5 on /boot type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,errors=remount-ro)
+tmpfs on /var/log type tmpfs (rw,noatime,size=20480k,mode=755)
+tmpfs on /var/cache/apt/archives type tmpfs (rw,noatime,size=102400k,mode=755)
+tmpfs on /var/tmp type tmpfs (rw,noatime,size=102400k,mode=755)
+tmpfs on /var/spool/cups type tmpfs (rw,noatime,size=102400k,mode=755)
+
+---
+
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+rootfs           14G  2,5G   11G  19% /
+/dev/root        14G  2,5G   11G  19% /
+devtmpfs        238M     0  238M   0% /dev
+tmpfs            49M  276K   49M   1% /run
+tmpfs           5,0M     0  5,0M   0% /run/lock
+tmpfs            97M     0   97M   0% /run/shm
+/dev/mmcblk0p5   60M   19M   42M  32% /boot
+tmpfs            20M  328K   20M   2% /var/log
+tmpfs           100M  156K  100M   1% /var/cache/apt/archives
+tmpfs           100M     0  100M   0% /var/tmp
+tmpfs           100M  168K  100M   1% /var/spool/cups
+
+---
+
+$ cat /etc/fstab
+proc            /proc           proc    defaults				0	0
+/dev/mmcblk0p5  /boot           vfat    defaults				0	2
+/dev/mmcblk0p6  /               ext4    defaults,noatime			0	1
+tmpfs		/var/log	tmpfs	size=20M,defaults,noatime,mode=0755	0	0
+tmpfs   	/var/run	tmpfs	size=2M,defaults,noatime,mode=0755	0	0
+tmpfs   /var/cache/apt/archives	tmpfs	size=100M,defaults,noatime,mode=0755	0	0
+tmpfs		/var/tmp	tmpfs	size=100M,defaults,noatime,mode=0755	0	0
+tmpfs		/var/spool/cups	tmpfs	size=100M,defaults,noatime,mode=0755	0	0

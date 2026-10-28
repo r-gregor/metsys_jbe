@@ -1,0 +1,1 @@
+sudo rsync -av --exclude SLIKE/ --delete --progress --exclude=".cache/" --exclude=".thumbnails/" /home/ /media/rgregor/eb8aea4b-d092-4b4e-9b83-f6b48ccc170e/backup_home_hp_rgregor_FULL_BCKP/home/

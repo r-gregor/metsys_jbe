@@ -1,0 +1,187 @@
+filename: mount-chtsht-20260727.txt
+https://linuxize.com/cheatsheet/mount/
+
+mount Cheatsheet
+Jul 24, 2026
+
+Quick reference for the mount command: mount and unmount filesystems, mount options, UUID and label mounts,
+network shares, and /etc/fstab entries
+
+The 'mount' command attaches a filesystem to a directory in the tree, and 'umount' detaches it. This
+cheatsheet covers basic syntax, listing mounts, common mount options, UUID and label lookups, network and
+special mounts, unmounting, and persistent '/etc/fstab' entries.
+
+-------------------------------------------------------------------------------------------------------------
+Basic Syntax
+Core mount and umount command forms.
+-------------------------------------------------------------------------------------------------------------
+mount DEVICE DIR               Attach a device to a mount point
+mount -t TYPE DEVICE DIR       Mount with an explicit filesystem type
+mount -o OPTIONS DEVICE DIR    Mount with a comma-separated option list
+mount DIR                      Mount an entry already defined in /etc/fstab
+mount -a                       Mount /etc/fstab filesystems except noauto entries
+umount DIR                     Detach the filesystem mounted at DIR
+-------------------------------------------------------------------------------------------------------------
+
+Most mount operations require root privileges, so prefix them with sudo.
+
+-------------------------------------------------------------------------------------------------------------
+List Mounted Filesystems
+Inspect what is currently mounted and where.
+-------------------------------------------------------------------------------------------------------------
+mount                          List all mounts using the legacy display; prefer findmnt
+findmnt                        Show mounts as a readable tree
+findmnt /dev/sdb1              Show where a specific device is mounted
+findmnt -t ext4,xfs            List only the given filesystem types
+findmnt --fstab --verify       Check /etc/fstab for errors before rebooting
+cat /proc/mounts               Read active mounts in the current mount namespace
+lsblk -f                       List block devices with type, label, and UUID
+df -hT                         Show mounted filesystems with type and free space
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Common Mount Options
+Values passed to -o or listed in the fourth /etc/fstab field.
+-------------------------------------------------------------------------------------------------------------
+defaults             Common defaults are rw,suid,dev,exec,auto,nouser,async; exact defaults vary
+ro / rw              Mount read-only or read-write
+noexec               Block execution of binaries on the filesystem
+nosuid               Ignore setuid and setgid bits
+nodev                Ignore device files on the filesystem
+noatime              Skip access-time updates, which reduces disk writes
+sync / async         Write synchronously or let the kernel buffer writes
+noauto               Skip this entry during mount -a and at boot
+user                 Allow a non-root user to mount; implies noexec,nosuid,nodev unless overridden
+nofail               Continue booting when the device is missing
+uid=1000,gid=1000    Set owner and group on filesystems without Unix permissions
+remount              Change options on an already mounted filesystem
+-------------------------------------------------------------------------------------------------------------
+
+Example: sudo mount -o remount,rw / remounts the root filesystem read-write.
+
+-------------------------------------------------------------------------------------------------------------
+Mount by UUID or Label
+Device names such as /dev/sdb1 can change between boots, so identify the filesystem instead.
+-------------------------------------------------------------------------------------------------------------
+lsblk -f                                 Show the UUID and label of every filesystem
+sudo blkid                               Print device type, label, and UUID
+sudo blkid /dev/sdb1                     Print the attributes of one device
+sudo mount UUID=1a2b3c4d-... /mnt/data   Mount by filesystem UUID
+sudo mount LABEL=backup /mnt/backup      Mount by filesystem label
+sudo mount -U 1a2b3c4d-... /mnt/data     Short form of the UUID lookup
+sudo mount -L backup /mnt/backup         Short form of the label lookup
+sudo e2label /dev/sdb1 backup            Set a label on an ext2, ext3, or ext4 filesystem
+-------------------------------------------------------------------------------------------------------------
+
+Prefer UUID= or LABEL= for persistent local mounts in /etc/fstab because device names can change.
+
+-------------------------------------------------------------------------------------------------------------
+Filesystem Types
+Values for -t and for the third /etc/fstab field.
+-------------------------------------------------------------------------------------------------------------
+ext4         Widely used general-purpose Linux filesystem
+xfs          High-performance journaling filesystem, default on RHEL
+btrfs        Copy-on-write filesystem with snapshots and subvolumes
+vfat         FAT32, used by USB drives and EFI system partitions
+exfat        Large-file FAT variant for USB drives and SD cards
+ntfs3        In-kernel NTFS driver available on supported kernels
+iso9660      Optical disc and ISO image filesystem
+tmpfs        In-memory filesystem backed by RAM and swap
+nfs          Network File System share
+cifs         SMB or Windows network share
+auto         Let mount detect the type
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Network and Special Mounts
+Mount forms beyond a plain local partition.
+-------------------------------------------------------------------------------------------------------------
+sudo mount -t nfs server:/srv/data /mnt/data       Mount an NFS export
+
+sudo mount -t cifs //server/share \                Mount a Windows or Samba share
+/mnt/share -o username=user
+
+sudo mount -t cifs //server/share \                Mount CIFS with a credentials file
+/mnt/share -o credentials=/etc/smb-credentials
+
+sshfs user@host:/remote/dir /mnt/remote            Mount a remote directory over SSH
+sudo mount -o loop image.iso /mnt/iso              Mount an ISO image through a loop device
+sudo mount --bind /src /dst                        Expose an existing directory at a second path
+sudo mount --rbind /src /dst                       Bind a directory together with its submounts
+sudo mount -t tmpfs -o size=512M tmpfs /mnt/ram    Create a 512 MB RAM-backed filesystem
+-------------------------------------------------------------------------------------------------------------
+
+Keep CIFS credentials outside project directories and version control. Protect the file with sudo chmod 600
+/etc/smb-credentials.
+
+-------------------------------------------------------------------------------------------------------------
+Unmounting
+Detach a filesystem and deal with a busy mount point.
+-------------------------------------------------------------------------------------------------------------
+sudo umount /mnt/data        Unmount by mount point
+sudo umount /dev/sdb1        Unmount by device (obsolete; use the mount point)
+sudo umount -R /mnt/data     Unmount a mount point and everything below it
+sudo umount -l /mnt/data     Lazy unmount: detach now, release when no longer in use
+sudo umount -f /mnt/share    Force an unmount, mainly for unreachable network shares
+sudo umount -a -t nfs        Unmount every NFS filesystem
+lsof +f -- /mnt/data         List open files under the mount point
+fuser -mv /mnt/data          Show processes and users holding the mount point
+sudo fuser -km /mnt/data     Kill every process using the mount point; destructive
+-------------------------------------------------------------------------------------------------------------
+
+Review fuser -mv output before using fuser -km. Use lazy or forced unmounts only when a normal unmount cannot
+work: -f can lose unwritten data, while -l hides the path before all references are released.
+
+-------------------------------------------------------------------------------------------------------------
+Persistent Mounts in /etc/fstab
+Each line has six space-separated fields.
+-------------------------------------------------------------------------------------------------------------
+1. Device                         UUID=, LABEL=, a device path, or a remote share
+2. Mount point                    Existing directory, or none for swap
+3. Type                           Filesystem type, such as ext4, nfs, or cifs
+4. Options                        Comma-separated mount options, or defaults
+5. Dump                           0 in nearly all cases; 1 marks the filesystem for dump
+6. Pass                           Order of fsck at boot: 1 for root, 2 for others, 0 to skip
+
+Example: UUID=1a2b3c4d-... /mnt/data ext4 defaults,nofail 0 2
+
+sudo find mnt --fstab --verify    Validate the file before rebooting
+sudo mount -a                     Apply mountable entries after validating /etc/fstab
+sudo systemctl daemon-reload      Regenerate the systemd mount units after an edit
+sudo mount /mnt/data              Mount one entry using only its mount point
+-------------------------------------------------------------------------------------------------------------
+
+Use nofail only for optional mounts. Add _netdev when a network-backed filesystem is not recognized as
+network-dependent from its type.
+
+-------------------------------------------------------------------------------------------------------------
+Troubleshooting
+Common mount errors and what to check.
+-------------------------------------------------------------------------------------------------------------
+target is busy                               Find the holder with fuser -mv DIR or lsof +f -- DIR,
+                                             then close it
+
+unknown filesystem type                      Install the required helper or driver, such as ntfs-3g,
+                                             nfs-common or nfs-utils, or cifs-utils; confirm kernel support
+                                             for exFAT
+
+wrong fs type, bad option, bad superblock    Confirm the type with lsblk -f and check dmesg. If repair is
+                                             needed, unmount it and use the correct filesystem checker
+
+mount point does not exist                   Create the directory first with sudo mkdir -p DIR
+
+permission denied on CIFS                    Verify credentials and server share permissions;
+                                             uid= and gid= only control local ownership
+
+special device does not exist                Recheck the UUID with blkid; the device name may have changed
+
+Files are hidden after mounting              The mounted filesystem covers existing directory contents;
+                                             unmount it and inspect the underlying path
+
+Boot drops to emergency mode                 Remount root with mount -o remount,rw /, fix the bad /etc/fstab
+                                             line, and validate it; add nofail only if the mount is optional
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

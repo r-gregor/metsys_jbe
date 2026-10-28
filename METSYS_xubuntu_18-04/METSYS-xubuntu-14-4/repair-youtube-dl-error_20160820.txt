@@ -1,0 +1,20 @@
+ERROR:
+$> ydlF "https://www.youtube.com/watch?v=vW4HkSHLvjA"
+[youtube] Setting language
+WARNING: unable to set language: <urlopen error [Errno 8] _ssl.c:510: EOF occurred in violation of protocol>
+[youtube] vW4HkSHLvjA: Downloading webpage
+ERROR: Unable to download webpage: <urlopen error [Errno 8] _ssl.c:510: EOF occurred in violation of protocol>
+
+--> BUG, need to update: 
+$> sudo youtube-dl -U
+It looks like you installed youtube-dl with a package manager, pip, setup.py or a tarball. Please use that to update.
+
+*************************************************************************************************************
+SO:
+
+sudo mv /usr/bin/youtube-dl{,.ORIGINAL} 
+ 
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl
+sudo chmod a+rx /usr/bin/youtube-dl
+
+[WORKED!] 20160820

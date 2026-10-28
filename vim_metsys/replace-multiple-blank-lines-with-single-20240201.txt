@@ -1,0 +1,8 @@
+Replace multiple blank lines with single empty line:
+
+- option 1 (search and replace):
+:%s/\(\n\n\)\n\+/\1/
+
+- option 2 (external command: cat squeeze: cat -s):
+:%!cat -s
+

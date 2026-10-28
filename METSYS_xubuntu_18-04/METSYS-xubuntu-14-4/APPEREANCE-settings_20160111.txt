@@ -1,0 +1,25 @@
+Installs:
+$> history | grep -E 'install.*icon'
+  477  2015-11-05 21:02:40 sudo apt-get install ultra-flat-icons-green
+  486  2015-11-05 21:02:40 sudo apt-get install ultra-flat-icons-green
+ 2040  2016-01-10 16:28:45 sudo apt-get install azenis-green-icons
+ 2043  2016-01-10 16:33:11 sudo apt-get install moka-icon-theme
+ 2044  2016-01-10 16:35:21 sudo apt-get install flatwoken-icons
+ 2045  2016-01-10 16:37:23 sudo apt-get install square-beam-icons
+ 2078  2016-01-11 23:16:00 sudo apt-get install shadow-icon-theme
+ 2082  2016-01-11 23:22:07 sudo apt-get install kawaiki-icons
+ 2085  2016-01-11 23:26:48 sudo apt-get install nitrux-icons2
+
+ 2096  2016-01-12 18:58:54 sudo apt-get install zukitwo
+ 2099  2016-01-12 19:07:09 sudo apt-get install moka-icon-theme
+ 2101  2016-01-12 19:08:24 sudo apt-get install faenza-icon-theme
+ 2102  2016-01-12 19:11:18 sudo apt-get install ubudao-style
+ 2109  2016-01-12 19:19:17 sudo apt-get install numix-icon-theme numix-icon-theme-circle
+ 2112  2016-01-12 19:22:14 sudo apt-get install faience-theme faience-icon-theme
+
+
+
+--------------------------------------------------------------------
+Latest settings:
+Theme:		AshOs-Dark-2.0
+Icons:		Revival; Shadow; Square-beam; Vivacius-*; Azenis Icons Green; Ultra-Flat-Icons-Mint-Green;

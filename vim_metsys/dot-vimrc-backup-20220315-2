@@ -1,0 +1,258 @@
+"  ------------------------- DEFAULT SETTINGS -----------------------------------
+set nocompatible                    " This must be first, because it changes other options as a side effect.
+set backspace=indent,eol,start      " allow backspacing over everything in insert mode
+set history=50                      " keep 50 lines of command line history
+set ruler                           " show the cursor position all the time
+set showcmd                         " display incomplete commands
+set incsearch                       " do incremental searching
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
+set smartindent
+set laststatus=2
+set t_Co=256
+set nohlsearch
+syntax on
+set number
+set relativenumber
+set ignorecase
+set colorcolumn=110
+highlight ColorColumn ctermbg=LightGrey
+
+if has('mouse')                     " In many terminal emulators the mouse works just fine, thus enable it.
+	set mouse=a
+endif
+
+" ----------- TAB CHARACTER SETTINS ---------------------------------
+" method 2:
+" set listchars=tab:\|\ 
+
+" method 3: (active)
+" (insert unicode character fo tight filled triangle big: '<ctrl + v>u25b6\ ')
+" u25b6: ▶
+" u25b7: ▷
+" u25b8: ▸
+" u25b9: ▹
+" u25bb: ▻
+" u27a1: ➡
+" u22c5: ⋅
+" u237f: ⍿  
+"
+" u254e: ╎ 
+"
+" u2506: ┆  
+"
+" u250a: ┊  
+"
+" u258f: ▏
+" u00bb: »
+" set listchars=tab:▶\
+" set listchars=tab:⍿⋅
+" set listchars=tab:»⋅
+" set listchars=tab:▏⋅
+set listchars=tab:┊⋅
+set list
+
+
+" ----------- 20190711 PYTHON HIGHLITING ----------------------------
+" let python_highlight_all = 1      " Enable syntax highlighting for python codes
+ 
+
+" ----------- status bar settup-02 ----------------------------------
+" added from: https://github.com/itchyny/lightline.vim
+" git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
+" ----------------- ABBREVIATIONS -----------------------------------
+ab sbng #! /usr/bin/env bash<cr><cr>### Name:<tab>Scriptname ...<cr>### Author:<tab>Author ... <cr>### Date:<tab> <cr>### Decription:<cr>### <cr>### <cr>### <cr> 
+" ab grv ${gr_} 
+ab ptn3 #! /usr/bin/env python3<cr># -*- coding: utf-8 -*-<cr><cr>
+"inoremap ${ ${}<Left>
+inoremap ${ ${}<ESC>hli
+inoremap {  {}<ESC>hli
+inoremap (  ()<ESC>hli
+inoremap [  []<ESC>hli
+
+" ----------------- QUOTING: automatic ------------------------------
+" 20201224: add/remove quotes arround the word:
+" Quote a word consisting of letters from iskeyword.
+nnoremap <silent> ,dq :call Quote('"')<CR>
+nnoremap <silent> ,sq :call Quote("'")<CR>
+nnoremap <silent> ,uq :call UnQuote()<CR>
+function! Quote(quote)
+	normal mz
+	exe 's/\(\k*\%#\k*\)/' . a:quote . '\1' . a:quote . '/'
+	normal `zl
+endfunction
+
+function! UnQuote()
+	normal mz
+	exe 's/["' . "'" . ']\(\k*\%#\k*\)[' . "'" . '"]/\1/'
+	normal `z
+endfunction
+
+
+" ----------------- 20210127: TOGGLE NUMBER/RELATIVENUMBER ----------
+" <ctrl+n> to toggle between just number and number+relativenumber
+" from: https://superuser.com/questions/339593/vim-toggle-number-with-relativenumber
+"Relative with start point or with line number or absolute number lines
+function! NumberToggle()
+	if(&number == 1)
+		" set number!
+		set relativenumber!
+		elseif(&relativenumber==1)
+		set relativenumber
+		set number
+		else
+		set norelativenumber
+		set number
+	endif
+endfunction
+
+nnoremap <C-n> :call NumberToggle()<CR>
+
+
+" ----------------- DRACULA COLOR THEME -----------------------------
+" ADDED 20210127
+" from: https://draculatheme.com/vim
+" 
+" Install (Vim):
+" These are the default instructions using Vim 8's |packages| feature. See sections below, if you use other plugin managers.
+"     Create theme folder (in case you don't have yet):
+" mkdir -p ~/.vim/pack/themes/start
+" If you use vim 8.0 (and not 8.2), you may need to use ~/.vim/pack/themes/opt instead.
+"     Navigate to the folder above:
+" cd ~/.vim/pack/themes/start
+"     Clone the repository using the "dracula" name:
+" git clone https://github.com/dracula/vim.git dracula
+"     Create configuration file (in case you don't have yet):
+" touch ~/.vimrc
+"     Edit the ~/.vimrc file with the following content:
+" packadd! dracula
+" syntax enable
+" colorscheme dracula
+" ---
+" literal:
+"   packadd! dracula
+"   syntax enable
+"   colorscheme dracula
+
+
+" ----------------- EDGE COLOR THEME --------------------------------
+" let g:edge_style = 'neon'
+" let g:edge_enable_italic = 1
+" let g:edge_disable_italic_comment = 1
+" colorscheme edge
+
+
+" ----------------- SWITCH COLORSCHEMES - PREVIEV -------------------
+" added: 20210127
+" from https://vim.fandom.com/wiki/Switch_color_schemes
+" :source ~/.vim/setcolors.vim
+" :SetColors all
+" :colors <colorscheme name>
+" ... switch to next F8; switch to previous <shift>+F8
+
+
+" ----------------- COLOR SETTINS FINAL (IF NO OTHER WORKS) ---------
+" colorscheme  simple-dark
+" colorscheme  nord
+" colorscheme  Mustang
+" colorscheme wombat256mod
+
+"
+" ----------------- CUSTOM MAPPINGS ---------------------------------
+let mapleader = " "
+
+" ADDED 20210226
+" search for [12] or [123] troughout a file 
+" and ask to deete it --> maped to ,d <comma+d> 
+nnoremap ,d :%s/\[\d\+]//gc
+ 
+" ---
+" ADDED 20210308
+" wildmenu and wildmode are used for command line completion.
+" the command line is "expanded" vertically with a list of all the
+" options available on your machine displayed in columns and an
+" horizontal strip that you can navigate with <Tab> (forward) and
+" <S-Tab> (backward).
+set wildmenu
+set wildmode=list:longest,full
+
+" ---
+"
+" added 20210622 (MY PRECIOUS!!)
+" comment/uncomment visually selected block
+vnoremap ,pt :s@^@# @<CR>
+vnoremap ,jv :s@^@// @<CR>
+vnoremap ,<space> :s@^.\{1,2\} @@<CR>
+vnoremap ,t :s/\(\t\+\) */\1/g<CR>
+
+" html comment/uncomment
+vnoremap ,ht :s/\%V\(.*\)\%V/<!-- \1 -->/<CR>
+vnoremap ,hu :s/\%V<!-- \(.*\) -->\%V/\1/<CR>
+" 
+" added 20211101: C-style comment out visual block 
+vnoremap ,cc :s/^/ * /<CR>gv"0do/*<CR><ESC>0C */<ESC>k"0p<CR>
+vnoremap ,cu :s/^ \* //<CR>gv"0dddkdd"0p
+
+" added 20210629 (d) - enclose visual selection
+" between <code></code> tags
+vnoremap ,cd di<code><CR></code><CR><ESC>kP?<code><CR>:s@.*\(<code>\)@\1@<CR>/</code><CR>:s@.*\(</code>\)@\1@<CR>j
+
+" added 20211105 (en): shift tab and remove spaces 
+vnoremap ,rr >gv:s/\(\t\+\) \+/\1/g<CR>
+
+" Plugins (vim-plug) ------------------------------------------
+call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree'
+Plug 'frazrepo/vim-rainbow'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'tomasiser/vim-code-dark'
+call plug#end()
+
+nnoremap <F5> :NERDTreeToggle<CR>
+
+" enable Rainbow globally
+" enable Rainbow globally 20210813
+let g:rainbow_active = 1
+
+" 20210813: vim's file explorer (Netrw) in left column of size 30 (close with :bd)
+nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+
+" ranger settings 20210813
+let g:ranger_map_keys = 0
+nnoremap <leader>r :Ranger<CR>
+
+" mapping to replace spaces and semicolon or just spaces
+" at the end of the line:
+" effect: single ; at the end of text remains
+nnoremap <leader>s :s/ *;*$/;/<esc>j
+
+" ----------------- CROSSHAIR LOCATION ------------------------
+set cursorline
+set cursorcolumn
+hi CursorColumn cterm=NONE ctermbg=235 ctermfg=white
+hi CursorLine cterm=NONE cterm=underline ctermbg=NONE
+
+" from Plugin vim-code-dark
+colorscheme codedark
+
+ab cstrt #include <stdio.h><CR>#include <string.h><CR><CR><CR>int main(int argc, char **argv<right> {<CR><CR><CR><CR><TAB>return 0;<CR><ESC>4ki
+
+" break the sentence at word beginning at 110 chars
+" and movi the beginning of the rest to thr next line
+nnoremap <leader>b 0110lbi<BS><CR><ESC>
+
+
+" move entire lines around (from: https://vim.fandom.com/wiki/Moving_lines_up_or_down)
+" to enter Alt+j key: Ctrl+v Alt+j in insert mode!
+nnoremap <Esc>j :m.+1<CR>==
+nnoremap <Esc>k :m.-2<CR>==
+inoremap <Esc>j <Esc>:m.+1<CR>==gi
+inoremap <Esc>j <Esc>:m.-2<CR>==gi
+vnoremap <Esc>j :m'>+1<CR>gv=gv
+vnoremap <Esc>k :m'<-2<CR>gv=gv

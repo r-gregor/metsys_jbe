@@ -1,0 +1,47 @@
+vpbht.desktop:
+    [Desktop Entry]
+    Name=VPN.ht
+    Comment=VPN.ht client
+    Exec=/usr/lib/vpnht/VPNht
+    Terminal=false
+    Type=Application
+    StartupNotify=false
+    Icon=vpnht
+    Categories=Network;TrayIcon;
+    StartupWMClass=vpnht
+
+# not working after reboot!
+
+# [works 01]
+$> systemctl restart vpnht
+
+# But ...
+$> rgregor@hp-probook4730s [/home/rgregor/majfajls/FILMCKI/iz_KORUZE/Movies/00_NOVO/_podnapisi]
+$> systemctl is-active vpnht
+active
+
+$> rgregor@hp-probook4730s [/home/rgregor/majfajls/FILMCKI/iz_KORUZE/Movies/00_NOVO/_podnapisi]
+$> systemctl is-enabled vpnht
+enabled
+
+$> rgregor@hp-probook4730s [/home/rgregor/majfajls/FILMCKI/iz_KORUZE/Movies/00_NOVO/_podnapisi]
+$> ls -l /etc/systemd/system/multi-user.target.wants/vpnht.service
+lrwxrwxrwx 1 root root 33 apr 27 16:50 /etc/systemd/system/multi-user.target.wants/vpnht.service -> /etc/systemd/system/vpnht.service
+
+$> rgregor@hp-probook4730s [/home/rgregor/majfajls/FILMCKI/iz_KORUZE/Movies/00_NOVO/_podnapisi]
+$> cat /etc/systemd/system/multi-user.target.wants/vpnht.service
+    [Unit]
+    Description=VPN.ht Client Daemon
+
+    [Service]
+    ExecStart=/usr/bin/vpnht-service
+
+    [Install]
+    WantedBy=multi-user.target
+
+# finally: add to .service ...
+    [Service]
+    ...
+    ...
+    Restart=always
+    ...

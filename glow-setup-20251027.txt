@@ -1,0 +1,7 @@
+git clone https://github.com/charmbracelet/glow.git
+cd glow/
+mv glow/ ~/majstaf/majprogs/
+softlink1-fname-to-ulb glow.exe
+
+---
+

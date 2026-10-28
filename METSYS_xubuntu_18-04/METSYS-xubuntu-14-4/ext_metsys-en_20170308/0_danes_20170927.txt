@@ -1,0 +1,51 @@
+﻿--------------------------------------------------------------------------------------------------------------
+$> gregor.redelonghi@cygwin-en [/home/gregor.redelonghi]
+$> ls -1F bin/
+__pycache__/
+00_bin_metsys/          \
+00_ostalo/              |
+00_ukazi/               | --> SAMOSTOJNI SKRIPTI (prejšnji ~/bin/)
+99_STARO-en/            |
+bekap/                  |
+ddbaklog/               | * - NOVO
+fnd/                    |
+gooo/                   |
+gremdomov/              |
+lynxdump/               /
+oneliners-en/
+opn/                    * - NOVO
+pnp/                    * - NOVO
+PYTHON-en/
+rsync_backup/           * - NOVO
+send_mail/              * - NOVO
+testing-en/
+w3mdump/                * - NOVO
+zze/                    * - NOVO
+listulbseznam.txt
+listulbseznam.txt.bckp
+
+--------------------------------------------------------------------------------------------------------------
+$> gregor.redelonghi@cygwin-en [/home/gregor.redelonghi]
+$> history | grep listulb
+
+ 2738  2017-09-27 10:55:45 00_ukazi/listulb2.sh > listulbseznam.txt
+ 
+        $> cat bin/00_ukazi/listulb2.sh
+        
+            <code>        
+            #! /bin/bash
+
+            clear
+            echo "List of \"soft-linked\" scripts on /usr/local/bin:"
+            echo
+
+            for aaa in $(find /usr/local/bin -type l)
+                    #do basename "${aaa}"
+                    do ls -lgG "${aaa}" | awk '{printf "%s;%s\n", $7, $9}'
+            done
+            </code>
+               
+--------------------------------------------------------------------------------------------------------------
+ 2786  2017-09-27 11:16:31 while read L; do ln -sfn ${L#*;} ${L%;*}; done < listulbseznam.txt
+ 2827  2017-09-27 12:25:32 ln -snf /home/gregor.redelonghi/bin/00_ukazi/lstulb.sh /usr/local/bin/listulb
+--------------------------------------------------------------------------------------------------------------

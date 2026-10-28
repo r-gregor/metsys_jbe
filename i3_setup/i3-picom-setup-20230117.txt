@@ -1,0 +1,50 @@
+git clone https://github.com/jonaburg/picom
+git submodule update --init --recursive
+sudo apt show x11-xcb
+sudo apt show libx11-xcb-dev
+sudo apt install libx11-xcb-dev
+sudo apt show libxcb-damage0-dev
+sudo apt install libxcb-damage0-dev
+sudo apt show libxcb-sync-dev
+sudo apt install libxcb-sync-dev
+sudo apt show libxcb-composite0-dev
+sudo apt install libxcb-composite0-dev
+sudo apt show libxcb-present-dev
+sudo apt install libxcb-present-dev
+sudo apt show uthash-dev
+sudo apt install uthash-dev
+sudo apt show libconfig-dev
+sudo apt install libconfig-dev
+sudo apt install cmake pkg-config mesa-utils libglu1-mesa-dev freeglut3-dev mesa-common-dev libglew-dev libglfw3-dev libglm-dev libao-dev libmpg123-dev
+sudo apt install build-essential libpython3-dev libdbus-1-dev
+meson --buildtype=release . build
+ninja -C build
+sudo ninja -C build install
+cd .config/
+picom -b
+sudo apt show picom
+cp /home/rgregor/majstaf/sorsi/picom/picom.sample.conf ~/.config/
+cd ~/.config
+mkdir picom
+mv picom.sample.conf picom/
+cd picom/
+cp picom.sample.conf picom.conf
+picom --config ~/.config/picom/picom.conf -b
+vim ~/.config/picom/picom.conf
+picom --config ~/.config/picom/picom.conf -b
+feh --bg-scale /home/rgregor/majstaf/majvolpejpers/majvolpejpers_bob2/index3.jpeg &
+history > majstaf/metsys_muadib/i3_picom_setup_20230117.txt
+---
+vim ~/.config/i3/config
+
+<code>
+# added after i3-gaps setup 20230115
+gaps inner 15
+gaps outer 5
+
+# added after picom setup 20230117
+exec_always --no-startup-id picom --experimental-backends -b
+# exec_always --no-startup-id picom -b
+</code>
+---
+

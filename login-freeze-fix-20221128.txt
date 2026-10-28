@@ -1,0 +1,12 @@
+    Restart your computer & go to the Login screen.
+    Do not enter any credentials.
+    Press Ctrl + Alt + F2 to go to Emergency console screen.
+    Enter your username & password
+    Then enter the command sudo systemctl restart gdm.service
+
+This command works only for Default Ubuntu version
+
+for Kubuntu & Lubuntu they use sddm login manager, so we have to enter sudo systemctl restart sddm.service
+
+for Xubuntu, Ubuntu Mate & Ubuntu budgie sudo systemctl restart lightdm.service
+

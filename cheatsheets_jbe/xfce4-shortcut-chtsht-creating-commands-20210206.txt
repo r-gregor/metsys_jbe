@@ -1,0 +1,9 @@
+gPth=$HOME/.config/xfce4/xfconf/xfce-perchannel-xml
+
+rgregor@jbez0rg ~/majstaf/BRISI $> sed -n '/&lt/s/.*&lt;\(.*\)" type.*value="\(.*\)"\/>/\1 | \2/p' $gPth/xfce4-keyboard-shortcuts.xml | sed -e 's/&gt//' -e 's/;/+/' | less
+rgregor@jbez0rg ~/majstaf/BRISI $> sed -n '/&lt/s/.*&lt;\(.*\)" type.*value="\(.*\)"\/>/\1 | \2/p' $gPth/xfce4-keyboard-shortcuts.xml | sed -e 's/&gt//' -e 's/;/+/' > xfce4-shortcuts-cheat-sheet_20210206.txt
+rgregor@jbez0rg ~/majstaf/BRISI $> vim xfce4-shortcuts-cheat-sheet_20210206.txt
+
+
+cat ~/majstaf/BRISI/xfce4-shortcuts-cheat-sheet_20210206.txt | sed 's/ | /;/' | tr ';' '\t'
+

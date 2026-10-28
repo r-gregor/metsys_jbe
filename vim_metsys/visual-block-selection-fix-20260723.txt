@@ -1,0 +1,2 @@
+On Windows, Ctrl+V may be mapped to paste. If it does not start visual block mode, use Ctrl+Q instead.
+

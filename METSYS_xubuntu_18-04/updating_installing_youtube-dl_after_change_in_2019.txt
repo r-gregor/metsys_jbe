@@ -1,0 +1,14 @@
+Youtube changed something to make it incompatible with youtube-dl, it's been fixed in the latest version. Use the following to update youtube-dl until the package system gets the updated version:
+
+sudo youtube-dl -U
+
+Update
+As noted by sup in the comments youtube-dl is patched in Ubuntu to disable the --update option because of security concerns (the bugreport is here). It is also argued in the bugreport that youtube-dl is a moving target, so the version in the repositories is often out of date. This makes easy upgrade a necessity.
+
+Easy upgrade is still possible with e.g. pip. Install like this (you may want to uninstall old versions of youtube-dl first):
+
+sudo pip3 install youtube_dl
+
+Upgrading can now be done with:
+
+sudo pip3 install --upgrade youtube_dl

@@ -1,0 +1,84 @@
+filename: MC_cheat-sheet_02_20231129.txt
+https://ratfactor.com/mc
+
+Dave's Midnight Commander Notes/Cheatsheet
+2021-12-02
+
+   I lost my way for a while, but now I'm coming back to [9]orthodox file managers with Midnight
+   Commander on Linux. I had previously been a huge fan of [10]Far Manager on Windows.
+
+Keyboard shortcuts
+   This is not (yet?) a complete cheatsheet, just the most useful stuff (my opinion).
+
+Navigation/Viewing
+     * UP, DOWN, PGUP, PGDN, HOME, and END all work as expected to move the selection
+     * TAB switch between left and right panels
+     * ALT-o open selected directory in other panel (and moves selection to next directory)
+     * ALT-i open same directory in other panel (both will now list the same directory)
+     * CTRL-u swap panels
+     * CTRL-r refresh file/dir list
+     * ALT-SHIFT-h open directory history
+     * ALT-y go to back a directory in your history (then ALT-u to go forward)
+
+   MC also has lots of powerful file viewing options such as:
+     * F3 - view file in built-in viewer (and F4 in viewer to view in hex mode!)
+     * CTRL-x q - toggle "quick view" mode with viewer in other panel
+
+Actions for files and directories
+     * F7 create new directory
+     * SHIFT-F4 create a new file
+
+   These commands work for a single selected file/dir (the highlight that moves with your keyboard's UP
+   and DOWN keys) or on all "tagged" files/dirs (see below).
+     * F5 copy a file (default copies from current panel to other panel)
+     * F6 move a file (default moves from current panel to other panel)
+          + You can also give the file a different name so this is also the "rename" feature
+     * F8 delete
+     * CTRL-x c chmod - change "mode" permissions
+     * CTRL-x s chown - change owner
+
+   I already mentioned F3 to use the internal MC viewer, which I think is great. For editing, I prefer
+   to use my external editor of choice (Vim) - so I use Options > Configure and uncheck "Use internal
+   edit".
+     * F3 - view file in built-in viewer (then F4 while in viewer for hex mode!)
+     * F4 - edit file in built-in editor (but see my note above about using external editor)
+
+   "Tagging" files/dirs is like "selecting", but keep in mind that "the selection" in MC is the file/dir
+   that is highlighted in the current panel. You can tag files by selecting them, glob patterns, and
+   even regex:
+     * INS tag/untag a file (ALT-SHIFT-8 inverts selection)
+     * + (SHIFT-=) tags by search pattern! (then use pattern "*" to tag all)
+     * - untags by search pattern (again, use pattern "*" to untag all)
+     * CTRL-x s create a relative path symbolic link to file/dir in other panel
+          + CTRL-x v same, but with relative path
+
+   Shell:
+   Shell commands are always available in the little command line at the bottom. Just start typing to
+   enter commands as you normally would.
+     * CTRL-o toggles full screen subshell
+
+Virtual filesystems
+   One my favorite features of MC is the ability to open archived files (*.tar.gz) or remote file
+   systems (over ftp, ssh) as if they were just another directory.
+
+   To open a FISH ("Files transferred over shell protocol") connection to a remote server via SSH when
+   you run mc, try:
+$ mc foo/ sh://myserver
+
+   Where foo/ is a local relative directory and myserver is a remote machine (this example assumes that
+   ssh myserver would also work).
+
+   You can also use the Right panel (or Left, you decide) and select "Shell link" and type in the SSH
+   server name (domain or alias if you have one configured in ~/ssh/config) and off you go (assuming you
+   have keys set up and that sort of thing - a bit ouf of the scope of this article - get ssh <server>
+   working and you'll be able to use <server> here).
+
+   This makes one-off file transfers extremely handy.
+
+   Being a text-based interface, you can also, of course, install and use MC directly on remote systems
+   as well in a regular terminal session. But then you're using it "local" to that server and virtual
+   filesystems are no longer involved.
+
+
+---
+

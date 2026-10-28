@@ -1,0 +1,19 @@
+WATCH -d --> show differences (not df):
+
+WATCH(1)                                                                                   User Commands                                                                                   WATCH(1)
+
+NAME
+       watch - execute a program periodically, showing output fullscreen
+
+SYNOPSIS
+       watch [options] command
+
+DESCRIPTION
+       watch runs command repeatedly, displaying its output and errors (the first screenfull).  This allows you to watch the program output change over time.  By default, the program is run every
+       2 seconds.  By default, watch will run until interrupted.
+
+OPTIONS
+       -d, --differences [permanent]
+              Highlight the differences between successive updates.  Option will read optional argument that changes highlight to be permanent, allowing to see what  has  changed  at  least  once
+              since first iteration.
+

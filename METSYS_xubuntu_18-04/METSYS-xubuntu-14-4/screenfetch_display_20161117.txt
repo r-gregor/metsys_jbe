@@ -1,0 +1,19 @@
+                          ./+o+-       rgregor@hp-rgregor
+                  yyyyy- -yyyyyy+      OS: ubuntu Ubuntu 14.04 trusty
+               ://+//////-yyyyyyo      Kernel: x86_64 Linux 4.4.0-47-generic
+           .++ .:/++++++/-.+sss/`      Uptime: 5h 28m
+         .:++o:  /++++++++/:--:/-      Packages: 2312
+        o:+o+:++.`..```.-/oo+++++/     Shell: bash 4.3.11
+       .:+o:+o/.          `+sssoo+/    Resolution: 1600x900
+  .++/+:+oo+o:`             /sssooo.   DE: XFCE4
+ /+++//+:`oo+o               /::--:.   WM: Xfwm4
+ \+/+o+++`o++o               ++////.   WM Theme: Default
+  .++.o+++oo+:`             /dddhhh.   GTK Theme: AshOS-Dark-2.0 [GTK2]
+       .+.o+oo:.          `oddhhhh+    Icon Theme: Shadow
+        \+.++o+o``-````.:ohdhhhhh+     Font: Droid Sans 10
+         `:o+++ `ohhhhhhhhyo++os:      CPU: Intel Core i5-2430M CPU @ 3GHz
+           .o:`.syhhhhhhh/.oo++o`      GPU: Mesa DRI Intel(R) Sandybridge Mobile
+               /osyyyyyyo++ooo+++/     RAM: 541MiB / 7917MiB
+                   ````` +oo+++o\:    
+                          `oo++.  
+

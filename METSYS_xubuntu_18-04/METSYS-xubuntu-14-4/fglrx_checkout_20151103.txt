@@ -1,0 +1,2 @@
+>glxgears # spinning gears
+>fgl_glxgears # spinning cube with gears

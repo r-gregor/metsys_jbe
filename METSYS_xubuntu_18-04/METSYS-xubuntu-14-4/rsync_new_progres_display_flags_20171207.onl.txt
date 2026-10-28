@@ -1,0 +1,1 @@
+rsync -an --size-only --info=misc2,stats1,progress2,del2 --delete 0_SOURCEDIR/ 0_DESTDIR/

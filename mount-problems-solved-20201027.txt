@@ -1,0 +1,30 @@
+Same experience after adding this line
+UUID=F43A-5DF2 /mnt/NASRPI exfat uid=1000,gid=1000,umask=007 0 0
+with:
+sudo nano /etc/fstab
+to
+/etc/fstab
+
+My Raspberry is not booting anymore !!
+New image of raspbian stretch was necessary !!
+
+
+***
+You need to add the [nofail] options if you want to automount external devices with fstab. You can use the
+ArchWiki like a Linux guide. https://wiki.archlinux.org/index.php/fstab#External_devices
+
+***
+That happened to me aswell. Luckily I had another Pi and an external SD card reader so I put the "dead" SD
+card into the other Pi and removed the offending fstab line. There is an option that can be added so the Pi
+continues the boot process after 90 seconds even if the mount can't be done.
+
+UUID=CA74-83DD /mnt/usb vfat uid=1000,gid=1000,nofail,umask=007 0 0
+         
+***
+Totally the same experience. Followed this Pi wouldn't boot. Used this in /etc/fstab instead:
+
+/dev/sda1 /media/USBdrive ext4 defaults,nofail,x-systemd.device-timeout=1,noatime 0 0
+
+and it works a charm. Note of course that I formatted my USB drive ext4, as it's a permanent fixture with my
+pi and I have no need or desire to move it, and even if I did, well my whole home LAN is Linux based and
+I got no probs with ext4 format drives.

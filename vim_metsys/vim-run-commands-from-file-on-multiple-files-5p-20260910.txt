@@ -1,0 +1,27 @@
+filename: vim-run-commands-from-file-on-multiple-files-5p-20260910.txt
+https://stackoverflow.com/questions/23235112/how-to-run-a-series-of-vim-commands-from-command-prompt
+
+...
+
+With all the commands you want to run on each file saved in a script, say "script.vim", you can execute that
+script on one file like this:
+$> vim -c "source script.vim" A.txt
+
+Taking this one step further, you can save your file at the end of the script, either by putting a :w command
+inside the script itself, or passing it from the command-line:
+$> vim -c "source script.vim | w" A.txt
+"                            ^^^^
+
+Now, you can run any command in Vim on multiple files, by using the argdo command. So your command turns into:
+$> vim -c "argdo source script.vim | w" A.txt B.txt C.txt D.txt
+"          ^^^^^                   ^^^
+
+Finally, if you want to quit Vim after running your script on every file, just add another command to quit:
+$> vim -c "argdo source script.vim | w" -c "qa" A.txt B.txt C.txt D.txt
+"          ^^^^^                   ^^^^^^^^^^^^
+
+...
+
+
+---
+

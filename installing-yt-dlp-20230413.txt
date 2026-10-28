@@ -1,0 +1,73 @@
+ $> python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+Defaulting to user installation because normal site-packages is not writeable
+Collecting https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+  Downloading https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz (2.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 3.5 MB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting websockets
+  Downloading websockets-11.0.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (129 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 kB 2.1 MB/s eta 0:00:00
+Collecting brotli
+  Downloading Brotli-1.0.9-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (2.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 8.5 MB/s eta 0:00:00
+Collecting pycryptodomex
+  Downloading pycryptodomex-3.17-cp35-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 7.7 MB/s eta 0:00:00
+Collecting mutagen
+  Downloading mutagen-1.46.0-py3-none-any.whl (193 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.6/193.6 kB 5.7 MB/s eta 0:00:00
+Collecting certifi
+  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 kB 5.0 MB/s eta 0:00:00
+Building wheels for collected packages: yt-dlp
+  Building wheel for yt-dlp (pyproject.toml) ... done
+  Created wheel for yt-dlp: filename=yt_dlp-2023.3.4-py2.py3-none-any.whl size=2677316 sha256=fd5078c75fd35e9517a0fa379d9835b7195cb8edc3c8d1455a93acfebfb452a3
+  Stored in directory: /tmp/pip-ephem-wheel-cache-4dy23yez/wheels/4c/91/d1/c5369304e2f7afb660bb6eee093af5a7d3c0ea05a3c1e8c797
+Successfully built yt-dlp
+Installing collected packages: brotli, websockets, pycryptodomex, mutagen, certifi, yt-dlp
+  WARNING: The scripts mid3cp, mid3iconv, mid3v2, moggsplit, mutagen-inspect and mutagen-pony are installed in '/home/rgregor/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script yt-dlp is installed in '/home/rgregor/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed brotli-1.0.9 certifi-2022.12.7 mutagen-1.46.0 pycryptodomex-3.17 websockets-11.0.1 yt-dlp-2023.3.4
+
+ $> sudo ln -s ~/.local/bin/yt-dlp /usr/local/bin/
+---
+SECOND INSTALL:
+ $> sudo python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+Collecting https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+  Downloading https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz (2.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 5.1 MB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting mutagen
+  Downloading mutagen-1.46.0-py3-none-any.whl (193 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.6/193.6 KB 3.2 MB/s eta 0:00:00
+Collecting pycryptodomex
+  Downloading pycryptodomex-3.17-cp35-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 9.3 MB/s eta 0:00:00
+Collecting brotli
+  Downloading Brotli-1.0.9-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (2.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 9.8 MB/s eta 0:00:00
+Collecting certifi
+  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 KB 12.7 MB/s eta 0:00:00
+Collecting websockets
+  Downloading websockets-11.0.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (129 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 KB 6.0 MB/s eta 0:00:00
+Building wheels for collected packages: yt-dlp
+  Building wheel for yt-dlp (pyproject.toml) ... done
+  Created wheel for yt-dlp: filename=yt_dlp-2023.3.4-py2.py3-none-any.whl size=2677409 sha256=e10c191c883d952b60bacc56ae5c4b821f34f516d379cd23fb6873c0a5839527
+  Stored in directory: /tmp/pip-ephem-wheel-cache-kgaqeep5/wheels/4c/91/d1/c5369304e2f7afb660bb6eee093af5a7d3c0ea05a3c1e8c797
+Successfully built yt-dlp
+Installing collected packages: brotli, websockets, pycryptodomex, mutagen, certifi, yt-dlp
+Successfully installed brotli-1.0.9 certifi-2022.12.7 mutagen-1.46.0 pycryptodomex-3.17 websockets-11.0.1 yt-dlp-2023.3.4
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+---
+

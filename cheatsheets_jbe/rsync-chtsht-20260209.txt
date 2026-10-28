@@ -1,0 +1,84 @@
+filename: rsync-chtsht-20260209.txt
+https://linuxize.com/cheatsheet/rsync/
+
+Rsync Cheatsheet
+Feb 3, 2026 *
+
+Rsync is a fast file sync tool for local and remote transfers. This cheatsheet covers the most common rsync
+commands, options, and patterns.
+
+
+-------------------------------------------------------------------------------------------------------------
+Install
+-------------------------------------------------------------------------------------------------------------
+sudo apt install rsync                                Install on Debian/Ubuntu
+sudo yum install rsync                                Install on RHEL/CentOS
+sudo dnf install rsync                                Install on Fedora
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Basic Syntax
+-------------------------------------------------------------------------------------------------------------
+rsync [OPTION] SRC DEST                               Local sync
+rsync [OPTION] SRC USER@HOST:DEST                     Local → remote
+rsync [OPTION] USER@HOST:SRC DEST                     Remote → local
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Local Sync Examples
+-------------------------------------------------------------------------------------------------------------
+rsync -a src/ dest/                                   Mirror contents
+rsync -a src dest/                                    Copy dir into dest
+rsync -av src/ dest/                                  Verbose sync
+rsync -a --delete src/ dest/                          Delete extra files
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Remote over SSH
+-------------------------------------------------------------------------------------------------------------
+rsync -a src/ user@host:/path/                        Local → remote
+rsync -a user@host:/path/ dest/                       Remote → local
+rsync -a -e "ssh -p 2222" src/ user@host:/path/       Custom SSH port
+rsync -a -P src/ user@host:/path/                     Progress + keep partial
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Common Options
+-------------------------------------------------------------------------------------------------------------
+-a                                                    Archive (recursive + preserve)
+-v                                                    Verbose
+-z                                                    Compress during transfer
+-P                                                    Progress + partial files
+--delete                                              Delete extras in dest
+--dry-run                                             Show changes only
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Excluding Files
+-------------------------------------------------------------------------------------------------------------
+rsync -a --exclude 'node_modules' src/ dest/          Exclude by name
+rsync -a --exclude-from='exclude.txt' src/ dest/      Exclude from file
+rsync -a --include='*.jpg' --exclude='*' src/ dest/   Include pattern
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Ownership & Permissions
+-------------------------------------------------------------------------------------------------------------
+-p                                                    Preserve permissions
+-o                                                    Preserve owner (root)
+-g                                                    Preserve group
+--chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r                     Set permissions
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Handy Patterns
+-------------------------------------------------------------------------------------------------------------
+rsync -a --info=progress2 src/ dest/                  Overall progress
+rsync -a --bwlimit=5m src/ dest/                      Limit bandwidth
+rsync -a --partial --append-verify src/ dest/         Resume large files
+rsync -a --stats src/ dest/                           Summary stats
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

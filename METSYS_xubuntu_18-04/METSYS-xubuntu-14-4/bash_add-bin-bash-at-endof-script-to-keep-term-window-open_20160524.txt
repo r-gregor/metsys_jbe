@@ -1,0 +1,3 @@
+enter /bin/bash at the end of the script to keep the terminal window opened
+if it was started from another terminal window:
+xfce4-terminal -e ~/BIN/<scriptname>

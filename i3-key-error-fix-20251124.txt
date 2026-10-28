@@ -1,0 +1,26 @@
+i3 update error:
+...
+ The following signatures were invalid: EXPKEYSIG E3CA1A89941C42E6 debian.sur5r.net Archive Automatic Signing Key 2015 (sur5r) <debian@sur5r.net>
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [2818 kB]
+Get:12 http://security.ubuntu.com/ubuntu jammy-security/main i386 Packages [732 kB]
+Get:13 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [13,9 kB]
+Get:14 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1009 kB]
+Get:15 http://security.ubuntu.com/ubuntu jammy-security/universe i386 Packages [681 kB]
+Get:16 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [22,3 kB]
+Fetched 5436 kB in 7s (740 kB/s)
+Reading package lists... Done
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://debian.sur5r.net/i3 jammy InRelease: The following signatures were invalid: EXPKEYSIG E3CA1A89941C42E6 debian.sur5r.net Archive Automatic Signing Key 2015 (sur5r) <debian@sur5r.net>
+W: Failed to fetch http://debian.sur5r.net/i3/dists/jammy/InRelease  The following signatures were invalid: EXPKEYSIG E3CA1A89941C42E6 debian.sur5r.net Archive Automatic Signing Key 2015 (sur5r) <debian@sur5r.net>
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+$> [rgregor@jbez0rg] ~                                                                                                             [2025-11-24] [21:38:56]
+...
+
+FIX:
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E3CA1A89941C42E6
+---
+commands:
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E3CA1A89941C42E6
+sudo apt-get update
+sudo apt-get dist-upgrade
+---
+

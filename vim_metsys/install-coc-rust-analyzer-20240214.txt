@@ -1,0 +1,9 @@
+1 - add to .vimrc:
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+2 - in vim run
+	:PlugInstall
+
+3 - in vim run
+	:CocInstall coc-rust-analyzer
+

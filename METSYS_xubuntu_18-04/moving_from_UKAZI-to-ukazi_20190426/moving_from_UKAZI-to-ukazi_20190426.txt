@@ -1,0 +1,10 @@
+  961  2019-04-26 09:00:35 cd majfajls/coding/
+  962  2019-04-26 09:00:58 grep -r UKAZI ./*
+---
+  993  2019-04-26 09:17:54 listulb | grep 00_UKAZI | sed 's/\.\.\+/;/g' >> listulb_seznam_20190426.txt
+  994  2019-04-26 09:18:06 listulb | grep 00_UKAZI | sed 's/\.\.\+/ /g' >> listulb_seznam_space_20190426.txt
+---
+ 1016  2019-04-26 09:26:09 while read LINE; do echo "sudo ln -v -snf $(echo "${LINE##*;}" | sed 's/UKAZI/ukazi/g') ${LINE%%;*}"; done < listulb_seznam_20190426.txt
+ 1017  2019-04-26 09:26:27 while read LINE; do sudo ln -v -snf $(echo "${LINE##*;}" | sed 's/UKAZI/ukazi/g') ${LINE%%;*}; done < listulb_seznam_20190426.txt
+ 1022  2019-04-26 09:28:10 cp -r 00_UKAZI/ 00_ukazi
+---

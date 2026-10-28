@@ -1,0 +1,101 @@
+#--- General ---#
+
+# Basic definitions
+for_window [class="^.*"] border pixel 2
+smart_gaps on
+gaps inner 10
+gaps outer 0
+hide_edge_borders both
+set $mod  Mod4
+set $mod2 Mod1
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
+
+# Application startup
+exec_always --no-startup-id $HOME/.local/bin/wm/wallpaper.sh &
+exec_always --no-startup-id $HOME/.local/bin/panel/polybar.sh &
+exec --no-startup-id firefox &
+exec --no-startup-id urxvt &
+exec --no-startup-id thunar &
+
+# Colors
+set_from_resource $bgcolor          WmColor.bgcolor           #000000
+set_from_resource $bgcolor_inactive WmColor.bgcolor_Inactive  #000000
+set_from_resource $bgcolor_urgent   WmColor.bgcolor_Urgent    #000000
+set_from_resource $fgcolor          WmColor.fgcolor           #000000
+set_from_resource $fgcolor_inactive WmColor.fgcolor_Inactive  #000000
+
+# Xresources colors
+set_from_resource $darkblack    color0  #000000
+set_from_resource $black        color8  #000000
+set_from_resource $darkred      color1  #000000
+set_from_resource $red          color9  #000000
+set_from_resource $darkgreen    color2  #000000
+set_from_resource $green        color10 #000000
+set_from_resource $darkyellow   color3  #000000
+set_from_resource $yellow       color11 #000000
+set_from_resource $darkblue     color4  #000000
+set_from_resource $blue         color12 #000000
+set_from_resource $darkmagenta  color5  #000000
+set_from_resource $magenta      color13 #000000
+set_from_resource $darkcyan     color6  #000000
+set_from_resource $cyan         color14 #000000
+set_from_resource $darkwhite    color7  #000000
+set_from_resource $white        color15 #000000
+set $transparent                #00000000
+
+# Window colors
+#                       border              background          text        indicator
+client.focused          $fgcolor_inactive   $fgcolor_inactive   $white      $darkgreen
+client.unfocused        $bgcolor_inactive   $bgcolor_inactive   $darkwhite  $darkgreen
+client.focused_inactive $bgcolor_inactive   $bgcolor_inactive   $darkwhite  $darkgreen
+client.urgent           $bgcolor_urgent     $bgcolor_urgent     $white      $darkgreen
+
+# Font
+font pango:DejaVu Sans 8
+
+#--- Workspaces ---#
+
+# Set workspaces
+set_from_resource $ws1  WmWorkSpace.ws1 0
+set_from_resource $ws2  WmWorkSpace.ws2 0
+set_from_resource $ws3  WmWorkSpace.ws3 0
+set_from_resource $ws4  WmWorkSpace.ws4 0
+set_from_resource $ws5  WmWorkSpace.ws5 0
+set_from_resource $ws6  WmWorkSpace.ws6 0
+set_from_resource $ws7  WmWorkSpace.ws7 0
+set_from_resource $ws8  WmWorkSpace.ws8 0
+set_from_resource $ws9  WmWorkSpace.ws9 0
+set_from_resource $ws10 WmWorkSpace.ws0 0
+
+# Assign workspace to monitor
+workspace "$ws1" output eDP-1
+workspace "$ws2" output eDP-1
+workspace "$ws3" output eDP-1
+workspace "$ws4" output eDP-1
+workspace "$ws5" output eDP-1
+
+# Switch to workspace (wont load config without)
+bindsym $mod+$mod2+0 workspace 0
+
+# Open program on specific workspace
+assign [class="firefox"] $ws1
+assign [class="URxvt"] $ws2
+assign [class="Thunar"] $ws3
+assign [class="kdenlive"] $ws5
+assign [class="krita"] $ws5
+
+# Set program properties
+for_window [class="Arandr"] floating enable
+for_window [class="feh"] floating enable
+for_window [class="firefox" instance="Places"] floating enable
+for_window [class="Inferno"] floating enable
+for_window [class="kdenlive"] focus
+for_window [class="krita"] focus
+for_window [class="Lxappearance"] floating enable
+for_window [class="mpv"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Qemu-system-i386"] floating enable
+for_window [class="Qemu-system-x86_64"] floating enable
+

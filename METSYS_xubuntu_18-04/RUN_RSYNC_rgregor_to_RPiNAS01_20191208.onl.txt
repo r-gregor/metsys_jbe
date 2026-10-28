@@ -1,0 +1,11 @@
+# Must NOT be run with sudo !!
+rsync -avr -e ssh \
+--delete \
+--exclude=".cache/" \
+--exclude=".thumbnails/" \
+--exclude="SLIKE" \
+--exclude="KRZ_*" \
+--info=progress2 \
+/home/rgregor/ \
+pi@rpinas01:/mnt/BACKUP2/hp-probook-1430s/home/rgregor/
+

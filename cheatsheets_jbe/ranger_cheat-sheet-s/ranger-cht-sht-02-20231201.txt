@@ -1,0 +1,79 @@
+filename: ranger_cht-sht_02_20231201.txt_20231201.txt
+https://kapeli.com/cheat_sheets/ranger.docset/Contents/Resources/Documents/index
+
+ranger file manager
+Enjoy this cheat sheet at its fullest within Dash, the macOS documentation browser.
+
+Navigation
+-------------------------------------------
+j    Move up
+k    Move down
+l    Open directory or file
+h    Go to parent directory
+i    Preview file
+q    Quit
+-------------------------------------------
+
+Actions prefixes
+-------------------------------------------
+g    Go (navigation or tabs)
+r    Open with
+y    Yank/copy
+d    Delete/cut
+p    Paste
+o    sOrt
+.    Filter stack
+u    Undo
+z    Settings
+M    lineMode (file details)
++
+-    chmod
+=
+?    Help
+-------------------------------------------
+
+Marking
+-------------------------------------------
+space         Mark current file
+v             Invert selection
+V             Visual mark mode
+uv            Unmark all
+:mark REGEX   Mark by regex
+-------------------------------------------
+
+Renaming
+-------------------------------------------
+cw            Rename file
+:rename       Rename extension :rename %s.txt
+:bulkrename   Bulk rename files in external editor
+Go
+gh            Jump to home
+gg            Jump to first line
+G             Jump to last line
+gn            New tab
+gt            Next tab
+gT            Previous tab
+OPTION-N      Go to Nth tab
+:travel       Jump to directory
+-------------------------------------------
+
+Settings
+-------------------------------------------
+zh
+CTRL-h       Toggle hidden files
+backspace
+zi           Toggle image previews
+-------------------------------------------
+
+Bookmarks
+-------------------------------------------
+m<key>       Create bookmark named
+'<key>       Jump to bookmark named
+''           Jump to last position
+-------------------------------------------
+
+You can modify and improve this cheat sheet here
+
+
+
+---

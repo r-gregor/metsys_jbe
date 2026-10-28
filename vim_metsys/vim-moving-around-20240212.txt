@@ -1,0 +1,186 @@
+filename: majstaf_en/metsys_en/vim_metsys/vim_moving-around_20240212.txt
+from: https://irian.to/blogs/moving-around-in-vim/
+
+Being able to freely move around in a file is an indispensable vim skill.
+
+Below is a list of the commands I use to move around in a file. I will also share some tips to move around
+efficiently and how you can start applying it.
+
+Setup Your Numbers Before starting, I find it helpful to have 'number' and 'relativenumber' set on vim. You
+can do it by running ':set relativenumber number' or having this on '.vimrc':
+    set relativenumber
+    set number
+
+This tells my current position and displays n lines above/ below my current position.
+
+[Title] - Character navigation Navigating around text:
+----------------------------------------------------------------
+h       left
+j       down
+k       up
+l       right
+
+[Title] - Word navigation
+----------------------------------------------------------------
+w       move forward to the beginning of next word
+W       move forward to the beginning of next WORD*
+e       move forward one word to the end of next word
+E       move forward one word to the end of next WORD
+b       move backward to beginning of previous word
+B       move backward to beginning of previous WORD
+ge      move backward to end of previous word
+gE      move backward to end of previous WORD
+
+* From :h WORD: A WORD consists of a sequence of non-blank characters, separated with white space. An empty
+  line is also considered to be a WORD.
+
+[Title] - Match navigation
+----------------------------------------------------------------
+%  Navigate to another match, usually works for (), [], {}
+
+(with matchit.vim on), we can now toggle within methods.
+
+[Title] - Block navigation
+----------------------------------------------------------------
+{       Jump to prev paragraph
+}       jump to next paragraph
+(       Jump to prev sentence
+)       Jump to next sentence
+
+[Title] - File Line navigation
+----------------------------------------------------------------
+gg      go to first line
+G       go to last line
+nG      go to line n
+n%      go to n% in file
+``      go to last jump position
+
+Btw, you can see how many lines in a file with CTRL-G.
+
+[Title] - Current line navigation
+----------------------------------------------------------------
+0       go to first character of current line
+^       go to first nonblank char of current line
+_       go to first nonblank char of current line
+n|      go column n of current line
+g_      go to last non-blank char of current line
+$       go to last char of current line
+
+[Title] - Screen navigation
+----------------------------------------------------------------
+H       go to top of screen
+M       go to medium screen
+L       go to bottom of screen
+nH      go n line from top
+nL      go n line from bottom
+
+[Title] - Scrolling screen
+----------------------------------------------------------------
+Ctrl-e  scroll down lines
+Ctrl-d  scroll down half screen
+Ctrl-f  scroll down whole screen
+Ctrl-y  scroll up lines
+Ctrl-u  scroll up half screen
+Ctrl-b  scroll up whole screen
+
+[Title] - Function/ Module Navigation
+----------------------------------------------------------------
+]m      go to the start of next method
+[m      go to the start of previous method
+]M      go to the end of next method
+[M      go to the end of previous method
+]]      go to next class/ module
+[[      go to previous class/module
+
+For more information on function/module navigation, this
+vid[https://thoughtbot.com/upcase/videos/navigating-within-ruby-files] by Drew Neil is very informative!
+
+[Title] - Search navigation
+---------------------------------------------------------------------------
+/       Search forward for a match
+?       Search backward for a match
+n       Repeat last search (same direction as previous search)
+N       Repeat last search (opposite direction as previous search)
+f       Search forward for a match in the same line
+F       Search backward for a match in the same line
+t       Search forward for a match in the same line, stopping before match
+T       Search backward for a match in the same line, stopping before match
+;       Repeat last search in the same line
+,       Repeat last search in the same line backwards
+*       Quickly search for word under cursor forward
+#       Quickly search for word under cursor backward
+
+
+Phew! Some items above I use almost every time, some I hardly ever used, but it's good to know they exist.
+Find one that works for you.
+
+[Title] - General tips on navigating
+When moving around in Vim, it is important to see patterns inside a file. Moving in vim reminds me of
+painting, start with the broadest stroke you know.
+
+  Is the word you're targeting slightly past the halfway length of the file? Start with 50% then go down with j.
+  Is it on line 73? This is awesome, jump directly there with 73G
+  Is the text 3 paragraphs down? Do }}} instead of mashing j buttons.
+  Do you know that it is near a unique keyword const uniqueKeyword = 'UNIQUE'? Search-jump with /uniqueKeyword
+
+If when you arrive on target line, the target word is still far near the end of the sentence, you can
+approach it with (w) - or if possible, look for unique letter around that target word. For example, if the
+sentence is:
+
+I ate a fried fish next to a zebra today
+
+Assume that you are starting with your cursor on "I". You want to edit "a" before zebra. Start by "find z" (fz)
+because "z" is not a commonly used letter then backtrack with b. Typing fzb(3 keystrokes) is faster than
+going to end then backtrack $bbb (4 keystrokes) and it is faster than wwwwwww (7 keystrokes). The last thing
+we want to do it pressing a lot of l's. Can you think of a pattern that get you there with less keystrokes?
+This is what makes vim fun!
+
+To get better at it, spend a few days playing vimgolf[https://www.vimgolf.com/]. Trust me, you will learn a lot.
+
+[Title] - How to apply this cheatsheet
+--------------------------------------
+You might be thinking: "O geez, there are so many of them! How can I possibly remember all of them?"
+
+Here are my personal tips:
+  - DO NOT try to commit all of them into memory in one sitting.
+  - Learn 5-6 of them today, use them every day for a week! Don't rush - what's the hurry?
+  - Learn another 5-6 next week while using the ones you learned previously.
+  - Do vimgolf and see how you fare on your own, then learn from other golfers.
+  - It took me almost a year to learn the above. I am still learning something new every week about Vim.
+    Doing Vim is a long term commitment.
+  - Learn to utilize help :h.
+
+If you are brand new to Vim and feel overwhelmed where to start, here are some commands you should learn
+first:
+
+[Title] - Basic navigations:
+----------------------------
+h
+j
+k
+l
+
+[Title] - Word Navigation:
+----------------------------
+w
+b
+
+[Title] - Jump to line n
+----------------------------
+nG  // ex: 1G, G, 73G
+
+[Title] - Searches:
+----------------------------
+/
+?
+n
+
+These 10 should put you in a really good position to move around in a file.Then slowly add more to your
+arsenal.
+
+Thanks for reading! Appreciate you making it this far. If you have more tips or questions, or found a mistake,
+please feel free to comment below!
+
+
+---
+

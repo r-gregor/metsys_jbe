@@ -1,0 +1,4 @@
+sudo apt show lxappearance
+sudo apt install lxappearance
+lxappearance &
+

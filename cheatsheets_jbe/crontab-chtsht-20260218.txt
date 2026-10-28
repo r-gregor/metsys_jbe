@@ -1,0 +1,123 @@
+filename: crontab-chtsht-20260218.txt
+https://linuxize.com/cheatsheet/crontab/
+
+Crontab Cheatsheet
+Feb 14, 2026
+
+Quick reference for scheduling and managing cron jobs with crontab in Linux
+
+Crontab is used to schedule recurring commands and scripts in Linux. This cheatsheet covers cron expression
+syntax, special strings, common schedules, and crontab management commands.
+
+-------------------------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------------------------
+Cron Format
+Use five time fields followed by the command.
+-------------------------------------------------------------------------------------------------------------
+* * * * * command   min hour day month weekday command
+*                   Any value
+,                   List of values (for example 1,15)
+-                   Range of values (for example 1-5)
+/                   Step values (for example */10)
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Time Fields
+Valid ranges for each cron field.
+-------------------------------------------------------------------------------------------------------------
+Minute         0-59
+Hour           0-23
+Day of month   1-31
+Month          1-12 or JAN-DEC
+Day of week    0-7 (0 and 7 are Sunday) or SUN-SAT
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Special Schedule Strings
+Shortcuts for common schedules.
+-------------------------------------------------------------------------------------------------------------
+@reboot      N/A           Run once at startup
+@yearly      0 0 1 1 *     Run once a year
+@annually    0 0 1 1 *     Same as @yearly
+@monthly     0 0 1 * *     Run once a month
+@weekly      0 0 * * 0     Run once a week
+@daily       0 0 * * *     Run once a day
+@midnight    0 0 * * *     Same as @daily
+@hourly      0 * * * *     Run once an hour
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Common Schedules
+Frequently used cron expressions.
+-------------------------------------------------------------------------------------------------------------
+Every minute                       * * * * *
+Every 5 minutes                    */5 * * * *
+Every 15 minutes                   */15 * * * *
+Every hour at minute 0             0 * * * *
+Every day at 02:30                 30 2 * * *
+Every weekday at 09:00             0 9 * * 1-5
+Every Sunday at 03:00              0 3 * * 0
+First day of month at midnight     0 0 1 * *
+Every 6 hours                      0 */6 * * *
+Every month on day 15 at 06:00     0 6 15 * *
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Crontab Management
+Create, list, and remove per-user cron jobs.
+-------------------------------------------------------------------------------------------------------------
+crontab -e                Edit current user's crontab
+crontab -l                List current user's crontab
+crontab -r                Remove current user's crontab
+crontab -u username -l    List another user's crontab (root)
+crontab -u username -e    Edit another user's crontab (root)
+crontab file.txt          Install crontab from file
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Command Patterns
+Useful patterns for reliable cron jobs.
+-------------------------------------------------------------------------------------------------------------
+*/5 * * * * /path/script.sh                              Run script every 5 minutes
+0 2 * * * /path/backup.sh >> /var/log/backup.log 2>&1    Append stdout/stderr to a log
+0 1 * * * /usr/bin/flock -n /tmp/job.lock /path/job.sh   Prevent overlapping runs
+@reboot /usr/bin/sleep 30 && /path/startup.sh            Run shortly after boot
+MAILTO=\"admin@example.com\"                             Send job output by email
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Environment in Cron
+Define environment values at the top of crontab.
+-------------------------------------------------------------------------------------------------------------
+SHELL=/bin/bash                                                      Use Bash for job execution
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin    Set explicit command path
+MAILTO=\"\"                                                          Disable cron email
+CRON_TZ=Europe/Skopje                                                Set timezone for this crontab
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Troubleshooting Checks
+Quick checks when jobs do not run.
+-------------------------------------------------------------------------------------------------------------
+Validate cron service status        systemctl status cron or systemctl status crond
+Check cron logs (Debian/Ubuntu)     grep CRON /var/log/syslog
+Check cron logs (RHEL/Fedora)       grep CROND /var/log/cron
+Check script permissions            ls -l /path/script.sh
+Test script manually                /path/script.sh
+Check if @reboot ran                journalctl -u cron --since "today"
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Related Guides
+Use these articles for complete cron workflows.
+-------------------------------------------------------------------------------------------------------------
+Scheduling Cron Jobs with Crontab   Full guide to creating and managing cron jobs
+How to List Cron Jobs in Linux      View user and system cron jobs
+Cron Jobs Every 5, 10, 15 Minutes   Ready-made recurring interval examples
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

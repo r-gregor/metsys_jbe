@@ -1,0 +1,11 @@
+nmcli con show
+nmcli con show --active
+nmcli device show wlp2s0
+iwconfig wlp2s0
+nmcli connection show wlp2s0
+nmcli connection show
+nmcli connection show "T-2_REDIJI_5G"
+cat /sys/class/net/wlp2s0/statistics/tx_bytes
+cat /sys/class/net/wlp2s0/statistics/rx_bytes
+---
+

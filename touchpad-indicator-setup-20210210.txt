@@ -1,0 +1,6 @@
+  990  2021-02-10 19:52:42 sudo add-apt-repository ppa:atareao/atareao
+  991  2021-02-10 19:53:05 sudo apt update
+  992  2021-02-10 19:53:37 sudo apt install touchpad-indicator
+
+add touchpad-indicator to "Session and startup" in "Settings manager"
+

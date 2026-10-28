@@ -1,0 +1,7 @@
+After reinstall and copy .ssh/ from backup to $HOME/ -- trying to connect to github and gitlab failed:
+	sign_and_send_pubkey: signing failed for RSA ** from agent: agent refused operation
+
+The FIX:
+	$> chmod 700 ~/.ssh
+	$> chmod 600 ~/.ssh/*
+

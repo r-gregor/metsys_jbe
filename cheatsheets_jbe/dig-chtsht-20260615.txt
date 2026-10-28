@@ -1,0 +1,103 @@
+filename: dig-chtsht-20260615.txt
+https://linuxize.com/cheatsheet/dig/
+
+dig Cheatsheet
+Jun 13, 2026
+
+Quick reference for querying DNS records, tracing resolution, and debugging name resolution with dig
+
+The 'dig' command queries DNS name servers and prints detailed records such as A, AAAA, MX, NS, TXT, and PTR.
+This cheatsheet covers basic lookups, record type queries, output control, reverse lookups, trace and DNSSEC
+checks, and quick troubleshooting.
+
+-------------------------------------------------------------------------------------------------------------
+Basic Syntax
+Core dig command forms.
+-------------------------------------------------------------------------------------------------------------
+dig example.com             Look up the A record using the default resolver
+dig example.com @8.8.8.8    Query a specific name server
+dig example.com mx          Query a specific record type
+dig -x 192.0.2.1            Run a reverse DNS lookup
+dig example.com +short      Print only the answer value
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Common Lookups
+Quick checks for hostnames and addresses.
+-------------------------------------------------------------------------------------------------------------
+dig example.com                  Look up A records using the default resolver
+dig example.com +short           Print only the IP address
+dig www.example.com              Check a hostname or subdomain
+dig example.com +noall +answer   Show only the answer section
+dig -x 192.0.2.1 +short          Reverse lookup, hostname only
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Record Types
+Append the record type to query a specific record.
+-------------------------------------------------------------------------------------------------------------
+dig example.com a           Query IPv4 address records
+dig example.com aaaa        Query IPv6 address records
+dig example.com mx          Query mail exchanger records
+dig example.com ns          Query authoritative name servers
+dig example.com txt         Query TXT records
+dig example.com soa         Query the SOA record
+dig www.example.com cname   Check whether a hostname is an alias
+dig example.com any         Request an ANY response; many servers return limited data
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Output Control
+Trim the verbose default output.
+-------------------------------------------------------------------------------------------------------------
+dig example.com +short                 Answer value only
+dig example.com +noall +answer         Answer section only
+dig +nocmd example.com                 Drop the version and options header
+dig example.com +nocomments +nostats   Hide comments and query stats
+dig example.com +ttlunits              Show TTL values with units such as minutes or hours
+dig example.com +multiline             Print records one field per line
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Specific DNS Servers
+Compare answers from different resolvers.
+-------------------------------------------------------------------------------------------------------------
+dig example.com @8.8.8.8        Query Google Public DNS
+dig example.com @1.1.1.1        Query Cloudflare DNS
+dig example.com @9.9.9.9        Query Quad9
+dig example.com mx @8.8.8.8     Query MX records from a specific resolver
+dig example.com txt @1.1.1.1    Compare TXT answers between resolvers
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Trace, DNSSEC, and Bulk
+Deeper debugging and batch queries.
+-------------------------------------------------------------------------------------------------------------
+dig example.com +trace                          Trace resolution from the root servers down
+dig example.com +dnssec                         Request DNSSEC records; this does not validate them locally
+dig example.com @1.1.1.1 +dnssec | grep flags   Check whether the resolver returned the ad validation flag
+dig example.com +tcp                            Force the query over TCP
+dig -f domains.txt +short                       Bulk query domains from a file
+dig -v                                          Print the dig version
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Troubleshooting
+Quick checks for common dig results.
+-------------------------------------------------------------------------------------------------------------
+NXDOMAIN                      Domain does not exist; verify spelling and registration
+SERVFAIL                      Check DNSSEC, delegation, and authoritative-server availability;
+                              compare another resolver
+-------------------------------------------------------------------------------------------------------------
+REFUSED                       The server policy rejected the query; verify recursion access or query the
+                              proper authoritative server
+-------------------------------------------------------------------------------------------------------------
+connection timed out;         Check network and /etc/resolv.conf; try +tcp
+no servers could be reached
+-------------------------------------------------------------------------------------------------------------
+Truncated reply               dig normally retries over TCP; use +tcp to test TCP directly
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

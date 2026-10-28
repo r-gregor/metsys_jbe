@@ -1,0 +1,130 @@
+filename: remove-old-kernel_20170915.txt
+https://www.tecmint.com/remove-old-kernel-in-debian-and-ubuntu/
+
+How to Delete Old Unused Kernels in Debian and Ubuntu
+September 7, 2017
+
+   In our last article, we’ve explained how to [63]delete old unused
+   kernels in CentOS/RHEL/Fedora. In this article, we will explain how to
+   delete old unused kernels in Debian and Ubuntu systems, but before
+   moving further, you may want to install the latest version in order to
+   take advantage of: security fixes, new kernel functions, updated
+   drivers and so much more.
+
+   To upgrade your kernel to latest version in Ubuntu and Debian, follow
+   this guide:
+    1. [64]How to Upgrade Kernel to Latest Version in Ubuntu
+
+   Important: It is advisable to keep at least one or two old kernels to
+   fall back to in case there is a problem with an update.
+
+   To find out the [65]current version of Linux kernel running on your
+   system, use the following command.
+$ uname -sr
+Linux 4.12.0-041200-generic
+
+   To list all installed kernels on your system, issue this command.
+$ dpkg -l | grep linux-image | awk '{print$2}'
+linux-image-4.12.0-041200-generic
+linux-image-4.8.0-22-generic
+linux-image-extra-4.8.0-22-generic
+linux-image-generic
+
+Remove Old Unused Kernels on Debian and Ubuntu
+   Run the commands below to remove a particular linux-image along with
+   its configuration files, then update grub2 configuration, and lastly
+   reboot the system.
+$ sudo apt remove --purge linux-image-4.4.0-21-generic
+$ sudo update-grub2
+$ sudo reboot
+
+   Removing Old Kernel in Ubuntu
+[sudo] password for tecmint:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+linux-generic linux-headers-4.8.0-59 linux-headers-4.8.0-59-generic linux-header
+s-generic linux-image-4.8.0-59-generic linux-image-extra-4.8.0-59-generic linux-
+image-generic
+Suggested packages:
+fdutils linux-doc-4.8.0 | linux-source-4.8.0 linux-tools
+Recommended packages:
+thermald
+The following packages will be REMOVED:
+linux-image-4.8.0-22-generic* linux-image-extra-4.8.0-22-generic*
+The following NEW packages will be installed:
+linux-headers-4.8.0-59 linux-headers-4.8.0-59-generic linux-image-4.8.0-59-gener
+ic linux-image-extra-4.8.0-59-generic
+The following packages will be upgraded:
+linux-generic linux-headers-generic linux-image-generic
+3 upgraded, 4 newly installed, 2 to remove and 182 not upgraded.
+Need to get 72.0 MB of archives.
+After this operation, 81.7 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 linux-heade
+rs-4.8.0-59 all 4.8.0-59.64 [10.2 MB]
+Get:2 http://us.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 linux-heade
+rs-4.8.0-59-generic amd64 4.8.0-59.64 [811 kB]
+
+Get:3 http://us.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 linux-gener
+ic amd64 4.8.0.59.72 [1,782 B]
+
+Get:4 http://us.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 linux-heade
+rs-generic amd64 4.8.0.59.72 [2,320 B]
+
+Get:5 http://us.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 linux-image
+-4.8.0-59-generic amd64 4.8.0-59.64 [23.6 MB]
+
+Get:6 http://us.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 linux-image
+-extra-4.8.0-59-generic amd64 4.8.0-59.64 [37.4 MB]
+
+Get:7 http://us.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 linux-image
+-generic amd64 4.8.0.59.72 [2,348 B]
+
+Fetched 72.0 MB in 7min 12s (167 kB/s)
+
+
+Selecting previously unselected package linux-headers-4.8.0-59.
+(Reading database ... 104895 files and directories currently installed.)
+Preparing to unpack .../0-linux-headers-4.8.0-59_4.8.0-59.64_all.deb ...
+Unpacking linux-headers-4.8.0-59 (4.8.0-59.64) ...
+Selecting previously unselected package linux-headers-4.8.0-59-generic.
+Preparing to unpack .../1-linux-headers-4.8.0-59-generic_4.8.0-59.64_amd64.deb .
+..
+Unpacking linux-headers-4.8.0-59-generic (4.8.0-59.64) ...
+Preparing to unpack .../2-linux-generic_4.8.0.59.72_amd64.deb ...
+Unpacking linux-generic (4.8.0.59.72) over (4.8.0.22.31) ...
+Preparing to unpack .../3-linux-headers-generic_4.8.0.59.72_amd64.deb ...
+Unpacking linux-headers-generic (4.8.0.59.72) over (4.8.0.22.31) ...
+Selecting previously unselected package linux-image-4.8.0-59-generic.
+Preparing to unpack .../4-linux-image-4.8.0-59-generic_4.8.0-59.64_amd64.deb ...
+Done.
+Removing linux-image-4.8.0-22-generic (4.8.0-22.24) ...
+Examining /etc/kernel/postrm.d .
+run-parts: executing /etc/kernel/postrm.d/initramfs-tools 4.8.0-22-generic /boot
+/vmlinuz-4.8.0-22-generic
+update-initramfs: Deleting /boot/initrd.img-4.8.0-22-generic
+run-parts: executing /etc/kernel/postrm.d/zz-update-grub 4.8.0-22-generic /boot/
+vmlinuz-4.8.0-22-generic
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-4.12.0-041200-generic
+Found initrd image: /boot/initrd.img-4.12.0-041200-generic
+Found linux image: /boot/vmlinuz-4.8.0-59-generic
+done
+...
+
+   Although this method works just fine, it is more reliable and efficient
+   to use a handy script called “byobu” that combines all the commands
+   above into a single program with useful options such as specifying
+   number of kernels to keep on the system.
+
+   Install byobu script package which provides a program called
+   purge-old-kernels used for removing old kernels and header packages
+   from the system.
+$ sudo apt install byobu
+
+   Then remove old kernels like so (the command below allows 2 kernels to
+   be kept on the system).
+$ sudo purge-old-kernels --keep 2
+

@@ -1,0 +1,7 @@
+1. setup yahoo App password:
+	https://login.yahoo.com/myaccount/security --> Generate and manage app passwords ...
+		added App password for sendf1 app (Created Oni December 17, 2022)
+
+2. use App password in sendf1 as smtp password
+3. Works on Google too, but MUST have 2FA
+

@@ -1,0 +1,2 @@
+sudo su
+/opt/firefox_46/firefox_46 -P firefox_46

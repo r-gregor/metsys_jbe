@@ -1,0 +1,203 @@
+filename: tmux-cheat-sheet_20220617.txt
+https://www.fosslinux.com/58612/foss-linuxs-tmux-cheat-sheet.htm
+
+FOSS Linux's Tmux Cheat Sheet
+April 19, 2022
+
+Tmux (TM) is an acronym that stands for Terminal Multiplexing. It is a free and open-source tool that allows
+you to open many terminals in a single desktop window by adding more than one terminal window. A "tabbed"
+interface (without actual tabs) is the result, allowing for tab flipping between windows without using the
+mouse.
+
+Before diving into the cheat sheet, you must ensure that Tmux is installed on your Linux OS. We shall brush
+through this article, but if you need a detailed report on how to install and use Tmux on Linux, check this
+comprehensive [https://www.fosslinux.com/58586/install-and-use-tmux-on-linux.htm]article.
+
+Installing Tmux
+For this guide, we shall be using Ubuntu 20.04LTS. Therefore, if you are using the same operating system as
+we are, don't shy off from running the commands provided as they have been tried and tested.
+
+Run the line of code below to install Tmux
+
+$> sudo apt-get install tmux
+
+Launch Tmux
+Once Tmux has been successfully installed on your Linux machine, then proceed and launch it using the command
+line below:
+
+$> tmux
+
+When you execute the command above, the apparent result is that Tmux will launch a new shell with a status
+bar at the bottom. Now that Tmux is up and running let us look at its triggers and commands.
+
+The Tmux commands and triggers
+The Tmux trigger is the Ctrl+B keyboard shortcut. When you press it, it tells Tmux to "listen" for the
+following key combination in a Tmux session. As a result, Ctrl+B is prefixed to all Tmux shortcuts.
+
+Additionally, you may run Tmux commands by name from the command line. Ctrl+B followed by ":" can be used to
+enter the command line to create a new window. To open a new window, type a new window and hit Enter. This is
+precisely the same as hitting Ctrl+B and C simultaneously.
+
+Simplified FOSSLinux's Tmux Cheat Sheet
+
+Tmux Windows commands
+=============================================================================================================
+Function                                                                        Command
+-------------------------------------------------------------------------------------------------------------
+This command will initiate a new session with the                               tmux new -s fosssession \
+name "fosssession" and window "fosstuts."                                       -n fosstuts
+
+Create a new window                                                             Ctrl + b c
+Rename current window                                                           Ctrl + b ,
+Close current window                                                            Ctrl + b &
+Previous window                                                                 Ctrl + b p
+Move to the next window                                                         Ctrl + b n
+Switch/select the window by the number                                          Ctrl + b 0 ... 9
+Toggle the last active window                                                   Ctrl + b l
+Reorder window                                                                  : swap-window -s 2 -t 1
+Move the current window to the left by one position                             : swap-window -t -1
+=============================================================================================================
+
+Tmux Sessions commands
+=============================================================================================================
+Function                                        Command
+-------------------------------------------------------------------------------------------------------------
+                                                tmux
+Start a new session                             tmux new
+                                                tmux new-session
+                                                : new
+-------------------------------------------------------------------------------------------------------------
+Start a new session with the name fosssession   tmux new -s fosssession
+                                                : new -s fosssession
+                                                tmux a
+-------------------------------------------------------------------------------------------------------------
+Attach to the last session                      tmux at
+                                                tmux attach
+                                                tmux attach-session
+                                                tmux ls
+-------------------------------------------------------------------------------------------------------------
+Show all sessions                               tmux list-sessions
+                                                Ctrl + b s
+-------------------------------------------------------------------------------------------------------------
+kill/delete session fosssession                 tmux kill-ses -t fosssession
+                                                tmux kill-session -t fosssession
+-------------------------------------------------------------------------------------------------------------
+kill/delete all sessions except the current one tmux kill-session -a
+kill/delete all sessions except fosssession     tmux kill-session -a -t fosssession
+Rename session                                  Ctrl + b $
+Detach from session                             Ctrl + b d
+Detach others during the session                attach -d
+Session and Window Preview                      Ctrl + b w
+Move to the previous session                    Ctrl + b (
+Move to the next session                        Ctrl + b )
+=============================================================================================================
+
+Tmux Panes commands
+=============================================================================================================
+Function                                                                       Command
+-------------------------------------------------------------------------------------------------------------
+Show pane numbers                                                              Ctrl + b q
+Switch/select pane by number                                                   Ctrl + b q 0 ... 9
+Toggle pane zoom                                                               Ctrl + b z
+Convert pane into a window                                                     Ctrl + b !
+                                                                               Ctrl + b + Up Arrow
+-------------------------------------------------------------------------------------------------------------
+Resize current pane height (it is optional to hold the second key)             Ctrl + b Ctrl + Down Arrow
+                                                                               Ctrl + b + Down Arrow
+                                                                               Ctrl + b Ctrl + Up Arrow
+-------------------------------------------------------------------------------------------------------------
+Toggle the last active pane                                                    Ctrl + b ;
+Split pane with horizontal layout                                              Ctrl + b %
+Toggle between pane layouts                                                    Ctrl + b Spacebar
+Split pane with vertical layout                                                Ctrl + b "
+Move the current pane left                                                     Ctrl + b {
+Switch to the next pane                                                        Ctrl + b o
+Move the current pane right                                                    Ctrl + b }
+                                                                               Ctrl + b Up Arrow
+-------------------------------------------------------------------------------------------------------------
+Switch to pane to the direction                                                Ctrl + b Down Arrow
+                                                                               Ctrl + b Right Arrow
+                                                                               Ctrl + b Left Arrow
+-------------------------------------------------------------------------------------------------------------
+Toggle synchronize-panes (send command to all panes)                           : setw synchronize-panes
+                                                                               Ctrl + b + Right Arrow
+-------------------------------------------------------------------------------------------------------------
+Resize current pane width (it is optional to hold the second key)              Ctrl + b Ctrl + Right Arrow
+                                                                               Ctrl + b + Left Arrow
+                                                                               Ctrl + b Ctrl + Left Arrow
+-------------------------------------------------------------------------------------------------------------
+Horizontal divides that are even                                               Ctrl+B Alt+1
+Vertical divides that are even                                                 Ctrl+B Alt+2
+Horizontal span for the primary pane, vertical divides for the secondary panes Ctrl+B Alt+3
+Vertical span for the primary pane, horizontal divides for the secondary panes Ctrl+B Alt+3
+Layout in tiles                                                                Ctrl+B Alt+5
+Close current pane                                                             Ctrl + b x
+=============================================================================================================
+
+Tmux Help commands
+=============================================================================================================
+Function                              Command
+-------------------------------------------------------------------------------------------------------------
+                                      tmux list-keys
+List key bindings(shortcuts)          : list-keys
+                                      Ctrl + b ?
+-------------------------------------------------------------------------------------------------------------
+Show every session, window, and pane  tmux info
+=============================================================================================================
+
+
+Tmux Search/Copy Mode commands
+=============================================================================================================
+Function                                            Command
+-------------------------------------------------------------------------------------------------------------
+Use vi keys in the buffer                           : setw -g mode-keys vi
+Enter copy mode                                     Ctrl + b [
+Switch to copy mode and go one-page higher          Ctrl + b PgUp
+Quit mode                                           q
+Go to the top line                                  g
+Go to the bottom line                               G
+Scroll up                                           Arrow Up
+Scroll down                                         Arrow Down
+Move cursor left                                    h
+Move cursor down                                    j
+Move cursor up                                      k
+Move cursor right                                   l
+Navigate the cursor one word at a time.             w
+One word at a time, go backwards with the cursor    b
+Search forward                                      /
+Search backward                                     ?
+Next keyword occurrence                             n
+Previous keyword occurrence                         N
+Start selection                                     Spacebar
+Clear selection                                     Esc
+Copy selection                                      Enter
+Paste contents of buffer_0                          Ctrl + b ]
+display buffer_0 contents                           : show-buffer
+copy whole visible contents of the pane to a buffer : capture-pane
+Show all buffers                                    : list-buffers
+Show all buffers and paste selected                 : choose-buffer
+Save buffer contents to buf.txt                     : save-buffer buf.txt
+delete buffer_1                                     : delete-buffer -b 1
+=============================================================================================================
+
+Tmux Misc commands
+=============================================================================================================
+          Function               Command
+-------------------------------------------------------------------------------------------------------------
+Enter command mode           Ctrl + b :
+Set OPTION for all sessions  : set -g OPTION
+Set OPTION for all windows   : setw -g OPTION
+Enable mouse mode            : set mouse on
+=============================================================================================================
+
+Conclusion
+Ctrl+B is a simple shortcut for launching Tmux, but the following keys can be a bit more challenging. By
+typing Ctrl+B followed by "?", you may access all of Tmux's keyboard shortcuts, or you can exit the help
+screen with the "Q" key. The help screen, on the other hand, has a lot of alternatives that aren't structured
+in any way. Tmux has numerous sophisticated capabilities you cannot cram; to help you remember them, we've
+created this FOSSLinux cheatsheet for Tmux.
+
+
+
+---
+

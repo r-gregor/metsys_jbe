@@ -1,0 +1,319 @@
+filename: pip_manage-python-packages_20171220.txt
+https://www.ostechnix.com/manage-python-packages-using-pip/
+
+How To Manage Python Packages Using Pip
+December 19, 2017
+
+   PIP, the python package manager, is used to install, upgrade, remove packages written in Python
+   programming language. In this guide, we will be discussing how to install pip and manage python
+   packages such as installing, updating, and removing packages using pip. Additionally, we will  see
+   what is virtual environment, how to create it, and how to isolate packages in the virtual environment
+   using venv and/or virtualenv tools. Let’s get to it.
+   [INS: :INS]
+
+Installation
+
+Install pip using package managers
+   On Arch Linux and its variants like Antergos, Manjaro Linux, you can install pip using command:
+
+   Python 2:
+sudo pacman -S python2-pip python2-wheel python2-setuptools
+
+   Python 3:
+sudo pacman -S python-pip python-wheel python-setuptools
+
+   On Fedora 21:
+
+   Python 2:
+sudo yum upgrade python-setuptools
+sudo yum install python-pip python-wheel
+
+   Python 3:
+sudo yum install python3 python3-wheel
+
+   Fedora 22:
+
+   Python 2:
+sudo dnf upgrade python-setuptools
+sudo dnf install python-pip python-wheel
+
+   Python 3:
+sudo dnf install python3 python3-wheel
+
+   To get newer versions of pip, setuptools, and wheel for Python 2, enable the [48]PyPA Copr Repo using
+   command:
+dnf copr enable pypa/pypa
+
+   and then run:
+sudo dnf upgrade python-setuptools
+sudo dnf install python-pip python-wheel
+
+   On CentOS/RHEL:
+
+   pip and wheel is not available in the default repositories of CentOS and RHEL. To install pip on
+   CentOS, RHEL, Scientific Linux and other RPM based systems, enable EPEL repository using command:
+sudo yum install epel-release
+
+   And then run the following command to install pip:
+sudo yum install python-pip
+sudo yum install python-wheel
+
+   Since setup-tools package is available in the default repositories, you can install it using command:
+sudo yum upgrade python-setuptools
+
+   openSUSE:
+
+   Python 2:
+sudo zypper install python-pip python-setuptools python-wheel
+
+   Python 3:
+sudo zypper install python3-pip python3-setuptools python3-wheel
+
+   Debian/Ubuntu:
+sudo apt-get install python-pip
+
+   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   !!! Replace “python” with “python3” for Python 3. !!!
+   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   
+   In Ubuntu 12.04 version, pip3 didn’t come packaged. If you’re using Ubuntu 12.04, you can install
+   pip3 using the following commands:
+sudo apt-get install python3-setuptools
+sudo easy_install3 pip
+
+Installing pip from binaries
+
+   If you’d like to install pip from binaries, just run:
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+
+   Please note that get-pip.py will also install setuptools and wheel. As I mentioned earlier, some
+   Linux distros doesn’t has wheel in the core repositories. In such cases, you may need to add some
+   third party repositories, for example EPEL.
+
+   pip is already installed if you’re using Python 2 >=2.7.9 or Python 3 >=3.4 binaries downloaded from
+   python.org. However, you will need to upgrade pip using command:
+sudo pip install -U pip
+
+   Or,
+sudo pip install --upgrade pip
+
+   To update all (pip, setuptools, whell), run:
+sudo pip install --upgrade pip setuptools wheel
+
+   To find out the installed version of pip/pip3, run:
+pip --version
+
+   Or,
+pip -V
+
+   Sample output would be:
+pip 9.0.1 from /usr/lib/python3.6/site-packages (python 3.6)
+
+Creating Virtual Environments
+   Before installing any python packages, it is recommended to create a virtual environment. Why do we
+   need to create virtual environment? You might ask. Because, the Python “Virtual Environments” allows
+   us to install a Python package in an isolated location, rather than installing it globally.
+
+   Let us say you want to install a python package, for example youtube-dl, that needs version 1 of
+   LibFoo, but another application requires version 2. How can you use both these applications? If you
+   install everything into /usr/lib/python2.7/site-packages or /usr/lib/python3.6/site-packages (or
+   whatever your platform’s standard location is), it’s easy to end up in a situation where you
+   unintentionally upgrade an application that shouldn’t be upgraded. To avoid this, we isolate the
+   packages in the virtual environment. All virtual environments have their own installation directories
+   and doesn’t interact or conflict with one another.
+
+   We can create isolated python environments using two tools.
+    1. venv
+    2. virtualenv
+
+   If you’re using Python 3.3 and later, venv is installed by default. For Python 2.x, you need to
+   install virtualenv. TO do so, run:
+sudo pip install virtualenv
+
+   Let us create a virtual environment now.
+
+   Using virtualenv:
+virtualenv <DIR_NAME>
+source <DIR_NAME>/bin/activate
+
+   Using venv:
+python3 -m venv <DIR_NAME>
+source <DIR_NAME>/bin/activate
+
+   Once, you run the above command, you will be placed in your virtual environment immediately.
+
+   To deactivate the virtual environment and come to back to your normal shell, run:
+deactivate
+
+Manage Python Packages Using Pip
+
+   Now we will see most common basic pip usage with examples.
+
+   To view the list of all pip commands and general options, run:
+pip
+
+   You should see an output something like below.
+
+   To know what install command does, run:
+pip install --help
+
+   The most common usage of pip is to install from the [49]PyPi (Python Package Index). PyPi is a
+   repository that contains all the packages created by the community of developers in Python.
+
+Install packages
+   Create virtual environment first as shown below:
+
+   Using virtualenv:
+virtualenv MYENV
+
+   Replace MYENV with your own name.
+
+   Using venv:
+python3 -m venv MYENV
+
+   Finally, activate it using command:
+source MYENV/bin/activate
+
+   Once, you run the above command, you will be placed inside  your virtual environment.
+
+   Now, it is time to install some packages. To install a package, for example youtube-dl, run:
+pip install youtube-dl
+
+   This command will install youtube-dl with all its dependencies.
+
+   To install a specific version, run:
+pip install youtube_dl=2017.12.14
+
+   To install a version other than specified version, run:
+pip install youtube_dl!=2017.12.14
+
+   Note the ‘!” in-front of equal symbol.
+
+   To install a version equal to or greater than the specified version, run:
+pip install youtube_dl>=2017.12.14
+
+   To install a version in the specific range, for instance greater than or equal to one version and
+   less than another, run:
+pip install youtube_dl>=2017.12.14, <2017.12.20
+
+   To install a version that’s “compatible” with a certain version:
+pip install youtube_dl~=2017.12.14
+
+Download packages
+   To download a package with all dependencies (without installing it), run:
+pip download youtube-dl
+
+List all installed packages
+
+   To find which packages were installed by pip, run:
+pip freeze
+
+   Or,
+pip list
+
+   These commands will display all installed packages using pip in your system.
+
+Search packages
+   To search for a specific package, for example youtube-dl, run:
+pip search youtube-dl
+
+   This command will search and display the result that matches the string “youtube-dl”.
+
+Update packages
+   To list all outdated packages in a simple tabular column format, run:
+pip list --outdated --format=columns
+
+   To update an outdated package, run:
+pip install --upgrade youtube-dl
+
+   We can also dump all packages in a file and update them all in one go. First, export all files to a
+   file:
+pip freeze > mypackages.txt
+
+   Now update all packages at once using command:
+pip install -r mypackages.txt --upgrade
+
+   Or,
+pip install -r mypackages.txt -U
+
+   If the above command didn’t work for any reason, use the following command to update all packages at
+   once:
+pip freeze --local | grep -v '^\e' | cut -d = -f 1 | xargs -n1 pip install -U
+
+Export all installed packages in a file
+   Sometimes, you might want to export all installed packages in a file to test them in a different
+   environment. To do so, run:
+pip freeze > MYENV_packages.txt
+
+   Now, deactivate the current virtual environment:
+deactivate
+
+   and create a new using commands:
+virtualenv MYENV1
+
+   Replace MYENV1 with your own name.
+
+   Using venv:
+python3 -m venv MYENV1
+
+   Activate the newly created environment:
+source MYENV1/bin/activate
+
+   Now, install all packages which we exported earlier.
+pip install -r MYENV_packages.txt
+
+   To install all at once without user interaction, run:
+pip install -r MYENV_packages.txt -y
+
+   Similarly, you can remove all packages from the list using command:
+pip uninstall -r MYENV_packages.txt -y
+
+View package information
+   To view the details of a package, run:
+$ pip show youtube-dl
+Name: youtube-dl
+Version: 2017.12.14
+Summary: YouTube video downloader
+Home-page: https://github.com/rg3/youtube-dl
+Author: Sergey M.
+Author-email: dstftw@gmail.com
+License: UNKNOWN
+Location: /home/sk/MYENV/lib/python3.6/site-packages
+Requires:
+
+View package dependencies
+   We can visualize the dependencies of all installed packages using “pipdeptree” tool.
+
+   Install it using command:
+pip install pipdeptree
+
+   Once installed, you can view the dependency tree using command:
+pipdeptree
+
+Uninstall packages
+   To uninstall/remove an installed package, run:
+pip uninstall youtube-dl
+
+   To uninstall multiple packages, specify them with space separated:
+pip uninstall package1, package2
+
+   To remove all python packages installed using pip, run:
+pip freeze | xargs pip uninstall -y
+
+   Sometimes pip doesn’t allow you to uninstall packages owned by the OS. In such cases, you can
+   uninstall all the packages which are not owned by the OS using command:
+pip uninstall -y $(pip freeze | sed 's;==.*;;g' | tr '\n' ' ')
+
+   As I mentioned in the previous section, we can dump all installed packages in a file and uninstall
+   them from the list using command:
+pip uninstall -r MYENV_packages.txt -y
+
+   At this stage, you might get some idea about pip and its usage. For more details, refer the
+   [50]official documentation and the pip help section by running the following command:
+pip --help
+
+   Or just,
+pip
+
+   And, that’s all for now. More good stuffs to come.

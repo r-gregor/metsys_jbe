@@ -1,0 +1,8 @@
+for FFF in $(find $DDOT/ -type f); do diff -q $FFF $(echo $FFF | cut -d'/' -f8-); done 2>/dev/null
+for FFF in $(find $DDOT/ -type f); do diff -q $FFF $(echo $FFF | cut -d'/' -f8-); done 2>/dev/null > differs_20221205.txt
+less differs_20221205.txt
+cp -i .bashrc ~/majstaf/d_metsys_git/d_metsys_source/d_dotfiles/
+FF=.vim/plugged/vim-code-dark/colors/codedark.vim
+FF=.config/alacritty/alacritty.yml
+cp -i $FF ~/majstaf/d_metsys_git/d_metsys_source/d_dotfiles/$FF
+

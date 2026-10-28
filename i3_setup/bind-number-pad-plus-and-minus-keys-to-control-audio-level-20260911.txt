@@ -1,0 +1,33 @@
+filename: /home/rgregor/majstaf/_NERAZPOREJENO/__DANES__/bind-number-pad-plus-and-minus-keys-to-control-audio-level-20260911.txt
+
+To bind the plus (+) and minus (-) keys on your number pad to control volume in the i3 window manager, you
+need to use their X11 keysym names: KP_Add and KP_Subtract.  Open your i3 configuration file (usually located
+
+at ~/.config/i3/config) and add the following lines depending on your audio system:
+For PulseAudio / PipeWire (Recommended)
+Most modern Linux distributions use pactl for audio control.
+
+[i3config]
+# Raise volume (Numpad +)
+bindcode KP_Add exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# Lower volume (Numpad -)
+bindcode KP_Subtract exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+For ALSA
+If your system relies strictly on ALSA, use amixer instead:
+
+[i3config]
+# Raise volume (Numpad +)
+bindcode KP_Add exec --no-startup-id amixer -q sset Master 5%+
+
+# Lower volume (Numpad -)
+bindcode KP_Subtract exec --no-startup-id amixer -q sset Master 5%-
+
+Key Steps to Apply Changes
+  * Save the configuration file.
+  * Restart i3 in place by pressing Mod4 + Shift + r (or Mod1 + Shift + r, depending on your modifier key).
+
+
+---
+

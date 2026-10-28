@@ -1,0 +1,6 @@
+gregor.redelonghi@cygwin-en ~/DRPBX_ODPRT
+
+for DF in $(find * -maxdepth 1 -type d -iname "_*"); do echo mkdir -p ~/BRISI/20220408/$DF; done
+for DF in $(find * -maxdepth 1 -type d -iname "_*"); do mkdir -p ~/BRISI/20220408/$DF; done
+for DF in $(find _*/ -iname "*.txt" | head -n100); do echo cp -rfv $DF ~/BRISI/20220408/$DF; done
+for DF in $(find _*/ -iname "*.txt" | head -n100); do cp -rfv $DF ~/BRISI/20220408/$DF; done

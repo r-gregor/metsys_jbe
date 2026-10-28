@@ -1,0 +1,216 @@
+    1  sudo apt-get update
+    2  sudo apt-get upgrade
+    3  sudo apt-cache search exfat
+    4  sudo apt-get install exfat-fuse exfat-utils
+    5  sudo apt-cache search ntfs
+    6  sudo apt-cache search ntfs | grep ntfs
+    7  sudo apt-get install ntfs-3g ntfs-config
+    8  rsync
+    9  cd /home/
+   10  ls
+   11  ll
+   12  cd
+   13  exit
+   14  cd .thunderbird/
+   15  ls
+   16  df
+   17  gparted
+   18  sudo apt install gparted
+   19  ll
+   20  cp -rv 3cuyrkqp.default/ 3cuyrkqp.default.ORIGINAL
+   21  ll
+   22  rm -r 3cuyrkqp.default/*
+   23  ll
+   24  cp -r /media/rgregor/B1_2_EXT4/UPGRADE_20190121/PROFILES/rgregor/dot_thunderbird/* ./3cuyrkqp.default/
+   25  plank
+   26  sudo apt install plank
+   27  sudo chown -R tadeja: /media/tadeja/*
+   28  cd /media/tadeja/
+   29  ls
+   30  exit
+   31  cd /media/tadeja/
+   32  su
+   33  su tadeja
+   34  exit
+   35  sudo chown -R tadeja: /media/rgregor/B1_2_EXT4/UPGRADE_20190121/PROFILES/tadeja
+   36  ll /media/rgregor/B1_2_EXT4/UPGRADE_20190121/PROFILES/tadeja
+   37  cd ..
+   38  ll
+   39  cd tadeja/
+   40  ll
+   41  c
+   42  cd
+   43  exit
+   44  sudo chown -R tadeja: ~/.thunderbird/
+   45  exit
+   46  cd .thunderbird/
+   47  ll
+   48  ll /home/tadeja/.thunderbird/
+   49  sudo ll /home/tadeja/.thunderbird/
+   50  sudo ls -l /home/tadeja/.thunderbird/
+   51  sudo chown -R rgregor: ./.thunderbird
+   52  exit
+   53  cd .thunderbird/
+   54  ll
+   55  cd 3cuyrkqp.default
+   56  ll
+   57  sudo chown -R rgregor: ./*
+   58  ll
+   59  cd
+   60  sudo apt-cache search thunderbird
+   61  sudo apt-cache search thunderbird | grep thunderbird
+   62  ll
+   63  tar -xvzf 170745-AshOS-Dark.tar.gz 
+   64  sudo tar -xvzf 170745-AshOS-Dark.tar.gz 
+   65  sudo tar -xvjf 170745-AshOS-Dark.tar.gz 
+   66  rm 170745-AshOS-Dark.tar.gz 
+   67  ll
+   68  unzip
+   69  ll
+   70  zip
+   71  unzip
+   72  man unzip
+   73  ll
+   74  unzip
+   75  ll
+   76  gunzip 170745-AshOS-Dark.tar.gz 
+   77  sudo apt-cache search ashos
+   78  cd /media/rgregor/B1_2_EXT4/
+   79  ll
+   80  cd rgregor_HP/
+   81  ll
+   82  cd home/
+   83  ll
+   84  cd rgregor/
+   85  ll
+   86  cd .themes/AshOS-Dark-2.0/
+   87  ll
+   88  cd ..
+   89  cp -r AshOS-Dark-2.0/ ~/.themes
+   90  cd ~/.themes
+   91  ll
+   92  cp -r /media/rgregor/B1_2_EXT4/rgregor_HP/home/rgregor/.themes/AshOS-Dark-2.0 ./
+   93  ll
+   94  sudo add-apt-repository ppa:noobslab/icons
+   95  sudo apt-get update
+   96  sudo apt-get install shadow-icon-theme
+   97  sudo mv /usr/share/icons/Shadow/scalable/places /usr/share/icons/Shadow/scalable/round_places
+   98  alias mv='mv -v'
+   99  sudo mv /usr/share/icons/Shadow/scalable/square_places /usr/share/icons/Shadow/scalable/places
+  100  sudo mv /usr/share/icons/Shadow/scalable/mimetypes /usr/share/icons/Shadow/scalable/round_mimetypes
+  101  sudo mv /usr/share/icons/Shadow/scalable/square_mimetypes /usr/share/icons/Shadow/scalable/mimetypes
+  102  sudo mv /usr/share/icons/Shadow/scalable/places /usr/share/icons/Shadow/scalable/round_places
+  103  ll /usr/share/icons/Shadow/scalable/
+  104  sudo mv /usr/share/icons/Shadow/scalable/round_mimetypes /usr/share/icons/Shadow/scalable/mimetypes
+  105  find -iname "*plank*"
+  106  cd ..
+  107  find -iname "*plank*"
+  108  cd ..
+  109  find -iname "*plank*"
+  110  ll .config/autostart/
+  111  cd .config/autostart/
+  112  ll
+  113  mv Plank\ dock.desktop plank.desktop
+  114  mousepad plank.desktop 
+  115  exit
+  116  sudo add-apt-repository ppa:noobslab/icons2
+  117  sudo apt-get update
+  118  sudo apt install revival-icons
+  119  sudo apt-cache search vlc
+  120  sudo apt-get install vlc
+  121  df
+  122  wdf
+  123  watch -d -n1 df
+  124  ll
+  125  lss
+  126  ls
+  127  exit
+  128  sudo ln -s /home/rgregor/majfajls/FILMCKI/iz_KORUZE/Movies/* Movies/
+  129  cd Movies/
+  130  ll
+  131  lss
+  132  ll
+  133  exit
+  134  ll
+  135  cd
+  136  cd /media/rgregor/B1_2_EXT4/
+  137  ll
+  138  cd
+  139  mount
+  140  sudo umount -v /dev/sdb*
+  141  exit
+  142  rm -r ~/.thunderbird/3cuyrkqp.default/*
+  143  ll ~/.thunderbird/3cuyrkqp.default/*
+  144  ll ~/.thunderbird/3cuyrkqp.default/
+  145  rm -v ~/.thunderbird/3cuyrkqp.default/.parentlock 
+  146  cp -rv 67qqpgzh.default/* ~/.thunderbird/3cuyrkqp.default/
+  147  cd
+  148  exit
+  149  ll
+  150  sudo mv {,_STARO_}rgregor_HP
+  151  ll
+  152  cd _STARO_rgregor_HP/
+  153  ll
+  154  cd home/rgregor/
+  155  ll
+  156  ls .f*
+  157  ls
+  158  ls -a
+  159  cd
+  160  cd /etc/fonts/
+  161  ls
+  162  cd
+  163  cd majfajls/METSYS-xubuntu-14-4/
+  164  ls
+  165  ls | grep -i font
+  166  ll
+  167  ls | grep kodi
+  168  cd ..
+  169  l
+  170  ll
+  171  lss
+  172  ls
+  173  cd
+  174  find -type f -iname "*kodi*"
+  175  exit
+  176  find -type f -iname "*kodi*"
+  177  sudo mkdir /opt/popcorn-time
+  178  cd /opt/popcorn-time/
+  179  ll
+  180  ll
+  181  sudo cp -rv Popcorn-Time-0.3.10-Linux-64/* /opt/popcorn-time/
+  182  sudo ln -sf /opt/popcorn-time/Popcorn-Time /usr/bin/popcorn-time
+  183  sudo nano /usr/share/applications/popcorntime.desktop
+  184  sudo wget -qO /opt/popcorn-time/popcorntime.png goo.gl/wz8ifr
+  185  history
+  186  find -iname "*popcorn*"
+  187  mousepad ODPRTO/_TXT/popcorn-time_install-on-debian-9_20180227.txt
+  188  mousepad ODPRTO/_TXT/howto_install-popcorn-time-movie-player-on-ubuntu-18-04_20180517.txt
+  189  cd /opt/popcorn-time/
+  190  ll
+  191  ./Popcorn-Time 
+  192  sudo ./Popcorn-Time 
+  193  sudo apt-cache search libgconf | grep libgconf
+  194  sudo apt-get install libgconf-2-4
+  195  history
+  196  exit
+  197  ll
+  198  exit
+  199  cd majfajls/coding/
+  200  ll
+  201  cd PYTHON_d/PYTHON_d_testing/
+  202  ll
+  203  ./dates_testing_20171105.py 
+  204  cd
+  205  cd majfajls/METSYS_xubuntu_18-04/
+  206  cd ..
+  207  cd METSYS-xubuntu-14-4/
+  208  ls | grep print
+  209  ll
+  210  cd ..
+  211  find -type f -iname "*print*" -o -iname "*epson*"
+  212  find -type f -iname "*printe*" -o -iname "*epson*"
+  213  sudo apt-cache search dropbox
+  214  sudo apt-get install thunar-dropbox-plugin
+  215  history
+  216  history >> ~/majfajls/METSYS_xubuntu_18-04/history_d_20190121.txt

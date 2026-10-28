@@ -1,0 +1,41 @@
+vim fname-dname-manipulations-en/fname-underscores-to-hypens-no-confirm-en
+cpi ~/majstaf/majbin/fname-dname-manipulations-en/fname-underscores-to-hypens-no-confirm-en $EMBIN/fname-dname-manipulations-en/
+chmod 755 fname-underscores-to-hypens-no-confirm-en
+softlink1-fname-to-ulb fname-underscores-to-hypens-no-confirm-en
+---
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+fname-underscores-to-hypens-en zig_what-is-string-literal_20250407.txt
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in $(find -type f -iname "*_*"); do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in $(ls debian-12*); do echo $FFF; done
+for FFF in $(ls debian-12*); do echo mv $FFF ${FFF//debian-12/debian12}; done
+for FFF in $(ls debian-12*); do mv $FFF ${FFF//debian-12/debian12}; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in $(find -type f -iname "*_*"); do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in *; do mv "$FFF" "${FFF// /-}"; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+fname-underscores-to-hypens-no-confirm-en js_return-multiple-values_20220803.txt
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in *; do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in $(ls -1  | grep -v "^_"); do echo $FFF; done
+for FFF in $(ls -1  | grep -v "^_"); do fname-underscores-to-hypens-no-confirm-en $FFF; done
+mv powerline-howto-vim-tmux-install-01-20161115.txt vim-powerline-howto-tmux-install-01-20161115.txt
+for FFF in _vim_*; do echo $FFF ${FFF//_vim_/custom_vim_}; done
+for FFF in _vim_*; do mv -v $FFF ${FFF//_vim_/custom_vim_}; done
+for FFF in $(find * -maxdepth 0 -type f -not -name "_*"); do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in $(find * -maxdepth 0 -type f -not -name "_*"); do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in $(find * -maxdepth 0 -type f -not -name "_*"); do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in $(find * -maxdepth 0 -type f -not -name "_*"); do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in $(find * -maxdepth 0 -type f -not -name "_*"); do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in _vim_*; do mv -v $FFF ${FFF//_vim_/custom_vim_}; done
+for FFF in $(find * -maxdepth 0 -type f -not -name "_*"); do fname-underscores-to-hypens-no-confirm-en $FFF; done
+for FFF in $(find * -maxdepth 0 -type f -not -name "_*"); do fname-underscores-to-hypens-no-confirm-en $FFF; done

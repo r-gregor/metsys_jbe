@@ -1,0 +1,3 @@
+Dark Glass dock theme for plank dock.
+
+to use the theme simply copy the folder into "/home/--enter your path name--/.local/share/plank/theme" directory. It would be really helpful you guys leave a review, thanks.

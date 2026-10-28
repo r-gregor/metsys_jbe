@@ -1,0 +1,36 @@
+./.alseg/MAC-addresses.txt
+10-1F-74-F2-4E-89	Eth LAN of HPLPT
+D0-DF-9A-E9-06-C7	WIFI of HPLPT	
+20-16-D8-B1-6B-2D	lnxmark - wifi	
+20-6A-8A-F3-CE-F9	LAN - lnxmark	
+28-5A-EB-13-C5-88	TADI_WIFI-IPHONE 
+BC-44-86-B9-72-71	ZALA-SAMSUNG	
+BC-44-86-B9-72-9F	MARK-SAMSUNG	
+E0-CB-EE-2A-8C-8E	GREGEC-SAMSUNG
+
+
+fixed IP-s:
+192.168.1.20	00:1a:d0:16:5e:0f	Albis Technologies AG (AMIS TV)
+192.168.1.22	b8:27:eb:f4:1a:77	RPi - MALINA1 (PRINT SERVER)
+192.168.1.100	b0:48:7a:d0:9c:c4	TP-LINK (wifi hot-spot)
+192.168.1.254	78:8c:54:02:0e:0f	Enkom Technologies Ltd. WAN-modem (ROUTER)
+192.168.1.26	bc:47:60:a3:65:90	Samsung Electronics Co.,Ltd (GALAXY TAB)
+
+~~~~~~~~~~~~~~~~~~~~~~~
+./majfajls/_STARO_/METSYS/MAC-addresses.txt
+10-1F-74-F2-4E-89	Eth LAN of HPLPT
+D0-DF-9A-E9-06-C7	WIFI of HPLPT	
+20-16-D8-B1-6B-2D	lnxmark - wifi	
+20-6A-8A-F3-CE-F9	LAN - lnxmark	
+28-5A-EB-13-C5-88	TADI_WIFI-IPHONE 
+BC-44-86-B9-72-71	ZALA-SAMSUNG	
+BC-44-86-B9-72-9F	MARK-SAMSUNG	
+E0-CB-EE-2A-8C-8E	GREGEC-SAMSUNG
+
+
+fixed IP-s:
+192.168.1.20	00:1a:d0:16:5e:0f	Albis Technologies AG (AMIS TV)
+192.168.1.22	b8:27:eb:f4:1a:77	RPi - MALINA1 (PRINT SERVER)
+192.168.1.100	b0:48:7a:d0:9c:c4	TP-LINK (wifi hot-spot)
+192.168.1.254	78:8c:54:02:0e:0f	Enkom Technologies Ltd. WAN-modem (ROUTER)
+192.168.1.26	bc:47:60:a3:65:90	Samsung Electronics Co.,Ltd (GALAXY TAB)

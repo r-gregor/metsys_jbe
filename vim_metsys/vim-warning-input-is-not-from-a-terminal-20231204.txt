@@ -1,0 +1,33 @@
+filename: vim_warning-input-is-not-from-a-terminal_20231204.txt
+https://unix.stackexchange.com/questions/732092/vim-warning-input-is-not-from-a-terminal
+
+Vim: Warning: Input is not from a terminal
+
+   I am not an advanced linux user and I have a hard time wrapping my head around some new concepts. I
+   recently read about xargs command and wanted to test some examples. One of them confused me like
+   hell.
+
+   The theory was this: If I can start editing a non existent file in vim (with vim someFile) and create
+   it only after it is edited (with :qw) then I could use echo and xargs to do the same job:
+
+   echo "someFile" | xargs vim
+
+   xargs will get the output of echo from stdout and will pass it as an argument to vim. It appears
+   however this leads to the following error -
+
+     Vim: Warning: Input is not from a terminal
+
+   The strangest thing is that a second after the error is printed vim will open the file but when I
+   save it and exit vim my terminal is totally bugged. I need to close the tmux pane in order to fix the
+   terminal. After all this the file will be created and the content will be as expected. It is obvious
+   something is not right here but I have absolutely no idea why.
+
+***
+   The reason this is happening is that xargs is not opening your tty in the child process.
+
+   This worked for me:
+echo /etc/hosts | xargs -o vim
+
+
+---
+

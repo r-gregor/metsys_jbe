@@ -1,0 +1,21 @@
+--- LIGHT ---
+Flatland	5+
+Sundried	5+
+--- DARK ---
+Alucard		5+
+Atom		5+
+ayu_mirage	5+
+Blazer		5+
+Bright_Lights	5+
+Duotone Dark	5+
+Hardcore	5+
+Harper		5+
+Jellybeans	5+
+LiquidCarbonTransparent	5+
+Molokai		5++
+Pnevma		5?
+Square		5+
+Wez		5+++
+Wombat		5++
+Wryan		5+
+

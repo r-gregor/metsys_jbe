@@ -1,0 +1,11 @@
+http://www.everydaylinuxuser.com/2015/03/setting-up-raspberry-pi-2.html
+-------------------------------------------------------------------------------------
+Checkup 20150520:
+- from malina1 SD card: - /etc/network/interfaces
+                        - saned.conf
+                        - how to mount SD image to local folder on linux ...
+
+LP
+-------------------------------------------------------------------------------------
+
+

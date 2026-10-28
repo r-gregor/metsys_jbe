@@ -1,0 +1,14 @@
+Note: The Places icons are round by default, if you want to replace them with Square Places then run following commands:
+Terminal Commands:
+sudo mv /usr/share/icons/Shadow/scalable/places /usr/share/icons/Shadow/scalable/round_places
+sudo mv /usr/share/icons/Shadow/scalable/square_places /usr/share/icons/Shadow/scalable/places
+
+If you want to revert back to Round Places then run following commands:
+Terminal Commands:
+sudo mv /usr/share/icons/Shadow/scalable/places /usr/share/icons/Shadow/scalable/square_places
+sudo mv /usr/share/icons/Shadow/scalable/round_places /usr/share/icons/Shadow/scalable/places
+
+That's it
+
+
+sudo mv /usr/share/icons/Shadow/scalable/places /usr/share/icons/Shadow/scalable/round_places && sudo mv /usr/share/icons/Shadow/scalable/square_places /usr/share/icons/Shadow/scalable/places

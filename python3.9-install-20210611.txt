@@ -1,0 +1,27 @@
+Install latest Python so that contains tkinter GUI library. (20210611)
+
+A - download latest stable python from https://www.python.org/ (Python3.9.5 --> Python3.9.5.tar.xz)
+  -> extract ... 
+
+B - In extracted Python3.9.5 directory run in terminal:
+$> sudo apt install build-essential checkinstall
+$> sudo apt install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
+$> sudo ./configure --enable-optimizations
+$> sudo make altinstall
+$> /usr/local/bin/python3.9 -m pip install --upgrade pip
+$> /usr/local/bin/python3.9 -m pip install requests numpy
+$> /usr/local/bin/python3.9 -m pip install virtualenv
+
+### Don't do this: ###
+# 	$> cd /usr/bin/
+# 	$> sudo ln -s /usr/local/bin/python3.9 /usr/bin/python3.9
+# 	$> sudo rm python3
+# 	$> sudo ln -s python3.9 python3
+### SYSTEM EXPECTS python3 to point to system install of python3=python3.8 IF THAT IS CHANGED ###
+### UPDATES DON'T WORK (Error) !!! ###
+### Instead: alias new python3 to python3.9.5 !!! ###
+
+C - IN ORTHER FOR pyinstaller TO WORK - python3.9-dev NEEDED TO BE INSTALLED:
+/usr/local/bin/python3.9 -m pip install pyinstaller
+sudo apt install python3-dev # [ Package: python3.9-dev (3.9.2-1); Header files and a static library for Python (v3.9) ]
+

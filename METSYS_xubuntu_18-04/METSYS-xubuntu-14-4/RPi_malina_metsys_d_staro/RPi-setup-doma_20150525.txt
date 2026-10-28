@@ -1,0 +1,112 @@
+﻿source-1: DBOR/RPi-Printer-Server_Scanner-Server_20140318.txt
+source-2: DBOR/saned_raspberry-pi-print-scanner-server_5P_20141124.txt
+source-3: DBOR/RPi_as-file-and-print-server_01_20150520.txt (avahi - zeroconf)
+source-4: DOBR/raspberry-pi-changing-the-hostname_20140131.txt (chang hostname)
+
+1 - update/upgrade RPi-server
+	>sudo apt-get update
+	>sudo apt-get upgrade
+
+2 - install CUPS on RPi-server
+	>sudo apt-get install cups
+	>sudo usermod -a -G lpadmin pi
+	
+	>sudo cp /etc/cups/cupsd.conf /etc/cups/cupsd.conf.ORIGINAL
+	>sudo vim /etc/cups/cupsd.conf ...
+		# Listen localhost:631
+		Listen *:631
+	
+	>sudo cupsctl --remote-admin
+	>sudo cupsctl --remote-any
+	>sudo /etc/init.d/cups restart
+
+3 - add printer on clients
+	browser: https://<RPi-server-ip-address>:631 ...
+		Don't worry about the certificate warning. It's self signed so your browser will rightfully
+		warn you about it. Now click on Administration and then on Add Printer. You should be prompted
+		with a user and password. Of course, use "pi" as the user and "raspberry" as the password
+		(or whatever new password you chose). You should see a list of local printers. Press continue,
+		review the information and make sure you check "Share this printer". Choose a make and model
+		and finally add the printer.
+		
+4 - install scanner on RPi-server
+	>scanimage -L	# test if sane is installed (usually with CUPS)
+	>scanimage --format=tiff > ~/myimage.tiff 	# test if scanner works
+	>sudo cp /etc/sane.d/saned.conf /etc/sane.d/saned.conf.ORIGINAL
+	>sudo vim /etc/sane.d/saned.conf
+		192.168.1.0/24				# add this line
+	
+	>sudo cp /etc/default/saned /etc/default/saned.ORIGINAL
+	>sudo vim /etc/default/saned			# make sure SANE starts by default
+		RUN=yes					# change this line to yes
+
+	### IMPORTANT add saned to group "lp" and reboot:
+	>sudo usermod -a -G saned
+
+
+5 - add printer to clients
+	>sudo apt-get update
+	>sudo apt-get install hplip
+		Then navigate to System settings --> Printers (or search for "printers"), and then select Add
+		printer. Your computer should automatically detect the printer shared by the print server over
+		the network. Click next and follow the steps to add the printer - you will be asked to add the
+		driver like you did in CUPS. When you are finished, click Maintenance --> Print Test Page to
+		check everything works as expected.
+		
+5 - add scanner to clients		
+	>sudo apt-get update
+	>sudo apt-get install xsane skanlite
+	
+	>sudo cp /etc/sane.d/net.conf /etc/sane.d/net.conf.ORIGINAL
+	>vim /etc/sane.d/net.conf
+		connect_timeout = 60			# uncomment this line
+		192.168.1.XX				# add RPi-server-ip-address to file
+
+		
+--------------------------------------------------------------------------------------------------------------
+OPTIONALLY
+
+6 - install zeroconf
+	>sudo apt-get install avahi-daemon
+	>sudo insserv avahi-daemon			# make sure it is start as a server
+	>sudo nano /etc/avahi/services/multiple.service
+		Now just make sure the server also knows what to advertise. This is defined in an XML file.
+		A simple example would be:
+			<?xml version="1.0" standalone='no'?>
+			<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+			<service-group>
+			<name replace-wildcards="yes">%h</name>
+			<service>
+			<type>_device-info._tcp</type>
+			<port>0</port>
+			<txt-record>model=RaspberryPi</txt-record>
+			</service>
+			<service>
+			type>_ssh._tcp</type>
+			port>22</port>
+			</service>
+			</service-group>
+		
+		You should now be able to refer to your Raspberry Pi by its ZeroConfig network name. That is
+		always the machine name (hostname) plus the extension “.local”. So the complete name, if you
+		didn’t change the host name, should be “hostname.local”.
+
+	>sudo apt-get install avahi-utils
+	>avahi-browse -at
+			At the very least, this enables you to see if other ZeroConfig service announcements
+			can be seen from this machine by entering: avahi-browse -at
+ 
+--------------------------------------------------------------------------------------------------------------   
+7 - change the hostname
+	>sudo cp /etc/hosts /etc/hosts.ORIGINAL
+	>sudo vim /etc/hosts
+		127.0.1.1	<new hostname = malina1>
+
+	>sudo cp /etc/hostname /etc/hostname.ORIGINAL
+	>sudo vim /etc/hostname
+		# raspberrypi --> change to:
+		malina1
+		
+	>/etc/init.d/hostname.sh			# commit the changes (or reboot)
+
+	

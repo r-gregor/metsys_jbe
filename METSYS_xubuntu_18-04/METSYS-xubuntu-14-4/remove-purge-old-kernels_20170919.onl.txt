@@ -1,0 +1,20 @@
+# dpkg --list | grep linux-headers
+OUTPUT:
+ii  linux-headers-4.4.0-34                      4.4.0-34.53~14.04.1                                all          Header files related to Linux kernel version 4.4.0
+ii  linux-headers-4.4.0-34-generic              4.4.0-34.53~14.04.1                                amd64        Linux kernel headers for version 4.4.0 on 64 bit x86 SMP
+ii  linux-headers-4.4.0-67                      4.4.0-67.88~14.04.1                                all          Header files related to Linux kernel version 4.4.0
+ii  linux-headers-4.4.0-67-generic              4.4.0-67.88~14.04.1                                amd64        Linux kernel headers for version 4.4.0 on 64 bit x86 SMP
+ii  linux-headers-4.4.0-71                      4.4.0-71.92~14.04.1                                all          Header files related to Linux kernel version 4.4.0
+ii  linux-headers-4.4.0-71-generic              4.4.0-71.92~14.04.1                                amd64        Linux kernel headers for version 4.4.0 on 64 bit x86 SMP
+ii  linux-headers-4.4.0-72                      4.4.0-72.93~14.04.1                                all          Header files related to Linux kernel version 4.4.0
+ii  linux-headers-4.4.0-72-generic              4.4.0-72.93~14.04.1                                amd64        Linux kernel headers for version 4.4.0 on 64 bit x86 SMP
+...
+
+
+# for N in 67 71 72 75 78 79; do sudo apt-get --purge remove linux-image-4.4.0-${N}; done
+
+# for N in 67 71 72 75 78 79; do sudo apt-get --purge remove linux-headers-4.4.0-${N}-*; done
+
+# sudo update-grub2
+
+# sudo reboot

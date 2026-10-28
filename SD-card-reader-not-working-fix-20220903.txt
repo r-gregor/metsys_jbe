@@ -1,0 +1,18 @@
+from: http://kaustubhghanekar.blogspot.com/2013/04/making-you-sd-card-work-with-your.html
+
+Fix SD card reader not working:
+
+1 - Test if controllers detected:
+$> lspci
+...
+24:00.0 System peripheral: JMicron Technology Corp. SD/MMC Host Controller (rev 30)
+24:00.2 SD Host controller: JMicron Technology Corp. Standard SD Host Controller (rev 30)
+24:00.3 System peripheral: JMicron Technology Corp. MS Host Controller (rev 30))))
+...
+
+
+2 - Then become root and type:
+#> echo tifm_sd >> /etc/modules
+#> echo mmc_block >> /etc/modules
+---
+

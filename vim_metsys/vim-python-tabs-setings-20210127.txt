@@ -1,0 +1,10 @@
+Vim: change default tab/indent settings for python files:
+change the file:
+	/usr/share/vim/vim82/ftplugin/python.vim
+
+	... the change:
+		" CHANGED 20210127 
+		" setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=8
+		setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+		         -----------                            ---------
+

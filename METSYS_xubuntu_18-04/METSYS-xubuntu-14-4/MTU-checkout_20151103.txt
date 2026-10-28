@@ -1,0 +1,131 @@
+$> rgregor@hp-rgregor [/home/rgregor] 
+$> for NNN in $(seq 1472 -2 1452); do echo -e "\n--- ping at MTU=$NNN ---"; ping -M do -s $NNN howtoforge.com; done
+
+--- ping at MTU=1472 ---
+PING howtoforge.com (104.25.204.33) 1472(1500) bytes of data.
+ping: local error: Message too long, mtu=1492
+ping: local error: Message too long, mtu=1492
+ping: local error: Message too long, mtu=1492
+^C
+--- howtoforge.com ping statistics ---
+3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2016ms
+
+
+--- ping at MTU=1470 ---
+PING howtoforge.com (104.25.204.33) 1470(1498) bytes of data.
+ping: local error: Message too long, mtu=1492
+ping: local error: Message too long, mtu=1492
+ping: local error: Message too long, mtu=1492
+^C
+--- howtoforge.com ping statistics ---
+3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2000ms
+
+
+--- ping at MTU=1468 ---
+PING howtoforge.com (104.25.204.33) 1468(1496) bytes of data.
+ping: local error: Message too long, mtu=1492
+ping: local error: Message too long, mtu=1492
+ping: local error: Message too long, mtu=1492
+^C
+--- howtoforge.com ping statistics ---
+3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 1999ms
+
+
+--- ping at MTU=1466 ---
+PING howtoforge.com (104.25.204.33) 1466(1494) bytes of data.
+ping: local error: Message too long, mtu=1492
+ping: local error: Message too long, mtu=1492
+ping: local error: Message too long, mtu=1492
+^C
+--- howtoforge.com ping statistics ---
+3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2000ms
+
+
+--- ping at MTU=1464 ---
+PING howtoforge.com (104.25.204.33) 1464(1492) bytes of data.
+1472 bytes from howtoforge.com (104.25.204.33): icmp_seq=1 ttl=60 time=66.6 ms
+1472 bytes from howtoforge.com (104.25.204.33): icmp_seq=2 ttl=60 time=67.2 ms
+1472 bytes from howtoforge.com (104.25.204.33): icmp_seq=3 ttl=60 time=67.6 ms
+1472 bytes from howtoforge.com (104.25.204.33): icmp_seq=4 ttl=60 time=65.4 ms
+1472 bytes from howtoforge.com (104.25.204.33): icmp_seq=5 ttl=60 time=68.0 ms
+1472 bytes from howtoforge.com (104.25.204.33): icmp_seq=6 ttl=60 time=66.4 ms
+^C
+--- howtoforge.com ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5009ms
+rtt min/avg/max/mdev = 65.400/66.886/68.023/0.908 ms
+
+--- ping at MTU=1462 ---
+PING howtoforge.com (104.25.204.33) 1462(1490) bytes of data.
+1470 bytes from howtoforge.com (104.25.204.33): icmp_seq=1 ttl=60 time=67.9 ms
+1470 bytes from howtoforge.com (104.25.204.33): icmp_seq=2 ttl=60 time=64.9 ms
+1470 bytes from howtoforge.com (104.25.204.33): icmp_seq=3 ttl=60 time=68.7 ms
+1470 bytes from howtoforge.com (104.25.204.33): icmp_seq=4 ttl=60 time=68.1 ms
+1470 bytes from howtoforge.com (104.25.204.33): icmp_seq=5 ttl=60 time=64.9 ms
+1470 bytes from howtoforge.com (104.25.204.33): icmp_seq=6 ttl=60 time=68.1 ms
+^C
+--- howtoforge.com ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5010ms
+rtt min/avg/max/mdev = 64.922/67.145/68.769/1.577 ms
+
+--- ping at MTU=1460 ---
+PING howtoforge.com (104.25.204.33) 1460(1488) bytes of data.
+1468 bytes from howtoforge.com (104.25.204.33): icmp_seq=1 ttl=60 time=65.0 ms
+1468 bytes from howtoforge.com (104.25.204.33): icmp_seq=2 ttl=60 time=67.8 ms
+1468 bytes from howtoforge.com (104.25.204.33): icmp_seq=3 ttl=60 time=64.2 ms
+1468 bytes from howtoforge.com (104.25.204.33): icmp_seq=4 ttl=60 time=65.9 ms
+1468 bytes from howtoforge.com (104.25.204.33): icmp_seq=5 ttl=60 time=63.2 ms
+^C
+--- howtoforge.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4008ms
+rtt min/avg/max/mdev = 63.204/65.264/67.819/1.571 ms
+
+--- ping at MTU=1458 ---
+PING howtoforge.com (104.25.204.33) 1458(1486) bytes of data.
+1466 bytes from howtoforge.com (104.25.204.33): icmp_seq=1 ttl=60 time=63.5 ms
+1466 bytes from howtoforge.com (104.25.204.33): icmp_seq=2 ttl=60 time=66.6 ms
+1466 bytes from howtoforge.com (104.25.204.33): icmp_seq=3 ttl=60 time=66.5 ms
+1466 bytes from howtoforge.com (104.25.204.33): icmp_seq=4 ttl=60 time=68.9 ms
+1466 bytes from howtoforge.com (104.25.204.33): icmp_seq=5 ttl=60 time=68.6 ms
+1466 bytes from howtoforge.com (104.25.204.33): icmp_seq=6 ttl=60 time=68.3 ms
+1466 bytes from howtoforge.com (104.25.204.33): icmp_seq=7 ttl=60 time=67.0 ms
+^C
+--- howtoforge.com ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6010ms
+rtt min/avg/max/mdev = 63.514/67.102/68.951/1.745 ms
+
+--- ping at MTU=1456 ---
+PING howtoforge.com (104.25.205.33) 1456(1484) bytes of data.
+1464 bytes from 104.25.205.33: icmp_seq=1 ttl=60 time=67.9 ms
+1464 bytes from 104.25.205.33: icmp_seq=2 ttl=60 time=66.8 ms
+1464 bytes from 104.25.205.33: icmp_seq=3 ttl=60 time=66.4 ms
+1464 bytes from 104.25.205.33: icmp_seq=4 ttl=60 time=68.0 ms
+1464 bytes from 104.25.205.33: icmp_seq=5 ttl=60 time=66.4 ms
+1464 bytes from 104.25.205.33: icmp_seq=6 ttl=60 time=66.9 ms
+^C
+--- howtoforge.com ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5009ms
+rtt min/avg/max/mdev = 66.433/67.111/68.021/0.732 ms
+
+--- ping at MTU=1454 ---
+PING howtoforge.com (104.25.205.33) 1454(1482) bytes of data.
+1462 bytes from howtoforge.com (104.25.205.33): icmp_seq=1 ttl=60 time=65.4 ms
+1462 bytes from howtoforge.com (104.25.205.33): icmp_seq=2 ttl=60 time=65.9 ms
+1462 bytes from howtoforge.com (104.25.205.33): icmp_seq=3 ttl=60 time=63.7 ms
+1462 bytes from howtoforge.com (104.25.205.33): icmp_seq=4 ttl=60 time=67.2 ms
+1462 bytes from howtoforge.com (104.25.205.33): icmp_seq=5 ttl=60 time=67.1 ms
+^C
+--- howtoforge.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4008ms
+rtt min/avg/max/mdev = 63.732/65.920/67.226/1.318 ms
+
+--- ping at MTU=1452 ---
+PING howtoforge.com (104.25.205.33) 1452(1480) bytes of data.
+1460 bytes from howtoforge.com (104.25.205.33): icmp_seq=1 ttl=60 time=66.5 ms
+1460 bytes from howtoforge.com (104.25.205.33): icmp_seq=2 ttl=60 time=67.0 ms
+1460 bytes from howtoforge.com (104.25.205.33): icmp_seq=3 ttl=60 time=66.0 ms
+1460 bytes from howtoforge.com (104.25.205.33): icmp_seq=4 ttl=60 time=63.5 ms
+1460 bytes from howtoforge.com (104.25.205.33): icmp_seq=5 ttl=60 time=66.8 ms
+^C
+--- howtoforge.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4007ms
+rtt min/avg/max/mdev = 63.574/66.019/67.092/1.302 ms

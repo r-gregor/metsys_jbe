@@ -1,0 +1,105 @@
+filename: screen-chtsht-20260407.txt
+https://linuxize.com/cheatsheet/screen/
+
+screen Cheatsheet
+Feb 12, 2026
+
+Quick reference for GNU Screen sessions, windows, detach/attach, and common key bindings
+
+GNU Screen is a terminal multiplexer that lets you keep shell sessions running in the background, reconnect
+later, and manage multiple windows in one terminal. This cheatsheet covers the most useful commands and key
+bindings.
+
+-------------------------------------------------------------------------------------------------------------
+Start and Exit
+-------------------------------------------------------------------------------------------------------------
+screen                   Start a new screen session
+screen -S work           Start session named work
+screen -ls               List running sessions
+screen -X -S work quit   Stop session work
+exit                     Exit current shell/window
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Attach and Detach
+-------------------------------------------------------------------------------------------------------------
+screen -r                Reattach to the only detached session
+screen -r work           Reattach to named session
+screen -x work           Attach to an already-attached session
+screen -d -r work        Detach elsewhere and reattach here
+Ctrl+a d                 Detach current session
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Prefix and Help
+Default prefix is Ctrl+a
+-------------------------------------------------------------------------------------------------------------
+Ctrl+a                   Enter screen command mode
+Ctrl+a ?                 Show key bindings help
+Ctrl+a :                 Open command prompt
+Ctrl+a "                 Show window list
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Windows
+-------------------------------------------------------------------------------------------------------------
+Ctrl+a c                 Create a new window
+Ctrl+a n                 Next window
+Ctrl+a p                 Previous window
+Ctrl+a Ctrl+a            Switch to last window
+Ctrl+a 0-9               Switch to window by number
+Ctrl+a A                 Rename current window
+Ctrl+a k                 Kill current window
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Navigation and Layout
+-------------------------------------------------------------------------------------------------------------
+Ctrl+a w                 List windows in status line
+Ctrl+a '                 Prompt for window number
+Ctrl+a S                 Split display horizontally
+Ctrl+a |                 Split display vertically
+Ctrl+a Tab               Move between split regions
+Ctrl+a X                 Remove current region
+Ctrl+a Q                 Remove all regions except current
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Copy and Scrollback
+-------------------------------------------------------------------------------------------------------------
+Ctrl+a [                 Enter copy/scrollback mode
+Space                    Start selection (in copy mode)
+Enter                    Copy selection (in copy mode)
+Ctrl+a ]                 Paste copied text
+Ctrl+a H                 Toggle logging to file
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Session Management
+-------------------------------------------------------------------------------------------------------------
+screen -wipe                       Clean dead sessions
+Ctrl+a x                           Lock session
+screen -S work -X stuff 'ls^M'     Send command to session (^M = Enter)
+screen -S work -p 0 -X hardcopy    Save current window output
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Useful Patterns
+-------------------------------------------------------------------------------------------------------------
+screen -dmS job bash -lc 'long-command'    Start detached background job
+screen -D -R                               Reattach if possible, otherwise create
+screen -r work -p 2                        Attach directly to window 2
+screen -L                                  Start session with logging enabled
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Configuration
+-------------------------------------------------------------------------------------------------------------
+~/.screenrc                        User configuration file
+defscrollback 10000                Increase scrollback history
+hardstatus on                      Enable status line
+startup_message off                Disable startup message
+-------------------------------------------------------------------------------------------------------------
+
+---
+

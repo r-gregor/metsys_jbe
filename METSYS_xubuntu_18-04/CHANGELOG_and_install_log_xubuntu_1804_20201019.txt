@@ -1,0 +1,80 @@
+--- 20190123
+2019-01-23 20:10:32 sudo apt-get install exfat-fuse exfat-utils
+2019-01-23 20:10:32 sudo apt-get install ntfs-3g ntfs-config
+2019-01-23 20:10:32 sudo apt install gparted
+2019-01-23 20:10:32 sudo apt install plank
+2019-01-23 20:10:32 sudo apt-get install shadow-icon-theme
+2019-01-23 20:10:32 sudo apt install revival-icons
+2019-01-23 20:10:32 sudo apt-get install vlc
+2019-01-23 20:10:32 sudo apt-get install libgconf-2-4
+2019-01-23 20:10:32 sudo apt-get install python3-pip python3-pyqt5
+2019-01-23 20:10:32 sudo apt-get install thunar-dropbox-plugin
+2019-01-23 20:10:32 sudo apt-get install doublecmd-common
+2019-01-23 20:10:32 sudo apt-get install fonts-hack
+2019-01-23 20:10:32 sudo apt-get install fonts-roboto
+2019-01-23 20:10:32 sudo apt-get install fonts-mononoki
+2019-01-23 20:10:32 sudo apt-get install lsb
+2019-01-23 20:10:32 sudo apt-get install sane sane-utils libsane-extras xsane
+2019-01-23 20:10:32 sudo apt-get install libboost-filesystem1.65.1
+2019-01-23 20:11:59 sudo apt-get install vim
+2019-01-23 20:17:38 sudo apt-get install youtube-dl
+2019-01-23 20:20:06 sudo apt-get install screen lynx arp-scan ufw gufw smartmontools lftp pinta lm-sensors
+2019-01-23 20:22:34 sudo apt-get install sshfs
+2019-01-23 20:29:54 sudo apt-get install gdebi-core
+2019-01-23 20:42:02 sudo apt-get install tmux
+2019-01-23 20:46:44 sudo apt install ncdu
+2019-01-23 20:48:29 sudo apt-get install xclip
+
+--- 20190128
+ 2019-01-28 19:22:21 sudo apt-get install smplayer mpv
+
+ ###	*** upgrade youtube-dl ***
+2019-01-28 20:05:15 sudo apt-get purge youtube-dl
+2019-01-28 20:05:43 sudo apt-get autoremove
+2019-01-28 20:06:26 sudo pip3 install youtube-dl
+
+--- 20190220
+2019-02-20 20:45:23 sudo apt-cache search python3-dev
+2019-02-20 20:45:52 sudo apt-cache show python3-dev
+2019-02-20 20:46:34 pip3 install jupyter
+2019-02-20 20:47:19 jupyter notrbook
+2019-02-20 20:47:42 sudo jupyter notebook
+2019-02-20 20:48:15 sudo apt-get install jupyter-core	??
+2019-02-20 20:49:28 pip3 install notebook
+2019-02-20 20:55:56 echo 'export PATH=$PATH:~/.local/bin/' >> ~/.bashrc
+2019-02-20 21:24:52 sudo python3 -m pip install pandas
+
+---
+[cat history* | grep "pip install" | cut -d' ' -f 4- | sort -k3 | uniq >> ~/majfajls/SEZNAMI/installs_20201019.txt]
+2020-10-08 18:21:16 python3 -m pip install lf
+2020-10-04 21:15:16 python3 -m pip install retext
+2020-10-04 21:13:48 python3 -m pip install --update
+2020-10-04 21:13:59 python3 -m pip install --upgrade
+2020-10-04 21:26:02 python3 -m pip install --upgrade pip
+2020-10-04 21:17:12 sudo -H python3 -m pip install retext
+2020-10-08 18:21:25 sudo python3 -m pip install lf
+2020-10-04 21:16:25 sudo python3 -m pip install retext
+2020-10-04 21:14:08 sudo python3 -m pip install --upgrade
+2020-10-04 21:19:30 sudo python3 -m pip install --upgrade pip
+
+---
+[cat history* | grep -E "apt-*.* install" | cut -d' ' -f 4- | sort -k3 | uniq >> ~/majfajls/SEZNAMI/installs_20201019.txt]
+2020-09-24 16:10:07 sudo apt install awesome dmenu
+2020-09-24 16:16:14 sudo apt install rofi
+2020-10-03 20:24:50 sudo apt install gedit
+2020-09-25 20:27:47 sudo apt install obconf obmenu
+2020-09-24 23:44:21 sudo apt install nitrogen
+2020-10-13 01:19:33 sudo apt-get install cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev libxcb-composite0-dev xcb libxcb-ewmh2
+2020-10-12 18:05:42 sudo apt install bspwm sxhkd
+2020-10-13 01:21:08 sudo apt install ccache
+2020-10-13 01:13:56 sudo apt install cmake
+2020-10-13 18:57:51 sudo apt install htop
+2020-10-08 18:17:38 sudo apt install lfm
+2020-09-25 20:46:43 sudo apt install lxtask
+2020-10-11 16:56:22 sudo apt install neofetch
+2020-09-26 21:35:43 sudo apt install pcmanfm
+2020-10-15 07:42:39 sudo apt install radeontop
+2020-10-08 18:18:20 sudo apt install ranger
+2020-09-26 21:00:27 sudo apt install tint2
+
+---

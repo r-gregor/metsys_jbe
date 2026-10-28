@@ -1,0 +1,4 @@
+export PS1=$'\[\e[1;36m\]\u\[\e[1;31m\]@\[\e[1;32m\]\h:\[\e[1;35m\]\w\[\e[1;31m\]\n\u21aa \[\e[0m\]'
+export PS1=$'\n\[\e[01;38;5;75m\]\w\n$(parse_git_branch)\[\e[1;31m\]\u21AA \[\e[0m\] '
+export export PS1=$'\n\[\e[01;38;5;75m\][\h] \w\n$(parse_git_branch)\[\e[1;31m\]\u21AA \[\e[0m\] '
+

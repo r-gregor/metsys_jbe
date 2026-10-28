@@ -1,0 +1,24 @@
+[0;37mSystem:   [0;37m [0;37mHost:[0;37m hp-rgregor [0;37mKernel:[0;37m 4.4.0-104-generic x86_64 (64 bit) [0;37mDesktop:[0;37m Xfce 4.11.8 [0;37mDistro:[0;37m Ubuntu 14.04 trusty
+[0;37mMachine:  [0;37m [0;37mSystem:[0;37m Hewlett-Packard [0;37mproduct:[0;37m HP ProBook 4730s [0;37mversion:[0;37m A0000C02
+[0;37m          [0;37m [0;37mMobo:[0;37m Hewlett-Packard [0;37mmodel:[0;37m 167C [0;37mversion:[0;37m KBC Version 22.1A
+[0;37m          [0;37m [0;37mBios:[0;37m Hewlett-Packard [0;37mversion:[0;37m 68SRR Ver. F.09 [0;37mdate:[0;37m 05/13/2011
+[0;37mCPU:      [0;37m [0;37mDual core[0;37m Intel Core i5-2430M CPU (-HT-MCP-)[0;37m [0;37mcache:[0;37m 3072 KB [0;37mflags:[0;37m (lm nx sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx)[0;37m 
+[0;37m          [0;37m [0;37mClock Speeds:[0;37m [0;37m1:[0;37m 815.531 MHz[0;37m [0;37m2:[0;37m 898.312 MHz[0;37m [0;37m3:[0;37m 800.156 MHz[0;37m [0;37m4:[0;37m 802.406 MHz[0;37m
+[0;37mGraphics: [0;37m [0;37mCard-1:[0;37m Intel 2nd Generation Core Processor Family Integrated Graphics Controller 
+[0;37m          [0;37m [0;37mCard-2:[0;37m Advanced Micro Devices [AMD/ATI] Seymour [Radeon HD 6400M/7400M Series] 
+[0;37m          [0;37m [0;37mX.Org:[0;37m 1.18.3 [0;37mdrivers:[0;37m ati,radeon,intel (unloaded: fbdev,vesa) [0;37mResolution:[0;37m 1600x900@60.1hz 
+[0;37m          [0;37m [0;37mGLX Renderer:[0;37m Mesa DRI Intel Sandybridge Mobile [0;37mGLX Version:[0;37m 3.0 Mesa 11.2.0[0;37m
+[0;37mAudio:    [0;37m [0;37mCard:[0;37m Intel 6 Series/C200 Series Family High Definition Audio Controller [0;37mdriver:[0;37m snd_hda_intel 
+[0;37m          [0;37m [0;37mSound:[0;37m Advanced Linux Sound Architecture [0;37mver:[0;37m k4.4.0-104-generic
+[0;37mNetwork:  [0;37m [0;37mCard-1:[0;37m Realtek RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller [0;37mdriver:[0;37m r8169 
+[0;37m          [0;37m [0;37mIF:[0;37m eth0 [0;37mstate:[0;37m down [0;37mmac:[0;37m 10:1f:74:f2:4e:89
+[0;37m          [0;37m [0;37mCard-2:[0;37m Qualcomm Atheros AR9285 Wireless Network Adapter (PCI-Express) [0;37mdriver:[0;37m ath9k 
+[0;37m          [0;37m [0;37mIF:[0;37m wlan0 [0;37mstate:[0;37m up [0;37mmac:[0;37m d0:df:9a:e9:06:c7
+[0;37mDrives:   [0;37m [0;37mHDD Total Size:[0;37m 640.1GB (34.3% used) [0;37m1:[0;37m [0;37mid:[0;37m /dev/sda [0;37mmodel:[0;37m ST9640423AS [0;37msize:[0;37m 640.1GB 
+[0;37mPartition:[0;37m [0;37mID:[0;37m / [0;37msize:[0;37m 96G [0;37mused:[0;37m 17G (18%) [0;37mfs:[0;37m ext4 [0;37mID:[0;37m /boot [0;37msize:[0;37m 969M [0;37mused:[0;37m 176M (20%) [0;37mfs:[0;37m ext4 
+[0;37m          [0;37m [0;37mID:[0;37m /home [0;37msize:[0;37m 482G [0;37mused:[0;37m 189G (42%) [0;37mfs:[0;37m ext4 [0;37mID:[0;37m swap-1 [0;37msize:[0;37m 8.89GB [0;37mused:[0;37m 0.00GB (0%) [0;37mfs:[0;37m swap 
+[0;37mRAID:     [0;37m No RAID devices detected - /proc/mdstat and md_mod kernel raid module present
+[0;37mSensors:  [0;37m [0;37mSystem Temperatures: cpu:[0;37m 39.0C [0;37mmobo:[0;37m 38.0C [0;37mgpu:[0;37m N/A 
+[0;37m          [0;37m [0;37mFan Speeds (in rpm): cpu:[0;37m N/A 
+[0;37mInfo:     [0;37m [0;37mProcesses:[0;37m 217 [0;37mUptime:[0;37m 1:18 [0;37mMemory:[0;37m 799.8/7917.3MB[0;37m [0;37mClient:[0;37m Shell (bash) [0;37minxi:[0;37m 1.9.17[0;37m [0;37m
+[0m

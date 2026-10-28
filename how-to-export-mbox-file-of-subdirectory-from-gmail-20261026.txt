@@ -1,0 +1,79 @@
+fname: how-to-export-mbox-file-of-subdirectory-from-gmail-20261026.txt
+
+Q: how to export mbox file of a subfolder from google mail?
+
+AI Overview
+To export an MBOX file for a specific Gmail subfolder or label, use Google Takeout with label selection or
+connect your account via an email client like Mozilla Thunderbird.
+
+Method 1: Using Google Takeout[**1] (Selective Labels/Folders)
+Google Takeout exports Gmail folders as individual .mbox files corresponding to your Gmail labels.
+01. Go to the Google Takeout page and sign in with your Google account.
+02. Click "Deselect all" near the top of the list.
+03. Scroll down to Mail and check the box next to it.
+04. Click the button that says "All mail data included" (or the gray option below Mail).
+05. In the pop-up window, uncheck "All Mail".
+06. Scroll down and check only the specific label or subfolder you want to export. Click OK.
+07. Scroll to the bottom of the page and click Next step.
+08. Choose your delivery method (e.g., Send download link via email), set the file type to .zip, and choose
+    your archive size.
+09. Click Create export.
+10. Wait for Google to process the archive (this can take from a few minutes to several hours), open the
+    download link sent to your email, and unzip the downloaded file. Inside the Takeout/Mail/ folder, you will
+    find the .mbox file named after your label.
+
+Method 2: Using Mozilla Thunderbird (IMAP + ImportExportTools NG)
+If you want instant selective control without waiting for Google Takeout:
+01. Install Mozilla Thunderbird and configure your Gmail account via IMAP so your folders and subfolders sync
+    locally.
+02. Install the free ImportExportTools NG add-on inside Thunderbird.
+03. Right-click the specific Gmail subfolder in the left-hand panel of Thunderbird.
+04. Select ImportExportTools NG -> Export folder as mbox file, then choose your computer destination.
+
+
+---
+[**1]
+Google Takeout is a free service created by the Google Data Liberation Front that lets you export and download
+a copy of your data from Google products.
+
+How to Use Google Takeout
+01. Go to the Page: Log into your Google Account and visit the Google Takeout page.
+02. Select Your Data: By default, all Google services holding your data are checked. Click Deselect all if you
+    only want specific items (such as Gmail, Google Photos, or Drive), then check the boxes next to the
+    services you want.  03. Choose Delivery Settings: Click Next step and select how you want to receive your
+    archive:
+    - Delivery method: Receive a download link via email, or add the archive directly to Google Drive,
+      Dropbox, OneDrive, or Box.
+    - Frequency: Choose a one-time export or recurring exports (every 2 months for 1 year).
+    - File type and size: Pick .zip or .tgz and set a maximum file size (from 1 GB up to 50 GB).
+04. Create Export: Click Create export. Depending on how much data you have, the process can take anywhere
+    from a few minutes to several days.
+05. Download: Once you receive the notification email, click the link to download your archive files to your
+    device.
+
+***
+Are you trying to backup a specific service (like Google Photos or Gmail) or transfer your data to a different
+account?
+
+To back up a specific service, you can isolate it during the selection process to save time and storage space.
+
+Step-by-Step Selection
+01. Go to Takeout: Open the Google Takeout page.
+02. Clear the Default List: Click the Deselect all button near the top of the list. This unchecks all 50+
+    Google services.
+03. Select Your Service: Scroll down the alphabetical list and check the box next to the exact service you
+    need.
+
+Customizing Your Export
+Many popular services allow you to filter exactly what gets backed up before you create the archive:
+* Google Photos: Click All photo albums included to uncheck specific years or folders you do not need.
+* Google Drive: Click All Drive data included to deselect specific folders, or click Multiple formats to
+  choose how your docs convert (e.g., converting Google Docs to Microsoft Word format).
+* Gmail: Click All Mail data included to back up specific labels or folders instead of your entire inbox.
+
+Once you have customized your service, scroll to the bottom, click Next step, and choose your download method.
+Which specific Google service (e.g., Photos, Drive, Gmail, or YouTube) are you looking to back up right now?
+
+
+---
+

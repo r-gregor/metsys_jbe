@@ -1,0 +1,105 @@
+filename: scp-chtsht-20260218.txt
+https://linuxize.com/cheatsheet/scp/
+
+SCP Cheatsheet
+Feb 16, 2026
+
+Quick reference for secure file transfer with scp over SSH
+SCP (Secure Copy) transfers files and directories between systems over SSH. This cheatsheet covers common scp
+commands for uploads, downloads, recursive copies, ports, keys, and useful options.
+
+-------------------------------------------------------------------------------------------------------------
+Basic Syntax
+Use this general form for scp commands.
+-------------------------------------------------------------------------------------------------------------
+scp SOURCE DEST                              General scp syntax
+scp file.txt user@host:/path/                Copy local file to remote
+scp user@host:/path/file.txt .               Copy remote file to current directory
+scp user@host:/path/file.txt /local/path/    Copy remote file to local directory
+Upload Files
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Copy local files to a remote host.
+-------------------------------------------------------------------------------------------------------------
+scp file.txt user@host:/tmp/                 Upload one file
+scp file1 file2 user@host:/tmp/              Upload multiple files
+scp *.log user@host:/var/log/archive/        Upload matching files
+scp -p file.txt user@host:/tmp/              Preserve modification times and mode
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Download Files
+Copy files from a remote host to your local system.
+-------------------------------------------------------------------------------------------------------------
+scp user@host:/tmp/file.txt .                Download to current directory
+scp user@host:/tmp/file.txt ~/Downloads/     Download to specific directory
+scp user@host:'/var/log/*.log' .             Download remote wildcard (quoted)
+scp user@host:/tmp/file.txt ./new-name.txt   Download and rename locally
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Copy Directories
+Use -r for recursive directory transfers.
+-------------------------------------------------------------------------------------------------------------
+scp -r dir/ user@host:/tmp/                  Upload directory recursively
+scp -r user@host:/var/www/ ./backup/         Download directory recursively
+scp -r dir1 dir2 user@host:/tmp/             Upload multiple directories
+scp -rp project/ user@host:/srv/             Recursive copy and preserve attributes
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Ports, Keys, and Identity
+Connect with custom SSH settings.
+-------------------------------------------------------------------------------------------------------------
+scp -P 2222 file.txt user@host:/tmp/                             Use custom SSH port
+scp -i ~/.ssh/id_ed25519 file.txt user@host:/tmp/                Use specific private key
+scp -o IdentityFile=~/.ssh/id_ed25519 file.txt user@host:/tmp/   Set key with -o option
+scp -o StrictHostKeyChecking=yes file.txt user@host:/tmp/        Enforce host key verification
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Performance and Reliability
+Tune speed, verbosity, and resilience.
+-------------------------------------------------------------------------------------------------------------
+scp -C large-file.iso user@host:/tmp/               Enable compression
+scp -l 8000 file.txt user@host:/tmp/                Limit bandwidth (Kbit/s)
+scp -v file.txt user@host:/tmp/                     Verbose output for debugging
+scp -q file.txt user@host:/tmp/                     Quiet mode
+scp -o ConnectTimeout=10 file.txt user@host:/tmp/   Set connection timeout
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Remote to Remote Copy
+Transfer files between two remote hosts.
+-------------------------------------------------------------------------------------------------------------
+scp user1@host1:/path/file user2@host2:/path/           Copy between remote hosts
+scp -3 user1@host1:/path/file user2@host2:/path/        Route transfer through local host
+scp -P 2222 user1@host1:/path/file user2@host2:/path/   Use custom port (applies to both hosts)
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Common Patterns
+Frequently used command combinations.
+-------------------------------------------------------------------------------------------------------------
+scp -r ./site user@host:/var/www/                              Deploy static site files
+scp -i ~/.ssh/id_ed25519 -P 2222 backup.sql user@host:/tmp/    Upload with key and custom port
+scp user@host:/etc/nginx/nginx.conf ./                         Pull config for review
+scp -rp ./configs user@host:/etc/myapp/                        Copy configs and keep metadata
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Troubleshooting
+-------------------------------------------------------------------------------------------------------------
+Permission denied                   Verify user has write access to the destination path
+Host key verification failed        ssh-keygen -R hostname to remove old key, then retry
+Connection refused on custom port   scp -P PORT file user@host:/path/ (uppercase -P)
+Transfer stalls or times out        scp -o ConnectTimeout=10 -o ServerAliveInterval=15 file user@host:/path/
+Not a regular file error            Add -r for directories: scp -r dir/ user@host:/path/
+Protocol error on OpenSSH 9.0+      scp -O file user@host:/path/ to use legacy SCP protocol
+Debug connection issues             scp -v file user@host:/path/ for verbose SSH output
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

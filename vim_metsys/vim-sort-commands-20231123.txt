@@ -1,0 +1,6 @@
+vim imdb_top-100_20231123.txt
+sed '/^[0-9]\+\. /!d' imdb_top-100_20231123.txt > imdb_top-100_20231123_02.txt 
+sed 's/^[0-9]\+\. //' imdb_top-100_20231123_02.txt > imdb_top-100_20231123_03.txt
+sort -nt'(' -k2 imdb_top-100_20231123_03.txt > imdb_top-100_20231123_by_year.txt
+sort imdb_top-100_20231123_03.txt > imdb_top-100_20231123_aplhabetically.txt
+

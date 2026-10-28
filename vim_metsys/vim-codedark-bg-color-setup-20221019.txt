@@ -1,0 +1,16 @@
+Run
+vim ~/.vim/plugged/vim-code-dark/colors/codedark.vim
+
+and change color for cdBack
+
+" General appearance colors:
+" (some of them may be unused)
+
+let s:cdNone = {'gui': 'NONE', 'cterm': 'NONE', 'cterm256': 'NONE'}
+let s:cdFront = {'gui': '#D4D4D4', 'cterm': s:cterm05, 'cterm256': '188'}
+" let s:cdBack = {'gui': '#1E1E1E', 'cterm': s:cterm00, 'cterm256': '234'}
+" let s:cdBack = {'gui': '#131313', 'cterm': s:cterm00, 'cterm256': '232'}
+let s:cdBack = {'gui': '#0c0c0c', 'cterm': s:cterm00, 'cterm256': '232'}
+
+Get colors from https://encycolorpedia.com/0c0c0c
+

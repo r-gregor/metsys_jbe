@@ -1,0 +1,35 @@
+In:
+/home/rgregor/.vim/pack/themes/start/dracula/colors
+
+cp -iv dracula.vim dracula.vim.ORIGINAL
+cp -iv [downloaded/path/dracula.vim] ./dracula.vim
+
+In .vimrc:
+a)
+" in .vimrc is the readme part on how to install the theme.
+uncomment lines with dracula theme:
+	packadd! dracula
+	syntax enable
+	colorscheme dracula
+
+b)
+comment out line with colorscheme = wombat ...
+
+
+
+In dracula.vim make changes:
+1)
+	if !exists('g:dracula_italic')
+	  " rgregor: remove ugly inverse substitution for italics 
+	  " rgregor: original:
+	  " let g:dracula_italic = 1
+	  let g:dracula_italic = 0
+	endif
+
+2)
+	" rgregor: background cahnged to bgdarker
+	" rgregor: original:
+	" call s:h('Normal', s:fg, g:dracula_colorterm || has('gui_running') ? s:bg : s:none )
+	call s:h('Normal', s:fg, g:dracula_colorterm || has('gui_running') ? s:bgdarker : s:none ) " changed to bgdarker!
+
+

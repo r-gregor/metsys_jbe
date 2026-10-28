@@ -1,0 +1,89 @@
+filename: kill-chtsht-20260316.txt
+https://linuxize.com/cheatsheet/kill/
+
+kill Cheatsheet
+Mar 13, 2026
+
+Quick reference for sending signals to processes by PID with kill and killall in Linux
+
+The 'kill' command sends signals to processes by PID. Use it to stop, reload, or pause a process. This
+cheatsheet covers common signals, kill by PID, `killall` by name, background job control, and a full signal
+reference.
+
+-------------------------------------------------------------------------------------------------------------
+Basic Syntax
+Core kill command forms.
+-------------------------------------------------------------------------------------------------------------
+kill PID      Send SIGTERM (graceful stop) to a process
+kill -9 PID   Force kill a process (SIGKILL)
+kill -1 PID   Reload process config (SIGHUP)
+kill -l       List all available signal names and numbers
+kill -0 PID   Check if a PID exists without sending a signal
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Signal Reference
+Signals most commonly used with kill, killall, and pkill.
+-------------------------------------------------------------------------------------------------------------
+SIGHUP      1    Reload config — most daemons reload settings without restarting
+SIGINT      2    Interrupt process — equivalent to pressing Ctrl+C
+SIGQUIT     3    Quit and write a core dump for debugging
+SIGKILL     9    Force kill — cannot be caught or ignored; always terminates immediately
+SIGTERM    15    Graceful stop — default signal; process can clean up before exiting
+SIGUSR1    10    User-defined signal 1 — meaning depends on the application
+SIGUSR2    12    User-defined signal 2 — meaning depends on the application
+SIGCONT    18    Resume a process that was suspended with SIGSTOP
+SIGSTOP    19    Suspend process — cannot be caught or ignored
+SIGTSTP    20    Terminal stop — equivalent to pressing Ctrl+Z
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Kill by PID
+Send signals to one or more specific processes.
+-------------------------------------------------------------------------------------------------------------
+kill 1234                  Gracefully stop PID 1234
+kill -9 1234 5678          Force kill multiple PIDs at once
+kill -HUP 1234             Reload config for PID 1234
+kill -STOP 1234            Suspend PID 1234
+kill -CONT 1234            Resume suspended PID 1234
+kill -9 $(pidof firefox)   Force kill all PIDs for a process by name
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+killall: Kill by Name
+Send signals to all processes matching an exact name.
+-------------------------------------------------------------------------------------------------------------
+killall process_name               Send SIGTERM to all matching processes
+killall -9 process_name            Force kill all matching processes
+killall -HUP nginx                 Reload all nginx processes
+killall -u username process_name   Kill matching processes owned by a user
+killall -v process_name            Kill and report which processes were signaled
+killall -r "pattern"               Match process names with a regex pattern
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Background Jobs
+Kill jobs running in the current shell session.
+-------------------------------------------------------------------------------------------------------------
+jobs         List background jobs and their job numbers
+kill %1      Send SIGTERM to background job number 1
+kill -9 %1   Force kill background job number 1
+kill %+      Kill the most recently started background job
+kill %%      Kill the current (most recent) background job
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Troubleshooting
+Quick fixes for common kill issues.
+-------------------------------------------------------------------------------------------------------------
+Process does not stop after SIGTERM   Wait a moment, then escalate to kill -9 PID
+No such process error                 PID has already exited; verify with ps -p PID
+Operation not permitted               Process belongs to another user — use sudo kill PID
+SIGKILL has no effect                 Process is in uninterruptible sleep (D state in ps); only a reboot can
+                                      free it
+Not sure which PID to kill            Find it first with pidof name, pgrep name, or ps aux | grep name
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

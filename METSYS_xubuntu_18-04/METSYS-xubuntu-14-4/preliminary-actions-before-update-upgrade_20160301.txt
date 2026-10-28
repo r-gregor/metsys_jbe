@@ -1,0 +1,6 @@
+Preliminary actions before update/upgrade
+
+- Backup everything you can't afford to loose into an external drive.
+- Remove all existing PPAs with the 'ppa-purge' command.
+- Uninstall any proprietary graphics card drivers.
+- Reboot your Ubuntu system.

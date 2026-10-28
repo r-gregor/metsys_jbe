@@ -1,0 +1,52 @@
+filename: vim_binding_combos.txt
+20240206_en:
+---
+help:
+	:help i_CTRL-X_CTRL-F
+	:help CTRL-W_CTRL-W
+---
+
+* ctrl+x      ... completion mode, which is a submode of insert mode
+* ctrl+p,n    ... word completion mode
+* ctrl+r      ... insert from a register
+
+--------------------------------------------------------------------------------------------------------------
+- put a word under the cursor into command after ':'-command
+	ctrl+r ctrl+w
+		:%s/[ctrl+r] [ctrl+w]/ ...
+
+- move windows in split:
+	ctrl+w shift+[h,j,k,l]
+
+- focus into next window:
+	ctrl+w ctrl+w
+
+- insert current path and subpaths in insert mode:
+	start a file- or dir- name
+		ctrl+x ctrl+f
+
+- insert last inserted text:
+	ctrl+r ctrl+a
+
+- inserting a tag (when using ctags):
+	ctrl+x ctrl+]
+
+- contex aware completition:
+	if previously inserted 'hello world'
+		ctrl+x ctrl+n,p
+			hel ctrl+x ctrl+n ctrl+x ctrl+n --> hello world
+
+- Language-aware completion (if filetype plugins installed ??)
+	ctrl+x ctrl+o
+
+- Search backwards for a line that starts with the same characters as those in the current line before
+  the cursor:
+	ctrl+x ctrl+l
+
+- Search forwards/backwards for words that start with the keyword in front of the cursor. The found keyword
+  is inserted in front of the cursor.
+	ctrl+x ctrl+p,n
+
+-  ...
+
+

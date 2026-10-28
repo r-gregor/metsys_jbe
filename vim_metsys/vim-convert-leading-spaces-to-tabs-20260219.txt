@@ -1,0 +1,41 @@
+filename: vim-convert-leading-spaces-to-tabs-20260219.txt
+https://stackoverflow.com/questions/9104706/how-can-i-convert-leading-spaces-to-tabs-in-vim-or-linux
+
+How can I convert leading spaces to tabs in Vim or Linux?
+
+I've looked over several questions on Stack Overflow for how to convert spaces to tabs without finding
+what I need. There seem to be more questions about how to convert tabs to spaces, but I'm trying to do
+the opposite.
+
+In Vim I've tried :retab and :retab! without luck, but I believe those are actually for going from tabs
+to spaces anyways.
+
+I tried both expand and unexpand at the command prompt without any luck.
+
+Here is the file in question:
+http://gdata-python-client.googlecode.com/hg-history/a9ed9edefd61a0ba0e18c43e448472051821003a/samples/docs/docs_v3_example.py
+
+How can I convert leading spaces to tabs using either Vim or the shell?
+
+...
+
+***
+Hi, the problem is that if you remove the ^ symbol, to start the search from the
+begin of the line, you risk changing spaces inside strings. With the ^ you guarantee you are changing
+only spaces and tabs since the begin of the line, thus, indentation. Besides that, if you are sure it
+is ok to do all at once, remove the ^ and run only once with: :%s/\(^I*\)␣␣␣␣/\1^I/g
+
+:%s/\(^\s*\)\@<=    /\t/g
+
+Translation: Search for every instance of 4 consecutive spaces (after the = character), but only if the
+entire line up to that point is whitespace (this uses the zero-width look-behind assertion, \@<=). Replace
+each found instance with a tab character.
+
+***
+The only solution that worked for expanding 1 space to 1 tab, but beware the unicode in the answer, I
+just used :%s/\(^\s*\)\@<= /\t/g - put the appropriate number of spaces (to convert 4 spaces to 1 tab,
+put in 4 spaces) right after the <=
+
+
+---
+

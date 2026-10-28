@@ -1,0 +1,8 @@
+for aaa in $(find /usr/local/bin -type l); do stat $aaa; done | grep File: | cut -d' ' -f4- >> softlinks_orig.txt
+sed -i 's/ -> /:/' softlinks_orig.txt
+sed -i 's_majfajls/BIN_majfajls/coding_' softlinks_orig.txt
+sed -i 's_rgregor/BIN_rgregor/majfajls/coding_' softlinks_orig.txt
+# grep 'majfajls/coding' softlinks_orig.txt 
+while read LINE; do L1=$(echo $LINE | cut -d':' -f1); L2=$(echo $LINE | cut -d':' -f2); echo "ln -snf $L2 $L1"; done < softlinks_orig.txt >> UKAZI.txt
+sudo bash UKAZI.txt 
+

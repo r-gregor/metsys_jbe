@@ -1,0 +1,13 @@
+filename: youtube-dl_update-move-to_yt-dlp_20230413.txt
+
+After youtube-dl not working (20230413) it had to be replaced with new one: yt-dlp (as python3 module):
+
+$> python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+$> yt-dlp --help
+$> yt-dlp -F "https://www.youtube.com/watch?v=Uo0YYUEdwZA"
+$> yt-dlp -f 22 "https://www.youtube.com/watch?v=Uo0YYUEdwZA"
+$> file /usr/local/bin/yt-dlp
+---
+change path to binary in ydlF and ydl !!
+---
+

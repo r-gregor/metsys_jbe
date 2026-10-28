@@ -1,0 +1,3 @@
+https://askubuntu.com/questions/173220/how-do-i-change-the-font-or-the-font-size-in-the-tty-console
+
+To adjust the font/font-size used for the TTY, run sudo dpkg-reconfigure console-setup, which will guide you through the steps to choose a font and font-size

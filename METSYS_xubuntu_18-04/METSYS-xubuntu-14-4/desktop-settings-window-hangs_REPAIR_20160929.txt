@@ -1,0 +1,6 @@
+20160929
+If right-click Desktop settings window freezes/hangs:
+
+remove xfce-desktop settings file so it loads defaults, and then it works (after re-login)
+
+	rm ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce-desktop.xml

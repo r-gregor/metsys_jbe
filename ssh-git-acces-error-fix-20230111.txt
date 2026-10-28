@@ -1,0 +1,11 @@
+Fix ssh connect erro for git:
+1 - cretate ~/.ssh/config file:
+
+Host github.com
+	user git
+	IdentityFile ~/.ssh/github-jbez0rg
+
+Host gitlab.com
+	user git
+	IdentityFile ~/.ssh/gitlab-jbez0rg
+

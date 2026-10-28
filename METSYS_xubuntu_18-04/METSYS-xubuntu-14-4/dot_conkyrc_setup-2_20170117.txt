@@ -1,0 +1,175 @@
+### General Settings
+# Positioning
+alignment top_right
+gap_x 10
+gap_y 10
+
+# Colours
+default_color 40c040
+default_outline_color white 
+default_shade_color black
+own_window_colour black
+
+# Font
+use_xft yes
+### xftfont sans-serif:size=8
+xftfont DejaVu Sans Mono:size=8
+draw_shades yes
+draw_outline no
+uppercase no
+
+# Program properties
+background no
+draw_borders no
+border_inner_margin 20
+border_outer_margin 0
+border_width 1
+minimum_size 230 #250
+maximum_width 230 #320
+double_buffer yes
+stippled_borders 0
+update_interval 2.0
+use_spacer none
+
+# Window properties
+own_window yes
+#own_window_type override
+own_window_type normal
+#own_window_type desktop
+#own_window_class Conky
+own_window_transparent no
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual yes
+# This value can be between 0 and 255. 0 = transparent and 255 = opaque.
+# You must set "own_window_transparent" to "no" for this to work.
+own_window_argb_value 210 # 128
+
+# Graph properties
+draw_graph_borders yes
+no_buffers yes
+cpu_avg_samples 2
+net_avg_samples 2
+show_graph_scale no
+show_graph_range no
+
+
+### Sensors
+# Date & Time
+TEXT
+${color white}${font sans-serif:bold:size=10}Xubuntu 14.04
+$sysname $kernel $font 
+
+${color white}${font sans-serif:bold:size=10}Date & Time ${hr 2}
+${alignc 28}${font Arial Black:size=24}${time %H:%M}$font
+${alignc}${Time %A, %d. %B %Y}
+
+# System
+${color white}${font sans-serif:bold:size=10}System ${hr 2}$font
+${color white}Host: $alignr$color$nodename
+${color white}Uptime:$alignr$color$uptime
+${color white}Battery: $color${battery} ${battery_bar}
+
+# CPU
+${color white}${font sans-serif:bold:size=10}CPU & Sensors $font${hr 2}
+### ${color white}${cpugraph cpu0 24,320 40c040 ffffff -t}
+#${color white}${cpugraph cpu1 25,80}${cpugraph cpu2 25,80}${cpugraph cpu3 25,80}${cpugraph cpu4 25,80}
+### ${color white}CPU0:$color ${cpu cpu1}% ${cpubar cpu1}
+### ${color white}CPU1:$color ${cpu cpu2}% ${cpubar cpu2}
+### ${color white}CPU2:$color ${cpu cpu3}% ${cpubar cpu3}
+### ${color white}CPU3:$color ${cpu cpu4}% ${cpubar cpu4}
+### ${color white}CPU4:$color ${cpu cpu4}% ${cpubar cpu5}
+### ${color white}CPU5:$color ${cpu cpu4}% ${cpubar cpu6}
+### ${color white}CPU6:$color ${cpu cpu4}% ${cpubar cpu7}
+### ${color white}CPU6:$color ${cpu cpu4}% ${cpubar cpu7}
+### ${color white}CPU7:$color ${cpu cpu4}% ${cpubar cpu8}
+### ${color white}Clock (GHz):$alignr$color $freq_g
+# Have a look at /sys/class/hwmon/ and the amount of files there. Use that as
+# a base for experimenting. These rows are for 4 files, which gives 4x4 = 16
+# possible combinations
+#${color white}Temperature 00:$alignr$color ${hwmon 0 temp 0}°C
+#${color white}Temperature 01:$alignr$color ${hwmon 0 temp 1}°C
+#${color white}Temperature 02:$alignr$color ${hwmon 0 temp 2}°C
+#${color white}Temperature 03:$alignr$color ${hwmon 0 temp 3}°C
+#${color white}Temperature 10:$alignr$color ${hwmon 1 temp 0}°C
+#${color white}Temperature 11:$alignr$color ${hwmon 1 temp 1}°C
+#${color white}Temperature 12:$alignr$color ${hwmon 1 temp 2}°C
+#${color white}Temperature 13:$alignr$color ${hwmon 1 temp 3}°C
+#${color white}Temperature 20:$alignr$color ${hwmon 2 temp 0}°C
+#${color white}Temperature 21:$alignr$color ${hwmon 2 temp 1}°C
+#${color white}Temperature 22:$alignr$color ${hwmon 2 temp 2}°C
+#${color white}Temperature 23:$alignr$color ${hwmon 2 temp 3}°C
+#${color white}Temperature 30:$alignr$color ${hwmon 3 temp 0}°C
+### ${color white}CPU Socket Temperature:$alignr$color ${hwmon 3 temp 1}°C
+### ${color white}Mainboard Temperature:$alignr$color ${hwmon 3 temp 2}°C
+#${color white}Temperature 33:$alignr$color ${hwmon 3 temp 3}°C
+#${color white}Fan 00:$alignr$color ${hwmon 0 fan 0} RPM
+#${color white}Fan 01:$alignr$color ${hwmon 0 fan 1} RPM
+#${color white}Fan 02:$alignr$color ${hwmon 0 fan 2} RPM
+#${color white}Fan 03:$alignr$color ${hwmon 0 fan 3} RPM
+#${color white}Fan 10:$alignr$color ${hwmon 1 fan 0} RPM
+#${color white}Fan 11:$alignr$color ${hwmon 1 fan 1} RPM
+#${color white}Fan 12:$alignr$color ${hwmon 1 fan 2} RPM
+#${color white}Fan 13:$alignr$color ${hwmon 1 fan 3} RPM
+#${color white}Fan 20:$alignr$color ${hwmon 2 fan 0} RPM
+#${color white}Fan 21:$alignr$color ${hwmon 2 fan 1} RPM
+#${color white}Fan 22:$alignr$color ${hwmon 2 fan 2} RPM
+#${color white}Fan 23:$alignr$color ${hwmon 2 fan 3} RPM
+#${color white}Fan 30:$alignr$color ${hwmon 3 fan 0} RPM
+### ${color white}CPU Fan:$alignr$color ${hwmon 3 fan 1} RPM
+### ${color white}Chassis Fan 1:$alignr$color ${hwmon 3 fan 2} RPM
+### ${color white}Chassis Fan 2:$alignr$color ${hwmon 3 fan 3} RPM
+
+# Memory
+${color white}${font sans-serif:bold:size=10}Memory $font${hr 2}
+${color white}RAM:$color $alignr$mem / $memmax - $memperc%
+$membar
+${color white}Swap:$color $swap/$swapmax - $swapperc%
+$swapbar
+
+# HDD
+${color white}${font sans-serif:bold:size=10}HDD $font${hr 2}
+#${font mono:size=8}${color white}Root $alignr${diskio_write /dev/sda6}/${diskio_read /dev/sda6} I/O
+${font mono:size=8}${color white}Root $color$alignr${fs_free /}/${fs_size /} ${color white}free
+$font$color${fs_used_perc /}% ${fs_bar /}
+### ${color white}${diskiograph /dev/sda6 24,320 40c040 ffffff}
+#${font mono:size=8}${color white}Home $alignr${diskio_write /dev/sdb1}/${diskio_read /dev/sdb1} I/O
+${font mono:size=8}${color white}Home $color$alignr${fs_free /home}/${fs_size /home} ${color white}free
+$font$color${fs_used_perc /home}% ${fs_bar /home}
+### ${color white}${diskiograph /dev/sdb1} 24,320 40c040 ffffff}
+#${color white}/dev/sda: $color$alignr${execi 60 /usr/sbin/hddtemp /dev/sda|cut -c34-} 
+### ${color white}/dev/sdb: $color$alignr${execi 60 /usr/sbin/hddtemp /dev/sdb|cut -c33-} 
+
+# Network
+${color white}${font sans-serif:bold:size=10}Network $font${hr 2}
+${color white}LAN IP:$alignr$color ${addr eth0}
+#${color white}WLAN IP:$alignr$color ${addr wlan0}
+${color white}Gateway:$alignr$color ${gw_iface} ${gw_ip}
+${color white}Primary DNS:$alignr$color ${nameserver 0}
+#${color white}Secondary DNS:$alignr$color ${nameserver 1}
+### ${color white}External IP:$alignr$color ${execi 3600 ~/.conky/publicip.sh}
+#${color white}WLAN Signal:$alignr$color ${wireless_link_qual wlan0}%$color
+LAN ${hr 1}
+${color white}Down: $color${downspeed eth0}/s ${color white}Total: $color${totaldown eth0} $alignr${color white}Up: $color${upspeed eth0}/s ${color white}Total: $color${totalup eth0}
+### ${color white}${downspeedgraph eth0 24,155 40c040 ffffff} $alignr${color white}${upspeedgraph eth0 24,155 40c040 ffffff}$color
+#WLAN ${hr 1}
+#${color white}Down: $color${downspeed wlan0}/s ${color white}Total: $color${totaldown wlan0} $alignr${color white}Up: $color${upspeed wlan0}/s ${color white}Total: $color${totalup wlan0}
+#${color white}${downspeedgraph wlan0 24,155 40c040 ffffff} $alignr${color white}${upspeedgraph wlan0 24,155 40c040 ffffff}$color
+
+# BATTERY
+${color white}${font sans-serif:bold:size=10}Battery $font${hr 2}
+### ${font Webdings:size=16}~${font} Battery: ${battery_percent BAT0}% ${alignr}${battery_bar 8,100 BAT0}
+${font Webdings:size=16}~${font} Battery:
+${Battery}  ${alignr}${battery_bar 8,120 BAT0}${font}
+
+# Processes
+${color white}${font sans-serif:bold:size=10}Processes $font${hr 2}
+${color white}Name $alignr PID CPU% MEM%
+${color red}${top name 1} $alignr ${top pid 1} ${top cpu 1} ${top mem 1}
+$color${top name 2} $alignr ${top pid 2} ${top cpu 2} ${top mem 2}
+$color${top name 3} $alignr ${top pid 3} ${top cpu 3} ${top mem 3}
+$color${top name 4} $alignr ${top pid 4} ${top cpu 4} ${top mem 4}
+$color${top name 5} $alignr ${top pid 5} ${top cpu 5} ${top mem 5}
+
+# Syslog
+### ${color white}${font sans-serif:bold:size=10}Syslog $font${hr 2}
+### $color${tail /var/log/syslog 5}

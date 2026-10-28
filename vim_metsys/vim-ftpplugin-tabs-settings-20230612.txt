@@ -1,0 +1,6 @@
+in 
+	~/.vim/pack/plugins/start/vim-polyglot/ftplugin
+
+find [programming_language_name].vim and change the line that sets the 'tabstop':
+	" setlocal tabstop=8 shiftwidth=4 softtabstop=4 expandtab
+	setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab

@@ -1,0 +1,3 @@
+if not exist create:
+	touch ~/.lftprc
+	echo "set ssl:verify-certificate false" >> .lftprc

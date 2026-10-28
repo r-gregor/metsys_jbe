@@ -1,0 +1,3 @@
+"System Program Problem Detected" notificaation upon login --> REMOVE:
+	delete all crash files from /var/crash/
+

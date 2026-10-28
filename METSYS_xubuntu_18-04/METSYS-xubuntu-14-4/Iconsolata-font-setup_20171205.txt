@@ -1,0 +1,10 @@
+Setup Inconsolata font on ubuntu:
+
+Ubuntu 14.04 - Install Inconsolata Monospace Font
+
+Inconsolata is a monospace font that still manages to look good in Netbeans on Linux even with the font hinting issues that the application has (and without having to install font-infinality or changing your JRE).
+
+Please note that the font does not have that spacing between lines by default, I edited Netbeans configuration to increase the line spacing.
+Steps
+sudo apt-get install fonts-inconsolata -y
+sudo fc-cache -fv

@@ -1,0 +1,4 @@
+filename: /home/rgregor/majstaf/_NERAZPOREJENO/__DANES__/vim-not-show-tabs-spaces-command-20260911.txt
+from:     https://unix.stackexchange.com/questions/647468/vim-set-listchars-to-only-show-non-breakable-spaces-not-tabs
+
+:set listchars=tab:\ \ ,nbsp:·

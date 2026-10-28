@@ -1,0 +1,46 @@
+V1:
+ROOT
+`-- ext_WD_usbHDD_2TB
+    |-- doma
+    |   |-- METSYS_d
+    |   `-- bekaps_d
+    |       |-- h_rgregor
+    |       |-- h_tadeja
+    |       |-- h_mark
+    |       |-- h_zala
+    |       |-- h_spela
+    |       `-- h_SLIKE
+    |
+    `-- en
+        |-- METSYS_en
+        `-- bekaps_en
+            |-- cugr
+            |-- downloads_cugr
+            |-- myprogs_cugr
+            |-- 2019_cugr
+            |-- cygwin_hgr
+            |-- ODPRTO_drpbx
+            `-- SKUPNI_drpbx
+
+--------------------------------------------------------
+V2:
+ROOT
+`-- ext_WD_usbHDD_2TB
+    |-- METSYS_d
+    |-- bekaps_d
+    |   |-- h_rgregor
+    |   |-- h_tadeja
+    |   |-- h_mark
+    |   |-- h_zala
+    |   |-- h_spela
+    |   `-- h_SLIKE
+    |
+    |-- METSYS_en
+    `-- bekaps_en
+        |-- cugr
+        |-- downloads_cugr
+        |-- myprogs_cugr
+        |-- 2019_cugr
+        |-- cygwin_hgr
+        |-- ODPRTO_drpbx
+        `-- SKUPNI_drpbx

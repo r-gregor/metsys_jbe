@@ -1,0 +1,213 @@
+### GENERAL #################################################################################################
+sudo apt install vim
+sudo apt install neofetch
+sudo apt install terminator plank
+sudo apt install dmenu
+sudo apt install lxtask
+sudo apt install git
+sudo apt install vlc
+sudo apt install pcmanfm
+sudo apt update && sudo apt install libcanberra-gtk-module libgconf-2-4 libatomic1
+sudo apt install sshfs
+sudo apt install ssh
+sudo apt install chromium-browser
+sudo apt install openjdk-11-jdk
+sudo apt install openjfx openjfx-source
+sudo apt install ./zoom_amd64.deb
+sudo apt install htop
+sudo apt install arandr
+sudo apt install grub-customizer
+sudo apt install lsb
+sudo apt install xsane sane
+sudo apt install simple-scan
+sudo apt install xclip
+sudo apt install gparted
+sudo apt install lynx
+sudo apt install tmux
+sudo apt install screen
+sudo apt install groff
+sudo apt install imagemagick-doc autotrace enscript ffmpeg gnuplot grads graphviz hp2xx html2ps libwmf-bin mplayer povray radiance texlive-base-bin transfig ufraw-batch inkscape
+sudo apt install evince
+sudo apt install touchpad-indicator
+sudo apt install w3m
+sudo apt install libqt5core5a
+sudo apt install vim-gtk3
+sudo apt install sqlite3
+sudo apt install network-manager
+sudo apt install software-properties-common
+sudo apt install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
+# sudo make altinstall
+sudo apt install build-essential checkinstall
+sudo apt install cheese
+sudo apt install gpart
+sudo apt install ranger
+sudo apt install nodejs
+sudo apt install bacula-console-qt
+sudo apt install bat
+sudo apt install speedtest-cli
+sudo apt install ncdu
+sudo apt install fish
+sudo apt install fd-find
+sudo apt install exa
+sudo apt install nala
+sudo apt install alacritty
+sudo apt install arp-scan
+sudo apt install chromium
+sudo apt install curl
+sudo apt install doublecmd-common doublecmd-gtk doublecmd-help-en doublecmd-plugins
+sudo apt install exfatprogs
+sudo apt install firefox-esr
+sudo apt install fzf
+sudo apt install google-chrome
+sudo apt install kitty
+sudo apt install kodi
+sudo apt install manpages-dev
+sudo apt install manpages-posix-dev
+sudo apt install mc
+sudo apt install papirus-icon-theme
+sudo apt install pip
+sudo apt install rofi
+sudo apt install sqlitebrowser
+sudo apt install valgrind
+sudo apt install lxpolkit
+sudo apt install vim-gtk3
+sudo apt install wget apt-transport-https gnupg2
+
+### FONTS ###################################################################################################
+sudo apt install font-manager
+sudo apt install fonts-font-awesome fonts-powerline
+sudo apt install fonts-arkpandora ttf-mscorefonts-installer
+sudo apt install fonts-mononoki
+sudo apt-get install ttf-mscorefonts-installer
+sudo fc-cache -fv
+
+### PYTHON ##################################################################################################
+sudo apt install python3-dev
+sudo apt install python3.9-dev
+sudo apt install python-wxgtk3.0
+sudo apt install python3-venv
+sudo apt install python3.10-venv
+/usr/local/bin/python3.9 -m install pyinstaller
+pip install bs4
+pip install Cinemagoer
+pip install cloud-scraper
+pip install cloudscraper
+pip install help
+pip install imdbspider
+pip install lxml
+pip install python3-imdbpy
+pip install requests
+pip install -r requirements.txt
+pip install scrap-imdb
+pip install scrapimdb
+pip install yt-dlp -U
+python3 -m pip3 install --upgrade pip
+python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+python3 -m pip install --upgrade pi
+python3 -m pip install --upgrade pip
+sudo python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+
+### TILING WM-S INSTALL #####################################################################################
+lsb_release -a
+bash <(curl -L zellij.dev/launch)
+sudo apt-cache search zellij
+cargo install --locked zellij
+rofi -show window
+/usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb
+sudo /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb
+/usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb keyring.deb SHA256:f9bb4340b5ce0ded29b7e014ee9ce788006e9bbfe31e96c09b2118ab91fca734
+sudo apt install ./keyring.deb
+echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
+sudo apt install i3*
+cd .config/i3/
+python3 -m pip install --upgrade pip
+pip install qtile
+mkdir -p ~/.config/qtile && cp /usr/share/doc/qtile/examples/config.py ~/.config/qtile/
+/home/rgregor/.local/bin/qtile start
+pip install xcffib
+ll .local/bin/qtile
+locate sessions
+cd /usr/share/xsessions/
+sudo cp i3.desktop qtile.desktop
+sudo vim qtile.desktop
+vim .config/i3/config
+cd .config/alacritty/
+vim alacritty.toml
+cd .config/kitty/
+vim kitty.conf
+killall gnome-font-viewer
+vim .config/i3/config
+vim .config/qtile/config.py
+vim .config/qtile/config.py
+# ---
+sudo apt purge i3blocks
+sudo apt autoremove
+cd Downloads/
+git clone https://github.com/Airblader/i3blocks-gaps.git
+cd i3blocks-gaps/
+make clean all
+sudo make install
+vim ~/.config/i3/config 
+git clone https://github.com/vivien/i3blocks-contrib.git
+mv i3blocks-contrib scripts
+cp scripts/config.example ./config
+# ---
+sudo apt install dunst
+sudo apt install nitrogen
+1003  2024-09-29 19:20:15 sudo apt install color-picker
+sudo apt install acpi #for battery script
+---
+download NERD font 'RobotoMono Nerd Font' from: https://www.nerdfonts.com/font-downloads
+font-manager &
+fc-cache -l
+fc-cache -fv
+
+select icons from: https://www.nerdfonts.com/cheat-sheet
+vim ~/.config/i3/config 
+    edit .../i3/config:
+       font pango:RobotoMono Nerd Font 12
+       ... and inside bar { ... }, also:
+           font pango:RobotoMono Nerd Font 12
+---
+sudo apt install perl
+sudo apt install acpi
+sudo apt install plymouth-x11
+sudo apt install feh
+---
+cargo install --locked zellij
+python3 -m pip install --upgrade pip
+pip install xcffib
+pip install qtile
+---
+---
+
+sudo apt install polybar
+mkdir polybar
+cd polybar/
+cp /etc/polybar/config.ini
+polybar bar
+cd .config/polybar/
+vim polybar_install_use_commands_20241104.txt
+cp -i polybar_install_use_commands_20241104.txt ~/majstaf/jbegit/metsys_jbe/
+killall polybar && polybar bar & disown
+polybar bar & disown
+vim .config/polybar/launch.sh
+vim .config/polybar/config.ini
+killall polybar && polybar bar & disown
+# ---
+sudo apt show volumeicon-alsa
+sudo apt install volumeicon-alsa
+volumeicon &
+vim ~/.config/i3/config
+# ---
+# picom install:
+sudo apt install meson
+sudo apt install libpcre++-dev
+sudo apt install meson
+sudo apt install libpcre++-dev
+sudo apt install libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libepoxy-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev meson ninja-build uthash-dev
+sudo apt install cmake
+# ---
+# enable enter password window display in i3;
+sudo apt install lxpolkit
+

@@ -1,0 +1,154 @@
+filename: vim_efficiency-commands.txt
+20240823
+---
+
+- g/pattern/action:
+	acction applied on all lines that contain pattern (g - global)
+
+- change buffer
+	:b <tab> --> list of available buffers
+		any unique part of filename --> opens the buffer
+
+- delete from current position until pattern (not including)
+	d
+		/.*pattern
+
+- opnen/edit new file in same folder:
+	:new % <tab> --> this filename with path
+		:new %:h --> just path
+			:new %:h<new filename>
+
+- go to surroundig bracket
+	] ),}, ...
+	[ (,{, ...
+
+- go to next displayed line in wrapped singe long line
+	gj, gk
+
+- open a file in READONLY mode
+	:view <filename>
+
+- go to a file under the cursor
+	gf      --> to file under the cursor
+	ctrl+o  --> to go back to prevoious file
+
+~/majstaf_en/majbin_en/gocleanmodcache
+
+- go to a file under the cursor and open it in new window
+	ctrl+w f
+
+- grep a list of files with pattern and select one
+	:vimgrep '<pattern>' <filepath>/** (internal grep)
+	:grep '<pattern>' <filepath>/** (external grep)
+		:copen
+			--> select
+
+- delete multiple buffers --> <ctrl+a> expands the glob
+	:bd *.c<ctrl+a>
+
+- switch to last edited buffer
+	ctrl+6
+
+- create a new file to edit when in netrw
+	shift+5
+
+- incrementing sequences
+	A - numbers
+	visualy select block of numbers:
+		1. line
+		1. line
+		1. line
+		1. line
+		g ctrl+a on selected block of numbers --> increment
+			1. line
+			2. line
+			3. line
+			4. line
+			g ctrl+x on selected block of numbers --> decrement
+				5. line
+				4. line
+				3. line
+				2. line
+	B - chars (alpha) -- must have nrformats be set to +=alpha --> :set nrformats+=alpha
+	visualy select block of chars:
+		{sequence: a; limit=false}
+		{sequence: a; limit=false}
+		{sequence: a; limit=false}
+		{sequence: a; limit=false}
+		{sequence: a; limit=false}
+		g ctrl+a on selected block of chars --> increment
+			{sequence: a; limit=false}
+			{sequence: b; limit=false}
+			{sequence: c; limit=false}
+			{sequence: d; limit=false}
+			{sequence: e; limit=false}
+	
+
+- within :help <help item> --> move to where link points to:
+	with cursor under the link press ctrl+]
+
+- open multiple files in separat tabs:
+	vim -p *.c *.h
+
+- move between tabs in vim
+	gt  --> go to next tab
+	gT  --> go to previous tab
+	1gt --> go to tab number 1
+	0gt --> go to first tab
+
+- save session to a file --> windows tabs and ...
+	:mksession <session_name.vim>
+
+- load session:
+	vim -S <session_name.vim>
+
+- rcCtrl-O lets us temporarily exit Insert mode, perform one Normal mode command, and then return to
+  Insert mode
+
+- perform normal command on multiple selections:
+	while in select mode type
+		:norm <command>
+
+- change the direction of selection
+	while in visual selection mode (shift-v, or ctrl+v) press 'o'
+	to change position and direction of cursor (so you can expand or shrink selection block in both directions)
+
+- operate on visual lines instead of logical (one line wrapped into several lines)
+	gj, gk, g0, g$ --> single j will move on to the entirenex line (skipping al the wraped visual ones), but
+	gj will move to the next visual line
+
+- format to width: separate long logical line into more ones as visual ones.
+	gq (gqq operate on whole line)
+
+- capitalize, uncapitalize and swap capitalization on word object
+	gU, gu, g~ --> (gUU, guu, g~~ operate on whole lines)
+
+- repeate prevous substitution on sigle line for whole file
+	g&
+
+- traverse back/forward all previous commands with all positions instead just go back the main command history
+	tree line with 'u'
+	g-, g+
+
+- ranges: run commands on ranges:
+	.<command>            current line (usually not necessary)
+	.,$<command>          fromcurrent till last line
+	15,20<command>        from .. to
+	.,.+5<command>        from current till 5 lines down
+	g/pattern/<command>   run commands on all patterns in file
+	g!/pattern/<command>  run command on every line EXCEPT ones with thw pattern (very useful!)
+	v/pattern/<command>   SAME AS previous (g!)
+		example: double spacing (insert empty line after every line)
+			g/^/put=\"\n\"
+
+		example: remove every empty line
+ 			g/^\s*$/d
+	copy all lines with pattern to the end of a file
+		g/pattern/t$
+	move all lines with pattern to the end of a file
+		g/pattern/m$
+	reverse the document move every line to a line 0
+		g/^/m0
+
+- ...
+

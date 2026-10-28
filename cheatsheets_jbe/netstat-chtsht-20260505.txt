@@ -1,0 +1,116 @@
+filename: netstat-chtsht-20260505.txt
+https://linuxize.com/cheatsheet/netstat/
+
+netstat Cheatsheet
+May 2, 2026
+
+Quick reference for listing network connections, listening ports, routes, interface counters, and protocol
+statistics with netstat
+
+The `netstat` command shows network connections, listening ports, routing tables, interface counters, and
+protocol statistics on Linux. This cheatsheet covers the most useful `netstat` flags and common
+troubleshooting patterns.
+
+-------------------------------------------------------------------------------------------------------------
+Basic Syntax
+Core netstat command forms and output controls.
+-------------------------------------------------------------------------------------------------------------
+netstat              Show active non-listening sockets
+sudo netstat -a      Show all sockets
+sudo netstat -n      Show numeric addresses and ports
+sudo netstat -p      Show PID and program name where available
+sudo netstat -c      Refresh output every second
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Listening Ports
+Find services that are accepting local connections.
+-------------------------------------------------------------------------------------------------------------
+sudo netstat -tuln                  Show TCP and UDP listening sockets
+sudo netstat -tulnp                 Show listening sockets with PID and process name
+sudo netstat -tnlp                  Show listening TCP sockets only
+sudo netstat -unlp                  Show listening UDP sockets only
+sudo netstat -tulnp | grep ':80'    Find the process listening on port 80
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Connections and TCP States
+Inspect active connections and common TCP states.
+-------------------------------------------------------------------------------------------------------------
+sudo netstat -at                       Show all TCP sockets
+sudo netstat -au                       Show all UDP sockets
+sudo netstat -ant                      Show TCP sockets with numeric addresses
+sudo netstat -ant | grep ESTABLISHED   Show established TCP connections
+sudo netstat -ant | grep TIME_WAIT     Show TCP connections in TIME_WAIT
+sudo netstat -atnc                     Watch TCP connection output continuously
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Counts and Filters
+Use shell filters with netstat output.
+-------------------------------------------------------------------------------------------------------------
+sudo netstat -ant | wc -l                      Count TCP output rows
+sudo netstat -ant | grep ':80' | wc -l         Count TCP connections involving port 80
+sudo netstat -ant | grep ESTABLISHED | wc -l   Count established TCP connections
+sudo netstat -tulnp | grep nginx               Find sockets owned by nginx
+sudo netstat -ant | grep 203.0.113.10          Filter connections by remote IP address
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Routes, Interfaces, and Stats
+Show routing, interface, and protocol information.
+-------------------------------------------------------------------------------------------------------------
+netstat -rn     Show the routing table with numeric addresses
+netstat -r      Show the routing table with name resolution
+netstat -i      Show interface counters
+netstat -ie     Show extended interface details
+netstat -s      Show protocol statistics
+netstat -st     Show TCP protocol statistics
+netstat -su     Show UDP protocol statistics
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Modern Replacements
+Use current Linux tools for new workflows and scripts.
+-------------------------------------------------------------------------------------------------------------
+netstat -tuln          ss -tuln
+sudo netstat -tulnp    sudo ss -tulnp
+netstat -rn            ip route
+netstat -i             ip -s link
+netstat -s             ss -s
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Troubleshooting
+Common netstat issues and quick fixes.
+-------------------------------------------------------------------------------------------------------------
+netstat: command not found       Install the net-tools package or use ss
+Process column is empty          Run with sudo when using -p
+Output is slow                   Add -n to disable name resolution
+Port lookup matches too much     Search with a colon, such as grep ':80'
+Need listeners only              Add -l with protocol flags such as -tuln
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+Related Guides
+Use these guides for full walkthroughs and modern alternatives.
+-------------------------------------------------------------------------------------------------------------
+netstat Command in Linux                 Full netstat guide with examples
+                                         [https://linuxize.com/post/netstat-command-in-linux/]
+
+ss Command in Linux                      Modern socket inspection tool
+                                         [https://linuxize.com/post/ss-command-in-linux/]
+
+ip Command in Linux                      Modern routes and interface management
+                                         [https://linuxize.com/post/linux-ip-command/]
+
+How to Check Listening Ports in Linux    Compare ss, netstat, and lsof
+                                         [https://linuxize.com/post/check-listening-ports-linux/]
+
+lsof Command in Linux                    Tie sockets and files back to processes
+                                         [https://linuxize.com/post/lsof-command-in-linux/]
+-------------------------------------------------------------------------------------------------------------
+
+
+---
+

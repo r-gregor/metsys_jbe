@@ -1,0 +1,130 @@
+rgregor@jbez0rg ~/majstaf/seznami
+ $> grep -ri 'losetup' ~/*
+Binary file /home/rgregor/DRPBX_ODPRTO/_PDF/Creating_Virtual_Disks_Using_Linux_Command_Line.pdf matches
+/home/rgregor/DRPBX_ODPRTO/_TXT/shrinking-images-on-linux_20150526.txt:$ sudo losetup -f
+/home/rgregor/DRPBX_ODPRTO/_TXT/shrinking-images-on-linux_20150526.txt:$ sudo losetup /dev/loop0 myimage.img
+/home/rgregor/DRPBX_ODPRTO/_TXT/shrinking-images-on-linux_20150526.txt:$ sudo losetup -d /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:     losetup /dev/loop0 ~/myDisk.img
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:     These numbers are important for the math... we'll use the losetup command like we did before, only
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:     this time we'll reach in specifically to the start of each of the three partitions. losetup takes
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:     losetup -o 32256 /dev/loop1 /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:     losetup -o 139829760 /dev/loop2 /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:     losetup -o 658022400 /dev/loop3 /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:losetup /dev/loop0 ~/myDisk.img
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:These numbers are important for the math... we'll use the losetup command like we did before, only this time
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:we'll reach in specifically to the start of each of the three partitions. losetup takes offsets as the number
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:losetup -o 32256 /dev/loop1 /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:losetup -o 139829760 /dev/loop2 /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_TXT/build-an-sd-card-image-without-an-sd-card_20150520.txt:losetup -o 658022400 /dev/loop3 /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:losetup /dev/loop0 floppy.img
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:losetup /dev/loop0 floppy.img
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:losetup -o32256 /dev/loop0 /path/to/c.img
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:losetup -d /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:   This is essentially a combination of the losetup and mount commands we used previously when
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:   extension of this, just change the offset of the losetup command according to the partition
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:     * losetup type command will give you the equivalent of a raw disk device (Eg /dev/hda)
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:     * losetup -o type command will give you the equivalent of a raw partition device (Eg
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:    2. Type losetup /dev/loop0 to confirm that the current system is not using any loopback
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:    3. Tpye losetup /dev/loop0 /virtualfs to attach the first Linux loopback device
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:       zero will be returned to indicate success. Alternative, type losetup /dev/loop0 to
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:    8. To un-mount the loopback file system, type umount /mnt/vfs follow with losetup -d
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:       losetup -f
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:       Anyone know why sometimes, even after a umount of the mounted file, losetup -d
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:       All that losetup junk is wholly unnecessary.
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:       Actually i found the losetup junk very useful :)
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:       “Anyone know why sometimes, even after a umount of the mounted file, losetup -d
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt: sudo losetup /dev/loop0 ~/1gb_file_image.img
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:   the offset and sizelimit parameters to pass to losetup when mounting the partitions in the
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt: sudo losetup /dev/loop0 ~/1gb_image_file.img -o 1048576 --sizelimit 134217216
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt: sudo losetup -d /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt: sudo losetup -d /dev/loop1
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:       I think I can fix things by using offsets in losetup and then formatting the whole
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:     * /bin/* A shell interpreter (ash because it is smaller than bash. The mount and losetup
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:-rwxr-xr-x   1 root     root         5484 May 27 07:56 losetup
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:   /bin/losetup /dev/loop0 /mnt/linux/linuxdsk.img
+/home/rgregor/DRPBX_ODPRTO/_TXT/creating-loopback-filesystem-image-on-linux_20140320.txt:   /bin/losetup /dev/loop1 /mnt/linux/linuxswp.img
+/home/rgregor/DRPBX_ODPRTO/_TXT/ramdisk_ramfs-vs-tmpfs_use-case-multif_20161027.txt:		     losetup /dev/loop0 disk.img
+/home/rgregor/DRPBX_ODPRTO/_TXT/RAMDISK_big_20190828.txt:		     losetup /dev/loop0 disk.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:   "losetup".
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:# losetup -o 32256 --sizelimit 5160448 /dev/loop1 hdd.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:# losetup -o 32256 --sizelimit 5160448 /dev/loop1 hdd.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:# losetup -o 5160960 --sizelimit 7740928 /dev/loop2 hdd.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:# losetup -o 7741440 --sizelimit 9289216 /dev/loop3 hdd.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:# losetup -o 9321984 --sizelimit 10321408 /dev/loop5 hdd.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:   Did I mention the importance of the sizelimit argument during losetup? If you didn't you will run
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:   during losetup. Forgetting this can make your life miserable since you can (and will) overwrite data
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:losetup /dev/loop0 ~/myDisk.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:These numbers are important for the math... we'll use the losetup command like we did before, only this time
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:we'll reach in specifically to the start of each of the three partitions. losetup takes offsets as the number
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:losetup -o 32256 /dev/loop1 /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:losetup -o 139829760 /dev/loop2 /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:losetup -o 658022400 /dev/loop3 /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_creating-partitioned-virtual-disk-images-multif_20180409.txt:# losetup --offset 32256 /dev/loop2 harddrive.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd-vs-cat-is-dd-still-relevant_20170510.txt:loop=`losetup --show -f sparse-file`
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_mount-sd-card-image-created-using-dd_20150520.txt:   losetup command:
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_mount-sd-card-image-created-using-dd_20150520.txt:$ sudo losetup /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_mount-sd-card-image-created-using-dd_20150520.txt:$ sudo losetup /dev/loop0 /home/myusername/raspberry-backup-sdf1-2014-04-10.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_mount-sd-card-image-created-using-dd_20150520.txt:sudo losetup -d /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:losetup /dev/loop0 floppy.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:losetup /dev/loop0 floppy.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:losetup -o32256 /dev/loop0 /path/to/c.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:losetup -d /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:   This is essentially a combination of the losetup and mount commands we used previously when
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:   extension of this, just change the offset of the losetup command according to the partition
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:     * losetup type command will give you the equivalent of a raw disk device (Eg /dev/hda)
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:     * losetup -o type command will give you the equivalent of a raw partition device (Eg
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:    2. Type losetup /dev/loop0 to confirm that the current system is not using any loopback
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:    3. Tpye losetup /dev/loop0 /virtualfs to attach the first Linux loopback device
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:       zero will be returned to indicate success. Alternative, type losetup /dev/loop0 to
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:    8. To un-mount the loopback file system, type umount /mnt/vfs follow with losetup -d
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:       losetup -f
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:       Anyone know why sometimes, even after a umount of the mounted file, losetup -d
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:       All that losetup junk is wholly unnecessary.
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:       Actually i found the losetup junk very useful :)
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:       “Anyone know why sometimes, even after a umount of the mounted file, losetup -d
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt: sudo losetup /dev/loop0 ~/1gb_file_image.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:   the offset and sizelimit parameters to pass to losetup when mounting the partitions in the
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt: sudo losetup /dev/loop0 ~/1gb_image_file.img -o 1048576 --sizelimit 134217216
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt: sudo losetup -d /dev/loop0
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt: sudo losetup -d /dev/loop1
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:       I think I can fix things by using offsets in losetup and then formatting the whole
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:     * /bin/* A shell interpreter (ash because it is smaller than bash. The mount and losetup
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:-rwxr-xr-x   1 root     root         5484 May 27 07:56 losetup
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:   /bin/losetup /dev/loop0 /mnt/linux/linuxdsk.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:   /bin/losetup /dev/loop1 /mnt/linux/linuxswp.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:losetup -e aes /dev/loop1 ./aes-drv
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:losetup -d /dev/loop1
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:lo interface is configured using losetup, according to the above, and the
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:losetup -e aes /dev/loop1 ./aes-drv
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:losetup -d /dev/loop1
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:lo interface is configured using losetup, according to the above, and the
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/TMPFS_all_20170201.txt:		     losetup /dev/loop0 disk.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_mounting-a-raw-partition-file_20150520.txt:# losetup --offset 32256 /dev/loop2 harddrive.img
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd-tutorial_20151118.txt:losetup -e aes /dev/loop1 ./aes-drv
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd-tutorial_20151118.txt:losetup -d /dev/loop1
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd-tutorial_20151118.txt:lo interface is configured using losetup, according to the above, and the
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_learn-the-command_20151118.txt:losetup -e aes /dev/loop1 ./aes-drv
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_learn-the-command_20151118.txt:losetup -d /dev/loop1
+/home/rgregor/DRPBX_ODPRTO/_LINUX_SYSTEM/dd_learn-the-command_20151118.txt:lo interface is configured using losetup, according to the above, and the
+/home/rgregor/DRPBX_ODPRTO/METSYS_skupno/doma/METSYS_xubuntu_18-04/METSYS-xubuntu-14-4/RPi_malina_metsys_d_staro/RPi_backup-and-resize-RPi-sd-card-image_5P_20150526.txt:$ raspi-bkp> sudo losetup /dev/loop0 ./raspibkp1.img	# mount raspibkp1.img as loop device
+/home/rgregor/DRPBX_ODPRTO/METSYS_skupno/doma/METSYS_xubuntu_18-04/METSYS-xubuntu-14-4/RPi_malina_metsys_d_staro/RPi_backup-and-resize-RPi-sd-card-image_5P_20150526.txt:$ raspi-bkp> sudo losetup -d /dev/loop0			# unmount loop device
+/home/rgregor/majstaf/d_metsys_git/d_metsys_source/d_setups/METSYS-xubuntu-14-4/RPi_malina_metsys_d_staro/RPi_backup-and-resize-RPi-sd-card-image_5P_20150526.txt:$ raspi-bkp> sudo losetup /dev/loop0 ./raspibkp1.img	# mount raspibkp1.img as loop device
+/home/rgregor/majstaf/d_metsys_git/d_metsys_source/d_setups/METSYS-xubuntu-14-4/RPi_malina_metsys_d_staro/RPi_backup-and-resize-RPi-sd-card-image_5P_20150526.txt:$ raspi-bkp> sudo losetup -d /dev/loop0			# unmount loop device
+/home/rgregor/majstaf/majwww/dnevno/Unix_Toolbox.html:<h3 id="losetup">Linux with losetup</h3>
+/home/rgregor/majstaf/majwww/dnevno/Unix_Toolbox.html:# losetup /dev/loop0 /usr/vdisk.img                   <span class="cmt"># Creates and associates /dev/loop0</span>
+/home/rgregor/majstaf/majwww/dnevno/Unix_Toolbox.html:# losetup -a                                          <span class="cmt"># Check used loops</span>
+/home/rgregor/majstaf/majwww/dnevno/Unix_Toolbox.html:# losetup -d /dev/loop0                               <span class="cmt"># Detach</span>
+/home/rgregor/majstaf/majwww/dnevno/Unix_Toolbox.html:Those instructions use the Linux <code>dm-crypt</code> (device-mapper) facility available on the 2.6 kernel. In this example, lets encrypt the partition <code>/dev/sdc1</code>, it could be however any other partition or disk, or USB or a file based partition created with <code>losetup</code>. In this case we would use <code>/dev/loop0</code>. See <a href="http://cb.vu/unixtoolbox.xhtml#losetup">file image partition</a>. The device mapper uses labels to identify a partition. We use <code>sdc1</code> in this example, but it could be any string.
+/home/rgregor/majstaf/majwww/skladisce/Unix_Toolbox.html:<h3 id="losetup">Linux with losetup</h3>
+/home/rgregor/majstaf/majwww/skladisce/Unix_Toolbox.html:# losetup /dev/loop0 /usr/vdisk.img                   <span class="cmt"># Creates and associates /dev/loop0</span>
+/home/rgregor/majstaf/majwww/skladisce/Unix_Toolbox.html:# losetup -a                                          <span class="cmt"># Check used loops</span>
+/home/rgregor/majstaf/majwww/skladisce/Unix_Toolbox.html:# losetup -d /dev/loop0                               <span class="cmt"># Detach</span>
+/home/rgregor/majstaf/majwww/skladisce/Unix_Toolbox.html:Those instructions use the Linux <code>dm-crypt</code> (device-mapper) facility available on the 2.6 kernel. In this example, lets encrypt the partition <code>/dev/sdc1</code>, it could be however any other partition or disk, or USB or a file based partition created with <code>losetup</code>. In this case we would use <code>/dev/loop0</code>. See <a href="http://cb.vu/unixtoolbox.xhtml#losetup">file image partition</a>. The device mapper uses labels to identify a partition. We use <code>sdc1</code> in this example, but it could be any string.
+/home/rgregor/majstaf/majwww/Unix_Toolbox.html:<h3 id="losetup">Linux with losetup</h3>
+/home/rgregor/majstaf/majwww/Unix_Toolbox.html:# losetup /dev/loop0 /usr/vdisk.img                   <span class="cmt"># Creates and associates /dev/loop0</span>
+/home/rgregor/majstaf/majwww/Unix_Toolbox.html:# losetup -a                                          <span class="cmt"># Check used loops</span>
+/home/rgregor/majstaf/majwww/Unix_Toolbox.html:# losetup -d /dev/loop0                               <span class="cmt"># Detach</span>
+/home/rgregor/majstaf/majwww/Unix_Toolbox.html:Those instructions use the Linux <code>dm-crypt</code> (device-mapper) facility available on the 2.6 kernel. In this example, lets encrypt the partition <code>/dev/sdc1</code>, it could be however any other partition or disk, or USB or a file based partition created with <code>losetup</code>. In this case we would use <code>/dev/loop0</code>. See <a href="http://cb.vu/unixtoolbox.xhtml#losetup">file image partition</a>. The device mapper uses labels to identify a partition. We use <code>sdc1</code> in this example, but it could be any string.
+Binary file /home/rgregor/majstaf/downloaded-ISOs/xubuntu-20.04.1-desktop-amd64.iso matches
+Binary file /home/rgregor/majstaf/downloaded-ISOs/linuxmint-20-xfce-64bit.iso matches
+^C

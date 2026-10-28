@@ -1,0 +1,4 @@
+When I install a snap its .desktop icon is copied to: /var/lib/snapd/desktop/applications/
+But it won’t appear in the GNOME’s results for launching applications until I manually copy it to either /usr/share/applications or ~/.local/share/applications
+
+Is there a way to make the .desktop files of installed snaps be copied to GNOME’s /usr/share/applications folder automatically?

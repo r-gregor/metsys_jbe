@@ -1,0 +1,99 @@
+  mkdir -p $BRISI/mdb-root_home_rgregor_dot-local_bin
+  cp -r ~/.local/bin/ $BRISI/mdb-root_home_rgregor_dot-local_bin/
+  cd .local/bin
+  cd $MBIN
+  mkdir -p /home/rgregor/majstaf/BRISI/mdb-root_home_rgregor_majstaf_majbin
+  cp -r ./* /home/rgregor/majstaf/BRISI/mdb-root_home_rgregor_majstaf_majbin/
+  find * -type d | grep "_"
+  for DDD in $(find * -type d | grep "_"); do echo mv $DDD ${DDD//_/-}; done
+  for DDD in $(find * -type d | grep "_"); do mv $DDD ${DDD//_/-}; done
+  find * -type f | grep "_"
+  for FFF in $(find * -type f | grep "_"); do mv $FFF ${FFF//_/-}; done
+  mkdir MAJBINTMP
+  cd MAJBINTMP/
+  git clone https://github.com/r-gregor/majbin_en.git
+  cd majbin_en/
+  cp -r fname-dname-manipulations-en ../../
+  cd fname-dname-manipulations-en/
+  mv fname-dname-manipulations-{en,mdb}
+  cd fname-dname-manipulations-mdb/
+  vim -p *
+  for FFF in *; do echo mv $FFF ${FFF//-en/-mdb}; done
+  for FFF in *; do mv $FFF ${FFF//-en/-mdb}; done
+  vim -O fname-hypens-to-underscores-mdb fname-underscores-to-hypens-mdb
+  rm fname-hypens-to-underscores-mdb
+  cp fname-underscores-to-hypens-mdb fname-hypens-to-unerscores-mdb
+  vim fname-hypens-to-unerscores-mdb
+  cp dname-underscores-to-hypens-mdb dname-hypens-to-underscores-mdb
+  vim dname-hypens-to-underscores-mdb
+  for FFF in *; do softlink1-fname-to-ulb $FFF; done
+  cd majstaf/majbin/send-mail
+  sbr
+  fname-hypens-to-unerscores-mdb send-config-d.sh
+  cd majstaf/majbin/
+  mv MAJBINTMP/ $BRISI/
+  grep -r "majbin_\|majrcs_" *
+  vim check-git-diffs-mdb
+  softlink1-fname-to-ulb ~/majstaf/majbin/broken-symlinks-list
+  broken-symlinks-list >> SEZNAM
+  vim SEZNAM
+  bash SEZNAM
+  broken-symlinks-list >> REMOVE
+  vim REMOVE
+  bash REMOVE 
+  rm binds_from_i3
+  rm REMOVE SEZNAM
+  ll | grep mdbgit
+  cd majstaf/majbin/git-commands/
+  find * -maxdepth 0 -type f | xargs -ro vim -p
+  cd ..
+  grepc -r "_" *
+  cd .local/bin/
+  broken-symlinks-list
+  cd $MGT
+  cd majbin_mdb/
+  rm -r ./*
+  cp -r ~/majstaf/majbin/* .
+  vim aliases_muadib
+  cpi aliases_muadib $MMRCS 
+  cd $MMRCS
+  gst
+  gyes-gadd-push-jbe
+  cd majstaf/majrcs/
+  vim ~/.bashrc
+  cd
+  ll
+  mdbgt-run-all
+  stat .local/bin/yt-dlp
+  vim majstaf/majrcs/aliases_muadib
+  sbr
+  yt-dlp
+  cd majstaf/majrcs/
+  cpi aliases_muadib $MMRCS
+  cd $MMRCS
+  gst
+  gyes-gadd-push-jbe
+  cd $CTST
+  cd ct_139_obletnica_20250115/
+  fname-underscores-to-hypens-mdb obletnica_c.c
+  for FFF in *; do fname-underscores-to-hypens-mdb $FFF; done
+  tree bin/
+  ll bin/
+  rmdir bin
+  make
+  bin/obletnica-c
+  cpi bin/obletnica-c ~/majstaf/coding2/toolbox/c_toolbox/obletnica_c/
+  cd ~/majstaf/coding2/toolbox/c_toolbox/obletnica_c/
+  rm obletnica_c
+  cd src/
+  rm ./*
+  cp /home/rgregor/majstaf/coding2/testing/c_testing/ct_139_obletnica_20250115/Makefile .
+  cp /home/rgregor/majstaf/coding2/testing/c_testing/ct_139_obletnica_20250115/obletnica-c.c .
+  softlink1-fname-to-ulb obletnica-c
+  obletnica-c
+  obletnica-c 2033
+  cd ..
+  mv obletnica{_,-}c
+  cd
+  ll
+  pwf

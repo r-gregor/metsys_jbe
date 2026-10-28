@@ -1,0 +1,29 @@
+How to resitze TMUX split windows (20260518)
+
+To resize a vertical split (or any pane) in tmux, you can use keyboard shortcuts, command mode, or the
+mouse. By default, the prefix key is Ctrl+b.
+
+1 - Using Keyboard Shortcuts (Fastest)
+    Make sure you are in the pane you want to resize, then use these combinations:
+     * Make wider (expand right): Press Ctrl+b, then hold Ctrl and press -->.
+     * Make narrower (expand left): Press Ctrl+b, then hold Ctrl and press <--.
+     * Make taller: Press Ctrl+b, then hold Ctrl and press <up arrow>.
+     * Make shorter: Press Ctrl+b, then hold Ctrl and press <down arrow>.
+       Tip: You can release Ctrl+b and continue holding Ctrl while tapping the arrows to resize incrementally.
+
+2 - Using Command Mode (Precise)
+    If you want to specify an exact number of terminal cells to resize by, use command mode:
+    1. Press Ctrl+b then : to open the command prompt at the bottom.
+    2. Type resize-pane followed by a direction and the number of cells (e.g., resize-pane -R 10 to expand 10
+       cells to the right)
+       * -R (Right)
+       * -L (Left)
+       * -U (Up)
+       * -D (Down)
+
+3. Using the Mouse (Easiest)
+   If you have mouse mode enabled, you can simply click and drag the borders of the pane to resize them.To
+   enable mouse mode for the current session, press Ctrl+b then :, and type:set mouse on
+
+---
+

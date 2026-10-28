@@ -1,0 +1,89 @@
+filename: /home/rgregor/majstaf/metsys/git/git_set_upstream_to_track_local_remote_branches-diff_20241022.txt
+
+Run following command to enable tracking: git branch --set-upstream-to <remote>/branch branch
+$> git branch --set-upstream-to ghjbe/main main
+
+or: git push <remote> <branch> -u
+$> git push ghjbe main -u
+
+in all repositories: so that git status -b shows the tracking info:
+$> git status -b
+
+output:
+On branch main
+Your branch is up to date with 'ghjbe/main'.
+
+nothing to commit, working tree clean
+
+---
+Explanation:
+
+Git status is about the repository's current status. It's built to be a
+distributed version control system, which means origin is no different than any
+other repository you might have as a remote. If you wanted git to diff your
+files with every remote then the output could rapidly get very complex, and
+chances are you don't care about most of it anyway.
+
+So Git lets you specify upstream tracking information. You can do git branch
+-vv to see the upstream for all your branches and if one does not have an
+upstream set you can check it out and run git branch --set-upstream-to
+origin/master for example. And whatever you've set here, does get included in
+your git status output like this:
+
+$> git status
+   On branch master
+   Your branch is ahead of 'origin/master' by 1 commit.
+      (use "git push" to publish your local commits)
+
+If you want to see a list of files changes between two branches them you can do
+something like git diff --stat origin/master...HEAD
+
+---
+Explanation 2:
+
+What is an Upstream Branch?
+An upstream branch in Git refers to a branch that serves as a reference point
+for another branch. Typically, it’s used to track the remote branch, allowing
+developers to fetch updates, compare changes, and push their commits easily.
+Setting an upstream branch simplifies the process of keeping local and remote
+repositories in sync.  How to Set Upstream Branches in Git?
+
+Using the Git Push command with the “-u” option for the upstream branch.  Set
+Upstream Branch using Git Push command
+
+---
+Set or Change Upstream Branch on Git
+
+How to automatically set upstream in git?
+You can automatically set upstream in Git by using the -u or –set-upstream
+option with the git push command when pushing your local branch to the remote
+repository. For example:
+$> git push -u origin <branch name>
+
+How to set a local branch to upstream?
+To set a local branch to track an upstream branch, you can use the -u or
+–set-upstream-to option with the git branch command. For example:
+$> git branch -u <remote/branch name>
+
+
+How to list upstream branches in git?
+You can list upstream branches in Git using the git branch command with the -vv
+option. This will display a list of all local branches along with their
+respective tracking branches. For example:
+$> git branch -vv
+
+How to set upstream branch in git without pushing?
+To set the upstream branch in Git without pushing, you can use the -u or
+–set-upstream-to option with the git branch command followed by the remote and
+branch name. For example:
+$> git branch --set-upstream-to=<remote/branch name>
+
+How to set upstream to a specific branch in git?
+To set upstream to a specific branch in Git, you can use the -u or
+–set-upstream option with the git push command followed by the remote and
+branch name. For example:
+
+git push -u origin <branch name>
+
+
+---

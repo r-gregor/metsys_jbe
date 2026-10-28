@@ -1,0 +1,90 @@
+2026-10-07 08:26:50 gt-testing-all
+2026-10-07 08:48:59 exit
+2026-10-07 08:49:21 cd $MJBN
+2026-10-07 08:49:22 ll
+2026-10-07 08:49:27 vim sflinks.txt
+2026-10-07 08:49:56 ll
+2026-10-07 08:51:27 grep -rl "gregor.redelonghi" **/*.sh |grep -v "arch\|backup" |less
+2026-10-07 08:53:28 mkdir en_only
+2026-10-07 08:53:35 cd ..
+2026-10-07 08:53:58 cp -r majbin/ _majbin_backup_20261007
+2026-10-07 08:54:16 ll -d _maj*
+2026-10-07 08:54:22 rm -r _majbin_backup_20260925/
+2026-10-07 08:54:34 cd majbin/
+2026-10-07 08:54:47 grep -rl "gregor.redelonghi/" **/*.sh |grep -v "arch\|backup" |less
+2026-10-07 08:56:28 vim find-and-move-to-en-only.sh
+2026-10-07 09:18:45 chmod +x find-and-move-to-en-only.sh
+2026-10-07 09:43:03 vim show-aliases-en.sh
+2026-10-07 09:43:26 vim find-and-move-to-en-only.sh
+2026-10-07 09:44:50 cd ..
+2026-10-07 09:45:01 cd majbin/
+2026-10-07 09:45:33 file ZpPretokNormniDejanski
+2026-10-07 09:47:15 mv find-and-move-to-en-only.sh find-en-only-commands-in-majbin-en.sh
+2026-10-07 09:47:21 vim find-en-only-commands-in-majbin-en.sh
+2026-10-07 09:50:06 ./find-en-only-commands-in-majbin-en.sh | xargs -I{} mv -v {} en_only/
+2026-10-07 09:50:41 cd ~/.local/bin
+2026-10-07 09:50:46 broken-symlinks-list
+2026-10-07 09:51:11 broken-symlinks-list | cut -d ':' -f1
+2026-10-07 09:51:46 broken-symlinks-list | cut -d ':' -f1 >> /home/gregor.redelonghi/majstaf/majbin/en_only/_broken-links-list-20261007.txt
+2026-10-07 09:51:50 vim /home/gregor.redelonghi/majstaf/majbin/en_only/_broken-links-list-20261007.txt
+2026-10-07 09:52:50 cd ~/majstaf/majbin/en_only/
+2026-10-07 09:53:26 cd ..
+2026-10-07 09:53:43 ./en_only/find-en-only-commands-in-majbin-en.sh
+2026-10-07 09:54:11 cd hstl-en/
+2026-10-07 09:54:19 vim hstl-en.sh
+2026-10-07 09:54:45 cd ..
+2026-10-07 10:10:15 cd en_only/
+2026-10-07 10:10:55 touch this_directory_contains_en_only_commands.txt
+2026-10-07 10:11:00 vim this_directory_contains_en_only_commands.txt
+2026-10-07 10:11:29 cd ..
+2026-10-07 10:21:04 while read -r -- INPUT; do if [ $INPUT == "crq.sh" ]; then echo "$INPUT"; fi; done < <(./find-en-only-commands-in-majbin-en.sh)
+2026-10-07 10:21:25 while read -r -- INPUT; do if [ -d "$INPUT" ]; then echo "dir: $INPUT"; fi; done < <(./find-en-only-commands-in-majbin-en.sh)
+2026-10-07 10:22:36 while read -r -- INPUT; do if [ -d "$INPUT" ]; then cp -v ./en_only/this_directory_contains_en_only_commands.txt "$INPUT"/; fi; done < <(./find-en-only-commands-in-majbin-en.sh)
+2026-10-07 10:23:46 vim en_only/en_only_commands_20261007.txt
+2026-10-07 10:25:12 while read -r -- INPUT; do if [ -d "$INPUT" ]; then echo "$INPUT"; fi; done < <(./find-en-only-commands-in-majbin-en.sh)
+2026-10-07 10:27:09 for DDD in ff-launch/ git-commands lvviev-lvedit-scripts-by-last-timestamp/ majcommands-list/ string-manipulations/; do echo $DDD; done
+2026-10-07 10:27:57 TDCEO=this_directory_contains_en_only_commands.txt
+2026-10-07 10:28:22 for DDD in ff-launch/ git-commands lvviev-lvedit-scripts-by-last-timestamp/ majcommands-list/ string-manipulations/; do echo rm -v $DDD/$TDCEO; done
+2026-10-07 10:28:33 for DDD in ff-launch/ git-commands lvviev-lvedit-scripts-by-last-timestamp/ majcommands-list/ string-manipulations/; do rm -v $DDD/$TDCEO; done
+2026-10-07 10:28:46 vim en_only/en_only_commands_20261007.txt
+2026-10-07 10:34:59 cd $MJBN
+2026-10-07 10:35:03 cd ff-launch/
+2026-10-07 10:36:29 grep -r -- "gregor.redelonghi\|gredelonghi\|-en" * |grep -v "messag\|arch\|doc\|FROM"
+2026-10-07 10:36:45 cd ../git-commands
+2026-10-07 10:36:47 grep -r -- "gregor.redelonghi\|gredelonghi\|-en" * |grep -v "messag\|arch\|doc\|FROM"
+2026-10-07 10:37:18 vim gt-add-gcmt.sh
+2026-10-07 10:38:30 gt-update-single-file gt-add-gcmt.sh
+2026-10-07 10:38:50 cd ../lvviev-lvedit-scripts-by-last-timestamp/
+2026-10-07 10:38:55 grep -r -- "gregor.redelonghi\|gredelonghi\|-en" * |grep -v "messag\|arch\|doc\|FROM"
+2026-10-07 10:39:12 vim lvedit-scripts-by-last-timestamp.sh
+2026-10-07 10:40:52 gt-update-single-file lvedit-scripts-by-last-timestamp.sh
+2026-10-07 10:41:01 cd ..
+2026-10-07 10:41:11 cd majcommands-list/
+2026-10-07 10:42:23 cd majcommands-list/
+2026-10-07 10:42:28 grep -r -- "gregor.redelonghi\|gredelonghi\|-en" * |grep -v "messag\|arch\|doc\|FROM"
+2026-10-07 10:42:35 cd ../string-manipulations/
+2026-10-07 10:42:37 grep -r -- "gregor.redelonghi\|gredelonghi\|-en" * |grep -v "messag\|arch\|doc\|FROM"
+2026-10-07 10:43:01 vim txt-fjls-from-*
+2026-10-07 10:46:06 cd majstaf/majbin/
+2026-10-07 10:53:16 cd lvviev-lvedit-scripts-by-last-timestamp/
+2026-10-07 10:53:36 ./find-en-only-commands-in-majbin-en.sh | grep -v "\.sh"
+2026-10-07 10:53:39 cd ..
+2026-10-07 10:53:40 ./find-en-only-commands-in-majbin-en.sh | grep -v "\.sh"
+2026-10-07 11:06:13 rm -r git-commands-backup-20260929/
+2026-10-07 11:59:21 ./find-en-only-commands-in-majbin-en.sh > en_only/en_only_commands_20261007.txt
+2026-10-07 11:59:52 cat en_only/en_only_commands_20261007.txt | grep git
+2026-10-07 12:00:05 cat en_only/en_only_commands_20261007.txt |wc -l
+2026-10-07 12:00:26 ./find-en-only-commands-in-majbin-en.sh | wc -l
+2026-10-07 12:01:29 cd en_only/
+2026-10-07 12:01:33 vim en_only_commands_20261007.txt
+2026-10-07 12:01:47 cd ..
+2026-10-07 12:01:55 vim find-en-only-commands-in-majbin-en.sh
+2026-10-07 12:02:33 ./find-en-only-commands-in-majbin-en.sh
+2026-10-07 12:02:47 ./find-en-only-commands-in-majbin-en.sh | wc -l
+2026-10-07 12:03:23 cat en_only/en_only_commands_20261007.txt | wc -l
+2026-10-07 12:03:37 cat en_only/en_only_commands_20261007.txt
+2026-10-07 12:04:41 while read ENONLYC; do echo mv -v ./"$ENONLYC" ./en_only/; done < en_only/en_only_commands_20261007.txt
+2026-10-07 12:05:04 while read ENONLYC; do mv -v ./"$ENONLYC" ./en_only/; done < en_only/en_only_commands_20261007.txt
+2026-10-07 12:05:25 vim en_only/en_only_commands_20261007.txt
+2026-10-07 12:10:19 /home/gregor.redelonghi/majstaf/majbin/en_only/hstl-en/hstl-en.sh
+2026-10-07 12:10:42 vim /home/gregor.redelonghi/majstaf/seznami/hstl-en-20261007-121019.txt

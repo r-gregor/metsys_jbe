@@ -1,0 +1,47 @@
+  911  2022-04-09 18:00:18 cd majstaf/d_bgit/
+  912  2022-04-09 18:01:07 mv d_bgit/ d_kdb
+  913  2022-04-09 18:01:18 vim d_kdb/setup.txt 
+  914  2022-04-09 18:02:28 vim majstaf/forallusers/aliases_forall 
+  915  2022-04-09 18:03:46 sbr
+  926  2022-04-09 18:14:14 dkdb remote rename origin glkdb
+  927  2022-04-09 18:14:58 dkdb remote
+  929  2022-04-09 18:17:28 cd ../_GIT/
+  930  2022-04-09 18:17:55 lynxd "ttps://support.beanstalkapp.com/article/1000-how-do-i-rename-an-existing-git-remote" git_howto-rename-existing-git-remote
+  931  2022-04-09 18:18:07 lynxd "https://support.beanstalkapp.com/article/1000-how-do-i-rename-an-existing-git-remote" git_howto-rename-existing-git-remote
+  932  2022-04-09 18:18:22 prepare-fjl-for-knowledgebase-d git_howto-rename-existing-git-remote_20220409.txt 
+  933  2022-04-09 18:21:36 dkdb commit -m "added _GIT/git_howto-rename-existing-git-remote_20220409.txt 20220409"
+  934  2022-04-09 18:21:47 dkdb push
+  935  2022-04-09 18:22:24 dkdb push --set-upstream glkdb main
+  936  2022-04-09 18:22:41 dkdb log -P --oneline
+  938  2022-04-09 18:44:17 dkdb remote add ghkdb git@github.com:r-gregor/knowledgedb.git
+  939  2022-04-09 18:46:29 dkdb pull ghkdb master
+  940  2022-04-09 18:46:33 dkdb pull ghkdb main
+  941  2022-04-09 18:48:00 dkbd pull --allow-unrelated-histories ghkdb main
+  943  2022-04-09 18:48:54 dkdb pull --allow-unrelated-histories ghkdb main
+  944  2022-04-09 18:50:38 echo "TEST 20220409" > ~/DRPBX_ODPRTO/_TXT/test_20220409.txt
+  945  2022-04-09 18:50:56 dkdb add .
+  946  2022-04-09 18:51:13 dkdb commit -m "test 20220409"
+  947  2022-04-09 18:51:33 dkdb push glkdb main
+  948  2022-04-09 18:51:45 dkdb push ghkdb main
+  949  2022-04-09 18:53:40 dkdb remote -v
+  951  2022-04-09 23:34:48 dkdb branch
+  952  2022-04-09 23:34:56 dkdb -P branch
+  953  2022-04-09 23:35:04 dkdb -P remote -v
+  955  2022-04-09 23:35:25 dkdb -P status -u
+  957  2022-04-09 23:36:28 vim ~/majstaf/forallusers/aliases_forall 
+  958  2022-04-09 23:37:34 dgfls remote -v
+  959  2022-04-09 23:38:03 dgfls branch
+  960  2022-04-09 23:38:48 cp -i .vimrc ~/majstaf/d_metsys_git_setup/d_metsys_source/d_dotfiles/
+  961  2022-04-09 23:39:16 cp -i majstaf/forallusers/aliases_forall ~/majstaf/d_metsys_git_setup/d_metsys_source/d_forallusers/
+  964  2022-04-09 23:39:49 dgfls -P log --oneline
+  965  2022-04-09 23:40:30 diff .vimrc ~/majstaf/d_metsys_git_setup/d_metsys_source/d_dotfiles/.vimrc
+  966  2022-04-09 23:40:39 dgfls status -u
+  967  2022-04-09 23:41:23 dgfls add .
+  968  2022-04-09 23:41:24 dgfls commit -m "Updated aliases_forall 20220409"
+  969  2022-04-09 23:41:37 dhfls add .
+  970  2022-04-09 23:41:44 dhfls commit -m "Updated aliases_forall 20220409"
+  971  2022-04-09 23:42:11 dgfls remote
+  972  2022-04-09 23:42:26 dgfls push gitlab_dmetsys master
+  973  2022-04-09 23:42:39 dhfls push github_dmetsys master
+  977  2022-04-09 23:42:56 dkdb status -u
+  978  2022-04-09 23:43:07 dkdb -P log --oneline

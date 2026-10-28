@@ -1,0 +1,180 @@
+## from: https:##www.youtube.com/watch?v=8T0vvf1xm58
+
+root@archiso ~ # localectl list-keymaps | grep SI
+root@archiso ~ # loadkeys sl_SI.UTF-8
+root@archiso ~ # ip a
+root@archiso ~ # iwctl
+## wlan setup (if needed))
+[iwd]# device list ## device name
+[iwd]# station [device name (like wlan0)] scan
+[iwd]# station wlan0 get networks ## networkname
+[iwd]# station wlan0 connect [networkname] ## enter password ...
+[iwd]# exit
+root@archiso ~ # timedatectl set-ntp true
+root@archiso ~ # reflector -c SLovenia -a 12 --sort rate --save /etc/pacman.d/mirrorlist
+root@archiso ~ # pacman -Syy
+root@archiso ~ # lsblk ## only one HDD (sda)
+## UEFI settings -- UEFI settings -- UEFI settings -- UEFI settings -- UEFI settings -- UEFI settings -- UEFI settings
+root@archiso ~ # gdisk /dev/sda 
+				n (new -- first partition)
+					Partition number: 	[enter] (accept 1)
+					First sector:		[enter]
+					Last sector:		+200M
+					HEX code for type:	L (to list filesystem codes) ==> efi (list for efi)
+					HEX code for type>	ef00
+				
+				n (new -- second partition)
+					Partition number: 	[enter] (accept 2)
+					First sector:		[enter]
+					Last sector:		[enter]
+					HEX code for type:	[enter]
+				w (write)
+
+root@archiso ~ # lsblk
+root@archiso ~ # mkfs.fat -F32 /dev/sda1
+root@archiso ~ # mkfs.ext4 /dev/sda2
+root@archiso ~ # mount /dev/sda2 /mnt
+root@archiso ~ # mkdir -p /mnt/boot/efi
+root@archiso ~ # mount /dev/sda1 /mnt/boot/efi
+root@archiso ~ # lsblk
+## UEFI settings -- UEFI settings -- UEFI settings -- UEFI settings -- UEFI settings -- UEFI settings -- UEFI settings
+##
+## MBR settings -- MBR settings -- MBR settings  -- MBR settings  -- MBR settings  -- MBR settings  -- MBR settings  
+root@archiso ~ # lsblk
+root@archiso ~ # fdisk /dev/sda
+					n (new -- first partition)
+						Partition type:		p (primary)
+						Partition num:		[enter] (select 1)
+						First sector:		[enter]
+						Last sector:		+8G (fo swap)
+					t (type)
+						Select partition:	1
+						HEX code for type:	L
+						HEX code for type:	82
+					n (new -- second partition)
+						Partition type:		p (primary)
+						Partition num:		[enter] (select 2)
+						First sector:		[enter]
+						Last sector:		[enter]
+					w
+
+root@archiso ~ # lsblk 
+root@archiso ~ # mkswap /dev/sda1
+root@archiso ~ # swapon /dev/sda1
+root@archiso ~ # mkfs.ext4 /dev/sda2
+root@archiso ~ # lsblk
+root@archiso ~ # mount /dev/sda2 /mnt
+root@archiso ~ # lsblk
+## MBR settings -- MBR settings -- MBR settings  -- MBR settings  -- MBR settings  -- MBR settings  -- MBR settings  
+root@archiso ~ # pacstrap /mnt base linux linux-lts linux-firmware vim intel-ucode (amd-ucode -- for amd processor)
+root@archiso ~ # genfstab -U /mnt >> /mnt/etc/fstab
+root@archiso ~ # cat /mnt/etc/fstab
+root@archiso ~ # arch-chroot /mnt
+[root@archiso /]# 
+## UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only
+[root@archiso /]# dd if=/dev/zero of=/swapfile bs=1M count=8192 status=progress ## (8192 = 1024 x 8)
+[root@archiso /]# chmod 600 /swapfile
+[root@archiso /]# mkswap /swapfile
+[root@archiso /]# swapon /swapfile
+[root@archiso /]# cp /etc/fstab{,.backup}
+[root@archiso /]# vim /etc/fstab
+## add line:
+/swapfile	none	swap	defaults	0	0
+## UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only
+[root@archiso /]# timedatectl list-timezones | grep Ljubljana
+[root@archiso /]# ln -sf /usr/share/zoneinfo/EUrope/Ljubljana /etc/localtime
+[root@archiso /]# hwclock --systohc
+[root@archiso /]# vim /etc/locale.gen
+# uncomment: 	en_US.UTF-8
+# 			(sl_SI.UTF-8 ??)
+[root@archiso /]# locale-gen
+[root@archiso /]# vim /etc/locale.conf
+# enter:
+# LANG=en_US.UTF-8
+# save/close
+[root@archiso /]# vim /etc/vconsole.conf
+# enter:
+# KEYMAP=slovene
+# save/close
+[root@archiso /]# vim /etc/hostname # ... myCoolHostname
+[root@archiso /]# vim /etc/hosts
+# enter:
+# 127.0.0.1		localhost
+# ::1			localhost
+# 127.0.1.1		myCoolHostname.localdomain	myCoolHostname
+# save/close
+[root@archiso /]# passwd (for root user) ...
+[root@archiso /]# pacman -S grub # MBR and UEFI
+[root@archiso /]# pacman -S efibootmgr
+[root@archiso /]# pacman -S networkmanager networkmanager-applet dialog mtools dosfstools base-devel linux-headers linux-lts-headers bluez bluez-utils cups alsa-utils pulseaudio pulseaudio-bluetooth git reflector xdg-utils xdg-user-dirs
+## UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only
+[root@archiso /]# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+[root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
+## UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only -- UEFI only
+##
+## MBR settings -- MBR settings -- MBR settings  -- MBR settings  -- MBR settings  -- MBR settings  -- MBR settings  
+[root@archiso /]# grub-install --target=i386-pc /dev/sda
+[root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
+## MBR settings -- MBR settings -- MBR settings  -- MBR settings  -- MBR settings  -- MBR settings  -- MBR settings  
+[root@archiso /]# systemctl enable NetworkManager
+[root@archiso /]# systemctl enable bluetooth
+[root@archiso /]# systemctl enable --now cup 
+[root@archiso /]# useradd -mG wheel rgregor
+[root@archiso /]# passwd rgregor
+[root@archiso /]# EDITOR=vim visudo
+# uncomment:
+%wheel ALL=(ALL) NOPASSWD: ALL
+[root@archiso /]# exit
+root@archiso ~ # umount -a
+root@archiso ~ # reboot
+##
+## from here on:  https://www.youtube.com/watch?v=PLBm0C5Gv58
+rgregor@myCollHostname ~ $ setfont ter132n # must be installed!!
+rgregor@myCollHostname ~ $ sudo pacman -S xf86-vide-intel[amdgpu] xorg [lightdm lightdm-greeter] xorg-xinit
+rgregor@myCollHostname ~ $ sudo pacman -S bspdm sxhkd dmenu rofi nitrogen picom xfce4-terminal terminator alacritty termite firefox arandr
+## bspwm setup ...
+rgregor@myCollHostname ~ $ mkdir -p ~/.config/{bspwm,sxhkd}
+rgregor@myCollHostname ~ $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
+rgregor@myCollHostname ~ $ vim ~/.xinitrc
+# delete xterm settings, and add lines:
+setxkeybmap si(sl?) &
+picom -f & (-f ... fading effect)
+exec bspwm
+
+rgregor@myCollHostname ~ $ sudo vim /etc/xdg/pivom.cof # only if VM in virtualbox!!
+# comment out the line:
+#vsync = true;
+
+rgregor@myCollHostname ~ $ startx
+...
+rgregor@myCollHostname ~ $ Mod+space (start dmenu) --> arandr
+# choose resolution
+# save --> choose name for shell script ... (~/.screenlayout/display1.sh)
+
+rgregor@myCollHostname ~ $ chmod -x ~/.screenlayout/display1.sh
+rgregor@myCollHostname ~ $ vim .xinitrc
+# add line BEFORE the compositor (picom):
+$HOME/.screenlayout/display1.sh
+xsetroot -cursor_name left_ptr # change the cursor shape (part of the xorg group)
+
+# download some wallpapers and set it up with nitrogen and than:
+rgregor@myCollHostname ~ $ sudo vim ~/.xinitrc
+# add AFTER display1 line:
+nitrogen --restore &
+
+## from here on: https://www.youtube.com/watch?v=7lLa4IoVdCo&feature=youtu.be
+## polybar setup
+#
+# From the channel [https://www.youtube.com/channel/UCX_WM2O-X96URC5n66G-hvwtall]:
+# This is Part 2 of the BSPWM (Binary Space Partitioning Window Manager) installation on Arch Linux. We are going to have an overview of the configuration files, installing and configuring Polybar and adding a lock screen.
+# For more info on the config commands available, please consult the BSPWM GitHub project linked below.
+# 
+# BSPWM GitHub Project: https://github.com/baskerville/bspwm
+# Arch Linux BSPWM Wiki: https://wiki.archlinux.org/index.php/...
+# BSPWM config files used in this tutorial: https://bit.ly/32ZkT6K
+# Polybar config file: https://ermannoferrari.net/polybar-co...
+# Powerline script: https://bit.ly/3hDkIln
+# Betterlockscreen: https://github.com/pavanjadhaw/better...
+
+...
+

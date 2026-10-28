@@ -1,0 +1,66 @@
+# 20251112:
+sudo apt-get install rxvt-unicode xsel
+cd $BRISI
+git clone https://github.com/muennich/urxvt-perls
+cd urxvt-perls/
+mkdir -p ~/.urxvt/ext
+cp keyboard-select deprecated/clipboard deprecated/url-select ~/.urxvt/ext
+vim ~/.Xresources
+xrdb ~/.Xresources
+urxvt
+cp .Xresources .urxvt-colors-default-1
+mv .Dracula-Xresources-color-theme .urxvt-colors-Dracula-1
+vim .urxvt-colors-default-1
+xrdb .Xresources
+vim .Xresources
+vim .urxvt-colors-Dracula-1
+printf '\33]50;%s\007' "xft:UbuntuMono Nerd Font-26"
+printf '\33]50;%s\007' "xft:UbuntuMono Nerd Font-18
+printf '\33]50;%s\007' "xft:UbuntuMono Nerd Font-18"
+printf '\33]50;%s\007' "xft:UbuntuMono Nerd Font-14"
+printf '\33]50;%s\007' "xft:UbuntuMono Nerd Font-16"
+printf '\33]50;%s\007' "xft:UbuntuMono Nerd Font-16"
+printf '\33]50;%s\007' "xft:EnvyCodeR Nerd Font Mono-16"
+printf '\33]50;%s\007' "xft:Monoid Nerd Font Mono-16"
+printf '\33]50;%s\007' "xft:Monoid Nerd Font Mono-14"
+printf '\33]50;%s\007' "xft:Mononoki Nerd Font Mono-14"
+printf '\33]50;%s\007' "xft:Mononoki Nerd Font Mono-16"
+printf '\33]50;%s\007' "xft:RobotoMono Nerd Font Mono-16"
+printf '\33]50;%s\007' "xft:RobotoMono Nerd Font Mono-14"
+printf '\33]50;%s\007' "xft:Terminess Nerd Font Mono-14"
+printf '\33]50;%s\007' "xft:Terminess Nerd Font Mono-16"
+printf '\33]50;%s\007' "xft:UbuntuMono Nerd Font Mono-16"
+grep 'xft:' .Xresources | head -n1 | cut -d: -f3
+echo "printf '\33]50;%s\007' \"xft:UbuntuMono Nerd Font Mono-16\"" >> ~/majstaf/majbin/urxvt-font-size/ufont-increase
+/home/rgregor/majstaf/majbin/urxvt-font-size/ufont-increase
+vim majstaf/majbin/urxvt-font-size/ufont-increase
+/home/rgregor/majstaf/majbin/urxvt-font-size/ufont-increase 4
+/home/rgregor/majstaf/majbin/urxvt-font-size/ufont-increase -3
+/home/rgregor/majstaf/majbin/urxvt-font-size/ufont-increase 2
+/home/rgregor/majstaf/majbin/urxvt-font-size/ufont-increase 0.5
+/home/rgregor/majstaf/majbin/urxvt-font-size/ufont-increase 3
+/home/rgregor/majstaf/majbin/urxvt-font-size/ufont-increase -1
+/home/rgregor/majstaf/majbin/urxvt-font-size/ufont-increase 0
+cd majstaf/majbin/urxvt-font-size/
+mv ufont-increase ufsc
+softlink1-fname-to-ulb ufsc
+/home/rgregor/majstaf/majbin/BrthReminder_c/BrthReminder_c_color
+ufsc 5
+ufsc
+ufsc -2
+ufsc 0
+ufsc 2
+ufsc 1
+vim majstaf/majbin/urxvt-font-size/ufsc
+
+---
+faze-2:
+IT WORKS WITH '+/-' ON THE KEYBOARD (not on the right numeric keypad!)
+1 - wget https://raw.githubusercontent.com/simmel/urxvt-resize-font/refs/heads/master/resize-font
+2 - cp resize-font ~/.urxvt/ext/
+3 - add next line in .Xresources:
+	urxvt.perl-ext-common: resize-font
+done!
+
+---
+

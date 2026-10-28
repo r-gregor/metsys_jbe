@@ -1,0 +1,45 @@
+filename: vim-enter-unicode-char-in-command-mode-20260814.txt
+
+from vim help
+:help i_CTRL-V_digit
+
+    *i_CTRL-V_digit*
+    With CTRL-V the decimal, octal or hexadecimal value of a character can be
+    entered directly.  This way you can enter any character, except a line break
+    (<NL>, value 10).  There are five ways to enter the character value:
+
+    first char    mode         max nr of chars   max value ~
+    (none)        decimal      3                 255
+    o or O        octal        3                 377      (255)
+    x or X        hexadecimal  2                 ff       (255)
+    u             hexadecimal  4                 ffff     (65535)
+    U             hexadecimal  8                 7fffffff (2147483647)
+
+    Normally you would type the maximum number of characters.  Thus to enter a
+    space (value 32) you would type <C-V>032.  You can omit the leading zero, in
+    which case the character typed after the number must be a non-digit.  This
+    happens for the other modes as well: As soon as you type a character that is
+    invalid for the mode, the value before it will be used and the "invalid"
+    character is dealt with in the normal way.
+
+    If you enter a value of 10, it will end up in the file as a 0.  The 10 is a
+    <NL>, which is used internally to represent the <Nul> character.  When writing
+    the buffer to a file, the <NL> character is translated into <Nul>.  The <NL>
+    character is written at the end of each line.  Thus if you want to insert a
+    <NL> character in a file you will have to make a line break.
+    Also see 'fileformat'.
+
+
+---
+If vim does not allow to enter acute accent "´" without a letter or with space (alt-gr + 9), than
+to replace all occurences of right ")" in words like: "let)s" or "I)ll" or "don)t" or "there)s" with
+acute accesnt "´" do enter in command mode:
+    :%s/\(\w\))\(\w\)/\1<special key combo>\2/gc
+    special key combo: 'ctrl+v' than 'u00b4'
+
+
+---
+
+
+
+

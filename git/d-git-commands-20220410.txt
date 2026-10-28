@@ -1,0 +1,31 @@
+  906  2022-04-10 17:21:30 mkdir d_metsys_git
+  907  2022-04-10 17:22:02 cp -r d_metsys_git_setup/d_metsys_github/* d_metsys_git/
+  908  2022-04-10 17:22:49 touch setup.txt
+  909  2022-04-10 17:23:11 grep git ~/majstaf/forallusers/aliases_forall >> setup.txt 
+  910  2022-04-10 17:23:15 vim setup.txt 
+  911  2022-04-10 17:25:34 cp -r d_metsys_git_setup/d_metsys_source d_metsys_git/
+  912  2022-04-10 17:25:58 cat setup.txt >> gitd 
+                           gitd ==> alias dtms ...
+  913  2022-04-10 17:27:00 dmts status -u
+  918  2022-04-10 17:30:12 dmts remote add gitlab_dmetsys git@gitlab.com:r-gregor/d_metsys
+  919  2022-04-10 17:30:21 dmts remote -v
+  920  2022-04-10 17:31:03 cp ~/majstaf/forallusers/aliases_forall d_metsys_source/d_forallusers/
+  921  2022-04-10 17:31:14 dmts status
+  922  2022-04-10 17:31:19 dmts add .
+  928  2022-04-10 17:33:38 dmts status
+  929  2022-04-10 17:34:42 dmts pull gitlab_dmetsys master
+  931  2022-04-10 17:36:06 dmts push --allow-unrelated-histories gitlab_dmetsys master
+  932  2022-04-10 17:38:26 dmts pull --allow-unrelated-histories gitlab_dmetsys master
+  933  2022-04-10 17:38:33 vim d_metsys_source/d_forallusers/aliases_forall
+  935  2022-04-10 17:39:31 dmts commit -m "test commit aliases_forall -- new setup 20220410"
+  938  2022-04-10 17:42:11 vim ~/majstaf/forallusers/aliases_forall 
+  939  2022-04-10 17:44:13 sbr
+  941  2022-04-10 17:45:16 cp -i ~/majstaf/forallusers/aliases_forall ~/majstaf/d_metsys_git/d_metsys_source/d_forallusers/
+  942  2022-04-10 17:45:32 dmts add .
+  943  2022-04-10 17:45:35 dmts status
+  944  2022-04-10 17:46:05 dmts commit -m "updated d_forallusers/aliases_forall"
+  946  2022-04-10 17:46:33 dmts push github_dmetsys master
+  947  2022-04-10 17:46:42 dmts push gitlab_dmetsys master
+  950  2022-04-10 17:48:06 cd majstaf/d_metsys_git
+  953  2022-04-10 17:48:26 yes | rm -r d_metsys_git_setup/
+  957  2022-04-10 17:49:01 vim d_git_commands_20220409.txt 

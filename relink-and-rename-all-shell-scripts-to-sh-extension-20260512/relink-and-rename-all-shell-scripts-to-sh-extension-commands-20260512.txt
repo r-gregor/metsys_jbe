@@ -1,0 +1,30 @@
+filename: relink-and-rename-all-shell-scripts-to-sh-extension-commands-20260512.txt
+
+cd majstaf/majbin/
+./find-all-shell-scripts.sh
+cp -r majbin/ majbin_novo
+cd majbin_novo/
+./find-all-shell-scripts.sh | less
+while read scrpt; do echo mv -v $scrpt ${scrpt}.sh; done < <(./find-all-shell-scripts.sh) #TEST
+while read scrpt; do mv -v $scrpt ${scrpt}.sh; done < <(./find-all-shell-scripts.sh) > log.txt
+cat log.txt
+cd ~/.local/bin/
+vim ~/majstaf/majbin/softlink2-fname-to-ulb #to keep .sh extension
+cp -r bin/ bin_backup
+for FFF in $(find * -type l); do ll --color=never $FFF; done
+for FFF in $(find * -type l); do ll --color=never $FFF; done >> ~/majstaf/majbin_novo/sflinks.txt
+vim ~/majstaf/majbin_novo/sflinks.txt
+cd ~/majstaf/majbin_novo/
+vim sflinks.txt #change to <commandname>;<link>
+while IFS=';' read link path; do printf "%-30s --> %s\n" "${link}" "${path}"; done < sflinks.txt #TEST
+vim renlink-shell-link-names-to-names-with-sh.sh
+cp -r majbin{,_backup}
+rm -r majbin
+cp -r majbin_novo/ majbin
+cd ~/.local/
+rm -r bin
+cp -r bin_backup/ bin
+cd ~/majstaf/majbin
+vim relink-shell-link-names-to-names-with-sh.sh
+./relink-shell-link-names-to-names-with-sh.sh
+

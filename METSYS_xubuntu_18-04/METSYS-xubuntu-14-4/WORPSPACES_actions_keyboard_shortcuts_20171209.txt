@@ -1,0 +1,9 @@
+WORPSPACESactionskeyboardshortcuts20171209:
+
+Ctrl + Alt + Arrow right arrow		Next workspace
+Ctrl + Alt + Arrow left				Previous workspace
+Alt + Insert						Add a workspace
+Alt + Delete						Delete a workspace
+Ctrl + F(N)							Go to workspace number N (1-9)
+Alt + Ctrl + Home|End				Move the window to previous|next workspace
+Alt + Ctrl + keypad key number N	Move a window to workspace number N (1-9)

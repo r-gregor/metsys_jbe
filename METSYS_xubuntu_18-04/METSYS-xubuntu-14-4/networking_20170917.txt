@@ -1,0 +1,77 @@
+stanje: 20170917
+---------------------------------------------
+00 - ROUTER (Enkom Technologies Ltd.)
+MAC					IP4/IP6
+78:8c:54:02:0e:0f	192.168.1.254	(fixed)
+---------------------------------------------
+01 - A1 (Amis IPTV - Albis Technologies AG)
+MAC					IP4/IP6
+00:1a:d0:16:5e:0f	192.168.1.21	(dhcp)
+---------------------------------------------
+02 - Access Point (TP-LINK)
+MAC					IP4/IP6
+b0:48:7a:d0:9c:c4	192.168.1.100	(fixed)
+---------------------------------------------
+03 - Rpi - KODI
+MAC					IP4/IP6
+b8:27:eb:86:38:d5	192.168.1.32	(dhcp-x)
+---------------------------------------------
+A - rgregor
+eth0:
+MAC					IP4/IP6
+10:1f:74:f2:4e:89 	inet 192.168.1.222	(fixed)
+					fe80::121f:74ff:fef2:4e89
+wlan0:
+MAC					IP4/IP6
+d0:df:9a:e9:06:c7	192.168.1.223
+					fe80::d2df:9aff:fee9:6c7
+
+SAMSUNG:
+MAC					IP4/IP6
+d8:5b:2a:c6:0f:b3	192.168.1.25	(dhcp)				
+---------------------------------------------
+B - Mark
+wlan0:
+MAC					IP4/IP6
+20:16:d8:b1:6b:2d	192.168.1.24	(dhcp)
+
+SAMSUNG:
+MAC					IP4/IP6
+bc:44:86:b9:72:9f	192.168.1.20	(dhcp)
+---------------------------------------------
+C - Zala
+eth0:
+MAC					IP4/IP6
+
+
+wlan0:
+MAC					IP4/IP6
+d0:7e:35:b8:a2:ea	192.168.1.202
+
+SAMSUNG:
+MAC					IP4/IP6
+bc:44:86:b9:72:71	192.168.1.29	(dhcp)
+---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+**********************************************
+MAC-s:
+10-1F-74-F2-4E-89	Eth LAN of HPLPT
+D0-DF-9A-E9-06-C7	WIFI of HPLPT	
+20-16-D8-B1-6B-2D	lnxmark - wifi	
+20-6A-8A-F3-CE-F9	LAN - lnxmark	
+28-5A-EB-13-C5-88	TADI_WIFI-IPHONE 
+BC-44-86-B9-72-71	ZALA-SAMSUNG	
+BC-44-86-B9-72-9F	MARK-SAMSUNG	
+E0-CB-EE-2A-8C-8E	GREGEC-SAMSUNG
+
+fixed IP-s:
+192.168.1.26	bc:47:60:a3:65:90	Samsung Electronics Co.,Ltd (GALAXY TAB)

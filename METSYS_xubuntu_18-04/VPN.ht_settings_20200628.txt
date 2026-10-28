@@ -1,0 +1,51 @@
+---
+First, you need to download the OpenVPN Config
+
+---
+
+Install OpenVPN in the Network Manager
+
+Open a new terminal window, enter the following command, press enter and accept all questions:
+
+For Unity:
+sudo apt-get install network-manager-openvpn
+
+For Gnome:
+sudo apt-get install network-manager-openvpn-gnome
+
+---
+
+Open the Network Manager
+
+
+Click on the network icon in the upper-right corner of the screen, select 'VPN Connections' and choose the 'Configure VPN...' option to open the configuration screen.
+
+---
+Click the 'Add' button in the 'Network Connections' window
+
+---
+Select the 'Import a saved VPN configuration...'
+And open the .ovpn you extracted from the ZIP-archive.
+
+---
+Select 'Password' as Authentication Type
+
+---
+Enter your VPN.ht credentials
+And select the crt.crt file you extracted from the ZIP-archive as CA Certificate.
+
+---
+Click 'Advanced' to add the TLS certficate
+
+Check the 'Use additional TLS authentication option and select the ta.key file you extracted from the ZIP-archive as 'Key File'. Make sure the 'Key Direction' option is set to '1'.
+
+---
+
+Close all networking windows and connect
+
+Go back to the tray icon in the upper-right corner and select the VPN configuration you just created. If everything is correct, a message will appear that you are connected.
+
+---
+Documentation complete
+
+You can always confirm you are connected by visiting MYIP.ht

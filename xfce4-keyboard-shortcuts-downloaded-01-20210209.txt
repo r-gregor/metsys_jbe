@@ -1,0 +1,32 @@
+https://www.keyxl.com/aaac887/409/Xfce-Window-Manager-keyboard-shortcuts.htm
+
+Xfce 4 Window Manager Keyboard Shortcuts
+
+Alt + F4        Close window
+Alt + F5        Maximize window
+Alt + F6        Maximize vertically
+Alt + F7        Maximize horizontally
+Alt + F8        Hide window
+Alt + F9        Shade window
+Alt + F10       Stick window
+Alt + Tab       Cycle windows focus
+Alt + F11       Toggle fullscreen
+Alt + Insert    Add a workspace
+Alt + Delete    Delete a workspace
+Ctrl + F(N)     Go to workspace number N (1-9)
+Alt + F1        Start xfhelp4
+Alt + F2        Start xfrun4
+---
+Alt + Ctrl + Delete       Lock the screen
+Ctrl + Alt + Arrow left   Previous workspace
+Shft + Alt + Page_Up      Raise window
+Shft + Alt + Page_Down    Lower window
+---
+Ctrl + Alt + Arrow right arrow    Next workspace
+Alt + Ctrl + Home|End             Move the window to previous|next workspace
+Alt + Ctrl + keypad key number N  Move a window to workspace number N (2-9)
+---
+Ctrl + Shft + Alt + Arrow (up, down, left, or right)    Move window
+Shft + Alt + Arrow (up, down, left, or right)           Resize window
+---
+

@@ -1,0 +1,13 @@
+# vim: record command to insert spaces up tp column 21 between bindsymbol and command:
+# right alignment on symbol (space, =) 
+# qa       - start recording:
+# 0f 30i 21|dwj<cr>
+# '0'      - go to start
+# 'f '     - find next space
+# '30i ^[' - insert 30 spaces followed by escape symbol (Ctrl+v, Exc)
+# '21|'    - move cursor to column 21
+# 'dw'     - remove al spaces between
+# 'j'      - go to nex line
+# '<CR>'   - enter (finish)
+# q        - finish recording
+

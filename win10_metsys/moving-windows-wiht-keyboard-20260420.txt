@@ -1,0 +1,10 @@
+filename: moving-windows-wiht-keyboard-20260420.txt
+
+1 - ALT+TAB to cycle trough open apps list to select
+2 - ALT+SPACEBAR to launch menu
+3 - select action ('m' - to [m]ove, or 'a' - to prem[a]kni on SLO)
+4 - move windows with ARROW keys
+5 - ENTER, or ESC to return zo normal mode
+
+---
+

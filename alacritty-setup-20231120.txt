@@ -1,0 +1,7 @@
+alacritty setup: import dracula.toml:
+background        = "#131926"
+foreground        = "#dddddd"
+bright_foreground = "#ffffff"
+green             = "#60B48A" (dim)
+---
+

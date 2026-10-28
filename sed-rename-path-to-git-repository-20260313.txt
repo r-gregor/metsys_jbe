@@ -1,0 +1,30 @@
+fname: sed-rename-path-to-git-repository-20260313.txt
+
+Convert current path to filename to "git" path
+
+fname ... filename somewhere inside "~/majstaf/...", like:
+/home/gregor.redelonghi/majstaf/majbin/git-commands/gupdate-file-en
+/home/gregor.redelonghi/majstaf/majbin/zze
+/home/gregor.redelonghi/majstaf/majrcs/funclist-en
+
+into
+
+/home/gregor.redelonghi/majstaf/engit/majbin_en/git-commands/gupdate-file-en
+/home/gregor.redelonghi/majstaf/engit/majbin_en/zze
+/home/gregor.redelonghi/majstaf/engit/majrcs_en/funclist-en
+
+COMMAND:
+HST="en"
+DSTF=$(echo ${fname} | sed "s/\(.*majstaf\)\/\([[:alpha:]]\+\)\/\(.*\)/\1\/${HST}git\/\2_${HST}\/\3/")
+                              +------------+/+----------------+/+----+
+                                    \1               \2           \3
+
+
+                \1                  \2                   \3
+[/home/gregor.redelonghi/majstaf]/[majbin]/[git-commands/gupdate-file-en]
+
+into:
+
+                \1\/engit                 \/\2_en              \/\3
+[/home/gregor.redelonghi/majstaf/engit][/majbin_en][/git-commands/gupdate-file-en]
+

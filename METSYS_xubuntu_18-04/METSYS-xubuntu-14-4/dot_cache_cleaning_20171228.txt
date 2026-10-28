@@ -1,0 +1,10 @@
+### ~/.cache/ 
+find ~/.cache/ -depth -type f -atime +365
+ # find ~/.cache/ -depth -type f -atime +365 -delete
+ find ~/.cache/ -depth -type f -atime +90
+ # find ~/.cache/ -depth -type f -atime +90 -delete
+ find ~/.cache/ -depth -type f
+ # find ~/.cache/ -depth -type f -delete
+
+### ~/.thumbnails/
+# find ~/.thumbnails/ -depth -type f -delete

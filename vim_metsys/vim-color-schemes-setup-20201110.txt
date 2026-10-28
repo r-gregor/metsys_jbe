@@ -1,0 +1,32 @@
+filename: vim-color-schemes-setup_20201110.txt
+
+ 2592  2020-11-10 09:10:26 cd /c/Users/gregor.redelonghi/Downloads/
+ 2593  2020-11-10 09:10:39 mkdir vim-themes-20201110
+ 2595  2020-11-10 09:10:44 cd vim-themes-20201110/
+ 2596  2020-11-10 09:11:04 nano list
+ 2600  2020-11-10 09:13:35 while read CS; do echo git clone $CS; done < list
+ 2601  2020-11-10 09:13:44 while read CS; do git clone $CS; done < list
+ 2614  2020-11-10 09:18:08 find * -type d -name colors
+ 2618  2020-11-10 09:21:52 mkdir -p ~/.vim/colors2
+ 2619  2020-11-10 09:22:05 for PATH in $(find * -type d -name colors); do echo cp $PATH/*.vim ~/.vim/colors2/; done
+ 2621  2020-11-10 09:22:30 for PATH in $(find * -type d -name colors); do cp -v$PATH/*.vim ~/.vim/colors2/; done
+ 2630  2020-11-10 09:25:18 for PATH in $(/usr/bin/find * -type d -name colors); do echo /usr/bin/cp -v $PATH/*.vim ~/.vim/colors2/; done
+ 2631  2020-11-10 09:25:27 for PATH in $(/usr/bin/find * -type d -name colors); do /usr/bin/cp -v $PATH/*.vim ~/.vim/colors2/; done
+ 2633  2020-11-10 09:25:51 cd ~/.vim/colors2
+ 2636  2020-11-10 09:26:19 cp -i ./* ../colors/
+ 2652  2020-11-10 09:30:35 ls -1
+ 2655  2020-11-10 09:31:36 cd 
+ 2659  2020-11-10 09:32:59 for LINE in $(\ls -1 ~/.vim/colors2/); do echo $LINE >> ~/.vimrc; done
+ 2660  2020-11-10 09:33:01 vim .vimrc
+==============================================================================================================
+contents of list:
+https://github.com/zefei/simple-dark.git
+https://github.com/sainnhe/sonokai.git
+https://github.com/sainnhe/edge.git
+https://github.com/flrnd/candid.vim.git
+https://github.com/sainnhe/archived-colors.git
+https://github.com/sainnhe/edge.git
+https://github.com/flrnd/candid.vim.git
+https://github.com/arzg/vim-oldbook8.git
+==============================================================================================================
+from: http://vimcolors.com/

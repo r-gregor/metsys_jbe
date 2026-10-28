@@ -1,0 +1,18 @@
+1 - create build.sh with gcc build commands - example:
+		#! /usr/bin/env bash
+		set -xe   # echo commands and errors, stop on errors!
+		gcc -g -Wall -Werror -std=c11 -o test main.c
+
+2 - chmod 755 build.sh
+3 - vim [program_name].sh
+4 - setup [make] command in vim:
+		:set makeprg=./build.sh
+5 - run [make] command in vim:
+		:make
+		# info:
+			:h make
+6 - disosplay c-errors -- run cope command:
+		:cope
+		# info:
+			:h cope (Open a window to show the current list of errors)
+

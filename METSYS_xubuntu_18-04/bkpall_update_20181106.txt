@@ -1,0 +1,7 @@
+Subject: update bkpall
+
+no need to copy backups of tar.gz-ed folders to Dropbox --> watch updated bkpall.sh from en on 20181106!
+still backup Dropbox ODPRTO/SKUPNI to alternative location on HDD out of bkpall area -- just to keep it safe
+from accidental removal from Dropbox Web Site.
+
+DONE (d) !

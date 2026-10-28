@@ -1,0 +1,16 @@
+# fname: max-num-open-files-or-fds-20260821.txt
+# from:  Understanding File Descriptors in Unix/Linux - You Suck at Programming
+#        https://www.youtube.com/watch?v=o9iZucYSkQA
+# ---
+
+# Max number of open files
+$> cat /proc/sys/fs/file-max
+
+# Max number of open file descriptors (fds)
+# ulimit (different limits per process):
+# man ulimit
+$> ulimit -n
+
+
+---
+

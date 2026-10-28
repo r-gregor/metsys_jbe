@@ -1,0 +1,5 @@
+1 - sudo at install brightnessctl
+2 - command:
+	brightnessctl set ${NM}%
+		NM = 10, 20, ..., 75, 100
+

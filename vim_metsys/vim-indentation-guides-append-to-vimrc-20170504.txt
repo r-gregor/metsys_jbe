@@ -1,0 +1,31 @@
+
+" 20170504:
+" setup indentations to be 4 spaces, and TABs are 4 spaces also:
+set expandtab 
+set shiftwidth=4
+set tabstop=4
+
+
+
+" 20170504 ------------------------------------------------------------------------------------
+" downloaded: indentLine-master.zip to /home/gregor.redelonghi/_DOWNLOADS/ en extracted it to:
+" indentLine-master folder. Copied the folder:
+"   cp -r indentLine-master ~/.vim/bundle/
+" and VOILA: the vertical bars at 4 spaces of indentation!
+"
+" 
+
+" IndenGuides ............................................
+" instalation:
+"   cd ~/.vim/bundle
+"   git clone git://github.com/nathanaelkane/vim-indent-guides.git
+"
+" If the folowing is enabled, the indentations are also highlated with
+" exchanging grey colors:
+" enable IndentGuides plugin - exchanging gray colours indentation ...
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_auto_colors=0
+hi IndentGuidesEven ctermbg=238
+hi IndentGuidesOdd ctermbg=236
+" 20170504 ------------------------------------------------------------------------------------
+

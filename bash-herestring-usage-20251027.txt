@@ -1,0 +1,16 @@
+# read string delimited with : int multiple values
+# -r skipp newlines at the end ...
+$>IFS=: read -r KEY VALUE <<< "OCE:GREGOR REDELONGHI"
+
+$> echo $KEY
+OCE
+
+$> echo $VALUE
+GREGOR REDELONGHI
+
+# convert value to al small-caps:
+$> KEY=${KEY,,}
+
+$> echo $KEY
+oce
+

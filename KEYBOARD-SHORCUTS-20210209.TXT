@@ -1,0 +1,30 @@
+Ctrl + Alt + End            move window to next/right workspace
+Ctrl + Alt + Home           move window to prevous/left workspace
+Ctrl + Alt + [Left,Right]   switch focus to [previous,next] workspace
+Ctrl + [F1-F9]              switch focus to workspace[1-9]
+Ctrl + Alt + KP_N           mowe window to workspace N (KP_N --> number on right side keypad)
+---
+Alt + F5                    1st - maxmize window horitzontaly; 2nd - float
+Alt + F6                    1st - maxmize window verticaly; 2nd - float
+Alt + F7                    1st - maximize window; 2nd - float
+Alt + F8                    1st - stick window; 2nd un-stick window (select multiple w to move them)
+ALt + Tab                   cycle windows
+Alt + [Delete/Insert]       delete/insert workspace
+Alt + Space                 pop up window menu
+---
+Super + Righ                tile window right
+Super + Left                tile window left
+Super + Up                  tile window up
+Super + Down                tile window down
+Super + KP_9                tile window top-right
+Super + KP_7                tile window top-left
+Super + KP_3                tile window bottom-right
+Super + KP_1                tile window bottom-left
+Super + Tab                 cycle same app windows
+Super + P                   dmenu
+Super + R                   Application finder
+---
+Ctrl + Shift + PgUp         st - increase font size
+Ctrl + Shift + PgDown       st - decrease font size
+---
+

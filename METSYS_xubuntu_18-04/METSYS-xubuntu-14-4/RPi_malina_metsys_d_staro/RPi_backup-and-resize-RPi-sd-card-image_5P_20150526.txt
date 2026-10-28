@@ -1,0 +1,41 @@
+﻿howto_clone-16gb-rpi-sd-card-to-8gb-sd-card
+https://www.youtube.com/watch?v=8afcs4y9Igs
+
+A - clone RPi sd-card to HDD and shrink it:
+
+	--> insert 16GB sd-card with RPi on it
+$ ~>mkdir raspi-bkp && cd raspi-bkp			# create-backup-dir an cd ri it
+$ raspi-bkp> lsblk					# get sd-card /dev/<diskname> (=/dev/mmcblk0)
+$ raspi-bkp> sudo dd bs=4M if=/dev/mmcblk0 of=/home/<username>/raspi-bkp/raspibkp1.img 
+							# clone sd-card
+
+...
+
+$ raspi-bkp> sudo losetup /dev/loop0 ./raspibkp1.img	# mount raspibkp1.img as loop device
+$ raspi-bkp> sudo partprobe /dev/loop0			# inform OS about patition table changes
+$ raspi-bkp> sudo gparted /dev/loop0			# start gparted ...
+
+... gparted part on: https://www.youtube.com/watch?v=8afcs4y9Igs
+	--> resize rootfs (/dev/mmcblk0p6) to the left to a little over used space (~ 1GB)
+	--> resize the extended partition  (/dev/mmcblk0p2) to full left to the right border of previous partition
+ 	--> move the partition on the right side of unlocated space (/dev/mmcblk0p3) to border of previous partition,
+	    so that only the unlocated space remains on the right side.
+
+$ raspi-bkp> sudo losetup -d /dev/loop0			# unmount loop device
+$ raspi-bkp> sudo fdisk -l ./raspibkp1.img
+	... Partiton table entries are not in disk order.
+	--> locate the largest "END" block number: 10557439 (example)
+
+$ raspi-bkp> sudo truncate --size=$[(10557439+1)*512] ./raspibkp1.img # block count starts from 0 so: +1!
+$ raspi-bkp> ls -lh --> size shrunk down from 16GB to cca 5.1 GB!!
+--------------------------------------------------------------------------------------------------------------
+B - clone RPi shrunk image to 8GB sd.card:	
+
+$ raspi-bkp> sudo gparted /dev/mmcblk0
+	--> revert the proces!!
+	--> move the partition on the left side of unlocated space (/dev/mmcblk0p3) to the righ-most side, on
+	    the right side of the unlocated space
+	--> resize the extended partition  (/dev/mmcblk0p2) to full right to the left border of /dev/mmcblk0p3
+	--> resize rootfs (/dev/mmcblk0p6) to full right to the left border of /dev/mmcblk0p3
+
+DONE!

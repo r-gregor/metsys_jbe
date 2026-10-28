@@ -1,0 +1,7 @@
+Download it from http://www.gringod.com/wp-upload/software/Fonts/Monaco_Linux.ttf
+
+ 2527  2018-08-07 18:00:38 cd /usr/share/fonts
+ 2528  2018-08-07 18:00:44 cd truetype/
+ 2533  2018-08-07 18:01:08 sudo mkdir Monaco
+ 2534  2018-08-07 18:01:25 sudo cp ~/majfajls/DOLPOTEGI/Monaco_Linux.ttf Monaco/
+ 2535  2018-08-07 18:01:36 fc-cache -fv

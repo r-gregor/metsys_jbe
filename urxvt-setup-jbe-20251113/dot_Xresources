@@ -1,0 +1,66 @@
+!! Colorscheme
+
+! added 20251112
+#include "./.urxvt/themes/urxvt-colors-default-1"
+!#include "./.urxvt/themes/urxvt-colors-Dracula-1"
+!#include "./.urxvt/themes/urxvt-colors-catppuccin-mocha"
+
+!! URxvt Appearance
+URxvt.font: xft:UbuntuMono Nerd Font Mono:style=Regular:size=16:antialias=true
+!URxvt.boldFont: xft:UbuntuMono Nerd Font:style=Bold:size=14:antialias=true
+!URxvt.italicFont: xft:UbuntuMono Nerd Font:style=Italic:size=14:antialias=true
+!URxvt.boldItalicfont: xft:UbuntuMono Nerd Font:style=Bold Italic:size=14:antialias=true
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxv.internalBorder: 24
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.cursorColor: #db310b
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
+
+! added 20251112 for font resize:
+! from: https://github.com/simmel/urxvt-resize-font
+urxvt.perl-ext-common: resize-font
+
+!!! URxvt.keysym.C-minus:     resize-font:smaller
+!!! URxvt.keysym.C-plus:      resize-font:bigger
+!!! URxvt.keysym.C-equal:     resize-font:reset
+!!! URxvt.keysym.C-question:  resize-font:show
+!!! URxvt.resize-font.step:   2
+
+!! Common Keybinds for Navigations
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-Left: \033[1;5D
+
+!! Copy Paste & Other Extensions
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+
+!Transparency added 20251113
+!from: https://ctkarch.org/documentation/tutorials/tuto.php?page=urxvt-transpa.xml
+!real transparency
+urxvt*depth: 32urxvt*depth: 32
+
+! same color as for background in theme ...
+URxvt.background: [90]#141c21
+

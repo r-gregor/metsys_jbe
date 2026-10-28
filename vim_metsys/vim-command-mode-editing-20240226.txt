@@ -1,0 +1,8 @@
+1 - show editable list of last command in normal mode for:
+	: - command mode       ... q:
+	/ - forward search     ... q/
+	? - backwards search   ... q?
+
+2 - show editable list of commands after entering in command mode pressing ':'
+	ctrl + F
+

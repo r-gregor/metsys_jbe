@@ -1,0 +1,2 @@
+Disks --> Drive Settings --> Write Cache --> [ Enable Writ Cache = ON ]
+# speed up, increase responsivenes, but if power failure --> data loss

@@ -1,0 +1,12 @@
+filename: KODI_17-6_No-Video-only-Sound_FIX_20180306.txt
+
+Install Video Acceleration API: 
+
+Video Acceleration API (VA API) is a royalty-free API as well as its implementation as free and open-source library (libVA) distributed under the MIT License.
+The API enables and provides access to hardware-accelerated video processing, using hardware such as graphics processing units (GPU) to accelerate video encoding and decoding by offloading processing from the central processing unit (CPU).
+
+<code>
+sudo apt-add-repository ppa:wsnipex/vaapi
+sudo apt-get update
+sudo apt-get dist-upgrade
+</code>

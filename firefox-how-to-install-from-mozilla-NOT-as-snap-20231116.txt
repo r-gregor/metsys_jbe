@@ -1,0 +1,97 @@
+Install Firefox as Normal Package on Ubuntu 22.04
+August 21, 2023 / Applications
+
+Starting with Ubuntu 22.04, Firefox comes installed as a Snap package by default. In this tutorial,
+you will learn how to remove the Firefox Snap and install Firefox as a normal software package on Ubuntu.
+Ezoic
+
+Some users simply do not like Snapd, and choose to remove it. Unfortunately, you can’t install Firefox
+from Ubuntu’s software repo with the apt command anymore, as it simply reinstalls Snapd and then
+installs the Firefox Snap again. Other users have also reported a sluggish experience using the Firefox
+snap and wish to restore the classic installation of Firefox.
+
+You have two options when replacing the Firefox Snap on Ubuntu. You can either install Firefox via the
+Mozilla PPA (recommended method) or install Firefox from the official web download. We will cover both
+methods below.
+
+Install Firefox With Mozilla PPA
+The Mozilla developers have their own Mozilla PPA which allows Ubuntu users to install the latest release
+of Firefox. Here is how to remove the Firefox Snap and install Firefox from Mozilla PPA instead.
+Fix snapd returned status code 400:...
+Remaining Time -5:20
+Fix snapd returned status code 400: bad request [Linux Troubleshoot]
+
+Step 1. Add the Mozilla PPA to your system.
+
+$ sudo add-apt-repository ppa:mozillateam/ppa
+
+Step 2. Next, you will need to remove the Firefox Snap package, as it will cause a conflict. You will also
+need to execute the following apt purge command to get rid of the wrapper that points to the Snap package.
+
+$ sudo snap remove --purge firefox
+$ sudo apt purge --autoremove firefox
+
+Step 3. The next command will configure your system to prefer the Firefox version available in the PPA
+rather than falling back to the Snap version when you try to install Firefox.
+
+$ echo -e '\nPackage: *\nPin: release o=LP-PPA-mozillateam\nPin-Priority: 1002' | sudo tee
+/etc/apt/preferences.d/mozilla-firefox
+
+Step 4. Now install Firefox from PPA by using the ordinary apt commands (these same commands can also
+be used to update Firefox):
+
+$ sudo apt update
+$ sudo apt install firefox
+
+Step 5. To make Firefox easier to open, search for it in the Activities menu, right-click on it, and
+select “Add to Favorites.” This will add it to the quick launch bar.
+Ezoic
+
+Adding Firefox to the quick launch dock
+
+Removal: In case you want to uninstall the PPA version and get rid of the repo you added, execute the
+following commands, and then you can go back to installing the Snap package if you’d like.
+
+$ sudo apt purge --autoremove firefox
+$ sudo rm /etc/apt/preferences.d/mozilla-firefox
+$ sudo add-apt-repository --remove ppa:mozillateam/ppa
+
+Install Firefox From Official Web Download
+
+Another option is to simpy download the Firefox browser from the official website. This installation
+can even coexist with your Snap install without conflicting, if you want.
+Ezoic
+
+Step 1. Install or update Firefox via official web download by using the wget command to download Firefox.
+
+$ wget -O firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64"
+
+Step 2. Extract the file’s contents and move them to your system’s /opt directory with the tar command:
+
+$ sudo tar xjf firefox.tar.bz2 -C /opt/
+
+Step 3. Create a symbolic link to the Firefox binary:
+Ezoic
+
+$ sudo ln -s /opt/firefox/firefox /usr/local/bin/firefox
+
+Step 4. Download the following file to add a shortcut to your desktop:
+
+$ wget https://raw.githubusercontent.com/mozilla/sumo-kb/main/install-firefox-linux/firefox.desktop
+-P ~/Desktop/
+
+Step 5. To add Firefox to the applications inside the Activities menu, and to the quick launch bar,
+add the desktop icon to this directory:
+
+$ sudo wget https://raw.githubusercontent.com/mozilla/sumo-kb/main/install-firefox-linux/firefox.desktop
+-P /usr/share/applications/
+
+Then search for the application in your Activities menu and add it to the quick launch bar:
+
+Adding Firefox to the quick launch dock
+
+Removal: In case you decide to remove this version of Firefox, execute:
+
+$ sudo rm -rf /opt/firefox/firefox /usr/local/bin/firefox ~/Desktop/firefox.desktop
+
+
