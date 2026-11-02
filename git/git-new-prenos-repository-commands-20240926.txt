@@ -1,0 +1,9 @@
+  mkdir prenos
+  cd prenos
+  git init
+  git branch -M main
+  echo "# prenos" >> README.md
+  git commit -m "initial commit 20240926 (from mdb)"
+  git remote add ghprns git@github.com:r-gregor/prenos.git
+  git remote add glprns git@gitlab.com:r-gregor/prenos.git
+  history > ~/majstaf/metsys/git_new_prenos_repository_commands_20240926.txt
