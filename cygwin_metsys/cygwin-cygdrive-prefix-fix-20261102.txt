@@ -1,0 +1,29 @@
+filename: cygwin-cygdrive-prefix-fix-20261102.txt
+from: https://unix.stackexchange.com/questions/44677/how-do-i-get-rid-of-cygwins-cygdrive-prefix-in-all-paths
+
+How do I get rid of Cygwin´s /cygdrive prefix in all paths?
+
+I´m switching to Cygwin from the bash shell that ships with Git for Windows, and encountering a strange
+problem. Someone thought it would be a good idea to add /cygdrive/ to all paths, while I think it´s a horribly
+ugly idea. I´ve been able to determine that I can partially fix this by adding
+
+	mount --change-cygdrive-prefix /
+
+in my .bashrc, but if I take a look at the PATH variable, everything still has /cygdrive/ in it. I suppose I
+could write a script to fix the PATH but that´s even more kludgey than what I´m already doing. There´s got to
+be a better way, and I´m pretty confident there is since Git´s bash shell uses (AFAIK) an older version of
+Cygwin, and it´s somehow configured to not prepend /cygdrive everywhere. So, how can I turn the "Suck" knob to
+zero?
+
+***
+FIX:
+It turns out you can control this in the file /etc/fstab. Just add a line that says:
+
+	# none / cygdrive binary 0 0
+	none / cygdrive binary,posix=0,user 0 0
+
+
+and the problem should be fixed. No more kludgey fixes in .bashrc, and no messed-up $PATH.
+
+---
+
