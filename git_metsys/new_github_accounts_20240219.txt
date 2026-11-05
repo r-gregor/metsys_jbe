@@ -1,0 +1,50 @@
+user:	jbez0rg
+mail:	jbe.z0rg@protonmail.com
+
+Quick setup — if you’ve done this kind of thing before
+or https/ssh	https://github.com/jbez0rg/dotfiles.git
+
+Get started by creating a new file or uploading an existing file. We recommend every repository include a README, LICENSE, and .gitignore.
+
+... or create a new repository on the command line
+echo "# dotfiles" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/jbez0rg/dotfiles.git
+git push -u origin main
+
+... or push an existing repository from the command line
+git remote add origin https://github.com/jbez0rg/dotfiles.git
+git branch -M main
+git push -u origin main
+
+... or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+---
+user:	muadib
+mail:	rgregor.muadib@protonmail.com
+
+Quick setup — if you’ve done this kind of thing before
+or https/ssh	https://github.com/rgregor-muadib/dotfiles.git
+
+Get started by creating a new file or uploading an existing file. We recommend every repository include a README, LICENSE, and .gitignore.
+
+... or create a new repository on the command line
+echo "# dotfiles" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/rgregor-muadib/dotfiles.git
+git push -u origin main
+
+... or push an existing repository from the command line
+git remote add origin https://github.com/rgregor-muadib/dotfiles.git
+git branch -M main
+git push -u origin main
+
+... or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.

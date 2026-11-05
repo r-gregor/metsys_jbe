@@ -1,0 +1,96 @@
+
+$> [gregor.redelonghi@PC-GREDELONGHI] ~/majstaf/engit/majrcs_en (git: main)
+$> gtn branch -v -v -a
+* main              50a0bbf [ghen/main] DELETEME2 test
+  remotes/ghen/main 50a0bbf DELETEME2 test
+  remotes/glen/main 50a0bbf DELETEME2 test
+
+$> [gregor.redelonghi@PC-GREDELONGHI] ~/majstaf/engit/majrcs_en (git: main)
+$> touch DELETEME3.txt
+
+$> [gregor.redelonghi@PC-GREDELONGHI] ~/majstaf/engit/majrcs_en (git: main ***ADD/COMMIT***)
+$> git add .
+
+$> [gregor.redelonghi@PC-GREDELONGHI] ~/majstaf/engit/majrcs_en (git: main ***ADD/COMMIT***)
+$> git commit -m "DELETEME3 test3"
+[main 0bbacca] DELETEME3 test3
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 DELETEME3.txt
+
+$> [gregor.redelonghi@PC-GREDELONGHI] ~/majstaf/engit/majrcs_en (git: main ***PUSH***)
+$> git push ghen main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 244 bytes | 244.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:r-gregor/majrcs_en.git
+   50a0bbf..0bbacca  main -> main
+
+$> [gregor.redelonghi@PC-GREDELONGHI] ~/majstaf/engit/majrcs_en (git: main)
+$> gtn branch -v -v -a
+* main              0bbacca [ghen/main] DELETEME3 test3
+  remotes/ghen/main 0bbacca DELETEME3 test3
+  remotes/glen/main 50a0bbf DELETEME2 test
+
+$> [gregor.redelonghi@PC-GREDELONGHI] ~/majstaf/engit/majrcs_en (git: main)
+$> git push glen main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 244 bytes | 244.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To gitlab.com:r-gregor/majrcs_en.git
+   50a0bbf..0bbacca  main -> main
+
+$> [gregor.redelonghi@PC-GREDELONGHI] ~/majstaf/engit/majrcs_en (git: main)
+$> gtn branch -v -v -a
+* main              0bbacca [ghen/main] DELETEME3 test3
+  remotes/ghen/main 0bbacca DELETEME3 test3
+  remotes/glen/main 0bbacca DELETEME3 test3
+
+$> [gregor.redelonghi@PC-GREDELONGHI] ~/majstaf/engit/majrcs_en (git: main)
+$> z c_t
+
+$> [gregor.redelonghi@PC-GREDELONGHI] .../coding2/testing/c_testing (git: main)
+$> gtn branch -v -v -a
+* main                11cfe97 [ghctst/main] update 20261102_0725_mdb
+  remotes/ghctst/HEAD -> ghctst/main
+  remotes/ghctst/main 11cfe97 update 20261102_0725_mdb
+  remotes/glctst/HEAD -> glctst/main
+  remotes/glctst/main 11cfe97 update 20261102_0725_mdb
+  remotes/glctst/temp c3f4233 updated function to endure single char per line
+
+$> [gregor.redelonghi@PC-GREDELONGHI] .../coding2/testing/c_testing (git: main)
+$> git push -d glctst temp
+To gitlab.com:r-gregor/c_testing.git
+ - [deleted]         temp
+
+$> [gregor.redelonghi@PC-GREDELONGHI] .../coding2/testing/c_testing (git: main)
+$> gtn branch -v -v -a
+* main                11cfe97 [ghctst/main] update 20261102_0725_mdb
+  remotes/ghctst/HEAD -> ghctst/main
+  remotes/ghctst/main 11cfe97 update 20261102_0725_mdb
+  remotes/glctst/HEAD -> glctst/main
+  remotes/glctst/main 11cfe97 update 20261102_0725_mdb
+
+$> [gregor.redelonghi@PC-GREDELONGHI] .../coding2/testing/c_testing (git: main)
+$> git branch -D d
+Deleted branch d (was c3f4233).
+
+$> [gregor.redelonghi@PC-GREDELONGHI] .../coding2/testing/c_testing (git: main)
+$> git branch -D rm
+Deleted branch rm (was c3f4233).
+
+$> [gregor.redelonghi@PC-GREDELONGHI] .../coding2/testing/c_testing (git: main)
+$> gtn branch -v -v -a
+* main                11cfe97 [ghctst/main] update 20261102_0725_mdb
+  remotes/ghctst/HEAD -> ghctst/main
+  remotes/ghctst/main 11cfe97 update 20261102_0725_mdb
+  remotes/glctst/HEAD -> glctst/main
+  remotes/glctst/main 11cfe97 update 20261102_0725_mdb
+
